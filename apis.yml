@@ -1,0 +1,42 @@
+aid: agstack
+name: AgStack Foundation
+description: >-
+  AgStack Foundation is a Linux Foundation project providing open source digital infrastructure for the agriculture sector. It develops frameworks and tools for agricultural data management, field boundary identification, and interoperability across agtech platforms.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Agriculture
+  - Open Source
+  - Technology
+  - Linux Foundation
+created: '2026-03-16'
+modified: '2026-03-16'
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/agstack/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: agstack:agstack-api
+    name: AgStack Foundation API
+    description: >-
+      API for accessing AgStack Foundation resources and tools for agricultural data management, field boundary identification, and agtech platform interoperability.
+    humanURL: https://agstack.org/projects/
+    tags:
+      - Agriculture
+      - Open Source
+    properties:
+      - type: Documentation
+        url: https://agstack.org/projects/
+common:
+  - type: Documentation
+    name: AgStack Foundation Documentation
+    description: Official documentation for AgStack Foundation.
+    url: https://agstack.org/projects/
+  - type: GitHubOrg
+    name: AgStack Foundation GitHub
+    description: Source code and repositories for AgStack Foundation.
+    url: https://github.com/agstack
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
