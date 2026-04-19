@@ -1,0 +1,14 @@
+{
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "activityType": "550e8400-e29b-41d4-a716-446655440000",
+  "title": "example_-title",
+  "details": "example_etails",
+  "hasStartDatetime": "2024-06-15T12:00:00Z",
+  "hasEndDatetime": "2024-06-15T12:00:00Z",
+  "responsibleAgent": "example_eAgent",
+  "usesAgriculturalMachinery": [],
+  "hasAppliedAmount": "example_Amount",
+  "hasApplicationMethod": "example_Method",
+  "usesFertilizer": "550e8400-e29b-41d4-a716-446655440000",
+  "operatedOn": "550e8400-e29b-41d4-a716-446655440000"
+}

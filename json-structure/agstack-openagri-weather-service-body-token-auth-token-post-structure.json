@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/Body_token_auth_token_post.json",
+  "title": "Body_token_auth_token_post",
+  "type": "object",
+  "fields": [
+    {
+      "name": "grant_type",
+      "type": "string"
+    },
+    {
+      "name": "username",
+      "type": "string"
+    },
+    {
+      "name": "password",
+      "type": "string"
+    },
+    {
+      "name": "scope",
+      "type": "string"
+    },
+    {
+      "name": "client_id",
+      "type": "string"
+    },
+    {
+      "name": "client_secret",
+      "type": "string"
+    }
+  ]
+}

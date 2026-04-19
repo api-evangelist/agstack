@@ -1,0 +1,8 @@
+{
+  "timestamp": "2024-06-15T12:00:00Z",
+  "uav_model": "example__model",
+  "status": "example_status",
+  "weather_source": "example_source",
+  "location": "example_cation",
+  "weather_params": {}
+}

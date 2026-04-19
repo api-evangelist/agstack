@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/ObservationQuantityValueField.json",
+  "title": "ObservationQuantityValueField",
+  "type": "object",
+  "fields": [
+    {
+      "name": "unit",
+      "type": "string"
+    },
+    {
+      "name": "hasValue",
+      "type": "string"
+    }
+  ]
+}

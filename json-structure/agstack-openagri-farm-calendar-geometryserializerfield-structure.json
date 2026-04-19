@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/GeometrySerializerField.json",
+  "title": "GeometrySerializerField",
+  "type": "object",
+  "fields": [
+    {
+      "name": "asWKT",
+      "type": "string"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/LocationSerializerField.json",
+  "title": "LocationSerializerField",
+  "type": "object",
+  "fields": [
+    {
+      "name": "lat",
+      "type": "string"
+    },
+    {
+      "name": "long",
+      "type": "string"
+    }
+  ]
+}

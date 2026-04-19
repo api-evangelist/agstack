@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/AddRawMaterialCompostQuantity.json",
+  "title": "AddRawMaterialCompostQuantity",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "readOnly": true
+    },
+    "typeName": {
+      "type": "string"
+    },
+    "quantityValue": {
+      "$ref": "#/components/schemas/AppliedAmmountField"
+    }
+  },
+  "required": [
+    "id",
+    "quantityValue",
+    "typeName"
+  ]
+}

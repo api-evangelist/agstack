@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/RegisterFieldWKTRequest.json",
+  "title": "RegisterFieldWKTRequest",
+  "type": "object",
+  "required": [
+    "wkt"
+  ],
+  "properties": {
+    "wkt": {
+      "type": "string",
+      "example": "POLYGON((75.78209 30.90706, 75.78211 30.90645, 75.78270 30.90654, 75.78262 30.90714, 75.78209 30.90706))"
+    },
+    "threshold": {
+      "type": "integer",
+      "default": 95,
+      "description": "Percentage overlap threshold"
+    },
+    "return_s2_indices": {
+      "type": "boolean",
+      "default": false
+    },
+    "s2_index": {
+      "type": "string",
+      "example": "8,13",
+      "description": "Comma-separated list of resolution levels"
+    }
+  }
+}

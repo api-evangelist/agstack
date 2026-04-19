@@ -1,0 +1,52 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "agstack": "https://agstack.org/vocab/",
+    "ocsm": "https://openagri.eu/vocab/ocsm/",
+    "geo": "http://www.opengis.net/ont/geosparql#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Asset": "agstack:Asset",
+    "FieldBoundary": "agstack:FieldBoundary",
+    "GeoId": "agstack:GeoId",
+    "WeatherForecast": "ocsm:WeatherForecast",
+    "FarmCalendar": "ocsm:FarmCalendar",
+    "FarmOperation": "ocsm:FarmOperation",
+    "AgriculturalMachine": "ocsm:AgriculturalMachine",
+    "Parcel": "ocsm:Parcel",
+
+    "id": "@id",
+    "type": "@type",
+    "geo_id": "agstack:geoId",
+    "boundary": "geo:hasGeometry",
+    "coordinates": "geo:coordinates",
+    "wkt": "geo:asWKT",
+    "centroid": "agstack:centroid",
+    "overlap_percentage": "agstack:overlapPercentage",
+
+    "lat": {"@id": "schema:latitude", "@type": "xsd:float"},
+    "lon": {"@id": "schema:longitude", "@type": "xsd:float"},
+    "temperature": {"@id": "schema:temperature", "@type": "xsd:float"},
+    "humidity": "ocsm:humidity",
+    "wind_speed": "ocsm:windSpeed",
+    "cloud_coverage": "ocsm:cloudCoverage",
+    "thi": "agstack:temperatureHumidityIndex",
+
+    "title": "dcterms:title",
+    "description": "dcterms:description",
+    "created_at": {"@id": "dcterms:created", "@type": "xsd:dateTime"},
+    "updated_at": {"@id": "dcterms:modified", "@type": "xsd:dateTime"},
+    "date": {"@id": "dcterms:date", "@type": "xsd:date"},
+
+    "farm": "ocsm:farm",
+    "parcel": "ocsm:parcel",
+    "activity_type": "ocsm:activityType",
+    "product": "ocsm:product",
+    "quantity": "schema:quantity",
+    "unit": "schema:unitCode",
+    "operator": "schema:agent",
+    "notes": "ocsm:notes"
+  }
+}

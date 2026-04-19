@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/JSONLDGraph.json",
+  "title": "JSONLDGraph",
+  "type": "object",
+  "fields": [
+    {
+      "name": "@context",
+      "type": "array"
+    },
+    {
+      "name": "@graph",
+      "type": "array"
+    }
+  ]
+}

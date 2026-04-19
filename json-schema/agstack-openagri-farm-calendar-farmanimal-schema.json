@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/FarmAnimal.json",
+  "title": "FarmAnimal",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "readOnly": true
+    },
+    "nationalID": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "nullable": true,
+      "maxLength": 100
+    },
+    "description": {
+      "type": "string",
+      "nullable": true
+    },
+    "hasAgriParcel": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "sex": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SexEnum"
+        }
+      ],
+      "minimum": -2147483648,
+      "maximum": 2147483647
+    },
+    "isCastrated": {
+      "type": "boolean"
+    },
+    "species": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "breed": {
+      "type": "string",
+      "nullable": true,
+      "maxLength": 255
+    },
+    "birthdate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "isMemberOfAnimalGroup": {
+      "$ref": "#/components/schemas/FarmAnimalGroupSerializerField"
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StatusEnum"
+        }
+      ],
+      "minimum": -2147483648,
+      "maximum": 2147483647
+    },
+    "invalidatedAtTime": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "dateCreated": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "dateModified": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    }
+  },
+  "required": [
+    "birthdate",
+    "dateCreated",
+    "dateModified",
+    "hasAgriParcel",
+    "id",
+    "invalidatedAtTime",
+    "species"
+  ]
+}

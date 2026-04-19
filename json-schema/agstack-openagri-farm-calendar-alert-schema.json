@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/Alert.json",
+  "title": "Alert",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "readOnly": true
+    },
+    "activityType": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "details": {
+      "type": "string",
+      "nullable": true
+    },
+    "severity": {
+      "$ref": "#/components/schemas/SeverityEnum"
+    },
+    "hasAgriParcel": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "validFrom": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "validTo": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dateIssued": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true,
+      "nullable": true
+    },
+    "quantityValue": {
+      "$ref": "#/components/schemas/ObservationQuantityValueField"
+    },
+    "relatedObservation": {
+      "type": "string",
+      "format": "uuid",
+      "nullable": true
+    }
+  },
+  "required": [
+    "activityType",
+    "dateIssued",
+    "hasAgriParcel",
+    "id",
+    "relatedObservation",
+    "validFrom",
+    "validTo"
+  ]
+}

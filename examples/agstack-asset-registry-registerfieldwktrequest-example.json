@@ -1,0 +1,6 @@
+{
+  "wkt": "example_st-wkt",
+  "threshold": 298,
+  "return_s2_indices": true,
+  "s2_index": "example__index"
+}

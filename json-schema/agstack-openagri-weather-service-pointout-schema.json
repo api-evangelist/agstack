@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/PointOut.json",
+  "title": "PointOut",
+  "properties": {
+    "location": {
+      "$ref": "#/components/schemas/GeoJSONOut"
+    }
+  },
+  "type": "object",
+  "required": [
+    "location"
+  ]
+}

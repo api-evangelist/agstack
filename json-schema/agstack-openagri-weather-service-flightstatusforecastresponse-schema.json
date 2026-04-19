@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/FlightStatusForecastResponse.json",
+  "title": "FlightStatusForecastResponse",
+  "properties": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Timestamp"
+    },
+    "uav_model": {
+      "type": "string",
+      "title": "Uav Model"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status"
+    },
+    "weather_source": {
+      "type": "string",
+      "title": "Weather Source"
+    },
+    "location": {
+      "$ref": "#/components/schemas/GeoJSONOut"
+    },
+    "weather_params": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "type": "object",
+      "title": "Weather Params"
+    }
+  },
+  "type": "object",
+  "required": [
+    "timestamp",
+    "uav_model",
+    "status",
+    "weather_source",
+    "location",
+    "weather_params"
+  ]
+}

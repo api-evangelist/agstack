@@ -1,0 +1,17 @@
+{
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "nationalID": "example_onalID",
+  "name": "example_l-name",
+  "description": "example_iption",
+  "hasAgriParcel": "550e8400-e29b-41d4-a716-446655440000",
+  "sex": "example_al-sex",
+  "isCastrated": true,
+  "species": "example_pecies",
+  "breed": "example_-breed",
+  "birthdate": "2024-06-15T12:00:00Z",
+  "isMemberOfAnimalGroup": "example_lGroup",
+  "status": "example_status",
+  "invalidatedAtTime": "2024-06-15T12:00:00Z",
+  "dateCreated": "2024-06-15T12:00:00Z",
+  "dateModified": "2024-06-15T12:00:00Z"
+}

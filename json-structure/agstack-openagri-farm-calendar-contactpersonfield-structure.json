@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/ContactPersonField.json",
+  "title": "ContactPersonField",
+  "type": "object",
+  "fields": [
+    {
+      "name": "firstname",
+      "type": "string"
+    },
+    {
+      "name": "lastname",
+      "type": "string"
+    }
+  ]
+}

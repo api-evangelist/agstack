@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/PatchedPesticide.json",
+  "title": "PatchedPesticide",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "readOnly": true
+    },
+    "hasCommercialName": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "nullable": true
+    },
+    "hasCost": {
+      "type": "string",
+      "format": "decimal",
+      "pattern": "^-?\\d{0,8}(?:\\.\\d{0,2})?$"
+    },
+    "isPricePer": {
+      "type": "string"
+    },
+    "hasActiveSubstance": {
+      "type": "string"
+    },
+    "isTargetedTowards": {
+      "type": "string"
+    },
+    "hasPreharvestInterval": {
+      "type": "integer"
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StatusEnum"
+        }
+      ],
+      "minimum": -2147483648,
+      "maximum": 2147483647
+    },
+    "dateCreated": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "dateModified": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "invalidatedAtTime": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    }
+  }
+}

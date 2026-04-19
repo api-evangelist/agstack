@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/PatchedFarmParcel.json",
+  "title": "PatchedFarmParcel",
+  "type": "object",
+  "fields": [
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "deleted_at",
+      "type": "datetime"
+    },
+    {
+      "name": "created_at",
+      "type": "datetime"
+    },
+    {
+      "name": "updated_at",
+      "type": "datetime"
+    },
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "identifier",
+      "type": "string"
+    },
+    {
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "name": "validFrom",
+      "type": "datetime"
+    },
+    {
+      "name": "validTo",
+      "type": "datetime"
+    },
+    {
+      "name": "area",
+      "type": "string"
+    },
+    {
+      "name": "hasIrrigationFlow",
+      "type": "string"
+    },
+    {
+      "name": "category",
+      "type": "string"
+    },
+    {
+      "name": "inRegion",
+      "type": "string"
+    },
+    {
+      "name": "hasToponym",
+      "type": "string"
+    },
+    {
+      "name": "isNitroArea",
+      "type": "boolean"
+    },
+    {
+      "name": "isNatura2000Area",
+      "type": "boolean"
+    },
+    {
+      "name": "isPdopgArea",
+      "type": "boolean"
+    },
+    {
+      "name": "isIrrigated",
+      "type": "boolean"
+    },
+    {
+      "name": "isCultivatedInLevels",
+      "type": "boolean"
+    },
+    {
+      "name": "isGroundSlope",
+      "type": "boolean"
+    },
+    {
+      "name": "depiction",
+      "type": "string"
+    },
+    {
+      "name": "hasGeometry",
+      "type": "string"
+    },
+    {
+      "name": "location",
+      "type": "string"
+    },
+    {
+      "name": "hasAgriCrop",
+      "type": "array"
+    },
+    {
+      "name": "farm",
+      "type": "string"
+    }
+  ]
+}

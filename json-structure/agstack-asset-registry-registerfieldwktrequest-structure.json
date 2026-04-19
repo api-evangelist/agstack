@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/RegisterFieldWKTRequest.json",
+  "title": "RegisterFieldWKTRequest",
+  "type": "object",
+  "fields": [
+    {
+      "name": "wkt",
+      "type": "string"
+    },
+    {
+      "name": "threshold",
+      "type": "int32",
+      "description": "Percentage overlap threshold"
+    },
+    {
+      "name": "return_s2_indices",
+      "type": "boolean"
+    },
+    {
+      "name": "s2_index",
+      "type": "string",
+      "description": "Comma-separated list of resolution levels"
+    }
+  ]
+}

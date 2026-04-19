@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/AgriculturalMachine.json",
+  "title": "AgriculturalMachine",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "description": {
+      "type": "string",
+      "nullable": true
+    },
+    "hasAgriParcel": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "purchase_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "manufacturer": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "model": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "seria_number": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StatusEnum"
+        }
+      ],
+      "minimum": -2147483648,
+      "maximum": 2147483647
+    },
+    "invalidatedAtTime": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "dateCreated": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "dateModified": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    }
+  },
+  "required": [
+    "dateCreated",
+    "dateModified",
+    "hasAgriParcel",
+    "id",
+    "invalidatedAtTime",
+    "manufacturer",
+    "model",
+    "name",
+    "purchase_date",
+    "seria_number"
+  ]
+}

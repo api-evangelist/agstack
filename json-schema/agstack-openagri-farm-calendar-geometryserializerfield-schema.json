@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/GeometrySerializerField.json",
+  "title": "GeometrySerializerField",
+  "type": "object",
+  "properties": {
+    "asWKT": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "asWKT"
+  ]
+}

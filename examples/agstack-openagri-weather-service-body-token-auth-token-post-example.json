@@ -1,0 +1,8 @@
+{
+  "grant_type": "example_t_type",
+  "username": "example_ername",
+  "password": "example_ssword",
+  "scope": "example_-scope",
+  "client_id": "example_ent_id",
+  "client_secret": "example_secret"
+}

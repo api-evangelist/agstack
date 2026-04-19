@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/FarmAnimal.json",
+  "title": "FarmAnimal",
+  "type": "object",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "nationalID",
+      "type": "string"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "name": "hasAgriParcel",
+      "type": "string"
+    },
+    {
+      "name": "sex",
+      "type": "string"
+    },
+    {
+      "name": "isCastrated",
+      "type": "boolean"
+    },
+    {
+      "name": "species",
+      "type": "string"
+    },
+    {
+      "name": "breed",
+      "type": "string"
+    },
+    {
+      "name": "birthdate",
+      "type": "datetime"
+    },
+    {
+      "name": "isMemberOfAnimalGroup",
+      "type": "string"
+    },
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "invalidatedAtTime",
+      "type": "datetime"
+    },
+    {
+      "name": "dateCreated",
+      "type": "datetime"
+    },
+    {
+      "name": "dateModified",
+      "type": "datetime"
+    }
+  ]
+}

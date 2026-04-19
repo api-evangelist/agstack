@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/MadeBySensorField.json",
+  "title": "MadeBySensorField",
+  "type": "object",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    }
+  ]
+}

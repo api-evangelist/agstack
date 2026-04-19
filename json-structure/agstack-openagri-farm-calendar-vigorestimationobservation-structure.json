@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/VigorEstimationObservation.json",
+  "title": "VigorEstimationObservation",
+  "type": "object",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "activityType",
+      "type": "string"
+    },
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "details",
+      "type": "string"
+    },
+    {
+      "name": "phenomenonTime",
+      "type": "datetime"
+    },
+    {
+      "name": "hasEndDatetime",
+      "type": "datetime"
+    },
+    {
+      "name": "madeBySensor",
+      "type": "string"
+    },
+    {
+      "name": "hasAgriParcel",
+      "type": "string"
+    },
+    {
+      "name": "hasArea",
+      "type": "string"
+    },
+    {
+      "name": "hasResult",
+      "type": "string"
+    },
+    {
+      "name": "observedProperty",
+      "type": "string"
+    }
+  ]
+}

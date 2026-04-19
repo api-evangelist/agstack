@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/ContactPersonField.json",
+  "title": "ContactPersonField",
+  "type": "object",
+  "properties": {
+    "firstname": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "firstname",
+    "lastname"
+  ]
+}

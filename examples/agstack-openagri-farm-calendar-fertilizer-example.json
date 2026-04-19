@@ -1,0 +1,14 @@
+{
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "hasCommercialName": "example_alName",
+  "description": "example_iption",
+  "hasCost": "example_asCost",
+  "isPricePer": "example_icePer",
+  "hasActiveSubstance": "example_stance",
+  "isTargetedTowards": "example_owards",
+  "hasNutrientConcentration": "example_ration",
+  "status": "example_status",
+  "dateCreated": "2024-06-15T12:00:00Z",
+  "dateModified": "2024-06-15T12:00:00Z",
+  "invalidatedAtTime": "2024-06-15T12:00:00Z"
+}

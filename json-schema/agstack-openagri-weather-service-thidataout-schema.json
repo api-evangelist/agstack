@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/THIDataOut.json",
+  "title": "THIDataOut",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Id"
+    },
+    "spatial_entity": {
+      "$ref": "#/components/schemas/PointOut"
+    },
+    "thi": {
+      "type": "number",
+      "title": "Thi"
+    }
+  },
+  "type": "object",
+  "required": [
+    "id",
+    "spatial_entity",
+    "thi"
+  ]
+}

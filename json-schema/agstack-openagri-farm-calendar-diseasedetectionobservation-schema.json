@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/DiseaseDetectionObservation.json",
+  "title": "DiseaseDetectionObservation",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "readOnly": true
+    },
+    "activityType": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "details": {
+      "type": "string",
+      "nullable": true
+    },
+    "phenomenonTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "hasEndDatetime": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "madeBySensor": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MadeBySensorField"
+        }
+      ],
+      "nullable": true
+    },
+    "hasAgriParcel": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "hasArea": {
+      "type": "string",
+      "format": "decimal",
+      "pattern": "^-?\\d{0,13}(?:\\.\\d{0,2})?$"
+    },
+    "hasResult": {
+      "$ref": "#/components/schemas/GenericQuantityValueField"
+    },
+    "observedProperty": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "activityType",
+    "hasAgriParcel",
+    "hasArea",
+    "hasResult",
+    "id",
+    "observedProperty",
+    "phenomenonTime"
+  ]
+}

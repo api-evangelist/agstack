@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/PointOut.json",
+  "title": "PointOut",
+  "type": "object",
+  "fields": [
+    {
+      "name": "location",
+      "type": "string"
+    }
+  ]
+}

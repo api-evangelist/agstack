@@ -1,0 +1,13 @@
+{
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "activityType": "550e8400-e29b-41d4-a716-446655440000",
+  "title": "example_-title",
+  "details": "example_etails",
+  "phenomenonTime": "2024-06-15T12:00:00Z",
+  "hasEndDatetime": "2024-06-15T12:00:00Z",
+  "madeBySensor": "example_Sensor",
+  "hasAgriParcel": "550e8400-e29b-41d4-a716-446655440000",
+  "hasArea": "example_asArea",
+  "hasResult": "example_Result",
+  "observedProperty": "example_operty"
+}

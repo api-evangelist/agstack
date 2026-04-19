@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/PatchedCropProtectionOperation.json",
+  "title": "PatchedCropProtectionOperation",
+  "type": "object",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "activityType",
+      "type": "string"
+    },
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "details",
+      "type": "string"
+    },
+    {
+      "name": "hasStartDatetime",
+      "type": "datetime"
+    },
+    {
+      "name": "hasEndDatetime",
+      "type": "datetime"
+    },
+    {
+      "name": "responsibleAgent",
+      "type": "string"
+    },
+    {
+      "name": "usesAgriculturalMachinery",
+      "type": "array"
+    },
+    {
+      "name": "hasAppliedAmount",
+      "type": "string"
+    },
+    {
+      "name": "usesPesticide",
+      "type": "string"
+    },
+    {
+      "name": "operatedOn",
+      "type": "string"
+    }
+  ]
+}

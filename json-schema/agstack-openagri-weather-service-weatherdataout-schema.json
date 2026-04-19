@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/WeatherDataOut.json",
+  "title": "WeatherDataOut",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "title": "Id"
+    },
+    "spatial_entity": {
+      "$ref": "#/components/schemas/PointOut"
+    },
+    "data": {
+      "type": "object",
+      "title": "Data"
+    }
+  },
+  "type": "object",
+  "required": [
+    "id",
+    "spatial_entity",
+    "data"
+  ]
+}

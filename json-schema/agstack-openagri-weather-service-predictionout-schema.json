@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/PredictionOut.json",
+  "title": "PredictionOut",
+  "properties": {
+    "value": {
+      "type": "number",
+      "title": "Value"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Timestamp"
+    },
+    "source": {
+      "type": "string",
+      "title": "Source"
+    },
+    "spatial_entity": {
+      "$ref": "#/components/schemas/PointOut"
+    },
+    "data_type": {
+      "type": "string",
+      "title": "Data Type"
+    },
+    "measurement_type": {
+      "type": "string",
+      "title": "Measurement Type"
+    }
+  },
+  "type": "object",
+  "required": [
+    "value",
+    "timestamp",
+    "source",
+    "spatial_entity",
+    "data_type",
+    "measurement_type"
+  ]
+}

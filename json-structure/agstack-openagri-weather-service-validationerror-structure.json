@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/ValidationError.json",
+  "title": "ValidationError",
+  "type": "object",
+  "fields": [
+    {
+      "name": "loc",
+      "type": "array"
+    },
+    {
+      "name": "msg",
+      "type": "string"
+    },
+    {
+      "name": "type",
+      "type": "string"
+    }
+  ]
+}

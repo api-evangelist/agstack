@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/AuthToken.json",
+  "title": "AuthToken",
+  "properties": {
+    "jwt_token": {
+      "type": "string",
+      "title": "Jwt Token"
+    }
+  },
+  "type": "object",
+  "required": [
+    "jwt_token"
+  ]
+}

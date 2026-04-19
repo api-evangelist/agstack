@@ -1,0 +1,164 @@
+name: Precision Agriculture
+description: Workflow-oriented capability composition for precision agriculture using AgStack's open infrastructure — field registration, weather intelligence, farm calendar management, and agricultural decision support.
+version: "1.0"
+tags:
+  - Agriculture
+  - Precision Agriculture
+  - Open Source
+  - Linux Foundation
+
+tools:
+  - name: register_field_boundary
+    description: Register an agricultural field boundary using WKT or GeoJSON geometry and receive a permanent unique geo ID
+    capability: agstack-asset-registry-api.registerFieldBoundary
+    inputs:
+      - name: wkt
+        type: string
+        description: Well-Known Text geometry of the field boundary
+    outputs:
+      - name: geo_id
+        type: string
+        description: 16-character alphanumeric unique identifier for the field
+
+  - name: bulk_register_fields
+    description: Register multiple field boundaries at once from a GeoJSON file
+    capability: agstack-asset-registry-api.registerFieldBoundariesGeoJson
+    inputs:
+      - name: geojson_file
+        type: object
+        description: GeoJSON FeatureCollection containing field boundary geometries
+    outputs:
+      - name: geo_ids
+        type: array
+        description: List of assigned geo IDs for each registered field
+
+  - name: get_field_data
+    description: Retrieve the complete boundary data and metadata for a registered field by geo ID
+    capability: agstack-asset-registry-api.fetchField
+    inputs:
+      - name: geo_id
+        type: string
+        description: Field's unique geo identifier
+    outputs:
+      - name: field_data
+        type: object
+        description: Field boundary geometry and associated metadata
+
+  - name: check_field_overlap
+    description: Calculate the spatial overlap percentage between two registered fields for land rights or deduplication analysis
+    capability: agstack-asset-registry-api.getPercentageOverlap
+    inputs:
+      - name: geo_id_1
+        type: string
+        description: First field geo ID
+      - name: geo_id_2
+        type: string
+        description: Second field geo ID
+    outputs:
+      - name: overlap_percentage
+        type: number
+        description: Percentage of spatial overlap between the two fields (0-100)
+
+  - name: get_weather_forecast
+    description: Retrieve 5-day weather forecast for agricultural planning by geographic coordinates
+    capability: agstack-openagri-weather-service-api.get_weather_forecast5days
+    inputs:
+      - name: lat
+        type: number
+        description: Latitude of the location
+      - name: lon
+        type: number
+        description: Longitude of the location
+    outputs:
+      - name: forecast
+        type: array
+        description: 5-day weather forecast records with temperature, humidity, wind, and precipitation
+
+  - name: get_current_weather
+    description: Get current weather conditions for a field location
+    capability: agstack-openagri-weather-service-api.get_weather
+    inputs:
+      - name: lat
+        type: number
+        description: Latitude of the field
+      - name: lon
+        type: number
+        description: Longitude of the field
+    outputs:
+      - name: weather
+        type: object
+        description: Current weather data
+
+  - name: get_livestock_heat_stress
+    description: Calculate Temperature-Humidity Index (THI) to assess heat stress risk for livestock
+    capability: agstack-openagri-weather-service-api.get_thi
+    inputs:
+      - name: lat
+        type: number
+        description: Latitude
+      - name: lon
+        type: number
+        description: Longitude
+    outputs:
+      - name: thi_data
+        type: object
+        description: THI value and stress classification (comfortable/moderate/severe/danger)
+
+  - name: check_spray_conditions
+    description: Check if current weather conditions are suitable for pesticide or fertilizer spraying operations
+    capability: agstack-openagri-weather-service-api.get_spray_forecast
+    inputs:
+      - name: lat
+        type: number
+        description: Latitude
+      - name: lon
+        type: number
+        description: Longitude
+    outputs:
+      - name: spray_forecast
+        type: object
+        description: Spray condition assessment and recommended spray windows
+
+  - name: check_uav_conditions
+    description: Check UAV flight condition forecasts for drone-based field scouting or precision spraying
+    capability: agstack-openagri-weather-service-api.get_flight_forecast
+    inputs:
+      - name: lat
+        type: number
+        description: Latitude
+      - name: lon
+        type: number
+        description: Longitude
+    outputs:
+      - name: flight_forecasts
+        type: array
+        description: UAV flight suitability forecasts for supported drone models
+
+workflows:
+  - name: Field Registration and Intelligence Setup
+    description: Register a new field in the AgStack asset registry and gather baseline weather and environmental intelligence
+    steps:
+      - tool: register_field_boundary
+        description: Register field boundary and obtain geo ID
+      - tool: get_weather_forecast
+        description: Get 5-day weather forecast for the field location
+      - tool: get_current_weather
+        description: Assess current growing conditions
+
+  - name: Spray Operation Planning
+    description: Plan safe and effective pesticide or fertilizer application by checking spray conditions and UAV flight windows
+    steps:
+      - tool: check_spray_conditions
+        description: Check if weather is suitable for spraying
+      - tool: check_uav_conditions
+        description: Determine if drone application is feasible
+      - tool: get_weather_forecast
+        description: Identify optimal spray windows in the 5-day forecast
+
+  - name: Field Deduplication and Boundary Verification
+    description: Verify new field registrations against existing fields to detect overlaps or duplicates
+    steps:
+      - tool: register_field_boundary
+        description: Register the candidate field
+      - tool: check_field_overlap
+        description: Compare against known fields to detect duplicates or boundary disputes

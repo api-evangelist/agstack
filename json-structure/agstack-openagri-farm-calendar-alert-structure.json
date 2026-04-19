@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/Alert.json",
+  "title": "Alert",
+  "type": "object",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "activityType",
+      "type": "string"
+    },
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "details",
+      "type": "string"
+    },
+    {
+      "name": "severity",
+      "type": "string"
+    },
+    {
+      "name": "hasAgriParcel",
+      "type": "string"
+    },
+    {
+      "name": "validFrom",
+      "type": "datetime"
+    },
+    {
+      "name": "validTo",
+      "type": "datetime"
+    },
+    {
+      "name": "dateIssued",
+      "type": "datetime"
+    },
+    {
+      "name": "quantityValue",
+      "type": "string"
+    },
+    {
+      "name": "relatedObservation",
+      "type": "string"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/GeoJSONFeatureCollection.json",
+  "title": "GeoJSONFeatureCollection",
+  "type": "object",
+  "fields": [
+    {
+      "name": "type",
+      "type": "string"
+    },
+    {
+      "name": "features",
+      "type": "array"
+    }
+  ]
+}

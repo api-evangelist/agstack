@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/AddressField.json",
+  "title": "AddressField",
+  "type": "object",
+  "properties": {
+    "adminUnitL1": {
+      "type": "string"
+    },
+    "adminUnitL2": {
+      "type": "string"
+    },
+    "addressArea": {
+      "type": "string"
+    },
+    "municipality": {
+      "type": "string"
+    },
+    "community": {
+      "type": "string"
+    },
+    "locatorName": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "addressArea",
+    "adminUnitL1",
+    "adminUnitL2",
+    "community",
+    "locatorName",
+    "municipality"
+  ]
+}

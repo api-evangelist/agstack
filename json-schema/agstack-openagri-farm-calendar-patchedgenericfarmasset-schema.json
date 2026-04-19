@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/PatchedGenericFarmAsset.json",
+  "title": "PatchedGenericFarmAsset",
+  "type": "object",
+  "properties": {
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StatusEnum"
+        }
+      ],
+      "minimum": -2147483648,
+      "maximum": 2147483647
+    },
+    "invalidatedAtTime": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "dateCreated": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "dateModified": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "description": {
+      "type": "string",
+      "nullable": true
+    },
+    "hasAgriParcel": {
+      "type": "string",
+      "format": "uuid"
+    }
+  }
+}

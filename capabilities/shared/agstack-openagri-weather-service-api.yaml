@@ -1,0 +1,108 @@
+name: OpenAgri Weather Service API
+description: Shared capability definitions for the AgStack OpenAgri Weather Service providing weather forecasts, agricultural indicators, UAV flight conditions, and spray forecasts.
+version: "2.5.0"
+source: https://github.com/agstack/OpenAgri-WeatherService
+operations:
+  - operationId: get_weather_forecast5days
+    summary: Get Weather Forecast 5 Days
+    method: GET
+    path: /api/data/forecast5
+    description: Retrieve 5-day weather forecast in JSON format for a geographic location
+    parameters:
+      - name: lat
+        in: query
+        required: true
+        type: number
+      - name: lon
+        in: query
+        required: true
+        type: number
+    response:
+      type: array
+      items: PredictionOut
+
+  - operationId: get_weather_forecast5days_ld
+    summary: Get Weather Forecast 5 Days Linked Data
+    method: GET
+    path: /api/linkeddata/forecast5
+    description: Retrieve 5-day weather forecast in JSON-LD/OCSM format
+    parameters:
+      - name: lat
+        in: query
+        required: true
+        type: number
+      - name: lon
+        in: query
+        required: true
+        type: number
+    response:
+      type: JSONLDGraph
+
+  - operationId: get_weather
+    summary: Get Current Weather
+    method: GET
+    path: /api/data/weather
+    description: Retrieve current weather conditions for a geographic location
+    parameters:
+      - name: lat
+        in: query
+        required: true
+        type: number
+      - name: lon
+        in: query
+        required: true
+        type: number
+    response:
+      type: WeatherDataOut
+
+  - operationId: get_thi
+    summary: Get Temperature Humidity Index
+    method: GET
+    path: /api/data/thi
+    description: Retrieve Temperature-Humidity Index (THI) — key agricultural stress indicator
+    parameters:
+      - name: lat
+        in: query
+        required: true
+        type: number
+      - name: lon
+        in: query
+        required: true
+        type: number
+    response:
+      type: THIDataOut
+
+  - operationId: get_flight_forecast
+    summary: Get UAV Flight Forecast
+    method: GET
+    path: /api/data/flight_forecast5
+    description: Retrieve 5-day UAV flight condition forecasts for all supported UAV models
+    parameters:
+      - name: lat
+        in: query
+        required: true
+        type: number
+      - name: lon
+        in: query
+        required: true
+        type: number
+    response:
+      type: array
+      items: FlightStatusForecastResponse
+
+  - operationId: get_spray_forecast
+    summary: Get Spray Condition Forecast
+    method: GET
+    path: /api/data/spray_forecast
+    description: Retrieve spray condition forecast for agricultural spraying planning
+    parameters:
+      - name: lat
+        in: query
+        required: true
+        type: number
+      - name: lon
+        in: query
+        required: true
+        type: number
+    response:
+      type: SprayForecastResponse

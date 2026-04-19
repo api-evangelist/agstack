@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/SprayForecastResponse.json",
+  "title": "SprayForecastResponse",
+  "type": "object",
+  "fields": [
+    {
+      "name": "timestamp",
+      "type": "datetime"
+    },
+    {
+      "name": "spray_conditions",
+      "type": "string"
+    },
+    {
+      "name": "source",
+      "type": "string"
+    },
+    {
+      "name": "location",
+      "type": "string"
+    },
+    {
+      "name": "detailed_status",
+      "type": "object"
+    }
+  ]
+}

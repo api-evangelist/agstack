@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/FarmCalendarActivity.json",
+  "title": "FarmCalendarActivity",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "readOnly": true
+    },
+    "activityType": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "details": {
+      "type": "string",
+      "nullable": true
+    },
+    "hasStartDatetime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "hasEndDatetime": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "hasAgriParcel": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "responsibleAgent": {
+      "type": "string",
+      "nullable": true
+    },
+    "usesAgriculturalMachinery": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      }
+    }
+  },
+  "required": [
+    "activityType",
+    "hasAgriParcel",
+    "hasStartDatetime",
+    "id",
+    "usesAgriculturalMachinery"
+  ]
+}

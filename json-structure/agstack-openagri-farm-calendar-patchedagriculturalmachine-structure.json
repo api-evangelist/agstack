@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/PatchedAgriculturalMachine.json",
+  "title": "PatchedAgriculturalMachine",
+  "type": "object",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "name": "hasAgriParcel",
+      "type": "string"
+    },
+    {
+      "name": "purchase_date",
+      "type": "string"
+    },
+    {
+      "name": "manufacturer",
+      "type": "string"
+    },
+    {
+      "name": "model",
+      "type": "string"
+    },
+    {
+      "name": "seria_number",
+      "type": "string"
+    },
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "invalidatedAtTime",
+      "type": "datetime"
+    },
+    {
+      "name": "dateCreated",
+      "type": "datetime"
+    },
+    {
+      "name": "dateModified",
+      "type": "datetime"
+    }
+  ]
+}

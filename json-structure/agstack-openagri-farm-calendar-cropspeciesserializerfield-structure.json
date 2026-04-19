@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/CropSpeciesSerializerField.json",
+  "title": "CropSpeciesSerializerField",
+  "type": "object",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "variety",
+      "type": "string"
+    }
+  ]
+}

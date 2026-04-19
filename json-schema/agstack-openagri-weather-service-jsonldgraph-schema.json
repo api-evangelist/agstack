@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/JSONLDGraph.json",
+  "title": "JSONLDGraph",
+  "properties": {
+    "@context": {
+      "items": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "type": "array",
+      "title": "@Context"
+    },
+    "@graph": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array",
+      "title": "@Graph"
+    }
+  },
+  "type": "object",
+  "required": [
+    "@context",
+    "@graph"
+  ]
+}

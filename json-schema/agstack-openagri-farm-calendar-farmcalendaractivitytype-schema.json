@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/FarmCalendarActivityType.json",
+  "title": "FarmCalendarActivityType",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "description": {
+      "type": "string",
+      "nullable": true
+    },
+    "category": {
+      "$ref": "#/components/schemas/CategoryEnum"
+    },
+    "background_color": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$",
+      "maxLength": 7
+    },
+    "border_color": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$",
+      "maxLength": 7
+    },
+    "text_color": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$",
+      "maxLength": 7
+    },
+    "activity_endpoint": {
+      "type": "string",
+      "readOnly": true,
+      "nullable": true,
+      "description": "The farm activitie API endpoint with the specific details of this activity type."
+    }
+  },
+  "required": [
+    "activity_endpoint",
+    "id",
+    "name"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "name": "example_e-name",
+  "description": "example_iption",
+  "hasAgriParcel": "550e8400-e29b-41d4-a716-446655440000",
+  "purchase_date": "example_e_date",
+  "manufacturer": "example_cturer",
+  "model": "example_-model",
+  "seria_number": "example_number",
+  "status": "example_status",
+  "invalidatedAtTime": "2024-06-15T12:00:00Z",
+  "dateCreated": "2024-06-15T12:00:00Z",
+  "dateModified": "2024-06-15T12:00:00Z"
+}

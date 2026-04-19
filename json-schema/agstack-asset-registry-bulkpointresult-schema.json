@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/BulkPointResult.json",
+  "title": "BulkPointResult",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string",
+      "example": "created"
+    },
+    "message": {
+      "type": "string",
+      "example": "Point registered successfully."
+    },
+    "Geo Id": {
+      "type": "string"
+    },
+    "Geo JSON": {
+      "type": "object"
+    }
+  }
+}

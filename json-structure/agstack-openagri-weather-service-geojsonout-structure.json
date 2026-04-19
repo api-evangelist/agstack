@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/GeoJSONOut.json",
+  "title": "GeoJSONOut",
+  "type": "object",
+  "fields": [
+    {
+      "name": "type",
+      "type": "string"
+    },
+    {
+      "name": "coordinates",
+      "type": "array"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/AddRawMaterialCompostQuantity.json",
+  "title": "AddRawMaterialCompostQuantity",
+  "type": "object",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "typeName",
+      "type": "string"
+    },
+    {
+      "name": "quantityValue",
+      "type": "string"
+    }
+  ]
+}

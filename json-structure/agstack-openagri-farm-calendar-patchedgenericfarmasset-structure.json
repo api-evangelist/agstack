@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/PatchedGenericFarmAsset.json",
+  "title": "PatchedGenericFarmAsset",
+  "type": "object",
+  "fields": [
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "invalidatedAtTime",
+      "type": "datetime"
+    },
+    {
+      "name": "dateCreated",
+      "type": "datetime"
+    },
+    {
+      "name": "dateModified",
+      "type": "datetime"
+    },
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "name": "hasAgriParcel",
+      "type": "string"
+    }
+  ]
+}

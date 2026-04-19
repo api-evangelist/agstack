@@ -1,0 +1,113 @@
+name: AgStack Foundation Vocabulary
+description: Controlled vocabulary and taxonomy for the AgStack Foundation open-source agricultural infrastructure — covering field registry, weather intelligence, farm calendar, and open agricultural data interoperability.
+version: "1.0"
+provider: AgStack Foundation (Linux Foundation)
+license: Apache-2.0
+
+domains:
+  - name: Asset Registry
+    description: Terms for registering and identifying agricultural land parcels and points
+    terms:
+      - term: geo_id
+        definition: A 256-bit (16-character alphanumeric) unique identifier assigned to a registered geospatial asset such as a field boundary or point
+        aliases: [geospatial ID, field ID, asset ID]
+        format: 16-character alphanumeric string
+      - term: field boundary
+        definition: The polygon geometry defining the perimeter of an agricultural field, typically expressed in WKT or GeoJSON
+        aliases: [field polygon, parcel boundary, land boundary]
+      - term: WKT
+        definition: Well-Known Text — a text markup language for representing vector geometry objects (POLYGON, POINT, LINESTRING, etc.)
+        standard: ISO/IEC 13249-3
+      - term: GeoJSON
+        definition: A geospatial data format based on JSON for encoding geographic data structures
+        standard: RFC 7946
+      - term: overlap_percentage
+        definition: The percentage of spatial intersection between two field boundaries (0–100)
+        unit: percent
+      - term: centroid
+        definition: The geometric center point of a field boundary polygon
+        type: Point (lat/lon)
+
+  - name: Weather and Agricultural Indicators
+    description: Meteorological and derived agricultural indicator terms
+    terms:
+      - term: THI
+        definition: Temperature-Humidity Index — composite measure of heat stress on livestock calculated from air temperature and relative humidity
+        formula: "THI = (1.8 × T + 32) - (0.55 - 0.0055 × RH) × (1.8 × T - 26)"
+        thresholds:
+          comfortable: "< 72"
+          moderate_stress: "72–79"
+          severe_stress: "80–89"
+          danger: "> 89"
+      - term: spray_conditions
+        definition: Assessment of whether current wind speed, temperature, humidity, and precipitation are suitable for applying pesticides or fertilizers
+        factors: [wind_speed, temperature, relative_humidity, precipitation_probability]
+      - term: UAV_flight_conditions
+        definition: Assessment of whether current wind, visibility, and precipitation conditions permit safe UAV (drone) operations
+        aliases: [drone flight conditions, UAS conditions]
+      - term: forecast5
+        definition: A 5-day weather forecast providing 3-hour interval predictions for temperature, precipitation, wind, and clouds
+
+  - name: Farm Calendar and Operations
+    description: Farm management and agronomic activity terminology from the OpenAgri Common Semantic Model (OCSM)
+    terms:
+      - term: farm operation
+        definition: A planned or recorded agricultural activity on a parcel, such as planting, spraying, harvesting, or irrigation
+        aliases: [farm activity, field operation]
+      - term: parcel
+        definition: A defined geographic area of agricultural land associated with a farm, typically registered in the asset registry
+        aliases: [field, plot, land parcel]
+      - term: activity_type
+        definition: Classification of a farm operation (e.g., SoilPreparation, Planting, Fertilization, IrrigationOperation, SprayApplication, Harvesting)
+      - term: irrigation_operation
+        definition: A farm operation involving the controlled application of water to crops via irrigation systems
+      - term: spray_application
+        definition: A farm operation involving the application of crop protection products (pesticides, herbicides, fungicides) or fertilizers by spraying
+      - term: harvest_operation
+        definition: A farm operation recording the collection of mature crops from a parcel
+
+  - name: Semantic Data Standards
+    description: Linked data and semantic interoperability standards used by AgStack
+    terms:
+      - term: OCSM
+        definition: OpenAgri Common Semantic Model — a linked data vocabulary for representing agricultural data in JSON-LD format, based on schema.org and INSPIRE data themes
+        url: https://openagri.eu/vocab/ocsm/
+      - term: JSON-LD
+        definition: JSON for Linked Data — a method of encoding Linked Data using JSON, enabling semantic interoperability between agtech platforms
+      - term: EUDR
+        definition: EU Deforestation Regulation — EU regulation requiring supply chain due diligence to prevent commodities from contributing to deforestation; drives need for georeferenced field data
+      - term: INATrace
+        definition: Open-source blockchain-based track and trace system for agricultural supply chains
+
+operations:
+  - operationId: registerFieldBoundary
+    tags: [Asset Registry]
+    description: Registers a field boundary WKT and returns a geo ID
+
+  - operationId: registerFieldBoundariesGeoJson
+    tags: [Asset Registry]
+    description: Bulk registers field boundaries from a GeoJSON file
+
+  - operationId: fetchField
+    tags: [Asset Registry]
+    description: Retrieves field geometry data by geo ID
+
+  - operationId: getPercentageOverlap
+    tags: [Asset Registry]
+    description: Calculates spatial overlap percentage between two fields
+
+  - operationId: get_weather_forecast5days
+    tags: [Weather]
+    description: Returns 5-day weather forecast in JSON format
+
+  - operationId: get_thi
+    tags: [Agricultural Indicators]
+    description: Returns Temperature-Humidity Index for heat stress assessment
+
+  - operationId: get_spray_forecast
+    tags: [Agricultural Indicators]
+    description: Returns spray condition suitability forecast
+
+  - operationId: get_flight_forecast
+    tags: [Agricultural Indicators]
+    description: Returns UAV flight condition forecast by drone model

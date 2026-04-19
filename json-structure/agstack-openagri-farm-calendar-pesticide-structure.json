@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/Pesticide.json",
+  "title": "Pesticide",
+  "type": "object",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "hasCommercialName",
+      "type": "string"
+    },
+    {
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "name": "hasCost",
+      "type": "string"
+    },
+    {
+      "name": "isPricePer",
+      "type": "string"
+    },
+    {
+      "name": "hasActiveSubstance",
+      "type": "string"
+    },
+    {
+      "name": "isTargetedTowards",
+      "type": "string"
+    },
+    {
+      "name": "hasPreharvestInterval",
+      "type": "int32"
+    },
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "dateCreated",
+      "type": "datetime"
+    },
+    {
+      "name": "dateModified",
+      "type": "datetime"
+    },
+    {
+      "name": "invalidatedAtTime",
+      "type": "datetime"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/AuthToken.json",
+  "title": "AuthToken",
+  "type": "object",
+  "fields": [
+    {
+      "name": "jwt_token",
+      "type": "string"
+    }
+  ]
+}

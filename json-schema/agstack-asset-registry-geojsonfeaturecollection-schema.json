@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/GeoJSONFeatureCollection.json",
+  "title": "GeoJSONFeatureCollection",
+  "type": "object",
+  "required": [
+    "type",
+    "features"
+  ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "FeatureCollection"
+      ]
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "geometry"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "example": "Feature"
+          },
+          "geometry": {
+            "type": "object",
+            "required": [
+              "type",
+              "coordinates"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "Point"
+                ]
+              },
+              "coordinates": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "example": [
+                  75.78209,
+                  30.90706
+                ]
+              }
+            }
+          },
+          "properties": {
+            "type": "object",
+            "description": "Optional properties like s2_index",
+            "properties": {
+              "s2_index": {
+                "type": "string",
+                "example": "8,13"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

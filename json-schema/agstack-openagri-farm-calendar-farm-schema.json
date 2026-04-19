@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/Farm.json",
+  "title": "Farm",
+  "type": "object",
+  "properties": {
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StatusEnum"
+        }
+      ],
+      "minimum": -2147483648,
+      "maximum": 2147483647
+    },
+    "deleted_at": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "administrator": {
+      "type": "string"
+    },
+    "telephone": {
+      "type": "string"
+    },
+    "vatID": {
+      "type": "string"
+    },
+    "hasAgriParcel": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "readOnly": true
+    },
+    "contactPerson": {
+      "$ref": "#/components/schemas/ContactPersonField"
+    },
+    "address": {
+      "$ref": "#/components/schemas/AddressField"
+    }
+  },
+  "required": [
+    "address",
+    "administrator",
+    "contactPerson",
+    "created_at",
+    "description",
+    "hasAgriParcel",
+    "id",
+    "name",
+    "telephone",
+    "updated_at",
+    "vatID"
+  ]
+}

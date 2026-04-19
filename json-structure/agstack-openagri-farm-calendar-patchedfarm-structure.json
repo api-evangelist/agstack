@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/PatchedFarm.json",
+  "title": "PatchedFarm",
+  "type": "object",
+  "fields": [
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "deleted_at",
+      "type": "datetime"
+    },
+    {
+      "name": "created_at",
+      "type": "datetime"
+    },
+    {
+      "name": "updated_at",
+      "type": "datetime"
+    },
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "name": "administrator",
+      "type": "string"
+    },
+    {
+      "name": "telephone",
+      "type": "string"
+    },
+    {
+      "name": "vatID",
+      "type": "string"
+    },
+    {
+      "name": "hasAgriParcel",
+      "type": "array"
+    },
+    {
+      "name": "contactPerson",
+      "type": "string"
+    },
+    {
+      "name": "address",
+      "type": "string"
+    }
+  ]
+}

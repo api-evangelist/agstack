@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/AddressField.json",
+  "title": "AddressField",
+  "type": "object",
+  "fields": [
+    {
+      "name": "adminUnitL1",
+      "type": "string"
+    },
+    {
+      "name": "adminUnitL2",
+      "type": "string"
+    },
+    {
+      "name": "addressArea",
+      "type": "string"
+    },
+    {
+      "name": "municipality",
+      "type": "string"
+    },
+    {
+      "name": "community",
+      "type": "string"
+    },
+    {
+      "name": "locatorName",
+      "type": "string"
+    }
+  ]
+}

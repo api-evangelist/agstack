@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/SprayForecastResponse.json",
+  "title": "SprayForecastResponse",
+  "properties": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Timestamp"
+    },
+    "spray_conditions": {
+      "$ref": "#/components/schemas/SprayStatus"
+    },
+    "source": {
+      "type": "string",
+      "title": "Source"
+    },
+    "location": {
+      "$ref": "#/components/schemas/GeoJSONOut"
+    },
+    "detailed_status": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object",
+      "title": "Detailed Status"
+    }
+  },
+  "type": "object",
+  "required": [
+    "timestamp",
+    "spray_conditions",
+    "source",
+    "location",
+    "detailed_status"
+  ]
+}

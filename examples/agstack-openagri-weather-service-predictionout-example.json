@@ -1,0 +1,8 @@
+{
+  "value": 41.517,
+  "timestamp": "2024-06-15T12:00:00Z",
+  "source": "example_source",
+  "spatial_entity": "example_entity",
+  "data_type": "example_a_type",
+  "measurement_type": "example_t_type"
+}

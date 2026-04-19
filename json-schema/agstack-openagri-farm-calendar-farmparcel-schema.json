@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/FarmParcel.json",
+  "title": "FarmParcel",
+  "type": "object",
+  "properties": {
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StatusEnum"
+        }
+      ],
+      "minimum": -2147483648,
+      "maximum": 2147483647
+    },
+    "deleted_at": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "readOnly": true
+    },
+    "identifier": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "description": {
+      "type": "string",
+      "nullable": true
+    },
+    "validFrom": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "validTo": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "area": {
+      "type": "string",
+      "format": "decimal",
+      "pattern": "^-?\\d{0,13}(?:\\.\\d{0,2})?$"
+    },
+    "hasIrrigationFlow": {
+      "type": "string",
+      "format": "decimal",
+      "pattern": "^-?\\d{0,13}(?:\\.\\d{0,2})?$",
+      "nullable": true
+    },
+    "category": {
+      "type": "string"
+    },
+    "inRegion": {
+      "type": "string",
+      "nullable": true
+    },
+    "hasToponym": {
+      "type": "string",
+      "nullable": true
+    },
+    "isNitroArea": {
+      "type": "boolean"
+    },
+    "isNatura2000Area": {
+      "type": "boolean"
+    },
+    "isPdopgArea": {
+      "type": "boolean"
+    },
+    "isIrrigated": {
+      "type": "boolean"
+    },
+    "isCultivatedInLevels": {
+      "type": "boolean"
+    },
+    "isGroundSlope": {
+      "type": "boolean"
+    },
+    "depiction": {
+      "type": "string",
+      "format": "uri",
+      "nullable": true,
+      "maxLength": 500
+    },
+    "hasGeometry": {
+      "$ref": "#/components/schemas/GeometrySerializerField"
+    },
+    "location": {
+      "$ref": "#/components/schemas/LocationSerializerField"
+    },
+    "hasAgriCrop": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "readOnly": true
+    },
+    "farm": {
+      "type": "string",
+      "format": "uuid"
+    }
+  },
+  "required": [
+    "category",
+    "created_at",
+    "farm",
+    "hasAgriCrop",
+    "hasGeometry",
+    "hasIrrigationFlow",
+    "hasToponym",
+    "id",
+    "identifier",
+    "inRegion",
+    "isCultivatedInLevels",
+    "isGroundSlope",
+    "isIrrigated",
+    "isNatura2000Area",
+    "isNitroArea",
+    "isPdopgArea",
+    "location",
+    "updated_at",
+    "validFrom",
+    "validTo"
+  ]
+}

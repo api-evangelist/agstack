@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/PatchedCompostOperation.json",
+  "title": "PatchedCompostOperation",
+  "type": "object",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "activityType",
+      "type": "string"
+    },
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "details",
+      "type": "string"
+    },
+    {
+      "name": "hasStartDatetime",
+      "type": "datetime"
+    },
+    {
+      "name": "hasEndDatetime",
+      "type": "datetime"
+    },
+    {
+      "name": "responsibleAgent",
+      "type": "string"
+    },
+    {
+      "name": "usesAgriculturalMachinery",
+      "type": "array"
+    },
+    {
+      "name": "hasAgriParcel",
+      "type": "string"
+    },
+    {
+      "name": "isOperatedOn",
+      "type": "string"
+    },
+    {
+      "name": "hasNestedOperation",
+      "type": "array"
+    },
+    {
+      "name": "hasMeasurement",
+      "type": "array"
+    }
+  ]
+}

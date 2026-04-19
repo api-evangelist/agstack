@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/WeatherDataOut.json",
+  "title": "WeatherDataOut",
+  "type": "object",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "spatial_entity",
+      "type": "string"
+    },
+    {
+      "name": "data",
+      "type": "object"
+    }
+  ]
+}

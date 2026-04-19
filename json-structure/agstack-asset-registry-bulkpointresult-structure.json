@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/BulkPointResult.json",
+  "title": "BulkPointResult",
+  "type": "object",
+  "fields": [
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "message",
+      "type": "string"
+    },
+    {
+      "name": "Geo Id",
+      "type": "string"
+    },
+    {
+      "name": "Geo JSON",
+      "type": "object"
+    }
+  ]
+}

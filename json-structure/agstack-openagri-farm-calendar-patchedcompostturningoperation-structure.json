@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/PatchedCompostTurningOperation.json",
+  "title": "PatchedCompostTurningOperation",
+  "type": "object",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "activityType",
+      "type": "string"
+    },
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "details",
+      "type": "string"
+    },
+    {
+      "name": "hasStartDatetime",
+      "type": "datetime"
+    },
+    {
+      "name": "hasEndDatetime",
+      "type": "datetime"
+    },
+    {
+      "name": "operatedOn",
+      "type": "string"
+    },
+    {
+      "name": "responsibleAgent",
+      "type": "string"
+    },
+    {
+      "name": "usesAgriculturalMachinery",
+      "type": "array"
+    }
+  ]
+}

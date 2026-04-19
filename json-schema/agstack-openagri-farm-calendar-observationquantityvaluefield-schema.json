@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agstack.org/schemas/ObservationQuantityValueField.json",
+  "title": "ObservationQuantityValueField",
+  "type": "object",
+  "properties": {
+    "unit": {
+      "type": "string",
+      "readOnly": true,
+      "nullable": true
+    },
+    "hasValue": {
+      "type": "string",
+      "readOnly": true,
+      "nullable": true
+    }
+  },
+  "required": [
+    "hasValue",
+    "unit"
+  ]
+}

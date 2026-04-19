@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/THIDataOut.json",
+  "title": "THIDataOut",
+  "type": "object",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "spatial_entity",
+      "type": "string"
+    },
+    {
+      "name": "thi",
+      "type": "float"
+    }
+  ]
+}

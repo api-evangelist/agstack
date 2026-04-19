@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/FarmCalendarActivityType.json",
+  "title": "FarmCalendarActivityType",
+  "type": "object",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "name": "category",
+      "type": "string"
+    },
+    {
+      "name": "background_color",
+      "type": "string"
+    },
+    {
+      "name": "border_color",
+      "type": "string"
+    },
+    {
+      "name": "text_color",
+      "type": "string"
+    },
+    {
+      "name": "activity_endpoint",
+      "type": "string",
+      "description": "The farm activitie API endpoint with the specific details of this activity type."
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+rules:
+  agstack-operation-summary-title-case:
+    description: Operation summaries should use Title Case
+    severity: warn
+    given: "$.paths[*][*].summary"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[A-Z]"
+
+  agstack-operationid-defined:
+    description: All operations must define an operationId
+    severity: error
+    given: "$.paths[*][get,post,put,delete,patch]"
+    then:
+      field: operationId
+      function: defined
+
+  agstack-response-200-defined:
+    description: All operations must define a successful response
+    severity: error
+    given: "$.paths[*][*].responses"
+    then:
+      function: truthy
+
+  agstack-response-422-validation-error:
+    description: FastAPI operations should document 422 validation errors
+    severity: warn
+    given: "$.paths[*][get,post].responses"
+    then:
+      function: truthy
+
+  agstack-security-bearer-defined:
+    description: Protected operations must declare Bearer security
+    severity: warn
+    given: "$.paths[*][post,put,delete,patch]"
+    then:
+      field: security
+      function: defined
+
+  agstack-info-version:
+    description: API must define a version
+    severity: error
+    given: "$.info"
+    then:
+      field: version
+      function: defined
+
+  agstack-info-description:
+    description: API must include a description
+    severity: warn
+    given: "$.info"
+    then:
+      field: description
+      function: defined
+
+  agstack-server-url-defined:
+    description: API must define at least one server URL
+    severity: error
+    given: "$.servers"
+    then:
+      function: length
+      functionOptions:
+        min: 1
+
+  agstack-schema-type-defined:
+    description: Schema components must define a type
+    severity: warn
+    given: "$.components.schemas[*]"
+    then:
+      field: type
+      function: defined
+
+  agstack-request-body-content-type:
+    description: POST/PUT request bodies should specify application/json content type
+    severity: warn
+    given: "$.paths[*][post,put].requestBody.content"
+    then:
+      function: truthy
+
+  agstack-tags-on-operations:
+    description: All operations should have tags for grouping
+    severity: warn
+    given: "$.paths[*][*]"
+    then:
+      field: tags
+      function: defined
+
+  agstack-geo-id-format:
+    description: Geo ID fields should follow AgStack's 16-character alphanumeric format
+    severity: warn
+    given: "$.components.schemas[*].properties.geo_id"
+    then:
+      function: truthy
+
+  agstack-openapi-version-3:
+    description: API must use OpenAPI 3.x
+    severity: error
+    given: "$.openapi"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^3\\."
+
+  agstack-description-field-length:
+    description: Operation descriptions should be meaningful (min 10 chars)
+    severity: warn
+    given: "$.paths[*][*].description"
+    then:
+      function: minLength
+      functionOptions:
+        value: 10
+
+  agstack-geojson-type-field:
+    description: GeoJSON schemas must include a type field
+    severity: error
+    given: "$.components.schemas.GeoJSONOut.properties"
+    then:
+      field: type
+      function: defined
+
+  agstack-paths-lowercase:
+    description: API paths should use lowercase and hyphens
+    severity: warn
+    given: "$.paths"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^/[a-z0-9/{}_-]+$"

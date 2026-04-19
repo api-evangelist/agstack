@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://agstack.org/structures/FlightStatusForecastResponse.json",
+  "title": "FlightStatusForecastResponse",
+  "type": "object",
+  "fields": [
+    {
+      "name": "timestamp",
+      "type": "datetime"
+    },
+    {
+      "name": "uav_model",
+      "type": "string"
+    },
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "weather_source",
+      "type": "string"
+    },
+    {
+      "name": "location",
+      "type": "string"
+    },
+    {
+      "name": "weather_params",
+      "type": "object"
+    }
+  ]
+}
