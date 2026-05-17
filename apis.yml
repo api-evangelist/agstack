@@ -170,7 +170,7 @@ common:
     type: About
     title: Linux Foundation AI and Data
   - url: json-ld/agstack-context.jsonld
-    type: JSON-LD
+    type: JSONLD
   - url: rules/agstack-spectral-rules.yml
     type: SpectralRules
   - url: vocabulary/agstack-vocabulary.yaml
