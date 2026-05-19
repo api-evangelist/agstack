@@ -1,0 +1,206 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: AgStack Asset Registry API — Field Registration (POST)
+  description: 'AgStack Asset Registry API — Field Registration (POST). 4 operations. Lead operation: 📂 Bulk Register Field
+    Boundaries (GeoJSON File). Self-contained Naftiko capability covering one Agstack business surface.'
+  tags:
+  - Agstack
+  - Field Registration (POST)
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AGSTACK_API_KEY: AGSTACK_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: asset-registry-field-registration-post
+    baseUri: https://api-ar.agstack.org
+    description: AgStack Asset Registry API — Field Registration (POST) business capability. Self-contained, no shared references.
+    resources:
+    - name: register-field-boundaries-geojson
+      path: /register-field-boundaries-geojson
+      operations:
+      - name: post
+        method: POST
+        description: 📂 Bulk Register Field Boundaries (GeoJSON File)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: register-field-boundary
+      path: /register-field-boundary
+      operations:
+      - name: post
+        method: POST
+        description: 📍 Register Field Boundary (WKT)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: register-point
+      path: /register-point
+      operations:
+      - name: post
+        method: POST
+        description: 🎯 Register a Point
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: register-points-geojson
+      path: /register-points-geojson
+      operations:
+      - name: post
+        method: POST
+        description: 📂 Bulk Register Points (GeoJSON)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.AGSTACK_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: asset-registry-field-registration-post-rest
+    port: 8080
+    description: REST adapter for AgStack Asset Registry API — Field Registration (POST). One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/register-field-boundaries-geojson
+      name: register-field-boundaries-geojson
+      description: REST surface for register-field-boundaries-geojson.
+      operations:
+      - method: POST
+        name: post
+        description: 📂 Bulk Register Field Boundaries (GeoJSON File)
+        call: asset-registry-field-registration-post.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/register-field-boundary
+      name: register-field-boundary
+      description: REST surface for register-field-boundary.
+      operations:
+      - method: POST
+        name: post
+        description: 📍 Register Field Boundary (WKT)
+        call: asset-registry-field-registration-post.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/register-point
+      name: register-point
+      description: REST surface for register-point.
+      operations:
+      - method: POST
+        name: post
+        description: 🎯 Register a Point
+        call: asset-registry-field-registration-post.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/register-points-geojson
+      name: register-points-geojson
+      description: REST surface for register-points-geojson.
+      operations:
+      - method: POST
+        name: post
+        description: 📂 Bulk Register Points (GeoJSON)
+        call: asset-registry-field-registration-post.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: asset-registry-field-registration-post-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for AgStack Asset Registry API — Field Registration (POST). One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: bulk-register-field-boundaries-geojson
+      description: 📂 Bulk Register Field Boundaries (GeoJSON File)
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: asset-registry-field-registration-post.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: register-field-boundary-wkt
+      description: 📍 Register Field Boundary (WKT)
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: asset-registry-field-registration-post.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: register-point
+      description: 🎯 Register a Point
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: asset-registry-field-registration-post.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: bulk-register-points-geojson
+      description: 📂 Bulk Register Points (GeoJSON)
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: asset-registry-field-registration-post.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,661 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: OpenAgri Weather service
+  description: 'OpenAgri Weather service. 13 operations. Lead operation: Get Flight Forecast For All Uavs. Self-contained
+    Naftiko capability covering one Agstack business surface.'
+  tags:
+  - Agstack
+  - OpenAgri Weather service
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AGSTACK_API_KEY: AGSTACK_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openagri-weather-service
+    baseUri: ''
+    description: OpenAgri Weather service business capability. Self-contained, no shared references.
+    resources:
+    - name: api-data-flight_forecast5
+      path: /api/data/flight_forecast5
+      operations:
+      - name: getflightforecastforalluavsapidataflightforecast5get
+        method: GET
+        description: Get Flight Forecast For All Uavs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: lat
+          in: query
+          type: number
+          required: true
+        - name: lon
+          in: query
+          type: number
+          required: true
+        - name: uavmodels
+          in: query
+          type: string
+        - name: status_filter
+          in: query
+          type: string
+    - name: api-data-flight_forecast5-uavmodel
+      path: /api/data/flight_forecast5/{uavmodel}
+      operations:
+      - name: getflightforecastforuavapidataflightforecast5uavmodelget
+        method: GET
+        description: Get Flight Forecast For Uav
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: uavmodel
+          in: path
+          type: string
+          required: true
+        - name: lat
+          in: query
+          type: number
+          required: true
+        - name: lon
+          in: query
+          type: number
+          required: true
+    - name: api-data-forecast5
+      path: /api/data/forecast5
+      operations:
+      - name: getweatherforecast5daysapidataforecast5get
+        method: GET
+        description: Get Weather Forecast5Days
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: lat
+          in: query
+          type: number
+          required: true
+        - name: lon
+          in: query
+          type: number
+          required: true
+    - name: api-data-spray_forecast
+      path: /api/data/spray_forecast
+      operations:
+      - name: getsprayforecastapidatasprayforecastget
+        method: GET
+        description: Get Spray Forecast
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: lat
+          in: query
+          type: number
+          required: true
+        - name: lon
+          in: query
+          type: number
+          required: true
+    - name: api-data-thi
+      path: /api/data/thi
+      operations:
+      - name: getthiapidatathiget
+        method: GET
+        description: Get Thi
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: lat
+          in: query
+          type: number
+          required: true
+        - name: lon
+          in: query
+          type: number
+          required: true
+    - name: api-data-weather
+      path: /api/data/weather
+      operations:
+      - name: getweatherapidataweatherget
+        method: GET
+        description: Get Weather
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: lat
+          in: query
+          type: number
+          required: true
+        - name: lon
+          in: query
+          type: number
+          required: true
+    - name: api-linkeddata-flight_forecast5
+      path: /api/linkeddata/flight_forecast5
+      operations:
+      - name: getflightforecastforalluavsldapilinkeddataflightforecast5get
+        method: GET
+        description: Get Flight Forecast For All Uavs Ld
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: lat
+          in: query
+          type: number
+          required: true
+        - name: lon
+          in: query
+          type: number
+          required: true
+        - name: uavmodels
+          in: query
+          type: string
+        - name: status_filter
+          in: query
+          type: string
+    - name: api-linkeddata-flight_forecast5-uavmodel
+      path: /api/linkeddata/flight_forecast5/{uavmodel}
+      operations:
+      - name: getflightforecastforuavldapilinkeddataflightforecast5uavmodelget
+        method: GET
+        description: Get Flight Forecast For Uav Ld
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: uavmodel
+          in: path
+          type: string
+          required: true
+        - name: lat
+          in: query
+          type: number
+          required: true
+        - name: lon
+          in: query
+          type: number
+          required: true
+    - name: api-linkeddata-forecast5
+      path: /api/linkeddata/forecast5
+      operations:
+      - name: getweatherforecast5daysldapilinkeddataforecast5get
+        method: GET
+        description: Get Weather Forecast5Days Ld
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: lat
+          in: query
+          type: number
+          required: true
+        - name: lon
+          in: query
+          type: number
+          required: true
+    - name: api-linkeddata-spray_forecast
+      path: /api/linkeddata/spray_forecast
+      operations:
+      - name: getsprayforecastldapilinkeddatasprayforecastget
+        method: GET
+        description: Get Spray Forecast Ld
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: lat
+          in: query
+          type: number
+          required: true
+        - name: lon
+          in: query
+          type: number
+          required: true
+    - name: api-linkeddata-thi
+      path: /api/linkeddata/thi
+      operations:
+      - name: getthildapilinkeddatathiget
+        method: GET
+        description: Get Thi Ld
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: lat
+          in: query
+          type: number
+          required: true
+        - name: lon
+          in: query
+          type: number
+          required: true
+    - name: auth-test
+      path: /auth/test
+      operations:
+      - name: getpayloadauthtestget
+        method: GET
+        description: Get Payload
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: auth-token
+      path: /auth/token
+      operations:
+      - name: tokenauthtokenpost
+        method: POST
+        description: Token
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.AGSTACK_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: openagri-weather-service-rest
+    port: 8080
+    description: REST adapter for OpenAgri Weather service. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/data/flight-forecast5
+      name: api-data-flight-forecast5
+      description: REST surface for api-data-flight_forecast5.
+      operations:
+      - method: GET
+        name: getflightforecastforalluavsapidataflightforecast5get
+        description: Get Flight Forecast For All Uavs
+        call: openagri-weather-service.getflightforecastforalluavsapidataflightforecast5get
+        with:
+          lat: rest.lat
+          lon: rest.lon
+          uavmodels: rest.uavmodels
+          status_filter: rest.status_filter
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/data/flight-forecast5/{uavmodel}
+      name: api-data-flight-forecast5-uavmodel
+      description: REST surface for api-data-flight_forecast5-uavmodel.
+      operations:
+      - method: GET
+        name: getflightforecastforuavapidataflightforecast5uavmodelget
+        description: Get Flight Forecast For Uav
+        call: openagri-weather-service.getflightforecastforuavapidataflightforecast5uavmodelget
+        with:
+          uavmodel: rest.uavmodel
+          lat: rest.lat
+          lon: rest.lon
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/data/forecast5
+      name: api-data-forecast5
+      description: REST surface for api-data-forecast5.
+      operations:
+      - method: GET
+        name: getweatherforecast5daysapidataforecast5get
+        description: Get Weather Forecast5Days
+        call: openagri-weather-service.getweatherforecast5daysapidataforecast5get
+        with:
+          lat: rest.lat
+          lon: rest.lon
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/data/spray-forecast
+      name: api-data-spray-forecast
+      description: REST surface for api-data-spray_forecast.
+      operations:
+      - method: GET
+        name: getsprayforecastapidatasprayforecastget
+        description: Get Spray Forecast
+        call: openagri-weather-service.getsprayforecastapidatasprayforecastget
+        with:
+          lat: rest.lat
+          lon: rest.lon
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/data/thi
+      name: api-data-thi
+      description: REST surface for api-data-thi.
+      operations:
+      - method: GET
+        name: getthiapidatathiget
+        description: Get Thi
+        call: openagri-weather-service.getthiapidatathiget
+        with:
+          lat: rest.lat
+          lon: rest.lon
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/data/weather
+      name: api-data-weather
+      description: REST surface for api-data-weather.
+      operations:
+      - method: GET
+        name: getweatherapidataweatherget
+        description: Get Weather
+        call: openagri-weather-service.getweatherapidataweatherget
+        with:
+          lat: rest.lat
+          lon: rest.lon
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/linkeddata/flight-forecast5
+      name: api-linkeddata-flight-forecast5
+      description: REST surface for api-linkeddata-flight_forecast5.
+      operations:
+      - method: GET
+        name: getflightforecastforalluavsldapilinkeddataflightforecast5get
+        description: Get Flight Forecast For All Uavs Ld
+        call: openagri-weather-service.getflightforecastforalluavsldapilinkeddataflightforecast5get
+        with:
+          lat: rest.lat
+          lon: rest.lon
+          uavmodels: rest.uavmodels
+          status_filter: rest.status_filter
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/linkeddata/flight-forecast5/{uavmodel}
+      name: api-linkeddata-flight-forecast5-uavmodel
+      description: REST surface for api-linkeddata-flight_forecast5-uavmodel.
+      operations:
+      - method: GET
+        name: getflightforecastforuavldapilinkeddataflightforecast5uavmodelget
+        description: Get Flight Forecast For Uav Ld
+        call: openagri-weather-service.getflightforecastforuavldapilinkeddataflightforecast5uavmodelget
+        with:
+          uavmodel: rest.uavmodel
+          lat: rest.lat
+          lon: rest.lon
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/linkeddata/forecast5
+      name: api-linkeddata-forecast5
+      description: REST surface for api-linkeddata-forecast5.
+      operations:
+      - method: GET
+        name: getweatherforecast5daysldapilinkeddataforecast5get
+        description: Get Weather Forecast5Days Ld
+        call: openagri-weather-service.getweatherforecast5daysldapilinkeddataforecast5get
+        with:
+          lat: rest.lat
+          lon: rest.lon
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/linkeddata/spray-forecast
+      name: api-linkeddata-spray-forecast
+      description: REST surface for api-linkeddata-spray_forecast.
+      operations:
+      - method: GET
+        name: getsprayforecastldapilinkeddatasprayforecastget
+        description: Get Spray Forecast Ld
+        call: openagri-weather-service.getsprayforecastldapilinkeddatasprayforecastget
+        with:
+          lat: rest.lat
+          lon: rest.lon
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/linkeddata/thi
+      name: api-linkeddata-thi
+      description: REST surface for api-linkeddata-thi.
+      operations:
+      - method: GET
+        name: getthildapilinkeddatathiget
+        description: Get Thi Ld
+        call: openagri-weather-service.getthildapilinkeddatathiget
+        with:
+          lat: rest.lat
+          lon: rest.lon
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/auth/test
+      name: auth-test
+      description: REST surface for auth-test.
+      operations:
+      - method: GET
+        name: getpayloadauthtestget
+        description: Get Payload
+        call: openagri-weather-service.getpayloadauthtestget
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/auth/token
+      name: auth-token
+      description: REST surface for auth-token.
+      operations:
+      - method: POST
+        name: tokenauthtokenpost
+        description: Token
+        call: openagri-weather-service.tokenauthtokenpost
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openagri-weather-service-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for OpenAgri Weather service. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: get-flight-forecast-all-uavs
+      description: Get Flight Forecast For All Uavs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openagri-weather-service.getflightforecastforalluavsapidataflightforecast5get
+      with:
+        lat: tools.lat
+        lon: tools.lon
+        uavmodels: tools.uavmodels
+        status_filter: tools.status_filter
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-flight-forecast-uav
+      description: Get Flight Forecast For Uav
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openagri-weather-service.getflightforecastforuavapidataflightforecast5uavmodelget
+      with:
+        uavmodel: tools.uavmodel
+        lat: tools.lat
+        lon: tools.lon
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-weather-forecast5days
+      description: Get Weather Forecast5Days
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openagri-weather-service.getweatherforecast5daysapidataforecast5get
+      with:
+        lat: tools.lat
+        lon: tools.lon
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-spray-forecast
+      description: Get Spray Forecast
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openagri-weather-service.getsprayforecastapidatasprayforecastget
+      with:
+        lat: tools.lat
+        lon: tools.lon
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-thi
+      description: Get Thi
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openagri-weather-service.getthiapidatathiget
+      with:
+        lat: tools.lat
+        lon: tools.lon
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-weather
+      description: Get Weather
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openagri-weather-service.getweatherapidataweatherget
+      with:
+        lat: tools.lat
+        lon: tools.lon
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-flight-forecast-all-uavs-2
+      description: Get Flight Forecast For All Uavs Ld
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openagri-weather-service.getflightforecastforalluavsldapilinkeddataflightforecast5get
+      with:
+        lat: tools.lat
+        lon: tools.lon
+        uavmodels: tools.uavmodels
+        status_filter: tools.status_filter
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-flight-forecast-uav-ld
+      description: Get Flight Forecast For Uav Ld
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openagri-weather-service.getflightforecastforuavldapilinkeddataflightforecast5uavmodelget
+      with:
+        uavmodel: tools.uavmodel
+        lat: tools.lat
+        lon: tools.lon
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-weather-forecast5days-ld
+      description: Get Weather Forecast5Days Ld
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openagri-weather-service.getweatherforecast5daysldapilinkeddataforecast5get
+      with:
+        lat: tools.lat
+        lon: tools.lon
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-spray-forecast-ld
+      description: Get Spray Forecast Ld
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openagri-weather-service.getsprayforecastldapilinkeddatasprayforecastget
+      with:
+        lat: tools.lat
+        lon: tools.lon
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-thi-ld
+      description: Get Thi Ld
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openagri-weather-service.getthildapilinkeddatathiget
+      with:
+        lat: tools.lat
+        lon: tools.lon
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-payload
+      description: Get Payload
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openagri-weather-service.getpayloadauthtestget
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: token
+      description: Token
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openagri-weather-service.tokenauthtokenpost
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

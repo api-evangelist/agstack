@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: AgStack Asset Registry API — Authentication
+  description: 'AgStack Asset Registry API — Authentication. 1 operations. Lead operation: 🔐 User Login. Self-contained Naftiko
+    capability covering one Agstack business surface.'
+  tags:
+  - Agstack
+  - Authentication
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AGSTACK_API_KEY: AGSTACK_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: asset-registry-authentication
+    baseUri: https://api-ar.agstack.org
+    description: AgStack Asset Registry API — Authentication business capability. Self-contained, no shared references.
+    resources:
+    - name: login
+      path: /login
+      operations:
+      - name: post
+        method: POST
+        description: 🔐 User Login
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.AGSTACK_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: asset-registry-authentication-rest
+    port: 8080
+    description: REST adapter for AgStack Asset Registry API — Authentication. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/login
+      name: login
+      description: REST surface for login.
+      operations:
+      - method: POST
+        name: post
+        description: 🔐 User Login
+        call: asset-registry-authentication.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: asset-registry-authentication-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for AgStack Asset Registry API — Authentication. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: user-login
+      description: 🔐 User Login
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: asset-registry-authentication.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

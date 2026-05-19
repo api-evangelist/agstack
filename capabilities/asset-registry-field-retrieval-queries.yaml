@@ -1,0 +1,208 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: AgStack Asset Registry API — Field Retrieval & Queries
+  description: 'AgStack Asset Registry API — Field Retrieval & Queries. 4 operations. Lead operation: 📌 Fetch Field Centroid.
+    Self-contained Naftiko capability covering one Agstack business surface.'
+  tags:
+  - Agstack
+  - Field Retrieval & Queries
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AGSTACK_API_KEY: AGSTACK_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: asset-registry-field-retrieval-queries
+    baseUri: https://api-ar.agstack.org
+    description: AgStack Asset Registry API — Field Retrieval & Queries business capability. Self-contained, no shared references.
+    resources:
+    - name: fetch-field-centroid-geo_id
+      path: /fetch-field-centroid/{geo_id}
+      operations:
+      - name: get
+        method: GET
+        description: 📌 Fetch Field Centroid
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: geo_id
+          in: path
+          type: string
+          required: true
+    - name: fetch-field-wkt-geo_id
+      path: /fetch-field-wkt/{geo_id}
+      operations:
+      - name: get
+        method: GET
+        description: 📐 Fetch Field WKT
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: geo_id
+          in: path
+          type: string
+          required: true
+    - name: fetch-field-geo_id
+      path: /fetch-field/{geo_id}
+      operations:
+      - name: get
+        method: GET
+        description: 🗺️ Fetch Field Data
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: geo_id
+          in: path
+          type: string
+          required: true
+        - name: s2_index
+          in: query
+          type: string
+    - name: get-percentage-overlap-two-fields
+      path: /get-percentage-overlap-two-fields
+      operations:
+      - name: post
+        method: POST
+        description: 📊 Get Percentage Overlap
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.AGSTACK_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: asset-registry-field-retrieval-queries-rest
+    port: 8080
+    description: REST adapter for AgStack Asset Registry API — Field Retrieval & Queries. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/fetch-field-centroid/{geo-id}
+      name: fetch-field-centroid-geo-id
+      description: REST surface for fetch-field-centroid-geo_id.
+      operations:
+      - method: GET
+        name: get
+        description: 📌 Fetch Field Centroid
+        call: asset-registry-field-retrieval-queries.get
+        with:
+          geo_id: rest.geo_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/fetch-field-wkt/{geo-id}
+      name: fetch-field-wkt-geo-id
+      description: REST surface for fetch-field-wkt-geo_id.
+      operations:
+      - method: GET
+        name: get
+        description: 📐 Fetch Field WKT
+        call: asset-registry-field-retrieval-queries.get
+        with:
+          geo_id: rest.geo_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/fetch-field/{geo-id}
+      name: fetch-field-geo-id
+      description: REST surface for fetch-field-geo_id.
+      operations:
+      - method: GET
+        name: get
+        description: 🗺️ Fetch Field Data
+        call: asset-registry-field-retrieval-queries.get
+        with:
+          geo_id: rest.geo_id
+          s2_index: rest.s2_index
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-percentage-overlap-two-fields
+      name: get-percentage-overlap-two-fields
+      description: REST surface for get-percentage-overlap-two-fields.
+      operations:
+      - method: POST
+        name: post
+        description: 📊 Get Percentage Overlap
+        call: asset-registry-field-retrieval-queries.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: asset-registry-field-retrieval-queries-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for AgStack Asset Registry API — Field Retrieval & Queries. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: fetch-field-centroid
+      description: 📌 Fetch Field Centroid
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: asset-registry-field-retrieval-queries.get
+      with:
+        geo_id: tools.geo_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: fetch-field-wkt
+      description: 📐 Fetch Field WKT
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: asset-registry-field-retrieval-queries.get
+      with:
+        geo_id: tools.geo_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: fetch-field-data
+      description: 🗺️ Fetch Field Data
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: asset-registry-field-retrieval-queries.get
+      with:
+        geo_id: tools.geo_id
+        s2_index: tools.s2_index
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-percentage-overlap
+      description: 📊 Get Percentage Overlap
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: asset-registry-field-retrieval-queries.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
