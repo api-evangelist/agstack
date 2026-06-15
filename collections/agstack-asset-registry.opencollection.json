@@ -1,0 +1,205 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AgStack Asset Registry API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "🔐 User Login",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ar.agstack.org/login",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Login to the Asset Registry using email and password."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Field Registration (POST)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "📍 Register Field Boundary (WKT)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ar.agstack.org/register-field-boundary",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "📍 Register Field Boundary (WKT)"
+        },
+        {
+          "info": {
+            "name": "📂 Bulk Register Field Boundaries (GeoJSON File)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ar.agstack.org/register-field-boundaries-geojson",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Bulk register Field Boundaries using a GeoJSON FeatureCollection. \nSupports both multipart file upload (`.geojson`) and raw JSON body.\n"
+        },
+        {
+          "info": {
+            "name": "🎯 Register a Point",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ar.agstack.org/register-point",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "🎯 Register a Point"
+        },
+        {
+          "info": {
+            "name": "📂 Bulk Register Points (GeoJSON)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ar.agstack.org/register-points-geojson",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Bulk register points using a GeoJSON FeatureCollection. \nSupports both multipart file upload (`.geojson`) and raw JSON body.\n"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Field Retrieval & Queries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "🗺️ Fetch Field Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ar.agstack.org/fetch-field/:geo_id",
+            "params": [
+              {
+                "name": "geo_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "s2_index",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "🗺️ Fetch Field Data"
+        },
+        {
+          "info": {
+            "name": "📐 Fetch Field WKT",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ar.agstack.org/fetch-field-wkt/:geo_id",
+            "params": [
+              {
+                "name": "geo_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "📐 Fetch Field WKT"
+        },
+        {
+          "info": {
+            "name": "📌 Fetch Field Centroid",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ar.agstack.org/fetch-field-centroid/:geo_id",
+            "params": [
+              {
+                "name": "geo_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "📌 Fetch Field Centroid"
+        },
+        {
+          "info": {
+            "name": "📊 Get Percentage Overlap",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ar.agstack.org/get-percentage-overlap-two-fields",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "📊 Get Percentage Overlap"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

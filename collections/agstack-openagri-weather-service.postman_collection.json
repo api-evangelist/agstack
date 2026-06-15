@@ -1,0 +1,2287 @@
+{
+  "item": [
+    {
+      "id": "f4effaf1-29d9-4f25-8131-b6556c2838a3",
+      "name": "Get Weather Forecast5Days",
+      "request": {
+        "name": "Get Weather Forecast5Days",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "data",
+            "forecast5"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "lat",
+              "value": "<number>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "lon",
+              "value": "<number>",
+              "description": "(Required) "
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "9ff28e5e-98dc-4327-940f-a7fdc186338b",
+          "name": "Successful Response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "data",
+                "forecast5"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"value\": 3717.999594721836,\n    \"timestamp\": \"1979-12-27T10:28:41.029Z\",\n    \"source\": \"string\",\n    \"spatial_entity\": {\n      \"location\": {\n        \"type\": \"POLYGON\"\n      }\n    },\n    \"data_type\": \"string\",\n    \"measurement_type\": \"string\"\n  },\n  {\n    \"value\": 5801.799374555585,\n    \"timestamp\": \"2013-09-01T14:14:36.782Z\",\n    \"source\": \"string\",\n    \"spatial_entity\": {\n      \"location\": {\n        \"type\": \"Point\"\n      }\n    },\n    \"data_type\": \"string\",\n    \"measurement_type\": \"string\"\n  }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "e39a90cb-d26a-4f15-ae3b-5180557b9177",
+          "name": "Validation Error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "data",
+                "forecast5"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "aff462ff-507b-471c-8431-3ea5a8845074",
+      "name": "Get Weather Forecast5Days Ld",
+      "request": {
+        "name": "Get Weather Forecast5Days Ld",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "linkeddata",
+            "forecast5"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "lat",
+              "value": "<number>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "lon",
+              "value": "<number>",
+              "description": "(Required) "
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "816af754-b70f-44dd-9083-63b15b9064b5",
+          "name": "Successful Response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "linkeddata",
+                "forecast5"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "09ea0324-b08a-4fd0-9a2a-898bc5b29b39",
+          "name": "Validation Error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "linkeddata",
+                "forecast5"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "bcea5c2e-9fc5-4374-9733-da3287df3594",
+      "name": "Get Weather",
+      "request": {
+        "name": "Get Weather",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "data",
+            "weather"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "lat",
+              "value": "<number>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "lon",
+              "value": "<number>",
+              "description": "(Required) "
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "cf24a2e3-4fbf-47b5-99b8-b77d11e911bc",
+          "name": "Successful Response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "data",
+                "weather"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"fde6c85c-4d04-4952-2ae4-6dde3978f85e\",\n  \"spatial_entity\": {\n    \"location\": {\n      \"type\": \"Point\"\n    }\n  },\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "984acaca-553b-49e6-a102-c185fbe3ac3d",
+          "name": "Validation Error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "data",
+                "weather"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "aec23340-99e4-4077-b91d-d6c1813033da",
+      "name": "Get Thi",
+      "request": {
+        "name": "Get Thi",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "data",
+            "thi"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "lat",
+              "value": "<number>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "lon",
+              "value": "<number>",
+              "description": "(Required) "
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "a67d89a4-9399-422e-b022-5c4a93800956",
+          "name": "Successful Response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "data",
+                "thi"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"fdd2a46a-9802-057a-19ee-cb2035498764\",\n  \"spatial_entity\": {\n    \"location\": {\n      \"type\": \"Point\"\n    }\n  },\n  \"thi\": 4203.961121383699\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "13b2511f-0fac-4156-b0e1-cd4a6c7fdab0",
+          "name": "Validation Error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "data",
+                "thi"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "7ec6806b-58e0-492a-aded-6ebe023c4960",
+      "name": "Get Thi Ld",
+      "request": {
+        "name": "Get Thi Ld",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "linkeddata",
+            "thi"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "lat",
+              "value": "<number>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "lon",
+              "value": "<number>",
+              "description": "(Required) "
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "6954b1a8-3410-4d3e-b7e0-c08fc50cc990",
+          "name": "Successful Response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "linkeddata",
+                "thi"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"@context\": [\n    \"string\",\n    \"string\"\n  ],\n  \"@graph\": []\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "3f5714c7-eb64-4768-b7c8-450f8158d3a4",
+          "name": "Validation Error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "linkeddata",
+                "thi"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "fa4aa1ea-2025-4ab1-9238-0c93498ab916",
+      "name": "Get Flight Forecast For All Uavs",
+      "request": {
+        "name": "Get Flight Forecast For All Uavs",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "data",
+            "flight_forecast5"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "lat",
+              "value": "<number>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "lon",
+              "value": "<number>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "uavmodels",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "uavmodels",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "status_filter",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "status_filter",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "22e20b27-e2dd-44b9-87e3-1d3217a1388f",
+          "name": "Successful Response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "data",
+                "flight_forecast5"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                },
+                {
+                  "key": "uavmodels",
+                  "value": "<string>"
+                },
+                {
+                  "key": "uavmodels",
+                  "value": "<string>"
+                },
+                {
+                  "key": "status_filter",
+                  "value": "<string>"
+                },
+                {
+                  "key": "status_filter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"timestamp\": \"2009-03-23T13:29:32.993Z\",\n    \"uav_model\": \"string\",\n    \"status\": \"string\",\n    \"weather_source\": \"string\",\n    \"location\": {\n      \"type\": \"POLYGON\"\n    },\n    \"weather_params\": {\n      \"key_0\": 6009.852719831769,\n      \"key_1\": 2665.176101389062,\n      \"key_2\": 7393.444376600902\n    }\n  },\n  {\n    \"timestamp\": \"1981-11-29T16:24:07.898Z\",\n    \"uav_model\": \"string\",\n    \"status\": \"string\",\n    \"weather_source\": \"string\",\n    \"location\": {\n      \"type\": \"Point\"\n    },\n    \"weather_params\": {\n      \"key_0\": 4514.062344240817,\n      \"key_1\": 2383.6592282536717,\n      \"key_2\": 2213.383961666544,\n      \"key_3\": 7414.589698749493\n    }\n  }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "c55e21fb-4f7a-43d5-9ab8-437d81607615",
+          "name": "Validation Error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "data",
+                "flight_forecast5"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                },
+                {
+                  "key": "uavmodels",
+                  "value": "<string>"
+                },
+                {
+                  "key": "uavmodels",
+                  "value": "<string>"
+                },
+                {
+                  "key": "status_filter",
+                  "value": "<string>"
+                },
+                {
+                  "key": "status_filter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "4c15d3fd-d080-4732-99ad-90308d8cabdc",
+      "name": "Get Flight Forecast For All Uavs Ld",
+      "request": {
+        "name": "Get Flight Forecast For All Uavs Ld",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "linkeddata",
+            "flight_forecast5"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "lat",
+              "value": "<number>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "lon",
+              "value": "<number>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "uavmodels",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "uavmodels",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "status_filter",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "status_filter",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "eca762f4-98c8-4d2b-b0f2-218852a27aa3",
+          "name": "Successful Response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "linkeddata",
+                "flight_forecast5"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                },
+                {
+                  "key": "uavmodels",
+                  "value": "<string>"
+                },
+                {
+                  "key": "uavmodels",
+                  "value": "<string>"
+                },
+                {
+                  "key": "status_filter",
+                  "value": "<string>"
+                },
+                {
+                  "key": "status_filter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "0246c996-66b0-4ecf-b474-68eea86e23df",
+          "name": "Validation Error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "linkeddata",
+                "flight_forecast5"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                },
+                {
+                  "key": "uavmodels",
+                  "value": "<string>"
+                },
+                {
+                  "key": "uavmodels",
+                  "value": "<string>"
+                },
+                {
+                  "key": "status_filter",
+                  "value": "<string>"
+                },
+                {
+                  "key": "status_filter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "133f387a-3efc-40e7-afdf-d3386e57adb2",
+      "name": "Get Flight Forecast For Uav",
+      "request": {
+        "name": "Get Flight Forecast For Uav",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "data",
+            "flight_forecast5",
+            ":uavmodel"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "lat",
+              "value": "<number>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "lon",
+              "value": "<number>",
+              "description": "(Required) "
+            }
+          ],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "uavmodel",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "75450944-fdb4-4b9e-a4ed-8f25e3517396",
+          "name": "Successful Response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "data",
+                "flight_forecast5",
+                ":uavmodel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uavmodel",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"timestamp\": \"1997-10-07T13:51:00.215Z\",\n    \"uav_model\": \"string\",\n    \"status\": \"string\",\n    \"weather_source\": \"string\",\n    \"location\": {\n      \"type\": \"Point\"\n    },\n    \"weather_params\": {\n      \"key_0\": 5521.642386238459\n    }\n  },\n  {\n    \"timestamp\": \"1948-12-05T15:11:51.630Z\",\n    \"uav_model\": \"string\",\n    \"status\": \"string\",\n    \"weather_source\": \"string\",\n    \"location\": {\n      \"type\": \"Point\"\n    },\n    \"weather_params\": {\n      \"key_0\": 1452.1062670569406,\n      \"key_1\": 6384.700673826347\n    }\n  }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "c8c6f1e1-f93b-4d25-8567-30eb007aafeb",
+          "name": "Validation Error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "data",
+                "flight_forecast5",
+                ":uavmodel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uavmodel",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "4cfef280-c2ac-4d46-b03a-aa353ae97575",
+      "name": "Get Flight Forecast For Uav Ld",
+      "request": {
+        "name": "Get Flight Forecast For Uav Ld",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "linkeddata",
+            "flight_forecast5",
+            ":uavmodel"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "lat",
+              "value": "<number>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "lon",
+              "value": "<number>",
+              "description": "(Required) "
+            }
+          ],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "uavmodel",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "f29ddec0-8bd7-48d0-9340-ab95fd2ed9be",
+          "name": "Successful Response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "linkeddata",
+                "flight_forecast5",
+                ":uavmodel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uavmodel",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "fca54e9f-7955-4c86-9ae4-7e51a44ff295",
+          "name": "Validation Error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "linkeddata",
+                "flight_forecast5",
+                ":uavmodel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uavmodel",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "25997246-654c-4413-b389-488c4c1cd8dd",
+      "name": "Get Spray Forecast",
+      "request": {
+        "name": "Get Spray Forecast",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "data",
+            "spray_forecast"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "lat",
+              "value": "<number>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "lon",
+              "value": "<number>",
+              "description": "(Required) "
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "8bc9fd3c-a9e2-4136-b4b9-8cf9a3dd8a1b",
+          "name": "Successful Response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "data",
+                "spray_forecast"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"timestamp\": \"1955-09-27T06:31:23.546Z\",\n    \"spray_conditions\": \"marginal\",\n    \"source\": \"string\",\n    \"location\": {\n      \"type\": \"Point\"\n    },\n    \"detailed_status\": {\n      \"key_0\": \"string\"\n    }\n  },\n  {\n    \"timestamp\": \"1971-01-10T00:35:41.982Z\",\n    \"spray_conditions\": \"unsuitable\",\n    \"source\": \"string\",\n    \"location\": {\n      \"type\": \"POLYGON\"\n    },\n    \"detailed_status\": {\n      \"key_0\": \"string\"\n    }\n  }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "ed3ff58a-2815-42cc-916a-923df1229426",
+          "name": "Validation Error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "data",
+                "spray_forecast"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "1e7811a0-1a0a-4de0-ac4c-0c5808355ee5",
+      "name": "Get Spray Forecast Ld",
+      "request": {
+        "name": "Get Spray Forecast Ld",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "linkeddata",
+            "spray_forecast"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "lat",
+              "value": "<number>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "lon",
+              "value": "<number>",
+              "description": "(Required) "
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "a0921f46-c5c1-498d-90d1-1a9839385952",
+          "name": "Successful Response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "linkeddata",
+                "spray_forecast"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "23f9458d-79f3-494b-9422-09d1096a07bc",
+          "name": "Validation Error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "linkeddata",
+                "spray_forecast"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "cc7b31f9-dca6-415d-9dae-43b286d86a4f",
+      "name": "Get Payload",
+      "request": {
+        "name": "Get Payload",
+        "description": {},
+        "url": {
+          "path": [
+            "auth",
+            "test"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "c32b4ae9-f386-4c23-8113-4e50932d43a9",
+          "name": "Successful Response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "auth",
+                "test"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "e3c6bf04-e0e5-4d53-b34e-33d5e1f353cb",
+      "name": "Token",
+      "request": {
+        "name": "Token",
+        "description": {},
+        "url": {
+          "path": [
+            "auth",
+            "token"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "disabled": false,
+              "key": "username",
+              "value": "<string>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "password",
+              "value": "<string>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "grant_type",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "scope",
+              "value": ""
+            },
+            {
+              "disabled": false,
+              "key": "client_id",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "client_secret",
+              "value": "<string>"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "c8b39e86-1f7f-4942-920b-d1f000ab2655",
+          "name": "Successful Response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "auth",
+                "token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "username",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "password",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "grant_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "scope",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "client_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "client_secret",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"jwt_token\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "3a2fda5d-1871-4c5a-876e-f425ed180967",
+          "name": "Validation Error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "auth",
+                "token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "username",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "(Required) ",
+                    "type": "text/plain"
+                  },
+                  "key": "password",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "grant_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "scope",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "client_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "client_secret",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f7f95c90-9178-43cd-aab5-14e9d089e72d",
+    "name": "OpenAgri Weather service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

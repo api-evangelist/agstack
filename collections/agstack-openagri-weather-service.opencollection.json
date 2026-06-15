@@ -1,0 +1,367 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenAgri Weather service",
+    "version": "2.5.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get Weather Forecast5Days",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/data/forecast5",
+        "params": [
+          {
+            "name": "lat",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "lon",
+            "value": "",
+            "type": "query"
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Get Weather Forecast5Days"
+    },
+    {
+      "info": {
+        "name": "Get Weather Forecast5Days Ld",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/linkeddata/forecast5",
+        "params": [
+          {
+            "name": "lat",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "lon",
+            "value": "",
+            "type": "query"
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Get Weather Forecast5Days Ld"
+    },
+    {
+      "info": {
+        "name": "Get Weather",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/data/weather",
+        "params": [
+          {
+            "name": "lat",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "lon",
+            "value": "",
+            "type": "query"
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Get Weather"
+    },
+    {
+      "info": {
+        "name": "Get Thi",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/data/thi",
+        "params": [
+          {
+            "name": "lat",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "lon",
+            "value": "",
+            "type": "query"
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Get Thi"
+    },
+    {
+      "info": {
+        "name": "Get Thi Ld",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/linkeddata/thi",
+        "params": [
+          {
+            "name": "lat",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "lon",
+            "value": "",
+            "type": "query"
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Get Thi Ld"
+    },
+    {
+      "info": {
+        "name": "Get Flight Forecast For All Uavs",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/data/flight_forecast5",
+        "params": [
+          {
+            "name": "lat",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "lon",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "uavmodels",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "status_filter",
+            "value": "",
+            "type": "query"
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Get Flight Forecast For All Uavs"
+    },
+    {
+      "info": {
+        "name": "Get Flight Forecast For All Uavs Ld",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/linkeddata/flight_forecast5",
+        "params": [
+          {
+            "name": "lat",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "lon",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "uavmodels",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "status_filter",
+            "value": "",
+            "type": "query"
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Get Flight Forecast For All Uavs Ld"
+    },
+    {
+      "info": {
+        "name": "Get Flight Forecast For Uav",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/data/flight_forecast5/:uavmodel",
+        "params": [
+          {
+            "name": "uavmodel",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "lat",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "lon",
+            "value": "",
+            "type": "query"
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Get Flight Forecast For Uav"
+    },
+    {
+      "info": {
+        "name": "Get Flight Forecast For Uav Ld",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/linkeddata/flight_forecast5/:uavmodel",
+        "params": [
+          {
+            "name": "uavmodel",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "lat",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "lon",
+            "value": "",
+            "type": "query"
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Get Flight Forecast For Uav Ld"
+    },
+    {
+      "info": {
+        "name": "Get Spray Forecast",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/data/spray_forecast",
+        "params": [
+          {
+            "name": "lat",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "lon",
+            "value": "",
+            "type": "query"
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Get Spray Forecast"
+    },
+    {
+      "info": {
+        "name": "Get Spray Forecast Ld",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/linkeddata/spray_forecast",
+        "params": [
+          {
+            "name": "lat",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "lon",
+            "value": "",
+            "type": "query"
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Get Spray Forecast Ld"
+    },
+    {
+      "info": {
+        "name": "Get Payload",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/auth/test",
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Get Payload"
+    },
+    {
+      "info": {
+        "name": "Token",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{{baseUrl}}/auth/token",
+        "body": {
+          "type": "form-urlencoded",
+          "data": []
+        }
+      },
+      "docs": "Token"
+    }
+  ],
+  "bundled": true
+}
