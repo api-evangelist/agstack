@@ -65,29 +65,29 @@ apis:
       - url: json-structure/agstack-openagri-weather-service-body-token-auth-token-post-structure.json
         type: JSONStructure
       - url: examples/agstack-openagri-weather-service-predictionout-example.json
-        type: Example
+        type: Examples
       - url: examples/agstack-openagri-weather-service-weatherdataout-example.json
-        type: Example
+        type: Examples
       - url: examples/agstack-openagri-weather-service-thidataout-example.json
-        type: Example
+        type: Examples
       - url: examples/agstack-openagri-weather-service-sprayforecastresponse-example.json
-        type: Example
+        type: Examples
       - url: examples/agstack-openagri-weather-service-flightstatusforecastresponse-example.json
-        type: Example
+        type: Examples
       - url: examples/agstack-openagri-weather-service-geojsonout-example.json
-        type: Example
+        type: Examples
       - url: examples/agstack-openagri-weather-service-jsonldgraph-example.json
-        type: Example
+        type: Examples
       - url: examples/agstack-openagri-weather-service-authtoken-example.json
-        type: Example
+        type: Examples
       - url: examples/agstack-openagri-weather-service-pointout-example.json
-        type: Example
+        type: Examples
       - url: examples/agstack-openagri-weather-service-validationerror-example.json
-        type: Example
+        type: Examples
       - url: examples/agstack-openagri-weather-service-httpvalidationerror-example.json
-        type: Example
+        type: Examples
       - url: examples/agstack-openagri-weather-service-body-token-auth-token-post-example.json
-        type: Example
+        type: Examples
     description: >-
       FastAPI-based weather service providing 5-day forecasts, current conditions, Temperature-Humidity Index (THI) for
       livestock heat stress, UAV flight condition forecasts, and spray condition assessments. Supports both JSON and
@@ -139,11 +139,11 @@ apis:
       - url: json-structure/agstack-asset-registry-bulkpointresult-structure.json
         type: JSONStructure
       - url: examples/agstack-asset-registry-registerfieldwktrequest-example.json
-        type: Example
+        type: Examples
       - url: examples/agstack-asset-registry-geojsonfeaturecollection-example.json
-        type: Example
+        type: Examples
       - url: examples/agstack-asset-registry-bulkpointresult-example.json
-        type: Example
+        type: Examples
     description: >-
       The AgStack Asset Registry provides global field boundary registration and identification. Submit a field polygon
       (WKT or GeoJSON) and receive a permanent 256-bit (16-character alphanumeric) geo ID. Supports single and bulk
