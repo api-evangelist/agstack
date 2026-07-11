@@ -1,0 +1,28 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/agstack-asset-registry-openapi.yml, openapi/agstack-openagri-farm-calendar-openapi.yml,
+  openapi/agstack-openagri-weather-service-openapi.yml
+summary:
+  types:
+  - apiKey
+  - http
+  api_key_in:
+  - cookie
+schemes:
+- name: Bearer_Token
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  description: |-
+    **Required for most operations.**
+    1. Login via `/login` to get token.
+    2. Paste access token here.
+  sources:
+  - openapi/agstack-asset-registry-openapi.yml
+  - openapi/agstack-openagri-weather-service-openapi.yml
+- name: cookieAuth
+  type: apiKey
+  in: cookie
+  parameter: sessionid
+  sources:
+  - openapi/agstack-openagri-farm-calendar-openapi.yml
