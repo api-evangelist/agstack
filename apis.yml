@@ -150,6 +150,8 @@ apis:
       registration, field retrieval, centroid calculation, and spatial overlap analysis. Production API available at
       api-ar.agstack.org.
 common:
+  - type: AgenticAccess
+    url: agentic-access/agstack-agentic-access.yml
   - type: DomainSecurity
     url: security/agstack-domain-security.yml
   - type: Authentication
