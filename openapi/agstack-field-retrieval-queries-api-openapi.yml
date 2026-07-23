@@ -1,0 +1,146 @@
+openapi: 3.0.3
+info:
+  title: AgStack Asset Registry api Field Retrieval & Queries API
+  version: 1.0.0
+  description: 'Welcome to the **AgStack Asset Registry** developer portal.
+
+
+    ---
+
+
+    ## 🔐 Authentication Guide
+
+
+    | Service Zone | HTTP Method | Credential Type |
+
+    | :--- | :---: | :--- |
+
+    | **Authentication** | `GET/POST` | **Bearer Token** (where applicable) |
+
+    | **Field Registration** | `POST` | **Bearer Token** |
+
+    | **Field Retrieval** | `GET/POST`| **Bearer Token** (where applicable) |
+
+
+
+    > 🚀 **Quick Start Guide**
+
+    > 1. Login via `/login` to get an `access_token` and `refresh_token`.
+
+    > 2. Use `Bearer_Token` (Lock Icon) to authorize protected routes.
+
+    '
+servers:
+- url: https://api-ar.agstack.org
+  description: Production Server
+tags:
+- name: Field Retrieval & Queries
+paths:
+  /fetch-field/{geo_id}:
+    get:
+      tags:
+      - Field Retrieval & Queries
+      summary: 🗺️ Fetch Field Data
+      parameters:
+      - name: geo_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: s2_index
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Field fetched successfully
+        '400':
+          $ref: '#/components/responses/ErrorResponse'
+        '404':
+          description: Field not found
+  /fetch-field-wkt/{geo_id}:
+    get:
+      tags:
+      - Field Retrieval & Queries
+      summary: 📐 Fetch Field WKT
+      parameters:
+      - name: geo_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: WKT fetched successfully
+        '400':
+          $ref: '#/components/responses/ErrorResponse'
+  /fetch-field-centroid/{geo_id}:
+    get:
+      tags:
+      - Field Retrieval & Queries
+      summary: 📌 Fetch Field Centroid
+      parameters:
+      - name: geo_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Centroid fetched successfully
+        '400':
+          $ref: '#/components/responses/ErrorResponse'
+  /get-percentage-overlap-two-fields:
+    post:
+      tags:
+      - Field Retrieval & Queries
+      summary: 📊 Get Percentage Overlap
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - geo_id_field_1
+              - geo_id_field_2
+              properties:
+                geo_id_field_1:
+                  type: string
+                geo_id_field_2:
+                  type: string
+      responses:
+        '200':
+          description: Overlap percentage calculated
+        '400':
+          $ref: '#/components/responses/ErrorResponse'
+        '404':
+          description: Field not found
+components:
+  responses:
+    ErrorResponse:
+      description: Generic Error Response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: Error description
+              error:
+                type: string
+                example: Detailed exception message
+  securitySchemes:
+    Bearer_Token:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: '**Required for most operations.**
+
+        1. Login via `/login` to get token.
+
+        2. Paste access token here.
+
+        '

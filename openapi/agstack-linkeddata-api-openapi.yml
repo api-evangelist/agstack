@@ -1,0 +1,293 @@
+openapi: 3.0.3
+info:
+  title: AgStack Asset Registry api Linkeddata API
+  version: 1.0.0
+  description: 'Welcome to the **AgStack Asset Registry** developer portal.
+
+
+    ---
+
+
+    ## 🔐 Authentication Guide
+
+
+    | Service Zone | HTTP Method | Credential Type |
+
+    | :--- | :---: | :--- |
+
+    | **Authentication** | `GET/POST` | **Bearer Token** (where applicable) |
+
+    | **Field Registration** | `POST` | **Bearer Token** |
+
+    | **Field Retrieval** | `GET/POST`| **Bearer Token** (where applicable) |
+
+
+
+    > 🚀 **Quick Start Guide**
+
+    > 1. Login via `/login` to get an `access_token` and `refresh_token`.
+
+    > 2. Use `Bearer_Token` (Lock Icon) to authorize protected routes.
+
+    '
+servers:
+- url: https://api-ar.agstack.org
+  description: Production Server
+tags:
+- name: Linkeddata
+paths:
+  /api/linkeddata/forecast5:
+    get:
+      summary: Get Weather Forecast5Days Ld
+      operationId: get_weather_forecast5days_ld_api_linkeddata_forecast5_get
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: lat
+        in: query
+        required: true
+        schema:
+          type: number
+          title: Lat
+      - name: lon
+        in: query
+        required: true
+        schema:
+          type: number
+          title: Lon
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Linkeddata
+  /api/linkeddata/thi:
+    get:
+      summary: Get Thi Ld
+      operationId: get_thi_ld_api_linkeddata_thi_get
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: lat
+        in: query
+        required: true
+        schema:
+          type: number
+          title: Lat
+      - name: lon
+        in: query
+        required: true
+        schema:
+          type: number
+          title: Lon
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JSONLDGraph'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Linkeddata
+  /api/linkeddata/flight_forecast5:
+    get:
+      summary: Get Flight Forecast For All Uavs Ld
+      operationId: get_flight_forecast_for_all_uavs_ld_api_linkeddata_flight_forecast5_get
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: lat
+        in: query
+        required: true
+        schema:
+          type: number
+          title: Lat
+      - name: lon
+        in: query
+        required: true
+        schema:
+          type: number
+          title: Lon
+      - name: uavmodels
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: array
+            items:
+              type: string
+          - type: 'null'
+          title: Uavmodels
+      - name: status_filter
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: array
+            items:
+              type: string
+          - type: 'null'
+          title: Status Filter
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Linkeddata
+  /api/linkeddata/flight_forecast5/{uavmodel}:
+    get:
+      summary: Get Flight Forecast For Uav Ld
+      operationId: get_flight_forecast_for_uav_ld_api_linkeddata_flight_forecast5__uavmodel__get
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: uavmodel
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Uavmodel
+      - name: lat
+        in: query
+        required: true
+        schema:
+          type: number
+          title: Lat
+      - name: lon
+        in: query
+        required: true
+        schema:
+          type: number
+          title: Lon
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Linkeddata
+  /api/linkeddata/spray_forecast:
+    get:
+      summary: Get Spray Forecast Ld
+      operationId: get_spray_forecast_ld_api_linkeddata_spray_forecast_get
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: lat
+        in: query
+        required: true
+        schema:
+          type: number
+          title: Lat
+      - name: lon
+        in: query
+        required: true
+        schema:
+          type: number
+          title: Lon
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Linkeddata
+components:
+  schemas:
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    JSONLDGraph:
+      properties:
+        '@context':
+          items:
+            anyOf:
+            - type: string
+            - type: object
+          type: array
+          title: '@Context'
+        '@graph':
+          items:
+            type: object
+          type: array
+          title: '@Graph'
+      type: object
+      required:
+      - '@context'
+      - '@graph'
+      title: JSONLDGraph
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+  securitySchemes:
+    Bearer_Token:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: '**Required for most operations.**
+
+        1. Login via `/login` to get token.
+
+        2. Paste access token here.
+
+        '

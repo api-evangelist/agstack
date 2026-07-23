@@ -1,14 +1,45 @@
 openapi: 3.0.3
 info:
-  title: OpenAgri Farm Calendar API
+  title: AgStack Asset Registry api API
   version: 1.0.0
-  description: API for farm assets and other farm related things.
+  description: 'Welcome to the **AgStack Asset Registry** developer portal.
+
+
+    ---
+
+
+    ## 🔐 Authentication Guide
+
+
+    | Service Zone | HTTP Method | Credential Type |
+
+    | :--- | :---: | :--- |
+
+    | **Authentication** | `GET/POST` | **Bearer Token** (where applicable) |
+
+    | **Field Registration** | `POST` | **Bearer Token** |
+
+    | **Field Retrieval** | `GET/POST`| **Bearer Token** (where applicable) |
+
+
+
+    > 🚀 **Quick Start Guide**
+
+    > 1. Login via `/login` to get an `access_token` and `refresh_token`.
+
+    > 2. Use `Bearer_Token` (Lock Icon) to authorize protected routes.
+
+    '
+servers:
+- url: https://api-ar.agstack.org
+  description: Production Server
+tags:
+- name: api
 paths:
   /api/v1/AddRawMaterialOperations/:
     get:
       operationId: api_v1_AddRawMaterialOperations_list
-      description: API endpoint that allows AddRawMaterialOperation to be viewed or
-        edited.
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
       parameters:
       - in: query
         name: activity_type
@@ -61,8 +92,7 @@ paths:
           description: ''
     post:
       operationId: api_v1_AddRawMaterialOperations_create
-      description: API endpoint that allows AddRawMaterialOperation to be viewed or
-        edited.
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -100,8 +130,7 @@ paths:
   /api/v1/AddRawMaterialOperations/{id}/:
     get:
       operationId: api_v1_AddRawMaterialOperations_retrieve
-      description: API endpoint that allows AddRawMaterialOperation to be viewed or
-        edited.
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -133,8 +162,7 @@ paths:
           description: ''
     put:
       operationId: api_v1_AddRawMaterialOperations_update
-      description: API endpoint that allows AddRawMaterialOperation to be viewed or
-        edited.
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -178,8 +206,7 @@ paths:
           description: ''
     patch:
       operationId: api_v1_AddRawMaterialOperations_partial_update
-      description: API endpoint that allows AddRawMaterialOperation to be viewed or
-        edited.
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -222,8 +249,7 @@ paths:
           description: ''
     delete:
       operationId: api_v1_AddRawMaterialOperations_destroy
-      description: API endpoint that allows AddRawMaterialOperation to be viewed or
-        edited.
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -275,10 +301,11 @@ paths:
           - 0
           - 1
           - 2
-        description: |-
-          * `0` - Inactive
+        description: '* `0` - Inactive
+
           * `1` - Active
-          * `2` - Deleted
+
+          * `2` - Deleted'
       tags:
       - api
       security:
@@ -516,12 +543,15 @@ paths:
           - minor
           - moderate
           - severe
-        description: |-
-          * `minor` - Minor
+        description: '* `minor` - Minor
+
           * `moderate` - Moderate
+
           * `severe` - Severe
+
           * `major` - Major
-          * `critical` - Critical
+
+          * `critical` - Critical'
       - in: query
         name: title
         schema:
@@ -829,8 +859,7 @@ paths:
   /api/v1/CompostOperations/{compost_operation_pk}/AddRawMaterialOperations/:
     get:
       operationId: api_v1_CompostOperations_AddRawMaterialOperations_list
-      description: API endpoint that allows AddRawMaterialOperation to be viewed or
-        edited.
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
       parameters:
       - in: query
         name: activity_type
@@ -888,8 +917,7 @@ paths:
           description: ''
     post:
       operationId: api_v1_CompostOperations_AddRawMaterialOperations_create
-      description: API endpoint that allows AddRawMaterialOperation to be viewed or
-        edited.
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
       parameters:
       - in: path
         name: compost_operation_pk
@@ -932,8 +960,7 @@ paths:
   /api/v1/CompostOperations/{compost_operation_pk}/AddRawMaterialOperations/{id}/:
     get:
       operationId: api_v1_CompostOperations_AddRawMaterialOperations_retrieve
-      description: API endpoint that allows AddRawMaterialOperation to be viewed or
-        edited.
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
       parameters:
       - in: path
         name: compost_operation_pk
@@ -970,8 +997,7 @@ paths:
           description: ''
     put:
       operationId: api_v1_CompostOperations_AddRawMaterialOperations_update
-      description: API endpoint that allows AddRawMaterialOperation to be viewed or
-        edited.
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
       parameters:
       - in: path
         name: compost_operation_pk
@@ -1020,8 +1046,7 @@ paths:
           description: ''
     patch:
       operationId: api_v1_CompostOperations_AddRawMaterialOperations_partial_update
-      description: API endpoint that allows AddRawMaterialOperation to be viewed or
-        edited.
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
       parameters:
       - in: path
         name: compost_operation_pk
@@ -1069,8 +1094,7 @@ paths:
           description: ''
     delete:
       operationId: api_v1_CompostOperations_AddRawMaterialOperations_destroy
-      description: API endpoint that allows AddRawMaterialOperation to be viewed or
-        edited.
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
       parameters:
       - in: path
         name: compost_operation_pk
@@ -1101,8 +1125,7 @@ paths:
   /api/v1/CompostOperations/{compost_operation_pk}/CompostTurningOperations/:
     get:
       operationId: api_v1_CompostOperations_CompostTurningOperations_list
-      description: API endpoint that allows CompostTurningOperation to be viewed or
-        edited.
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
       parameters:
       - in: query
         name: activity_type
@@ -1160,8 +1183,7 @@ paths:
           description: ''
     post:
       operationId: api_v1_CompostOperations_CompostTurningOperations_create
-      description: API endpoint that allows CompostTurningOperation to be viewed or
-        edited.
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
       parameters:
       - in: path
         name: compost_operation_pk
@@ -1204,8 +1226,7 @@ paths:
   /api/v1/CompostOperations/{compost_operation_pk}/CompostTurningOperations/{id}/:
     get:
       operationId: api_v1_CompostOperations_CompostTurningOperations_retrieve
-      description: API endpoint that allows CompostTurningOperation to be viewed or
-        edited.
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
       parameters:
       - in: path
         name: compost_operation_pk
@@ -1242,8 +1263,7 @@ paths:
           description: ''
     put:
       operationId: api_v1_CompostOperations_CompostTurningOperations_update
-      description: API endpoint that allows CompostTurningOperation to be viewed or
-        edited.
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
       parameters:
       - in: path
         name: compost_operation_pk
@@ -1292,8 +1312,7 @@ paths:
           description: ''
     patch:
       operationId: api_v1_CompostOperations_CompostTurningOperations_partial_update
-      description: API endpoint that allows CompostTurningOperation to be viewed or
-        edited.
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
       parameters:
       - in: path
         name: compost_operation_pk
@@ -1341,8 +1360,7 @@ paths:
           description: ''
     delete:
       operationId: api_v1_CompostOperations_CompostTurningOperations_destroy
-      description: API endpoint that allows CompostTurningOperation to be viewed or
-        edited.
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
       parameters:
       - in: path
         name: compost_operation_pk
@@ -2054,8 +2072,7 @@ paths:
   /api/v1/CompostTurningOperations/:
     get:
       operationId: api_v1_CompostTurningOperations_list
-      description: API endpoint that allows CompostTurningOperation to be viewed or
-        edited.
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
       parameters:
       - in: query
         name: activity_type
@@ -2108,8 +2125,7 @@ paths:
           description: ''
     post:
       operationId: api_v1_CompostTurningOperations_create
-      description: API endpoint that allows CompostTurningOperation to be viewed or
-        edited.
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -2147,8 +2163,7 @@ paths:
   /api/v1/CompostTurningOperations/{id}/:
     get:
       operationId: api_v1_CompostTurningOperations_retrieve
-      description: API endpoint that allows CompostTurningOperation to be viewed or
-        edited.
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -2180,8 +2195,7 @@ paths:
           description: ''
     put:
       operationId: api_v1_CompostTurningOperations_update
-      description: API endpoint that allows CompostTurningOperation to be viewed or
-        edited.
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -2225,8 +2239,7 @@ paths:
           description: ''
     patch:
       operationId: api_v1_CompostTurningOperations_partial_update
-      description: API endpoint that allows CompostTurningOperation to be viewed or
-        edited.
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -2269,8 +2282,7 @@ paths:
           description: ''
     delete:
       operationId: api_v1_CompostTurningOperations_destroy
-      description: API endpoint that allows CompostTurningOperation to be viewed or
-        edited.
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -2296,8 +2308,7 @@ paths:
   /api/v1/CropGrowthStageObservations/:
     get:
       operationId: api_v1_CropGrowthStageObservations_list
-      description: API endpoint that allows CropGrowthStageObservation to be viewed
-        or edited.
+      description: API endpoint that allows CropGrowthStageObservation to be viewed or edited.
       parameters:
       - in: query
         name: activity_type
@@ -2354,8 +2365,7 @@ paths:
           description: ''
     post:
       operationId: api_v1_CropGrowthStageObservations_create
-      description: API endpoint that allows CropGrowthStageObservation to be viewed
-        or edited.
+      description: API endpoint that allows CropGrowthStageObservation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -2393,8 +2403,7 @@ paths:
   /api/v1/CropGrowthStageObservations/{id}/:
     get:
       operationId: api_v1_CropGrowthStageObservations_retrieve
-      description: API endpoint that allows CropGrowthStageObservation to be viewed
-        or edited.
+      description: API endpoint that allows CropGrowthStageObservation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -2426,8 +2435,7 @@ paths:
           description: ''
     put:
       operationId: api_v1_CropGrowthStageObservations_update
-      description: API endpoint that allows CropGrowthStageObservation to be viewed
-        or edited.
+      description: API endpoint that allows CropGrowthStageObservation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -2471,8 +2479,7 @@ paths:
           description: ''
     patch:
       operationId: api_v1_CropGrowthStageObservations_partial_update
-      description: API endpoint that allows CropGrowthStageObservation to be viewed
-        or edited.
+      description: API endpoint that allows CropGrowthStageObservation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -2515,8 +2522,7 @@ paths:
           description: ''
     delete:
       operationId: api_v1_CropGrowthStageObservations_destroy
-      description: API endpoint that allows CropGrowthStageObservation to be viewed
-        or edited.
+      description: API endpoint that allows CropGrowthStageObservation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -2542,8 +2548,7 @@ paths:
   /api/v1/CropProtectionOperations/:
     get:
       operationId: api_v1_CropProtectionOperations_list
-      description: API endpoint that allows CropProtectionOperation to be viewed or
-        edited.
+      description: API endpoint that allows CropProtectionOperation to be viewed or edited.
       parameters:
       - in: query
         name: activity_type
@@ -2600,8 +2605,7 @@ paths:
           description: ''
     post:
       operationId: api_v1_CropProtectionOperations_create
-      description: API endpoint that allows CropProtectionOperation to be viewed or
-        edited.
+      description: API endpoint that allows CropProtectionOperation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -2639,8 +2643,7 @@ paths:
   /api/v1/CropProtectionOperations/{id}/:
     get:
       operationId: api_v1_CropProtectionOperations_retrieve
-      description: API endpoint that allows CropProtectionOperation to be viewed or
-        edited.
+      description: API endpoint that allows CropProtectionOperation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -2672,8 +2675,7 @@ paths:
           description: ''
     put:
       operationId: api_v1_CropProtectionOperations_update
-      description: API endpoint that allows CropProtectionOperation to be viewed or
-        edited.
+      description: API endpoint that allows CropProtectionOperation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -2717,8 +2719,7 @@ paths:
           description: ''
     patch:
       operationId: api_v1_CropProtectionOperations_partial_update
-      description: API endpoint that allows CropProtectionOperation to be viewed or
-        edited.
+      description: API endpoint that allows CropProtectionOperation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -2761,8 +2762,7 @@ paths:
           description: ''
     delete:
       operationId: api_v1_CropProtectionOperations_destroy
-      description: API endpoint that allows CropProtectionOperation to be viewed or
-        edited.
+      description: API endpoint that allows CropProtectionOperation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -3285,10 +3285,11 @@ paths:
           - 0
           - 1
           - 2
-        description: |-
-          * `0` - Inactive
+        description: '* `0` - Inactive
+
           * `1` - Active
-          * `2` - Deleted
+
+          * `2` - Deleted'
       tags:
       - api
       security:
@@ -3522,10 +3523,11 @@ paths:
           - 0
           - 1
           - 2
-        description: |-
-          * `0` - Inactive
+        description: '* `0` - Inactive
+
           * `1` - Active
-          * `2` - Deleted
+
+          * `2` - Deleted'
       tags:
       - api
       security:
@@ -3969,8 +3971,7 @@ paths:
   /api/v1/FarmCalendarActivityTypes/:
     get:
       operationId: api_v1_FarmCalendarActivityTypes_list
-      description: API endpoint that allows FarmCalendarActivityType to be viewed
-        or edited.
+      description: API endpoint that allows FarmCalendarActivityType to be viewed or edited.
       parameters:
       - in: query
         name: category
@@ -3980,10 +3981,11 @@ paths:
           - activity
           - alert
           - observation
-        description: |-
-          * `activity` - Activity
+        description: '* `activity` - Activity
+
           * `observation` - Observation
-          * `alert` - Alert
+
+          * `alert` - Alert'
       - in: query
         name: format
         schema:
@@ -4015,8 +4017,7 @@ paths:
           description: ''
     post:
       operationId: api_v1_FarmCalendarActivityTypes_create
-      description: API endpoint that allows FarmCalendarActivityType to be viewed
-        or edited.
+      description: API endpoint that allows FarmCalendarActivityType to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -4054,8 +4055,7 @@ paths:
   /api/v1/FarmCalendarActivityTypes/{id}/:
     get:
       operationId: api_v1_FarmCalendarActivityTypes_retrieve
-      description: API endpoint that allows FarmCalendarActivityType to be viewed
-        or edited.
+      description: API endpoint that allows FarmCalendarActivityType to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -4087,8 +4087,7 @@ paths:
           description: ''
     put:
       operationId: api_v1_FarmCalendarActivityTypes_update
-      description: API endpoint that allows FarmCalendarActivityType to be viewed
-        or edited.
+      description: API endpoint that allows FarmCalendarActivityType to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -4132,8 +4131,7 @@ paths:
           description: ''
     patch:
       operationId: api_v1_FarmCalendarActivityTypes_partial_update
-      description: API endpoint that allows FarmCalendarActivityType to be viewed
-        or edited.
+      description: API endpoint that allows FarmCalendarActivityType to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -4176,8 +4174,7 @@ paths:
           description: ''
     delete:
       operationId: api_v1_FarmCalendarActivityTypes_destroy
-      description: API endpoint that allows FarmCalendarActivityType to be viewed
-        or edited.
+      description: API endpoint that allows FarmCalendarActivityType to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -4237,10 +4234,11 @@ paths:
           - 0
           - 1
           - 2
-        description: |-
-          * `0` - Inactive
+        description: '* `0` - Inactive
+
           * `1` - Active
-          * `2` - Deleted
+
+          * `2` - Deleted'
       - in: query
         name: variety
         schema:
@@ -4487,10 +4485,11 @@ paths:
           - 0
           - 1
           - 2
-        description: |-
-          * `0` - Inactive
+        description: '* `0` - Inactive
+
           * `1` - Active
-          * `2` - Deleted
+
+          * `2` - Deleted'
       tags:
       - api
       security:
@@ -4694,8 +4693,7 @@ paths:
   /api/v1/FertilizationOperations/:
     get:
       operationId: api_v1_FertilizationOperations_list
-      description: API endpoint that allows FertilizationOperation to be viewed or
-        edited.
+      description: API endpoint that allows FertilizationOperation to be viewed or edited.
       parameters:
       - in: query
         name: activity_type
@@ -4752,8 +4750,7 @@ paths:
           description: ''
     post:
       operationId: api_v1_FertilizationOperations_create
-      description: API endpoint that allows FertilizationOperation to be viewed or
-        edited.
+      description: API endpoint that allows FertilizationOperation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -4791,8 +4788,7 @@ paths:
   /api/v1/FertilizationOperations/{id}/:
     get:
       operationId: api_v1_FertilizationOperations_retrieve
-      description: API endpoint that allows FertilizationOperation to be viewed or
-        edited.
+      description: API endpoint that allows FertilizationOperation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -4824,8 +4820,7 @@ paths:
           description: ''
     put:
       operationId: api_v1_FertilizationOperations_update
-      description: API endpoint that allows FertilizationOperation to be viewed or
-        edited.
+      description: API endpoint that allows FertilizationOperation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -4869,8 +4864,7 @@ paths:
           description: ''
     patch:
       operationId: api_v1_FertilizationOperations_partial_update
-      description: API endpoint that allows FertilizationOperation to be viewed or
-        edited.
+      description: API endpoint that allows FertilizationOperation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -4913,8 +4907,7 @@ paths:
           description: ''
     delete:
       operationId: api_v1_FertilizationOperations_destroy
-      description: API endpoint that allows FertilizationOperation to be viewed or
-        edited.
+      description: API endpoint that allows FertilizationOperation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -4961,10 +4954,11 @@ paths:
           - 0
           - 1
           - 2
-        description: |-
-          * `0` - Inactive
+        description: '* `0` - Inactive
+
           * `1` - Active
-          * `2` - Deleted
+
+          * `2` - Deleted'
       tags:
       - api
       security:
@@ -5194,10 +5188,11 @@ paths:
           - 0
           - 1
           - 2
-        description: |-
-          * `0` - Inactive
+        description: '* `0` - Inactive
+
           * `1` - Active
-          * `2` - Deleted
+
+          * `2` - Deleted'
       tags:
       - api
       security:
@@ -5898,10 +5893,11 @@ paths:
           - 0
           - 1
           - 2
-        description: |-
-          * `0` - Inactive
+        description: '* `0` - Inactive
+
           * `1` - Active
-          * `2` - Deleted
+
+          * `2` - Deleted'
       tags:
       - api
       security:
@@ -6105,8 +6101,7 @@ paths:
   /api/v1/SprayingRecommendation/:
     get:
       operationId: api_v1_SprayingRecommendation_list
-      description: API endpoint that allows SprayingRecommendation to be viewed or
-        edited.
+      description: API endpoint that allows SprayingRecommendation to be viewed or edited.
       parameters:
       - in: query
         name: activity_type
@@ -6159,8 +6154,7 @@ paths:
           description: ''
     post:
       operationId: api_v1_SprayingRecommendation_create
-      description: API endpoint that allows SprayingRecommendation to be viewed or
-        edited.
+      description: API endpoint that allows SprayingRecommendation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -6198,8 +6192,7 @@ paths:
   /api/v1/SprayingRecommendation/{id}/:
     get:
       operationId: api_v1_SprayingRecommendation_retrieve
-      description: API endpoint that allows SprayingRecommendation to be viewed or
-        edited.
+      description: API endpoint that allows SprayingRecommendation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -6231,8 +6224,7 @@ paths:
           description: ''
     put:
       operationId: api_v1_SprayingRecommendation_update
-      description: API endpoint that allows SprayingRecommendation to be viewed or
-        edited.
+      description: API endpoint that allows SprayingRecommendation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -6276,8 +6268,7 @@ paths:
           description: ''
     patch:
       operationId: api_v1_SprayingRecommendation_partial_update
-      description: API endpoint that allows SprayingRecommendation to be viewed or
-        edited.
+      description: API endpoint that allows SprayingRecommendation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -6320,8 +6311,7 @@ paths:
           description: ''
     delete:
       operationId: api_v1_SprayingRecommendation_destroy
-      description: API endpoint that allows SprayingRecommendation to be viewed or
-        edited.
+      description: API endpoint that allows SprayingRecommendation to be viewed or edited.
       parameters:
       - in: query
         name: format
@@ -6819,11 +6809,12 @@ paths:
   /api/v1/schema/:
     get:
       operationId: api_v1_schema_retrieve
-      description: |-
-        OpenApi3 schema for this API. Format can be selected via content negotiation.
+      description: 'OpenApi3 schema for this API. Format can be selected via content negotiation.
+
 
         - YAML: application/vnd.oai.openapi
-        - JSON: application/vnd.oai.openapi+json
+
+        - JSON: application/vnd.oai.openapi+json'
       parameters:
       - in: query
         name: format
@@ -6963,22 +6954,7 @@ paths:
           description: ''
 components:
   schemas:
-    AddRawMaterialCompostQuantity:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        typeName:
-          type: string
-        quantityValue:
-          $ref: '#/components/schemas/AppliedAmmountField'
-      required:
-      - id
-      - quantityValue
-      - typeName
-    AddRawMaterialOperation:
+    IrrigationOperation:
       type: object
       properties:
         id:
@@ -7001,9 +6977,6 @@ components:
           type: string
           format: date-time
           nullable: true
-        operatedOn:
-          type: string
-          format: uuid
         responsibleAgent:
           type: string
           nullable: true
@@ -7012,95 +6985,21 @@ components:
           items:
             type: string
             format: uuid
-        hasCompostMaterial:
-          type: array
-          items:
-            $ref: '#/components/schemas/AddRawMaterialCompostQuantity'
+        hasAppliedAmount:
+          $ref: '#/components/schemas/AppliedAmmountField'
+        usesIrrigationSystem:
+          $ref: '#/components/schemas/UsesIrrigationSystemEnum'
+        operatedOn:
+          type: string
+          format: uuid
       required:
       - activityType
-      - hasCompostMaterial
+      - hasAppliedAmount
       - hasStartDatetime
       - id
       - operatedOn
       - usesAgriculturalMachinery
-    AddressField:
-      type: object
-      properties:
-        adminUnitL1:
-          type: string
-        adminUnitL2:
-          type: string
-        addressArea:
-          type: string
-        municipality:
-          type: string
-        community:
-          type: string
-        locatorName:
-          type: string
-      required:
-      - addressArea
-      - adminUnitL1
-      - adminUnitL2
-      - community
-      - locatorName
-      - municipality
-    AgriculturalMachine:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        name:
-          type: string
-          maxLength: 100
-        description:
-          type: string
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        purchase_date:
-          type: string
-          format: date
-        manufacturer:
-          type: string
-          maxLength: 255
-        model:
-          type: string
-          maxLength: 255
-        seria_number:
-          type: string
-          maxLength: 255
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        invalidatedAtTime:
-          type: string
-          format: date-time
-          readOnly: true
-        dateCreated:
-          type: string
-          format: date-time
-          readOnly: true
-        dateModified:
-          type: string
-          format: date-time
-          readOnly: true
-      required:
-      - dateCreated
-      - dateModified
-      - hasAgriParcel
-      - id
-      - invalidatedAtTime
-      - manufacturer
-      - model
-      - name
-      - purchase_date
-      - seria_number
+      - usesIrrigationSystem
     Alert:
       type: object
       properties:
@@ -7147,284 +7046,7 @@ components:
       - relatedObservation
       - validFrom
       - validTo
-    AppliedAmmountField:
-      type: object
-      properties:
-        unit:
-          type: string
-        numericValue:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,15}(?:\.\d{0,2})?$
-      required:
-      - numericValue
-      - unit
-    CategoryEnum:
-      enum:
-      - activity
-      - observation
-      - alert
-      type: string
-      description: |-
-        * `activity` - Activity
-        * `observation` - Observation
-        * `alert` - Alert
-    CompostOperation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        responsibleAgent:
-          type: string
-          nullable: true
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-        hasAgriParcel:
-          type: string
-          format: uuid
-        isOperatedOn:
-          type: string
-        hasNestedOperation:
-          type: array
-          items:
-            type: string
-            format: uuid
-          readOnly: true
-        hasMeasurement:
-          type: array
-          items:
-            type: string
-            format: uuid
-          readOnly: true
-      required:
-      - activityType
-      - hasAgriParcel
-      - hasMeasurement
-      - hasNestedOperation
-      - hasStartDatetime
-      - id
-      - isOperatedOn
-      - usesAgriculturalMachinery
-    CompostTurningOperation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        operatedOn:
-          type: string
-          format: uuid
-        responsibleAgent:
-          type: string
-          nullable: true
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-      required:
-      - activityType
-      - hasStartDatetime
-      - id
-      - operatedOn
-      - usesAgriculturalMachinery
-    ContactPersonField:
-      type: object
-      properties:
-        firstname:
-          type: string
-        lastname:
-          type: string
-      required:
-      - firstname
-      - lastname
-    CropGrowthStageObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        hasAgriCrop:
-          type: string
-          format: uuid
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-      required:
-      - activityType
-      - hasAgriCrop
-      - hasAgriParcel
-      - hasResult
-      - id
-      - observedProperty
-      - phenomenonTime
-    CropProtectionOperation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        responsibleAgent:
-          type: string
-          nullable: true
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-        hasAppliedAmount:
-          $ref: '#/components/schemas/AppliedAmmountField'
-        usesPesticide:
-          type: string
-          format: uuid
-          nullable: true
-        operatedOn:
-          type: string
-          format: uuid
-      required:
-      - activityType
-      - hasAppliedAmount
-      - hasStartDatetime
-      - id
-      - operatedOn
-      - usesAgriculturalMachinery
-      - usesPesticide
-    CropSpeciesSerializerField:
-      type: object
-      properties:
-        name:
-          type: string
-        variety:
-          type: string
-      required:
-      - name
-      - variety
-    CropStressIndicatorObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        hasAgriCrop:
-          type: string
-          format: uuid
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-      required:
-      - activityType
-      - hasAgriCrop
-      - hasAgriParcel
-      - hasResult
-      - id
-      - observedProperty
-      - phenomenonTime
-    DiseaseDetectionObservation:
+    YieldPredictionObservation:
       type: object
       properties:
         id:
@@ -7470,6 +7092,48 @@ components:
       - id
       - observedProperty
       - phenomenonTime
+    PatchedSprayingRecommendationObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+          nullable: true
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasArea:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+        usesPesticide:
+          type: string
+          format: uuid
+          nullable: true
     Farm:
       type: object
       properties:
@@ -7526,6 +7190,429 @@ components:
       - telephone
       - updated_at
       - vatID
+    ContactPersonField:
+      type: object
+      properties:
+        firstname:
+          type: string
+        lastname:
+          type: string
+      required:
+      - firstname
+      - lastname
+    PatchedYieldPredictionObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+          nullable: true
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasArea:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+    FarmCalendarActivityType:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type: string
+          nullable: true
+        category:
+          $ref: '#/components/schemas/CategoryEnum'
+        background_color:
+          type: string
+          pattern: ^#[0-9A-Fa-f]{6}$
+          maxLength: 7
+        border_color:
+          type: string
+          pattern: ^#[0-9A-Fa-f]{6}$
+          maxLength: 7
+        text_color:
+          type: string
+          pattern: ^#[0-9A-Fa-f]{6}$
+          maxLength: 7
+        activity_endpoint:
+          type: string
+          readOnly: true
+          nullable: true
+          description: The farm activitie API endpoint with the specific details of this activity type.
+      required:
+      - activity_endpoint
+      - id
+      - name
+    UsesIrrigationSystemEnum:
+      enum:
+      - sprinkler
+      - drip
+      - centre_pivot
+      - furrow
+      - terraced
+      type: string
+      description: '* `sprinkler` - Sprinkler
+
+        * `drip` - Drip
+
+        * `centre_pivot` - Centre Pivot
+
+        * `furrow` - Furrow
+
+        * `terraced` - Terraced'
+    CropStressIndicatorObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+          nullable: true
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasAgriCrop:
+          type: string
+          format: uuid
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+      required:
+      - activityType
+      - hasAgriCrop
+      - hasAgriParcel
+      - hasResult
+      - id
+      - observedProperty
+      - phenomenonTime
+    PatchedPesticide:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        hasCommercialName:
+          type: string
+        description:
+          type: string
+          nullable: true
+        hasCost:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        isPricePer:
+          type: string
+        hasActiveSubstance:
+          type: string
+        isTargetedTowards:
+          type: string
+        hasPreharvestInterval:
+          type: integer
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+    SprayingRecommendationObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+          nullable: true
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasArea:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+        usesPesticide:
+          type: string
+          format: uuid
+          nullable: true
+      required:
+      - activityType
+      - hasAgriParcel
+      - hasArea
+      - hasResult
+      - id
+      - observedProperty
+      - phenomenonTime
+      - usesPesticide
+    GenericFarmAsset:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type: string
+          nullable: true
+        hasAgriParcel:
+          type: string
+          format: uuid
+      required:
+      - dateCreated
+      - dateModified
+      - hasAgriParcel
+      - id
+      - invalidatedAtTime
+      - name
+    FarmCalendarActivity:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        hasAgriParcel:
+          type: string
+          format: uuid
+        responsibleAgent:
+          type: string
+          nullable: true
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+      required:
+      - activityType
+      - hasAgriParcel
+      - hasStartDatetime
+      - id
+      - usesAgriculturalMachinery
+    MadeBySensorField:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+      required:
+      - name
+    StatusEnum:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      description: '* `0` - Inactive
+
+        * `1` - Active
+
+        * `2` - Deleted'
+    FarmCrop:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type: string
+          nullable: true
+        hasAgriParcel:
+          type: string
+          format: uuid
+        cropSpecies:
+          $ref: '#/components/schemas/CropSpeciesSerializerField'
+        growth_stage:
+          type: string
+          nullable: true
+          maxLength: 255
+      required:
+      - cropSpecies
+      - dateCreated
+      - dateModified
+      - hasAgriParcel
+      - id
+      - invalidatedAtTime
+      - name
+    PatchedFarmCrop:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type: string
+          nullable: true
+        hasAgriParcel:
+          type: string
+          format: uuid
+        cropSpecies:
+          $ref: '#/components/schemas/CropSpeciesSerializerField'
+        growth_stage:
+          type: string
+          nullable: true
+          maxLength: 255
     FarmAnimal:
       type: object
       properties:
@@ -7589,12 +7676,778 @@ components:
       - id
       - invalidatedAtTime
       - species
+    CropProtectionOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        responsibleAgent:
+          type: string
+          nullable: true
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasAppliedAmount:
+          $ref: '#/components/schemas/AppliedAmmountField'
+        usesPesticide:
+          type: string
+          format: uuid
+          nullable: true
+        operatedOn:
+          type: string
+          format: uuid
+      required:
+      - activityType
+      - hasAppliedAmount
+      - hasStartDatetime
+      - id
+      - operatedOn
+      - usesAgriculturalMachinery
+      - usesPesticide
+    PatchedCropProtectionOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        responsibleAgent:
+          type: string
+          nullable: true
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasAppliedAmount:
+          $ref: '#/components/schemas/AppliedAmmountField'
+        usesPesticide:
+          type: string
+          format: uuid
+          nullable: true
+        operatedOn:
+          type: string
+          format: uuid
+    PatchedObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        hasAgriParcel:
+          type: string
+          format: uuid
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+          nullable: true
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+    PatchedFarmCalendarActivityType:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type: string
+          nullable: true
+        category:
+          $ref: '#/components/schemas/CategoryEnum'
+        background_color:
+          type: string
+          pattern: ^#[0-9A-Fa-f]{6}$
+          maxLength: 7
+        border_color:
+          type: string
+          pattern: ^#[0-9A-Fa-f]{6}$
+          maxLength: 7
+        text_color:
+          type: string
+          pattern: ^#[0-9A-Fa-f]{6}$
+          maxLength: 7
+        activity_endpoint:
+          type: string
+          readOnly: true
+          nullable: true
+          description: The farm activitie API endpoint with the specific details of this activity type.
+    PatchedGenericFarmAsset:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type: string
+          nullable: true
+        hasAgriParcel:
+          type: string
+          format: uuid
+    DiseaseDetectionObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+          nullable: true
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasArea:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+      required:
+      - activityType
+      - hasAgriParcel
+      - hasArea
+      - hasResult
+      - id
+      - observedProperty
+      - phenomenonTime
+    ObservationQuantityValueField:
+      type: object
+      properties:
+        unit:
+          type: string
+          readOnly: true
+          nullable: true
+        hasValue:
+          type: string
+          readOnly: true
+          nullable: true
+      required:
+      - hasValue
+      - unit
+    Pesticide:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        hasCommercialName:
+          type: string
+        description:
+          type: string
+          nullable: true
+        hasCost:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        isPricePer:
+          type: string
+        hasActiveSubstance:
+          type: string
+        isTargetedTowards:
+          type: string
+        hasPreharvestInterval:
+          type: integer
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - dateCreated
+      - dateModified
+      - hasActiveSubstance
+      - hasCommercialName
+      - hasCost
+      - hasPreharvestInterval
+      - id
+      - invalidatedAtTime
+      - isPricePer
+      - isTargetedTowards
+    FertilizationOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        responsibleAgent:
+          type: string
+          nullable: true
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasAppliedAmount:
+          $ref: '#/components/schemas/AppliedAmmountField'
+        hasApplicationMethod:
+          type: string
+          nullable: true
+        usesFertilizer:
+          type: string
+          format: uuid
+          nullable: true
+        operatedOn:
+          type: string
+          format: uuid
+      required:
+      - activityType
+      - hasApplicationMethod
+      - hasAppliedAmount
+      - hasStartDatetime
+      - id
+      - operatedOn
+      - usesAgriculturalMachinery
+      - usesFertilizer
+    PatchedIrrigationOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        responsibleAgent:
+          type: string
+          nullable: true
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasAppliedAmount:
+          $ref: '#/components/schemas/AppliedAmmountField'
+        usesIrrigationSystem:
+          $ref: '#/components/schemas/UsesIrrigationSystemEnum'
+        operatedOn:
+          type: string
+          format: uuid
+    AddressField:
+      type: object
+      properties:
+        adminUnitL1:
+          type: string
+        adminUnitL2:
+          type: string
+        addressArea:
+          type: string
+        municipality:
+          type: string
+        community:
+          type: string
+        locatorName:
+          type: string
+      required:
+      - addressArea
+      - adminUnitL1
+      - adminUnitL2
+      - community
+      - locatorName
+      - municipality
     FarmAnimalGroupSerializerField:
       type: object
       properties:
         hasName:
           type: string
-    FarmCalendarActivity:
+    AddRawMaterialCompostQuantity:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        typeName:
+          type: string
+        quantityValue:
+          $ref: '#/components/schemas/AppliedAmmountField'
+      required:
+      - id
+      - quantityValue
+      - typeName
+    PatchedVigorEstimationObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+          nullable: true
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasArea:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+    PatchedAgriculturalMachine:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type: string
+          nullable: true
+        hasAgriParcel:
+          type: string
+          format: uuid
+        purchase_date:
+          type: string
+          format: date
+        manufacturer:
+          type: string
+          maxLength: 255
+        model:
+          type: string
+          maxLength: 255
+        seria_number:
+          type: string
+          maxLength: 255
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+    AddRawMaterialOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        operatedOn:
+          type: string
+          format: uuid
+        responsibleAgent:
+          type: string
+          nullable: true
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasCompostMaterial:
+          type: array
+          items:
+            $ref: '#/components/schemas/AddRawMaterialCompostQuantity'
+      required:
+      - activityType
+      - hasCompostMaterial
+      - hasStartDatetime
+      - id
+      - operatedOn
+      - usesAgriculturalMachinery
+    PatchedAlert:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        severity:
+          $ref: '#/components/schemas/SeverityEnum'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        validFrom:
+          type: string
+          format: date-time
+        validTo:
+          type: string
+          format: date-time
+        dateIssued:
+          type: string
+          format: date-time
+          readOnly: true
+          nullable: true
+        quantityValue:
+          $ref: '#/components/schemas/ObservationQuantityValueField'
+        relatedObservation:
+          type: string
+          format: uuid
+          nullable: true
+    PatchedFertilizer:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        hasCommercialName:
+          type: string
+        description:
+          type: string
+          nullable: true
+        hasCost:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        isPricePer:
+          type: string
+        hasActiveSubstance:
+          type: string
+        isTargetedTowards:
+          type: string
+        hasNutrientConcentration:
+          type: string
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+    PatchedFertilizationOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        responsibleAgent:
+          type: string
+          nullable: true
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasAppliedAmount:
+          $ref: '#/components/schemas/AppliedAmmountField'
+        hasApplicationMethod:
+          type: string
+          nullable: true
+        usesFertilizer:
+          type: string
+          format: uuid
+          nullable: true
+        operatedOn:
+          type: string
+          format: uuid
+    PatchedCompostTurningOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        operatedOn:
+          type: string
+          format: uuid
+        responsibleAgent:
+          type: string
+          nullable: true
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+    AgriculturalMachine:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type: string
+          nullable: true
+        hasAgriParcel:
+          type: string
+          format: uuid
+        purchase_date:
+          type: string
+          format: date
+        manufacturer:
+          type: string
+          maxLength: 255
+        model:
+          type: string
+          maxLength: 255
+        seria_number:
+          type: string
+          maxLength: 255
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - dateCreated
+      - dateModified
+      - hasAgriParcel
+      - id
+      - invalidatedAtTime
+      - manufacturer
+      - model
+      - name
+      - purchase_date
+      - seria_number
+    PatchedFarmCalendarActivity:
       type: object
       properties:
         id:
@@ -7628,52 +8481,652 @@ components:
           items:
             type: string
             format: uuid
-      required:
-      - activityType
-      - hasAgriParcel
-      - hasStartDatetime
-      - id
-      - usesAgriculturalMachinery
-    FarmCalendarActivityType:
+    SexEnum:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      description: '* `0` - N/A
+
+        * `1` - Female
+
+        * `2` - Male'
+    PatchedCropGrowthStageObservation:
       type: object
       properties:
         id:
           type: string
           format: uuid
           readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+          nullable: true
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasAgriCrop:
+          type: string
+          format: uuid
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+    GenericQuantityValueField:
+      type: object
+      properties:
+        unit:
+          type: string
+          nullable: true
+        hasValue:
+          type: string
+      required:
+      - hasValue
+    CompostOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        responsibleAgent:
+          type: string
+          nullable: true
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasAgriParcel:
+          type: string
+          format: uuid
+        isOperatedOn:
+          type: string
+        hasNestedOperation:
+          type: array
+          items:
+            type: string
+            format: uuid
+          readOnly: true
+        hasMeasurement:
+          type: array
+          items:
+            type: string
+            format: uuid
+          readOnly: true
+      required:
+      - activityType
+      - hasAgriParcel
+      - hasMeasurement
+      - hasNestedOperation
+      - hasStartDatetime
+      - id
+      - isOperatedOn
+      - usesAgriculturalMachinery
+    CropGrowthStageObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+          nullable: true
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasAgriCrop:
+          type: string
+          format: uuid
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+      required:
+      - activityType
+      - hasAgriCrop
+      - hasAgriParcel
+      - hasResult
+      - id
+      - observedProperty
+      - phenomenonTime
+    LocationSerializerField:
+      type: object
+      properties:
+        lat:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,3}(?:\.\d{0,14})?$
+        long:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,3}(?:\.\d{0,14})?$
+      required:
+      - lat
+      - long
+    Observation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        hasAgriParcel:
+          type: string
+          format: uuid
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+          nullable: true
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+      required:
+      - activityType
+      - hasAgriParcel
+      - hasResult
+      - id
+      - observedProperty
+      - phenomenonTime
+    CategoryEnum:
+      enum:
+      - activity
+      - observation
+      - alert
+      type: string
+      description: '* `activity` - Activity
+
+        * `observation` - Observation
+
+        * `alert` - Alert'
+    Fertilizer:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        hasCommercialName:
+          type: string
+        description:
+          type: string
+          nullable: true
+        hasCost:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        isPricePer:
+          type: string
+        hasActiveSubstance:
+          type: string
+        isTargetedTowards:
+          type: string
+        hasNutrientConcentration:
+          type: string
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - dateCreated
+      - dateModified
+      - hasActiveSubstance
+      - hasCommercialName
+      - hasCost
+      - hasNutrientConcentration
+      - id
+      - invalidatedAtTime
+      - isPricePer
+      - isTargetedTowards
+    PatchedFarmParcel:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        deleted_at:
+          type: string
+          format: date-time
+          nullable: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        identifier:
+          type: string
+          maxLength: 255
+        description:
+          type: string
+          nullable: true
+        validFrom:
+          type: string
+          format: date-time
+        validTo:
+          type: string
+          format: date-time
+        area:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        hasIrrigationFlow:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+          nullable: true
+        category:
+          type: string
+        inRegion:
+          type: string
+          nullable: true
+        hasToponym:
+          type: string
+          nullable: true
+        isNitroArea:
+          type: boolean
+        isNatura2000Area:
+          type: boolean
+        isPdopgArea:
+          type: boolean
+        isIrrigated:
+          type: boolean
+        isCultivatedInLevels:
+          type: boolean
+        isGroundSlope:
+          type: boolean
+        depiction:
+          type: string
+          format: uri
+          nullable: true
+          maxLength: 500
+        hasGeometry:
+          $ref: '#/components/schemas/GeometrySerializerField'
+        location:
+          $ref: '#/components/schemas/LocationSerializerField'
+        hasAgriCrop:
+          type: array
+          items:
+            type: string
+            format: uuid
+          readOnly: true
+        farm:
+          type: string
+          format: uuid
+    PatchedCompostOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        responsibleAgent:
+          type: string
+          nullable: true
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasAgriParcel:
+          type: string
+          format: uuid
+        isOperatedOn:
+          type: string
+        hasNestedOperation:
+          type: array
+          items:
+            type: string
+            format: uuid
+          readOnly: true
+        hasMeasurement:
+          type: array
+          items:
+            type: string
+            format: uuid
+          readOnly: true
+    PatchedDiseaseDetectionObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+          nullable: true
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasArea:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+    PatchedAddRawMaterialOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        operatedOn:
+          type: string
+          format: uuid
+        responsibleAgent:
+          type: string
+          nullable: true
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasCompostMaterial:
+          type: array
+          items:
+            $ref: '#/components/schemas/AddRawMaterialCompostQuantity'
+    AppliedAmmountField:
+      type: object
+      properties:
+        unit:
+          type: string
+        numericValue:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,15}(?:\.\d{0,2})?$
+      required:
+      - numericValue
+      - unit
+    CompostTurningOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        operatedOn:
+          type: string
+          format: uuid
+        responsibleAgent:
+          type: string
+          nullable: true
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+      required:
+      - activityType
+      - hasStartDatetime
+      - id
+      - operatedOn
+      - usesAgriculturalMachinery
+    PatchedCropStressIndicatorObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+          nullable: true
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasAgriCrop:
+          type: string
+          format: uuid
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+    CropSpeciesSerializerField:
+      type: object
+      properties:
         name:
           type: string
+        variety:
+          type: string
+      required:
+      - name
+      - variety
+    GeometrySerializerField:
+      type: object
+      properties:
+        asWKT:
+          type: string
+      required:
+      - asWKT
+    SeverityEnum:
+      enum:
+      - minor
+      - moderate
+      - severe
+      - major
+      - critical
+      type: string
+      description: '* `minor` - Minor
+
+        * `moderate` - Moderate
+
+        * `severe` - Severe
+
+        * `major` - Major
+
+        * `critical` - Critical'
+    PatchedFarmAnimal:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        nationalID:
+          type: string
+        name:
+          type: string
+          nullable: true
           maxLength: 100
         description:
           type: string
           nullable: true
-        category:
-          $ref: '#/components/schemas/CategoryEnum'
-        background_color:
+        hasAgriParcel:
           type: string
-          pattern: ^#[0-9A-Fa-f]{6}$
-          maxLength: 7
-        border_color:
+          format: uuid
+        sex:
+          allOf:
+          - $ref: '#/components/schemas/SexEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        isCastrated:
+          type: boolean
+        species:
           type: string
-          pattern: ^#[0-9A-Fa-f]{6}$
-          maxLength: 7
-        text_color:
+          maxLength: 255
+        breed:
           type: string
-          pattern: ^#[0-9A-Fa-f]{6}$
-          maxLength: 7
-        activity_endpoint:
-          type: string
-          readOnly: true
           nullable: true
-          description: The farm activitie API endpoint with the specific details of
-            this activity type.
-      required:
-      - activity_endpoint
-      - id
-      - name
-    FarmCrop:
-      type: object
-      properties:
+          maxLength: 255
+        birthdate:
+          type: string
+          format: date-time
+        isMemberOfAnimalGroup:
+          $ref: '#/components/schemas/FarmAnimalGroupSerializerField'
         status:
           allOf:
           - $ref: '#/components/schemas/StatusEnum'
@@ -7691,33 +9144,52 @@ components:
           type: string
           format: date-time
           readOnly: true
+    VigorEstimationObservation:
+      type: object
+      properties:
         id:
           type: string
           format: uuid
           readOnly: true
-        name:
+        activityType:
           type: string
-          maxLength: 100
-        description:
+          format: uuid
+        title:
           type: string
+          maxLength: 200
+        details:
+          type: string
+          nullable: true
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type: string
+          format: date-time
+          nullable: true
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
           nullable: true
         hasAgriParcel:
           type: string
           format: uuid
-        cropSpecies:
-          $ref: '#/components/schemas/CropSpeciesSerializerField'
-        growth_stage:
+        hasArea:
           type: string
-          nullable: true
-          maxLength: 255
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
       required:
-      - cropSpecies
-      - dateCreated
-      - dateModified
+      - activityType
       - hasAgriParcel
+      - hasArea
+      - hasResult
       - id
-      - invalidatedAtTime
-      - name
+      - observedProperty
+      - phenomenonTime
     FarmParcel:
       type: object
       properties:
@@ -7822,645 +9294,6 @@ components:
       - updated_at
       - validFrom
       - validTo
-    FertilizationOperation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        responsibleAgent:
-          type: string
-          nullable: true
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-        hasAppliedAmount:
-          $ref: '#/components/schemas/AppliedAmmountField'
-        hasApplicationMethod:
-          type: string
-          nullable: true
-        usesFertilizer:
-          type: string
-          format: uuid
-          nullable: true
-        operatedOn:
-          type: string
-          format: uuid
-      required:
-      - activityType
-      - hasApplicationMethod
-      - hasAppliedAmount
-      - hasStartDatetime
-      - id
-      - operatedOn
-      - usesAgriculturalMachinery
-      - usesFertilizer
-    Fertilizer:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        hasCommercialName:
-          type: string
-        description:
-          type: string
-          nullable: true
-        hasCost:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
-        isPricePer:
-          type: string
-        hasActiveSubstance:
-          type: string
-        isTargetedTowards:
-          type: string
-        hasNutrientConcentration:
-          type: string
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        dateCreated:
-          type: string
-          format: date-time
-          readOnly: true
-        dateModified:
-          type: string
-          format: date-time
-          readOnly: true
-        invalidatedAtTime:
-          type: string
-          format: date-time
-          readOnly: true
-      required:
-      - dateCreated
-      - dateModified
-      - hasActiveSubstance
-      - hasCommercialName
-      - hasCost
-      - hasNutrientConcentration
-      - id
-      - invalidatedAtTime
-      - isPricePer
-      - isTargetedTowards
-    GenericFarmAsset:
-      type: object
-      properties:
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        invalidatedAtTime:
-          type: string
-          format: date-time
-          readOnly: true
-        dateCreated:
-          type: string
-          format: date-time
-          readOnly: true
-        dateModified:
-          type: string
-          format: date-time
-          readOnly: true
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        name:
-          type: string
-          maxLength: 100
-        description:
-          type: string
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-      required:
-      - dateCreated
-      - dateModified
-      - hasAgriParcel
-      - id
-      - invalidatedAtTime
-      - name
-    GenericQuantityValueField:
-      type: object
-      properties:
-        unit:
-          type: string
-          nullable: true
-        hasValue:
-          type: string
-      required:
-      - hasValue
-    GeometrySerializerField:
-      type: object
-      properties:
-        asWKT:
-          type: string
-      required:
-      - asWKT
-    IrrigationOperation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        responsibleAgent:
-          type: string
-          nullable: true
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-        hasAppliedAmount:
-          $ref: '#/components/schemas/AppliedAmmountField'
-        usesIrrigationSystem:
-          $ref: '#/components/schemas/UsesIrrigationSystemEnum'
-        operatedOn:
-          type: string
-          format: uuid
-      required:
-      - activityType
-      - hasAppliedAmount
-      - hasStartDatetime
-      - id
-      - operatedOn
-      - usesAgriculturalMachinery
-      - usesIrrigationSystem
-    LocationSerializerField:
-      type: object
-      properties:
-        lat:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,3}(?:\.\d{0,14})?$
-        long:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,3}(?:\.\d{0,14})?$
-      required:
-      - lat
-      - long
-    MadeBySensorField:
-      type: object
-      properties:
-        name:
-          type: string
-          nullable: true
-      required:
-      - name
-    Observation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-      required:
-      - activityType
-      - hasAgriParcel
-      - hasResult
-      - id
-      - observedProperty
-      - phenomenonTime
-    ObservationQuantityValueField:
-      type: object
-      properties:
-        unit:
-          type: string
-          readOnly: true
-          nullable: true
-        hasValue:
-          type: string
-          readOnly: true
-          nullable: true
-      required:
-      - hasValue
-      - unit
-    PatchedAddRawMaterialOperation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        operatedOn:
-          type: string
-          format: uuid
-        responsibleAgent:
-          type: string
-          nullable: true
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-        hasCompostMaterial:
-          type: array
-          items:
-            $ref: '#/components/schemas/AddRawMaterialCompostQuantity'
-    PatchedAgriculturalMachine:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        name:
-          type: string
-          maxLength: 100
-        description:
-          type: string
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        purchase_date:
-          type: string
-          format: date
-        manufacturer:
-          type: string
-          maxLength: 255
-        model:
-          type: string
-          maxLength: 255
-        seria_number:
-          type: string
-          maxLength: 255
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        invalidatedAtTime:
-          type: string
-          format: date-time
-          readOnly: true
-        dateCreated:
-          type: string
-          format: date-time
-          readOnly: true
-        dateModified:
-          type: string
-          format: date-time
-          readOnly: true
-    PatchedAlert:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        severity:
-          $ref: '#/components/schemas/SeverityEnum'
-        hasAgriParcel:
-          type: string
-          format: uuid
-        validFrom:
-          type: string
-          format: date-time
-        validTo:
-          type: string
-          format: date-time
-        dateIssued:
-          type: string
-          format: date-time
-          readOnly: true
-          nullable: true
-        quantityValue:
-          $ref: '#/components/schemas/ObservationQuantityValueField'
-        relatedObservation:
-          type: string
-          format: uuid
-          nullable: true
-    PatchedCompostOperation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        responsibleAgent:
-          type: string
-          nullable: true
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-        hasAgriParcel:
-          type: string
-          format: uuid
-        isOperatedOn:
-          type: string
-        hasNestedOperation:
-          type: array
-          items:
-            type: string
-            format: uuid
-          readOnly: true
-        hasMeasurement:
-          type: array
-          items:
-            type: string
-            format: uuid
-          readOnly: true
-    PatchedCompostTurningOperation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        operatedOn:
-          type: string
-          format: uuid
-        responsibleAgent:
-          type: string
-          nullable: true
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-    PatchedCropGrowthStageObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        hasAgriCrop:
-          type: string
-          format: uuid
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-    PatchedCropProtectionOperation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        responsibleAgent:
-          type: string
-          nullable: true
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-        hasAppliedAmount:
-          $ref: '#/components/schemas/AppliedAmmountField'
-        usesPesticide:
-          type: string
-          format: uuid
-          nullable: true
-        operatedOn:
-          type: string
-          format: uuid
-    PatchedCropStressIndicatorObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        hasAgriCrop:
-          type: string
-          format: uuid
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-    PatchedDiseaseDetectionObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        hasArea:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
     PatchedFarm:
       type: object
       properties:
@@ -8505,843 +9338,15 @@ components:
           $ref: '#/components/schemas/ContactPersonField'
         address:
           $ref: '#/components/schemas/AddressField'
-    PatchedFarmAnimal:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        nationalID:
-          type: string
-        name:
-          type: string
-          nullable: true
-          maxLength: 100
-        description:
-          type: string
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        sex:
-          allOf:
-          - $ref: '#/components/schemas/SexEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        isCastrated:
-          type: boolean
-        species:
-          type: string
-          maxLength: 255
-        breed:
-          type: string
-          nullable: true
-          maxLength: 255
-        birthdate:
-          type: string
-          format: date-time
-        isMemberOfAnimalGroup:
-          $ref: '#/components/schemas/FarmAnimalGroupSerializerField'
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        invalidatedAtTime:
-          type: string
-          format: date-time
-          readOnly: true
-        dateCreated:
-          type: string
-          format: date-time
-          readOnly: true
-        dateModified:
-          type: string
-          format: date-time
-          readOnly: true
-    PatchedFarmCalendarActivity:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        responsibleAgent:
-          type: string
-          nullable: true
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-    PatchedFarmCalendarActivityType:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        name:
-          type: string
-          maxLength: 100
-        description:
-          type: string
-          nullable: true
-        category:
-          $ref: '#/components/schemas/CategoryEnum'
-        background_color:
-          type: string
-          pattern: ^#[0-9A-Fa-f]{6}$
-          maxLength: 7
-        border_color:
-          type: string
-          pattern: ^#[0-9A-Fa-f]{6}$
-          maxLength: 7
-        text_color:
-          type: string
-          pattern: ^#[0-9A-Fa-f]{6}$
-          maxLength: 7
-        activity_endpoint:
-          type: string
-          readOnly: true
-          nullable: true
-          description: The farm activitie API endpoint with the specific details of
-            this activity type.
-    PatchedFarmCrop:
-      type: object
-      properties:
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        invalidatedAtTime:
-          type: string
-          format: date-time
-          readOnly: true
-        dateCreated:
-          type: string
-          format: date-time
-          readOnly: true
-        dateModified:
-          type: string
-          format: date-time
-          readOnly: true
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        name:
-          type: string
-          maxLength: 100
-        description:
-          type: string
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        cropSpecies:
-          $ref: '#/components/schemas/CropSpeciesSerializerField'
-        growth_stage:
-          type: string
-          nullable: true
-          maxLength: 255
-    PatchedFarmParcel:
-      type: object
-      properties:
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        deleted_at:
-          type: string
-          format: date-time
-          nullable: true
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        updated_at:
-          type: string
-          format: date-time
-          readOnly: true
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        identifier:
-          type: string
-          maxLength: 255
-        description:
-          type: string
-          nullable: true
-        validFrom:
-          type: string
-          format: date-time
-        validTo:
-          type: string
-          format: date-time
-        area:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
-        hasIrrigationFlow:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
-          nullable: true
-        category:
-          type: string
-        inRegion:
-          type: string
-          nullable: true
-        hasToponym:
-          type: string
-          nullable: true
-        isNitroArea:
-          type: boolean
-        isNatura2000Area:
-          type: boolean
-        isPdopgArea:
-          type: boolean
-        isIrrigated:
-          type: boolean
-        isCultivatedInLevels:
-          type: boolean
-        isGroundSlope:
-          type: boolean
-        depiction:
-          type: string
-          format: uri
-          nullable: true
-          maxLength: 500
-        hasGeometry:
-          $ref: '#/components/schemas/GeometrySerializerField'
-        location:
-          $ref: '#/components/schemas/LocationSerializerField'
-        hasAgriCrop:
-          type: array
-          items:
-            type: string
-            format: uuid
-          readOnly: true
-        farm:
-          type: string
-          format: uuid
-    PatchedFertilizationOperation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        responsibleAgent:
-          type: string
-          nullable: true
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-        hasAppliedAmount:
-          $ref: '#/components/schemas/AppliedAmmountField'
-        hasApplicationMethod:
-          type: string
-          nullable: true
-        usesFertilizer:
-          type: string
-          format: uuid
-          nullable: true
-        operatedOn:
-          type: string
-          format: uuid
-    PatchedFertilizer:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        hasCommercialName:
-          type: string
-        description:
-          type: string
-          nullable: true
-        hasCost:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
-        isPricePer:
-          type: string
-        hasActiveSubstance:
-          type: string
-        isTargetedTowards:
-          type: string
-        hasNutrientConcentration:
-          type: string
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        dateCreated:
-          type: string
-          format: date-time
-          readOnly: true
-        dateModified:
-          type: string
-          format: date-time
-          readOnly: true
-        invalidatedAtTime:
-          type: string
-          format: date-time
-          readOnly: true
-    PatchedGenericFarmAsset:
-      type: object
-      properties:
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        invalidatedAtTime:
-          type: string
-          format: date-time
-          readOnly: true
-        dateCreated:
-          type: string
-          format: date-time
-          readOnly: true
-        dateModified:
-          type: string
-          format: date-time
-          readOnly: true
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        name:
-          type: string
-          maxLength: 100
-        description:
-          type: string
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-    PatchedIrrigationOperation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        responsibleAgent:
-          type: string
-          nullable: true
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-        hasAppliedAmount:
-          $ref: '#/components/schemas/AppliedAmmountField'
-        usesIrrigationSystem:
-          $ref: '#/components/schemas/UsesIrrigationSystemEnum'
-        operatedOn:
-          type: string
-          format: uuid
-    PatchedObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-    PatchedPesticide:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        hasCommercialName:
-          type: string
-        description:
-          type: string
-          nullable: true
-        hasCost:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
-        isPricePer:
-          type: string
-        hasActiveSubstance:
-          type: string
-        isTargetedTowards:
-          type: string
-        hasPreharvestInterval:
-          type: integer
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        dateCreated:
-          type: string
-          format: date-time
-          readOnly: true
-        dateModified:
-          type: string
-          format: date-time
-          readOnly: true
-        invalidatedAtTime:
-          type: string
-          format: date-time
-          readOnly: true
-    PatchedSprayingRecommendationObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        hasArea:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-        usesPesticide:
-          type: string
-          format: uuid
-          nullable: true
-    PatchedVigorEstimationObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        hasArea:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-    PatchedYieldPredictionObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        hasArea:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-    Pesticide:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        hasCommercialName:
-          type: string
-        description:
-          type: string
-          nullable: true
-        hasCost:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
-        isPricePer:
-          type: string
-        hasActiveSubstance:
-          type: string
-        isTargetedTowards:
-          type: string
-        hasPreharvestInterval:
-          type: integer
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        dateCreated:
-          type: string
-          format: date-time
-          readOnly: true
-        dateModified:
-          type: string
-          format: date-time
-          readOnly: true
-        invalidatedAtTime:
-          type: string
-          format: date-time
-          readOnly: true
-      required:
-      - dateCreated
-      - dateModified
-      - hasActiveSubstance
-      - hasCommercialName
-      - hasCost
-      - hasPreharvestInterval
-      - id
-      - invalidatedAtTime
-      - isPricePer
-      - isTargetedTowards
-    SeverityEnum:
-      enum:
-      - minor
-      - moderate
-      - severe
-      - major
-      - critical
-      type: string
-      description: |-
-        * `minor` - Minor
-        * `moderate` - Moderate
-        * `severe` - Severe
-        * `major` - Major
-        * `critical` - Critical
-    SexEnum:
-      enum:
-      - 0
-      - 1
-      - 2
-      type: integer
-      description: |-
-        * `0` - N/A
-        * `1` - Female
-        * `2` - Male
-    SprayingRecommendationObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        hasArea:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-        usesPesticide:
-          type: string
-          format: uuid
-          nullable: true
-      required:
-      - activityType
-      - hasAgriParcel
-      - hasArea
-      - hasResult
-      - id
-      - observedProperty
-      - phenomenonTime
-      - usesPesticide
-    StatusEnum:
-      enum:
-      - 0
-      - 1
-      - 2
-      type: integer
-      description: |-
-        * `0` - Inactive
-        * `1` - Active
-        * `2` - Deleted
-    UsesIrrigationSystemEnum:
-      enum:
-      - sprinkler
-      - drip
-      - centre_pivot
-      - furrow
-      - terraced
-      type: string
-      description: |-
-        * `sprinkler` - Sprinkler
-        * `drip` - Drip
-        * `centre_pivot` - Centre Pivot
-        * `furrow` - Furrow
-        * `terraced` - Terraced
-    VigorEstimationObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        hasArea:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-      required:
-      - activityType
-      - hasAgriParcel
-      - hasArea
-      - hasResult
-      - id
-      - observedProperty
-      - phenomenonTime
-    YieldPredictionObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        hasArea:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-      required:
-      - activityType
-      - hasAgriParcel
-      - hasArea
-      - hasResult
-      - id
-      - observedProperty
-      - phenomenonTime
   securitySchemes:
-    cookieAuth:
-      type: apiKey
-      in: cookie
-      name: sessionid
+    Bearer_Token:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: '**Required for most operations.**
+
+        1. Login via `/login` to get token.
+
+        2. Paste access token here.
+
+        '

@@ -1,0 +1,163 @@
+openapi: 3.0.3
+info:
+  title: AgStack Asset Registry api Auth API
+  version: 1.0.0
+  description: 'Welcome to the **AgStack Asset Registry** developer portal.
+
+
+    ---
+
+
+    ## 🔐 Authentication Guide
+
+
+    | Service Zone | HTTP Method | Credential Type |
+
+    | :--- | :---: | :--- |
+
+    | **Authentication** | `GET/POST` | **Bearer Token** (where applicable) |
+
+    | **Field Registration** | `POST` | **Bearer Token** |
+
+    | **Field Retrieval** | `GET/POST`| **Bearer Token** (where applicable) |
+
+
+
+    > 🚀 **Quick Start Guide**
+
+    > 1. Login via `/login` to get an `access_token` and `refresh_token`.
+
+    > 2. Use `Bearer_Token` (Lock Icon) to authorize protected routes.
+
+    '
+servers:
+- url: https://api-ar.agstack.org
+  description: Production Server
+tags:
+- name: Auth
+paths:
+  /auth/test:
+    get:
+      summary: Get Payload
+      operationId: get_payload_auth_test_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      security:
+      - HTTPBearer: []
+      tags:
+      - Auth
+  /auth/token:
+    post:
+      summary: Token
+      operationId: token_auth_token_post
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Body_token_auth_token_post'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthToken'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Auth
+components:
+  schemas:
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    Body_token_auth_token_post:
+      properties:
+        grant_type:
+          anyOf:
+          - type: string
+            pattern: password
+          - type: 'null'
+          title: Grant Type
+        username:
+          type: string
+          title: Username
+        password:
+          type: string
+          title: Password
+        scope:
+          type: string
+          title: Scope
+          default: ''
+        client_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Client Id
+        client_secret:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Client Secret
+      type: object
+      required:
+      - username
+      - password
+      title: Body_token_auth_token_post
+    AuthToken:
+      properties:
+        jwt_token:
+          type: string
+          title: Jwt Token
+      type: object
+      required:
+      - jwt_token
+      title: AuthToken
+  securitySchemes:
+    Bearer_Token:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: '**Required for most operations.**
+
+        1. Login via `/login` to get token.
+
+        2. Paste access token here.
+
+        '

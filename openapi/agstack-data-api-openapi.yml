@@ -1,0 +1,478 @@
+openapi: 3.0.3
+info:
+  title: AgStack Asset Registry api Data API
+  version: 1.0.0
+  description: 'Welcome to the **AgStack Asset Registry** developer portal.
+
+
+    ---
+
+
+    ## 🔐 Authentication Guide
+
+
+    | Service Zone | HTTP Method | Credential Type |
+
+    | :--- | :---: | :--- |
+
+    | **Authentication** | `GET/POST` | **Bearer Token** (where applicable) |
+
+    | **Field Registration** | `POST` | **Bearer Token** |
+
+    | **Field Retrieval** | `GET/POST`| **Bearer Token** (where applicable) |
+
+
+
+    > 🚀 **Quick Start Guide**
+
+    > 1. Login via `/login` to get an `access_token` and `refresh_token`.
+
+    > 2. Use `Bearer_Token` (Lock Icon) to authorize protected routes.
+
+    '
+servers:
+- url: https://api-ar.agstack.org
+  description: Production Server
+tags:
+- name: Data
+paths:
+  /api/data/forecast5:
+    get:
+      summary: Get Weather Forecast5Days
+      operationId: get_weather_forecast5days_api_data_forecast5_get
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: lat
+        in: query
+        required: true
+        schema:
+          type: number
+          title: Lat
+      - name: lon
+        in: query
+        required: true
+        schema:
+          type: number
+          title: Lon
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PredictionOut'
+                title: Response Get Weather Forecast5Days Api Data Forecast5 Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Data
+  /api/data/weather:
+    get:
+      summary: Get Weather
+      operationId: get_weather_api_data_weather_get
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: lat
+        in: query
+        required: true
+        schema:
+          type: number
+          title: Lat
+      - name: lon
+        in: query
+        required: true
+        schema:
+          type: number
+          title: Lon
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WeatherDataOut'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Data
+  /api/data/thi:
+    get:
+      summary: Get Thi
+      operationId: get_thi_api_data_thi_get
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: lat
+        in: query
+        required: true
+        schema:
+          type: number
+          title: Lat
+      - name: lon
+        in: query
+        required: true
+        schema:
+          type: number
+          title: Lon
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/THIDataOut'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Data
+  /api/data/flight_forecast5:
+    get:
+      summary: Get Flight Forecast For All Uavs
+      operationId: get_flight_forecast_for_all_uavs_api_data_flight_forecast5_get
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: lat
+        in: query
+        required: true
+        schema:
+          type: number
+          title: Lat
+      - name: lon
+        in: query
+        required: true
+        schema:
+          type: number
+          title: Lon
+      - name: uavmodels
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: array
+            items:
+              type: string
+          - type: 'null'
+          title: Uavmodels
+      - name: status_filter
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: array
+            items:
+              type: string
+          - type: 'null'
+          title: Status Filter
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FlightStatusForecastResponse'
+                title: Response Get Flight Forecast For All Uavs Api Data Flight Forecast5 Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Data
+  /api/data/flight_forecast5/{uavmodel}:
+    get:
+      summary: Get Flight Forecast For Uav
+      operationId: get_flight_forecast_for_uav_api_data_flight_forecast5__uavmodel__get
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: uavmodel
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Uavmodel
+      - name: lat
+        in: query
+        required: true
+        schema:
+          type: number
+          title: Lat
+      - name: lon
+        in: query
+        required: true
+        schema:
+          type: number
+          title: Lon
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FlightStatusForecastResponse'
+                title: Response Get Flight Forecast For Uav Api Data Flight Forecast5  Uavmodel  Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Data
+  /api/data/spray_forecast:
+    get:
+      summary: Get Spray Forecast
+      operationId: get_spray_forecast_api_data_spray_forecast_get
+      security:
+      - HTTPBearer: []
+      parameters:
+      - name: lat
+        in: query
+        required: true
+        schema:
+          type: number
+          title: Lat
+      - name: lon
+        in: query
+        required: true
+        schema:
+          type: number
+          title: Lon
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SprayForecastResponse'
+                title: Response Get Spray Forecast Api Data Spray Forecast Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Data
+components:
+  schemas:
+    GeoJSONTypeEnum:
+      type: string
+      enum:
+      - Point
+      - POLYGON
+      title: GeoJSONTypeEnum
+    THIDataOut:
+      properties:
+        id:
+          type: string
+          format: uuid
+          title: Id
+        spatial_entity:
+          $ref: '#/components/schemas/PointOut'
+        thi:
+          type: number
+          title: Thi
+      type: object
+      required:
+      - id
+      - spatial_entity
+      - thi
+      title: THIDataOut
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    PredictionOut:
+      properties:
+        value:
+          type: number
+          title: Value
+        timestamp:
+          type: string
+          format: date-time
+          title: Timestamp
+        source:
+          type: string
+          title: Source
+        spatial_entity:
+          $ref: '#/components/schemas/PointOut'
+        data_type:
+          type: string
+          title: Data Type
+        measurement_type:
+          type: string
+          title: Measurement Type
+      type: object
+      required:
+      - value
+      - timestamp
+      - source
+      - spatial_entity
+      - data_type
+      - measurement_type
+      title: PredictionOut
+    SprayForecastResponse:
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+          title: Timestamp
+        spray_conditions:
+          $ref: '#/components/schemas/SprayStatus'
+        source:
+          type: string
+          title: Source
+        location:
+          $ref: '#/components/schemas/GeoJSONOut'
+        detailed_status:
+          additionalProperties:
+            type: string
+          type: object
+          title: Detailed Status
+      type: object
+      required:
+      - timestamp
+      - spray_conditions
+      - source
+      - location
+      - detailed_status
+      title: SprayForecastResponse
+    SprayStatus:
+      type: string
+      enum:
+      - optimal
+      - marginal
+      - unsuitable
+      title: SprayStatus
+    FlightStatusForecastResponse:
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+          title: Timestamp
+        uav_model:
+          type: string
+          title: Uav Model
+        status:
+          type: string
+          title: Status
+        weather_source:
+          type: string
+          title: Weather Source
+        location:
+          $ref: '#/components/schemas/GeoJSONOut'
+        weather_params:
+          additionalProperties:
+            type: number
+          type: object
+          title: Weather Params
+      type: object
+      required:
+      - timestamp
+      - uav_model
+      - status
+      - weather_source
+      - location
+      - weather_params
+      title: FlightStatusForecastResponse
+    WeatherDataOut:
+      properties:
+        id:
+          type: string
+          format: uuid
+          title: Id
+        spatial_entity:
+          $ref: '#/components/schemas/PointOut'
+        data:
+          type: object
+          title: Data
+      type: object
+      required:
+      - id
+      - spatial_entity
+      - data
+      title: WeatherDataOut
+    PointOut:
+      properties:
+        location:
+          $ref: '#/components/schemas/GeoJSONOut'
+      type: object
+      required:
+      - location
+      title: PointOut
+    GeoJSONOut:
+      properties:
+        type:
+          $ref: '#/components/schemas/GeoJSONTypeEnum'
+        coordinates:
+          items: {}
+          type: array
+          title: Coordinates
+      type: object
+      required:
+      - type
+      - coordinates
+      title: GeoJSONOut
+  securitySchemes:
+    Bearer_Token:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: '**Required for most operations.**
+
+        1. Login via `/login` to get token.
+
+        2. Paste access token here.
+
+        '
