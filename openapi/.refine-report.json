@@ -1,0 +1,26 @@
+{
+  "provider": "agstack",
+  "sources": [
+    "agstack-api-api-openapi.yml",
+    "agstack-auth-api-openapi.yml",
+    "agstack-authentication-api-openapi.yml",
+    "agstack-data-api-openapi.yml",
+    "agstack-field-registration-post-api-openapi.yml",
+    "agstack-field-retrieval-queries-api-openapi.yml",
+    "agstack-linkeddata-api-openapi.yml"
+  ],
+  "outputs": [
+    "agstack-api-api-openapi.yml",
+    "agstack-auth-api-openapi.yml",
+    "agstack-authentication-api-openapi.yml",
+    "agstack-data-api-openapi.yml",
+    "agstack-field-registration-post-api-openapi.yml",
+    "agstack-field-retrieval-queries-api-openapi.yml",
+    "agstack-linkeddata-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
