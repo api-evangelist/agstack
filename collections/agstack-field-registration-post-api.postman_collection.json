@@ -1,0 +1,672 @@
+{
+  "item": [
+    {
+      "id": "81ca22d6-be3e-454a-aeec-8ea7fa37b575",
+      "name": "Field Registration (POST)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "adad551f-9de3-4561-b4e1-d76865559edd",
+          "name": "📍 Register Field Boundary (WKT)",
+          "request": {
+            "name": "📍 Register Field Boundary (WKT)",
+            "description": {},
+            "url": {
+              "path": [
+                "register-field-boundary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"wkt\": \"<string>\",\n  \"threshold\": 95,\n  \"return_s2_indices\": false,\n  \"s2_index\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8da72213-13b4-4b31-ba03-b82adc133adb",
+              "name": "Field Boundary registered successfully or already exists.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "register-field-boundary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"wkt\": \"POLYGON((75.78209 30.90706, 75.78211 30.90645, 75.78270 30.90654, 75.78262 30.90714, 75.78209 30.90706))\",\n  \"threshold\": 95,\n  \"return_s2_indices\": false,\n  \"s2_index\": \"8,13\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7064efcf-6fe3-443d-8faa-93dce242439a",
+              "name": "Generic Error Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "register-field-boundary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"wkt\": \"POLYGON((75.78209 30.90706, 75.78211 30.90645, 75.78270 30.90654, 75.78262 30.90714, 75.78209 30.90706))\",\n  \"threshold\": 95,\n  \"return_s2_indices\": false,\n  \"s2_index\": \"8,13\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Error description\",\n  \"error\": \"Detailed exception message\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4305d84d-0b5e-4d38-af1e-51f41460752a",
+          "name": "📂 Bulk Register Field Boundaries (GeoJSON File)",
+          "request": {
+            "name": "📂 Bulk Register Field Boundaries (GeoJSON File)",
+            "description": {
+              "content": "Bulk register Field Boundaries using a GeoJSON FeatureCollection. \nSupports both multipart file upload (`.geojson`) and raw JSON body.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "register-field-boundaries-geojson"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": "Upload a valid .geojson file"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "efa51ae9-fbf9-4e62-8f54-5f176cc74754",
+              "name": "Bulk registration completed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "register-field-boundaries-geojson"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "Upload a valid .geojson file",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "655f006c-712b-484d-9f50-b000a3b1c6f2",
+              "name": "Generic Error Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "register-field-boundaries-geojson"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "Upload a valid .geojson file",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Error description\",\n  \"error\": \"Detailed exception message\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d67893ff-2c82-4b7e-9fbb-e32a82e4ee82",
+          "name": "🎯 Register a Point",
+          "request": {
+            "name": "🎯 Register a Point",
+            "description": {},
+            "url": {
+              "path": [
+                "register-point"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"wkt\": \"<string>\",\n  \"s2_index\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a9b1a52b-b78e-4766-be35-03685d6bc9b9",
+              "name": "Point registered successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "register-point"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"wkt\": \"POINT(75.78209 30.90706)\",\n  \"s2_index\": \"8,13\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "13359047-1643-45eb-9db1-46a0e576672c",
+              "name": "Generic Error Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "register-point"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"wkt\": \"POINT(75.78209 30.90706)\",\n  \"s2_index\": \"8,13\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Error description\",\n  \"error\": \"Detailed exception message\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "51ae8b15-32b3-4816-9c1c-4a598337579f",
+          "name": "📂 Bulk Register Points (GeoJSON)",
+          "request": {
+            "name": "📂 Bulk Register Points (GeoJSON)",
+            "description": {
+              "content": "Bulk register points using a GeoJSON FeatureCollection. \nSupports both multipart file upload (`.geojson`) and raw JSON body.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "register-points-geojson"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": "Upload a valid .geojson file containing Point features."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "04394fc2-59bc-4c73-bce7-42ba01210342",
+              "name": "Bulk point registration completed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "register-points-geojson"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "Upload a valid .geojson file containing Point features.",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Bulk point registration completed\",\n  \"results\": [\n    {\n      \"status\": \"created\",\n      \"message\": \"Point registered successfully.\",\n      \"Geo Id\": \"string\",\n      \"Geo JSON\": {}\n    },\n    {\n      \"status\": \"created\",\n      \"message\": \"Point registered successfully.\",\n      \"Geo Id\": \"string\",\n      \"Geo JSON\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9078d3c2-0b57-442b-be0e-cd13f19e5df7",
+              "name": "Generic Error Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "register-points-geojson"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "Upload a valid .geojson file containing Point features.",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Error description\",\n  \"error\": \"Detailed exception message\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-ar.agstack.org",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6a0675b0-7a89-4714-a446-43800cd024bb",
+    "name": "AgStack Asset Registry api Field Registration (POST) API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Welcome to the **AgStack Asset Registry** developer portal.\n\n---\n\n## 🔐 Authentication Guide\n\n| Service Zone | HTTP Method | Credential Type |\n| :--- | :---: | :--- |\n| **Authentication** | `GET/POST` | **Bearer Token** (where applicable) |\n| **Field Registration** | `POST` | **Bearer Token** |\n| **Field Retrieval** | `GET/POST`| **Bearer Token** (where applicable) |\n\n\n> 🚀 **Quick Start Guide**\n> 1. Login via `/login` to get an `access_token` and `refresh_token`.\n> 2. Use `Bearer_Token` (Lock Icon) to authorize protected routes.\n",
+      "type": "text/plain"
+    }
+  }
+}

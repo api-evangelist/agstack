@@ -1,0 +1,148 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AgStack Asset Registry api Linkeddata API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Linkeddata",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Weather Forecast5Days Ld",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ar.agstack.org/api/linkeddata/forecast5",
+            "params": [
+              {
+                "name": "lat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lon",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Weather Forecast5Days Ld"
+        },
+        {
+          "info": {
+            "name": "Get Thi Ld",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ar.agstack.org/api/linkeddata/thi",
+            "params": [
+              {
+                "name": "lat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lon",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Thi Ld"
+        },
+        {
+          "info": {
+            "name": "Get Flight Forecast For All Uavs Ld",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ar.agstack.org/api/linkeddata/flight_forecast5",
+            "params": [
+              {
+                "name": "lat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lon",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "uavmodels",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "status_filter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Flight Forecast For All Uavs Ld"
+        },
+        {
+          "info": {
+            "name": "Get Flight Forecast For Uav Ld",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ar.agstack.org/api/linkeddata/flight_forecast5/:uavmodel",
+            "params": [
+              {
+                "name": "uavmodel",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "lat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lon",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Flight Forecast For Uav Ld"
+        },
+        {
+          "info": {
+            "name": "Get Spray Forecast Ld",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ar.agstack.org/api/linkeddata/spray_forecast",
+            "params": [
+              {
+                "name": "lat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lon",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Spray Forecast Ld"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

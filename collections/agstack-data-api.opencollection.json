@@ -1,0 +1,171 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AgStack Asset Registry api Data API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Data",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Weather Forecast5Days",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ar.agstack.org/api/data/forecast5",
+            "params": [
+              {
+                "name": "lat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lon",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Weather Forecast5Days"
+        },
+        {
+          "info": {
+            "name": "Get Weather",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ar.agstack.org/api/data/weather",
+            "params": [
+              {
+                "name": "lat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lon",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Weather"
+        },
+        {
+          "info": {
+            "name": "Get Thi",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ar.agstack.org/api/data/thi",
+            "params": [
+              {
+                "name": "lat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lon",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Thi"
+        },
+        {
+          "info": {
+            "name": "Get Flight Forecast For All Uavs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ar.agstack.org/api/data/flight_forecast5",
+            "params": [
+              {
+                "name": "lat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lon",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "uavmodels",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "status_filter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Flight Forecast For All Uavs"
+        },
+        {
+          "info": {
+            "name": "Get Flight Forecast For Uav",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ar.agstack.org/api/data/flight_forecast5/:uavmodel",
+            "params": [
+              {
+                "name": "uavmodel",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "lat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lon",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Flight Forecast For Uav"
+        },
+        {
+          "info": {
+            "name": "Get Spray Forecast",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ar.agstack.org/api/data/spray_forecast",
+            "params": [
+              {
+                "name": "lat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lon",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Spray Forecast"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

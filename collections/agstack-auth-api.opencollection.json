@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AgStack Asset Registry api Auth API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Auth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Payload",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-ar.agstack.org/auth/test"
+          },
+          "docs": "Get Payload"
+        },
+        {
+          "info": {
+            "name": "Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ar.agstack.org/auth/token",
+            "body": {
+              "type": "form-urlencoded",
+              "data": []
+            }
+          },
+          "docs": "Token"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

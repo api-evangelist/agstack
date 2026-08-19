@@ -1,0 +1,166 @@
+{
+  "item": [
+    {
+      "id": "f6814e35-085e-42ed-a906-228396a72522",
+      "name": "Authentication",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "69f3b7b6-0b93-4753-92c7-254b06a7bf6d",
+          "name": "🔐 User Login",
+          "request": {
+            "name": "🔐 User Login",
+            "description": {
+              "content": "Login to the Asset Registry using email and password.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "login"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<email>\",\n  \"password\": \"<password>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "032ef003-1f4b-46c4-83cd-8876911a9250",
+              "name": "Successful Login",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "login"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"demo@gmail.com\",\n  \"password\": \"Demo@1234\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"access_token\": \"string\",\n  \"refresh_token\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1638c995-589a-4c51-ba02-5f85d7bdf9c6",
+              "name": "Generic Error Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "login"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"demo@gmail.com\",\n  \"password\": \"Demo@1234\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Error description\",\n  \"error\": \"Detailed exception message\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-ar.agstack.org",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f818855e-37da-42a4-bedf-bb262b1e56c3",
+    "name": "AgStack Asset Registry api Authentication API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Welcome to the **AgStack Asset Registry** developer portal.\n\n---\n\n## 🔐 Authentication Guide\n\n| Service Zone | HTTP Method | Credential Type |\n| :--- | :---: | :--- |\n| **Authentication** | `GET/POST` | **Bearer Token** (where applicable) |\n| **Field Registration** | `POST` | **Bearer Token** |\n| **Field Retrieval** | `GET/POST`| **Bearer Token** (where applicable) |\n\n\n> 🚀 **Quick Start Guide**\n> 1. Login via `/login` to get an `access_token` and `refresh_token`.\n> 2. Use `Bearer_Token` (Lock Icon) to authorize protected routes.\n",
+      "type": "text/plain"
+    }
+  }
+}

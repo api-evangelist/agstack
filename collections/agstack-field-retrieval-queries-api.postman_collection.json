@@ -1,0 +1,622 @@
+{
+  "item": [
+    {
+      "id": "0db3e5bc-bd20-4c8d-a4d9-416d51cf11a9",
+      "name": "Field Retrieval & Queries",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ae3ff399-67a3-4f04-a30b-8fb6ebb56a6e",
+          "name": "🗺️ Fetch Field Data",
+          "request": {
+            "name": "🗺️ Fetch Field Data",
+            "description": {},
+            "url": {
+              "path": [
+                "fetch-field",
+                ":geo_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "s2_index",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "geo_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e3fa5c5e-dbe1-4fc3-a6cf-4d77f2f3ce5d",
+              "name": "Field fetched successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fetch-field",
+                    ":geo_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "s2_index",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "geo_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "26dc1d5e-da9f-4f56-861c-0e58837b8abc",
+              "name": "Generic Error Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fetch-field",
+                    ":geo_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "s2_index",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "geo_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Error description\",\n  \"error\": \"Detailed exception message\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "989eed3a-ea12-4eee-b0a5-a82370a2a30b",
+              "name": "Field not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fetch-field",
+                    ":geo_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "s2_index",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "geo_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "52bc52e8-0d50-4f50-8c81-852c6f60515d",
+          "name": "📐 Fetch Field WKT",
+          "request": {
+            "name": "📐 Fetch Field WKT",
+            "description": {},
+            "url": {
+              "path": [
+                "fetch-field-wkt",
+                ":geo_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "geo_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0a9b07cd-e66a-439c-ac01-fd47d0c1f94b",
+              "name": "WKT fetched successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fetch-field-wkt",
+                    ":geo_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "geo_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "34d9e7cb-7f97-4157-a461-b3a71b418798",
+              "name": "Generic Error Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fetch-field-wkt",
+                    ":geo_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "geo_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Error description\",\n  \"error\": \"Detailed exception message\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f3228f34-f208-499c-935a-8d3e7ff59788",
+          "name": "📌 Fetch Field Centroid",
+          "request": {
+            "name": "📌 Fetch Field Centroid",
+            "description": {},
+            "url": {
+              "path": [
+                "fetch-field-centroid",
+                ":geo_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "geo_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "794a719d-ca39-4ccd-ade3-9839e8a636a6",
+              "name": "Centroid fetched successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fetch-field-centroid",
+                    ":geo_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "geo_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f0c17d48-8090-4a92-a11b-fe2c45060050",
+              "name": "Generic Error Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fetch-field-centroid",
+                    ":geo_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "geo_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Error description\",\n  \"error\": \"Detailed exception message\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3ba2d140-a03c-469f-82e6-ee1825dfaa05",
+          "name": "📊 Get Percentage Overlap",
+          "request": {
+            "name": "📊 Get Percentage Overlap",
+            "description": {},
+            "url": {
+              "path": [
+                "get-percentage-overlap-two-fields"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"geo_id_field_1\": \"<string>\",\n  \"geo_id_field_2\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "db8471cc-3d7a-4ddd-b695-0337697fd194",
+              "name": "Overlap percentage calculated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-percentage-overlap-two-fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"geo_id_field_1\": \"<string>\",\n  \"geo_id_field_2\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dcdae831-42dc-4331-8671-c6bc969f2283",
+              "name": "Generic Error Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-percentage-overlap-two-fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"geo_id_field_1\": \"<string>\",\n  \"geo_id_field_2\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Error description\",\n  \"error\": \"Detailed exception message\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "edc66403-800e-4d05-934a-fca922be15e1",
+              "name": "Field not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-percentage-overlap-two-fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"geo_id_field_1\": \"<string>\",\n  \"geo_id_field_2\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-ar.agstack.org",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "47e152f3-5b43-41dc-849f-94030093ce66",
+    "name": "AgStack Asset Registry api Field Retrieval & Queries API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Welcome to the **AgStack Asset Registry** developer portal.\n\n---\n\n## 🔐 Authentication Guide\n\n| Service Zone | HTTP Method | Credential Type |\n| :--- | :---: | :--- |\n| **Authentication** | `GET/POST` | **Bearer Token** (where applicable) |\n| **Field Registration** | `POST` | **Bearer Token** |\n| **Field Retrieval** | `GET/POST`| **Bearer Token** (where applicable) |\n\n\n> 🚀 **Quick Start Guide**\n> 1. Login via `/login` to get an `access_token` and `refresh_token`.\n> 2. Use `Bearer_Token` (Lock Icon) to authorize protected routes.\n",
+      "type": "text/plain"
+    }
+  }
+}

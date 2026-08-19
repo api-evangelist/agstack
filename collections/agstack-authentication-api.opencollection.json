@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AgStack Asset Registry api Authentication API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "🔐 User Login",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-ar.agstack.org/login",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Login to the Asset Registry using email and password."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
