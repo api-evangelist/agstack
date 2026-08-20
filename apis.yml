@@ -5,7 +5,8 @@ apis:
   name: AgStack Foundation api API
   description: The api API from AgStack Foundation — 57 operation(s) for api.
   humanURL: https://github.com/agstack/OpenAgri-WeatherService
-  tags:
+  tags: []
+  tags_raw:
   - api
   properties:
   - type: OpenAPI
@@ -119,6 +120,8 @@ apis:
   description: The Auth API from AgStack Foundation — 2 operation(s) for auth.
   humanURL: https://github.com/agstack/OpenAgri-WeatherService
   tags:
+  - Authentication
+  tags_raw:
   - Auth
   properties:
   - type: OpenAPI
@@ -687,6 +690,8 @@ apis:
   description: The Linkeddata API from AgStack Foundation — 5 operation(s) for linkeddata.
   humanURL: https://github.com/agstack/OpenAgri-WeatherService
   tags:
+  - Linked Data
+  tags_raw:
   - Linkeddata
   properties:
   - type: OpenAPI
@@ -885,6 +890,13 @@ common:
           asset registry
 name: AgStack Foundation
 tags:
+  - Agriculture
+  - Linux Foundation
+  - Open-Source
+  - Geospatial
+  - Precision Agriculture
+  - Linked Data
+tags_raw:
   - Agriculture
   - Linux Foundation
   - Open Source
