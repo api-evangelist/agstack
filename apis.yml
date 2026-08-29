@@ -801,6 +801,9 @@ apis:
   - type: Examples
     url: examples/agstack-asset-registry-bulkpointresult-example.json
 common:
+  - type: CapabilityMap
+    url: capabilities/agstack-capability-edges.yml
+    name: AgStack Foundation Business Capability Map
   - type: AgenticAccess
     url: agentic-access/agstack-agentic-access.yml
   - type: DomainSecurity

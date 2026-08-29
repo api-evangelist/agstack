@@ -1,0 +1,33 @@
+slug: agstack
+provider: AgStack Foundation
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Agriculture & Food Production
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Field Registration (POST)
+  spec_file: agstack-field-registration-post-api-openapi.yml
+  capability_id: BC-3540.20
+  capability_id_l1: BC-3540
+  capability_name: Field and Parcel Management
+  confidence: 0.85
+  evidence: POST /register-field-boundary  📍 Register Field Boundary (WKT); POST /register-field-boundaries-geojson  📂
+    Bulk Register Field Boundaries (GeoJSON File)
+  reason: Registration of field boundaries with unique geo IDs is field boundary records at parcel level.
+- tag: Field Retrieval & Queries
+  spec_file: agstack-field-retrieval-queries-api-openapi.yml
+  capability_id: BC-3540.20
+  capability_id_l1: BC-3540
+  capability_name: Field and Parcel Management
+  confidence: 0.85
+  evidence: GET /fetch-field/{geo_id}  🗺️ Fetch Field Data; GET /fetch-field-wkt/{geo_id}  📐 Fetch Field
+    WKT; POST /get-percentage-overlap-two-fields
+  reason: Retrieval and geometric querying of registered field boundaries is field and parcel record management.
