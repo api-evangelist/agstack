@@ -690,7 +690,7 @@ apis:
   description: The Linkeddata API from AgStack Foundation — 5 operation(s) for linkeddata.
   humanURL: https://github.com/agstack/OpenAgri-WeatherService
   tags:
-  - Linkeddata
+  - Linked Data
   tags_raw:
   - Linkeddata
   properties:
