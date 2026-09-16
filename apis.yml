@@ -2,7 +2,7 @@ aid: agstack
 url: https://raw.githubusercontent.com/api-evangelist/agstack/refs/heads/main/apis.yml
 apis:
 - aid: agstack:agstack-api-api
-  name: AgStack Foundation api API
+  name: AgStack Foundation api
   description: The api API from AgStack Foundation — 57 operation(s) for api.
   humanURL: https://github.com/agstack/OpenAgri-WeatherService
   tags: []
@@ -48,8 +48,7 @@ apis:
   - type: JSONStructure
     url: json-structure/agstack-openagri-weather-service-sprayforecastresponse-structure.json
   - type: JSONStructure
-    url: >-
-      json-structure/agstack-openagri-weather-service-flightstatusforecastresponse-structure.json
+    url: json-structure/agstack-openagri-weather-service-flightstatusforecastresponse-structure.json
   - type: JSONStructure
     url: json-structure/agstack-openagri-weather-service-geojsonout-structure.json
   - type: JSONStructure
@@ -63,8 +62,7 @@ apis:
   - type: JSONStructure
     url: json-structure/agstack-openagri-weather-service-httpvalidationerror-structure.json
   - type: JSONStructure
-    url: >-
-      json-structure/agstack-openagri-weather-service-body-token-auth-token-post-structure.json
+    url: json-structure/agstack-openagri-weather-service-body-token-auth-token-post-structure.json
   - type: Examples
     url: examples/agstack-openagri-weather-service-predictionout-example.json
   - type: Examples
@@ -163,8 +161,7 @@ apis:
   - type: JSONStructure
     url: json-structure/agstack-openagri-weather-service-sprayforecastresponse-structure.json
   - type: JSONStructure
-    url: >-
-      json-structure/agstack-openagri-weather-service-flightstatusforecastresponse-structure.json
+    url: json-structure/agstack-openagri-weather-service-flightstatusforecastresponse-structure.json
   - type: JSONStructure
     url: json-structure/agstack-openagri-weather-service-geojsonout-structure.json
   - type: JSONStructure
@@ -178,8 +175,7 @@ apis:
   - type: JSONStructure
     url: json-structure/agstack-openagri-weather-service-httpvalidationerror-structure.json
   - type: JSONStructure
-    url: >-
-      json-structure/agstack-openagri-weather-service-body-token-auth-token-post-structure.json
+    url: json-structure/agstack-openagri-weather-service-body-token-auth-token-post-structure.json
   - type: Examples
     url: examples/agstack-openagri-weather-service-predictionout-example.json
   - type: Examples
@@ -276,8 +272,7 @@ apis:
   - type: JSONStructure
     url: json-structure/agstack-openagri-weather-service-sprayforecastresponse-structure.json
   - type: JSONStructure
-    url: >-
-      json-structure/agstack-openagri-weather-service-flightstatusforecastresponse-structure.json
+    url: json-structure/agstack-openagri-weather-service-flightstatusforecastresponse-structure.json
   - type: JSONStructure
     url: json-structure/agstack-openagri-weather-service-geojsonout-structure.json
   - type: JSONStructure
@@ -291,8 +286,7 @@ apis:
   - type: JSONStructure
     url: json-structure/agstack-openagri-weather-service-httpvalidationerror-structure.json
   - type: JSONStructure
-    url: >-
-      json-structure/agstack-openagri-weather-service-body-token-auth-token-post-structure.json
+    url: json-structure/agstack-openagri-weather-service-body-token-auth-token-post-structure.json
   - type: Examples
     url: examples/agstack-openagri-weather-service-predictionout-example.json
   - type: Examples
@@ -389,8 +383,7 @@ apis:
   - type: JSONStructure
     url: json-structure/agstack-openagri-weather-service-sprayforecastresponse-structure.json
   - type: JSONStructure
-    url: >-
-      json-structure/agstack-openagri-weather-service-flightstatusforecastresponse-structure.json
+    url: json-structure/agstack-openagri-weather-service-flightstatusforecastresponse-structure.json
   - type: JSONStructure
     url: json-structure/agstack-openagri-weather-service-geojsonout-structure.json
   - type: JSONStructure
@@ -404,8 +397,7 @@ apis:
   - type: JSONStructure
     url: json-structure/agstack-openagri-weather-service-httpvalidationerror-structure.json
   - type: JSONStructure
-    url: >-
-      json-structure/agstack-openagri-weather-service-body-token-auth-token-post-structure.json
+    url: json-structure/agstack-openagri-weather-service-body-token-auth-token-post-structure.json
   - type: Examples
     url: examples/agstack-openagri-weather-service-predictionout-example.json
   - type: Examples
@@ -458,8 +450,7 @@ apis:
     url: examples/agstack-asset-registry-bulkpointresult-example.json
 - aid: agstack:agstack-field-registration-post-api
   name: AgStack Foundation Field Registration (POST) API
-  description: >-
-    The Field Registration (POST) API from AgStack Foundation — 4 operation(s) for field registration
+  description: The Field Registration (POST) API from AgStack Foundation — 4 operation(s) for field registration
     (post).
   humanURL: https://github.com/agstack/OpenAgri-WeatherService
   tags:
@@ -504,8 +495,7 @@ apis:
   - type: JSONStructure
     url: json-structure/agstack-openagri-weather-service-sprayforecastresponse-structure.json
   - type: JSONStructure
-    url: >-
-      json-structure/agstack-openagri-weather-service-flightstatusforecastresponse-structure.json
+    url: json-structure/agstack-openagri-weather-service-flightstatusforecastresponse-structure.json
   - type: JSONStructure
     url: json-structure/agstack-openagri-weather-service-geojsonout-structure.json
   - type: JSONStructure
@@ -519,8 +509,7 @@ apis:
   - type: JSONStructure
     url: json-structure/agstack-openagri-weather-service-httpvalidationerror-structure.json
   - type: JSONStructure
-    url: >-
-      json-structure/agstack-openagri-weather-service-body-token-auth-token-post-structure.json
+    url: json-structure/agstack-openagri-weather-service-body-token-auth-token-post-structure.json
   - type: Examples
     url: examples/agstack-openagri-weather-service-predictionout-example.json
   - type: Examples
@@ -573,8 +562,8 @@ apis:
     url: examples/agstack-asset-registry-bulkpointresult-example.json
 - aid: agstack:agstack-field-retrieval-queries-api
   name: AgStack Foundation Field Retrieval & Queries API
-  description: >-
-    The Field Retrieval & Queries API from AgStack Foundation — 4 operation(s) for field retrieval & queries.
+  description: The Field Retrieval & Queries API from AgStack Foundation — 4 operation(s) for field retrieval
+    & queries.
   humanURL: https://github.com/agstack/OpenAgri-WeatherService
   tags:
   - Field Retrieval & Queries
@@ -618,8 +607,7 @@ apis:
   - type: JSONStructure
     url: json-structure/agstack-openagri-weather-service-sprayforecastresponse-structure.json
   - type: JSONStructure
-    url: >-
-      json-structure/agstack-openagri-weather-service-flightstatusforecastresponse-structure.json
+    url: json-structure/agstack-openagri-weather-service-flightstatusforecastresponse-structure.json
   - type: JSONStructure
     url: json-structure/agstack-openagri-weather-service-geojsonout-structure.json
   - type: JSONStructure
@@ -633,8 +621,7 @@ apis:
   - type: JSONStructure
     url: json-structure/agstack-openagri-weather-service-httpvalidationerror-structure.json
   - type: JSONStructure
-    url: >-
-      json-structure/agstack-openagri-weather-service-body-token-auth-token-post-structure.json
+    url: json-structure/agstack-openagri-weather-service-body-token-auth-token-post-structure.json
   - type: Examples
     url: examples/agstack-openagri-weather-service-predictionout-example.json
   - type: Examples
@@ -733,8 +720,7 @@ apis:
   - type: JSONStructure
     url: json-structure/agstack-openagri-weather-service-sprayforecastresponse-structure.json
   - type: JSONStructure
-    url: >-
-      json-structure/agstack-openagri-weather-service-flightstatusforecastresponse-structure.json
+    url: json-structure/agstack-openagri-weather-service-flightstatusforecastresponse-structure.json
   - type: JSONStructure
     url: json-structure/agstack-openagri-weather-service-geojsonout-structure.json
   - type: JSONStructure
@@ -748,8 +734,7 @@ apis:
   - type: JSONStructure
     url: json-structure/agstack-openagri-weather-service-httpvalidationerror-structure.json
   - type: JSONStructure
-    url: >-
-      json-structure/agstack-openagri-weather-service-body-token-auth-token-post-structure.json
+    url: json-structure/agstack-openagri-weather-service-body-token-auth-token-post-structure.json
   - type: Examples
     url: examples/agstack-openagri-weather-service-predictionout-example.json
   - type: Examples
@@ -801,113 +786,110 @@ apis:
   - type: Examples
     url: examples/agstack-asset-registry-bulkpointresult-example.json
 common:
-  - type: Website
-    url: https://www.agstack.org/
-  - type: CapabilityMap
-    url: capabilities/agstack-capability-edges.yml
-    name: AgStack Foundation Business Capability Map
-  - type: AgenticAccess
-    url: agentic-access/agstack-agentic-access.yml
-  - type: DomainSecurity
-    url: security/agstack-domain-security.yml
-  - type: Authentication
-    url: authentication/agstack-authentication.yml
-  - url: https://agstack.org/feed/
-    type: Blog
-  - url: https://agstack.org/
-    type: Portal
-  - url: https://agstack.org/projects/
-    type: Documentation
-  - url: https://github.com/agstack
-    type: GitHubOrganization
-  - url: https://agstack.org/about/
-    type: About
-  - url: https://lfaidata.foundation/
-    type: About
-    title: Linux Foundation AI and Data
-  - url: json-ld/agstack-context.jsonld
-    type: JSONLD
-  - url: rules/agstack-spectral-rules.yml
-    type: SpectralRules
-  - url: vocabulary/agstack-vocabulary.yaml
-    type: Vocabulary
-  - type: Features
-    data:
-      - name: Field Boundary Registry
-        description: >-
-          Global registry for agricultural field boundaries — submit WKT or GeoJSON geometry, receive a permanent unique
-          16-character geo ID
-      - name: Agricultural Weather Intelligence
-        description: >-
-          5-day weather forecasts, current conditions, and agricultural indicators including THI, spray conditions, and
-          UAV flight suitability
-      - name: Digital Farm Calendar
-        description: >-
-          Record and manage farm operations (planting, irrigation, spraying, harvesting) with linked data (JSON-LD/OCSM)
-          output
-      - name: Linked Data Support
-        description: >-
-          All APIs support JSON-LD output conforming to the OpenAgri Common Semantic Model (OCSM) for semantic
-          interoperability
-      - name: EUDR Compliance Support
-        description: >-
-          Tools for EU Deforestation Regulation compliance — field boundary registration and supply chain traceability
-          via INATrace
-      - name: Irrigation Management
-        description: Evapotranspiration (ETo) calculations and soil moisture analysis for data-driven irrigation decisions
-      - name: Open Source Infrastructure
-        description: All tools are Apache-2.0 licensed, Docker-ready, and deployable on any cloud or on-premises infrastructure
-  - type: UseCases
-    data:
-      - name: Farmer Field Registration
-        description: >-
-          Farmers and agri-cooperatives register field boundaries in the global asset registry to enable data-driven
-          farm management
-      - name: Crop Protection Planning
-        description: >-
-          Check spray conditions and UAV flight forecasts before applying pesticides or fertilizers to minimize drift
-          and maximize efficacy
-      - name: Livestock Heat Stress Monitoring
-        description: Monitor Temperature-Humidity Index to detect and prevent heat stress events in dairy and beef cattle herds
-      - name: EUDR Supply Chain Compliance
-        description: >-
-          Register plot geolocations and trace agricultural commodities through the supply chain to demonstrate
-          zero-deforestation compliance
-      - name: Precision Irrigation
-        description: Use evapotranspiration data and soil moisture analysis to schedule irrigation and optimize water usage
-      - name: Interoperable Agtech Integration
-        description: Share agricultural data between platforms using JSON-LD/OCSM linked data format for semantic interoperability
-  - type: Integrations
-    data:
-      - name: OpenWeatherMap
-        description: Weather data source for current conditions and forecasts used by the OpenAgri Weather Service
-      - name: OpenAgri
-        description: EU Horizon Europe project (Grant No. 101134083) that funds and drives the OpenAgri microservices ecosystem
-      - name: OCSM
-        description: >-
-          OpenAgri Common Semantic Model — linked data vocabulary for agricultural interoperability used across all
-          OpenAgri APIs
-      - name: INATrace
-        description: Open-source blockchain-based track and trace system for agricultural supply chains
-      - name: TerraTrac
-        description: >-
-          TechnoServe Labs mobile and web application for EUDR compliance field data collection integrated with the
-          asset registry
+- type: Website
+  url: https://www.agstack.org/
+- type: CapabilityMap
+  url: capabilities/agstack-capability-edges.yml
+  name: AgStack Foundation Business Capability Map
+- type: AgenticAccess
+  url: agentic-access/agstack-agentic-access.yml
+- type: DomainSecurity
+  url: security/agstack-domain-security.yml
+- type: Authentication
+  url: authentication/agstack-authentication.yml
+- url: https://agstack.org/feed/
+  type: Blog
+- url: https://agstack.org/
+  type: Portal
+- url: https://agstack.org/projects/
+  type: Documentation
+- url: https://github.com/agstack
+  type: GitHubOrganization
+- url: https://agstack.org/about/
+  type: About
+- url: https://lfaidata.foundation/
+  type: About
+  title: Linux Foundation AI and Data
+- url: json-ld/agstack-context.jsonld
+  type: JSONLD
+- url: rules/agstack-spectral-rules.yml
+  type: SpectralRules
+- url: vocabulary/agstack-vocabulary.yaml
+  type: Vocabulary
+- type: Features
+  data:
+  - name: Field Boundary Registry
+    description: Global registry for agricultural field boundaries — submit WKT or GeoJSON geometry, receive
+      a permanent unique 16-character geo ID
+  - name: Agricultural Weather Intelligence
+    description: 5-day weather forecasts, current conditions, and agricultural indicators including THI,
+      spray conditions, and UAV flight suitability
+  - name: Digital Farm Calendar
+    description: Record and manage farm operations (planting, irrigation, spraying, harvesting) with linked
+      data (JSON-LD/OCSM) output
+  - name: Linked Data Support
+    description: All APIs support JSON-LD output conforming to the OpenAgri Common Semantic Model (OCSM)
+      for semantic interoperability
+  - name: EUDR Compliance Support
+    description: Tools for EU Deforestation Regulation compliance — field boundary registration and supply
+      chain traceability via INATrace
+  - name: Irrigation Management
+    description: Evapotranspiration (ETo) calculations and soil moisture analysis for data-driven irrigation
+      decisions
+  - name: Open Source Infrastructure
+    description: All tools are Apache-2.0 licensed, Docker-ready, and deployable on any cloud or on-premises
+      infrastructure
+- type: UseCases
+  data:
+  - name: Farmer Field Registration
+    description: Farmers and agri-cooperatives register field boundaries in the global asset registry
+      to enable data-driven farm management
+  - name: Crop Protection Planning
+    description: Check spray conditions and UAV flight forecasts before applying pesticides or fertilizers
+      to minimize drift and maximize efficacy
+  - name: Livestock Heat Stress Monitoring
+    description: Monitor Temperature-Humidity Index to detect and prevent heat stress events in dairy
+      and beef cattle herds
+  - name: EUDR Supply Chain Compliance
+    description: Register plot geolocations and trace agricultural commodities through the supply chain
+      to demonstrate zero-deforestation compliance
+  - name: Precision Irrigation
+    description: Use evapotranspiration data and soil moisture analysis to schedule irrigation and optimize
+      water usage
+  - name: Interoperable Agtech Integration
+    description: Share agricultural data between platforms using JSON-LD/OCSM linked data format for semantic
+      interoperability
+- type: Integrations
+  data:
+  - name: OpenWeatherMap
+    description: Weather data source for current conditions and forecasts used by the OpenAgri Weather
+      Service
+  - name: OpenAgri
+    description: EU Horizon Europe project (Grant No. 101134083) that funds and drives the OpenAgri microservices
+      ecosystem
+  - name: OCSM
+    description: OpenAgri Common Semantic Model — linked data vocabulary for agricultural interoperability
+      used across all OpenAgri APIs
+  - name: INATrace
+    description: Open-source blockchain-based track and trace system for agricultural supply chains
+  - name: TerraTrac
+    description: TechnoServe Labs mobile and web application for EUDR compliance field data collection
+      integrated with the asset registry
 name: AgStack Foundation
 tags:
-  - Agriculture
-  - Linux Foundation
-  - Open-Source
-  - Geospatial
-  - Precision Agriculture
-  - Linked Data
+- Agriculture
+- Linux Foundation
+- Open-Source
+- Geospatial
+- Precision Agriculture
+- Linked Data
 tags_raw:
-  - Agriculture
-  - Linux Foundation
-  - Open Source
-  - Geospatial
-  - Precision Agriculture
-  - Linked Data
+- Agriculture
+- Linux Foundation
+- Open Source
+- Geospatial
+- Precision Agriculture
+- Linked Data
 type: Index
 deliveryModel:
   model: unknown
@@ -937,15 +919,15 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/agstack.png
 access: 3rd-Party
 created: '2026-03-16'
-modified: '2026-05-19'
+modified: '2026-09-16'
 position: Consuming
-description: >-
-  AgStack Foundation is a Linux Foundation project providing open-source digital infrastructure for the agriculture
-  sector. Key projects include the Asset Registry (global field boundary registration with unique geo IDs), the OpenAgri
-  Weather Service (agricultural weather forecasts, THI, spray conditions, UAV flight forecasts), and the OpenAgri Farm
-  Calendar (farm operation recording with JSON-LD/OCSM linked data support). AgStack tools support EUDR compliance,
-  precision agriculture, and interoperability across the agtech ecosystem through the OpenAgri Common Semantic Model.
+description: AgStack Foundation is a Linux Foundation project providing open-source digital infrastructure
+  for the agriculture sector. Key projects include the Asset Registry (global field boundary registration
+  with unique geo IDs), the OpenAgri Weather Service (agricultural weather forecasts, THI, spray conditions,
+  UAV flight forecasts), and the OpenAgri Farm Calendar (farm operation recording with JSON-LD/OCSM linked
+  data support). AgStack tools support EUDR compliance, precision agriculture, and interoperability across
+  the agtech ecosystem through the OpenAgri Common Semantic Model.
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
 specificationVersion: '0.23'
