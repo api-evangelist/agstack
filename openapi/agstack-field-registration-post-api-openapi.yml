@@ -1,35 +1,8 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: AgStack Asset Registry api Field Registration (POST) API
+  title: AgStack Asset Registry Field Registration (POST) API
   version: 1.0.0
-  description: 'Welcome to the **AgStack Asset Registry** developer portal.
-
-
-    ---
-
-
-    ## 🔐 Authentication Guide
-
-
-    | Service Zone | HTTP Method | Credential Type |
-
-    | :--- | :---: | :--- |
-
-    | **Authentication** | `GET/POST` | **Bearer Token** (where applicable) |
-
-    | **Field Registration** | `POST` | **Bearer Token** |
-
-    | **Field Retrieval** | `GET/POST`| **Bearer Token** (where applicable) |
-
-
-
-    > 🚀 **Quick Start Guide**
-
-    > 1. Login via `/login` to get an `access_token` and `refresh_token`.
-
-    > 2. Use `Bearer_Token` (Lock Icon) to authorize protected routes.
-
-    '
+  description: Welcome to the **AgStack Asset Registry** developer portal.
 servers:
 - url: https://api-ar.agstack.org
   description: Production Server
@@ -54,12 +27,16 @@ paths:
           description: Field Boundary registered successfully or already exists.
         '400':
           $ref: '#/components/responses/ErrorResponse'
+      operationId: postRegisterFieldBoundary
+      x-operation-id-source: derived
   /register-field-boundaries-geojson:
     post:
       tags:
       - Field Registration (POST)
       summary: 📂 Bulk Register Field Boundaries (GeoJSON File)
-      description: "Bulk register Field Boundaries using a GeoJSON FeatureCollection. \nSupports both multipart file upload (`.geojson`) and raw JSON body.\n"
+      description: 'Bulk register Field Boundaries using a GeoJSON FeatureCollection.
+
+        Supports both multipart file upload (`.geojson`) and raw JSON body.'
       security:
       - Bearer_Token: []
       requestBody:
@@ -89,6 +66,8 @@ paths:
                       type: object
         '400':
           $ref: '#/components/responses/ErrorResponse'
+      operationId: postRegisterFieldBoundariesGeojson
+      x-operation-id-source: derived
   /register-point:
     post:
       tags:
@@ -116,12 +95,16 @@ paths:
           description: Point registered successfully
         '400':
           $ref: '#/components/responses/ErrorResponse'
+      operationId: postRegisterPoint
+      x-operation-id-source: derived
   /register-points-geojson:
     post:
       tags:
       - Field Registration (POST)
       summary: 📂 Bulk Register Points (GeoJSON)
-      description: "Bulk register points using a GeoJSON FeatureCollection. \nSupports both multipart file upload (`.geojson`) and raw JSON body.\n"
+      description: 'Bulk register points using a GeoJSON FeatureCollection.
+
+        Supports both multipart file upload (`.geojson`) and raw JSON body.'
       security:
       - Bearer_Token: []
       requestBody:
@@ -155,8 +138,23 @@ paths:
                       $ref: '#/components/schemas/BulkPointResult'
         '400':
           $ref: '#/components/responses/ErrorResponse'
+      operationId: postRegisterPointsGeojson
+      x-operation-id-source: derived
 components:
   schemas:
+    BulkPointResult:
+      type: object
+      properties:
+        status:
+          type: string
+          example: created
+        message:
+          type: string
+          example: Point registered successfully.
+        Geo Id:
+          type: string
+        Geo JSON:
+          type: object
     RegisterFieldWKTRequest:
       type: object
       required:
@@ -220,19 +218,6 @@ components:
                   s2_index:
                     type: string
                     example: 8,13
-    BulkPointResult:
-      type: object
-      properties:
-        status:
-          type: string
-          example: created
-        message:
-          type: string
-          example: Point registered successfully.
-        Geo Id:
-          type: string
-        Geo JSON:
-          type: object
   responses:
     ErrorResponse:
       description: Generic Error Response

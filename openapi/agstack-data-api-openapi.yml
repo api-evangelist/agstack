@@ -1,38 +1,8 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: AgStack Asset Registry api Data API
-  version: 1.0.0
-  description: 'Welcome to the **AgStack Asset Registry** developer portal.
-
-
-    ---
-
-
-    ## 🔐 Authentication Guide
-
-
-    | Service Zone | HTTP Method | Credential Type |
-
-    | :--- | :---: | :--- |
-
-    | **Authentication** | `GET/POST` | **Bearer Token** (where applicable) |
-
-    | **Field Registration** | `POST` | **Bearer Token** |
-
-    | **Field Retrieval** | `GET/POST`| **Bearer Token** (where applicable) |
-
-
-
-    > 🚀 **Quick Start Guide**
-
-    > 1. Login via `/login` to get an `access_token` and `refresh_token`.
-
-    > 2. Use `Bearer_Token` (Lock Icon) to authorize protected routes.
-
-    '
-servers:
-- url: https://api-ar.agstack.org
-  description: Production Server
+  title: OpenAgri Weather service Data API
+  summary: This is OpenAPI for OpenAgri Weather service
+  version: 2.5.0
 tags:
 - name: Data
 paths:
@@ -280,59 +250,14 @@ paths:
       - Data
 components:
   schemas:
-    GeoJSONTypeEnum:
-      type: string
-      enum:
-      - Point
-      - POLYGON
-      title: GeoJSONTypeEnum
-    THIDataOut:
+    PointOut:
       properties:
-        id:
-          type: string
-          format: uuid
-          title: Id
-        spatial_entity:
-          $ref: '#/components/schemas/PointOut'
-        thi:
-          type: number
-          title: Thi
+        location:
+          $ref: '#/components/schemas/GeoJSONOut'
       type: object
       required:
-      - id
-      - spatial_entity
-      - thi
-      title: THIDataOut
-    ValidationError:
-      properties:
-        loc:
-          items:
-            anyOf:
-            - type: string
-            - type: integer
-          type: array
-          title: Location
-        msg:
-          type: string
-          title: Message
-        type:
-          type: string
-          title: Error Type
-      type: object
-      required:
-      - loc
-      - msg
-      - type
-      title: ValidationError
-    HTTPValidationError:
-      properties:
-        detail:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
-          title: Detail
-      type: object
-      title: HTTPValidationError
+      - location
+      title: PointOut
     PredictionOut:
       properties:
         value:
@@ -362,32 +287,25 @@ components:
       - data_type
       - measurement_type
       title: PredictionOut
-    SprayForecastResponse:
+    GeoJSONOut:
       properties:
-        timestamp:
-          type: string
-          format: date-time
-          title: Timestamp
-        spray_conditions:
-          $ref: '#/components/schemas/SprayStatus'
-        source:
-          type: string
-          title: Source
-        location:
-          $ref: '#/components/schemas/GeoJSONOut'
-        detailed_status:
-          additionalProperties:
-            type: string
-          type: object
-          title: Detailed Status
+        type:
+          $ref: '#/components/schemas/GeoJSONTypeEnum'
+        coordinates:
+          items: {}
+          type: array
+          title: Coordinates
       type: object
       required:
-      - timestamp
-      - spray_conditions
-      - source
-      - location
-      - detailed_status
-      title: SprayForecastResponse
+      - type
+      - coordinates
+      title: GeoJSONOut
+    GeoJSONTypeEnum:
+      type: string
+      enum:
+      - Point
+      - POLYGON
+      title: GeoJSONTypeEnum
     SprayStatus:
       type: string
       enum:
@@ -426,6 +344,27 @@ components:
       - location
       - weather_params
       title: FlightStatusForecastResponse
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
     WeatherDataOut:
       properties:
         id:
@@ -443,36 +382,59 @@ components:
       - spatial_entity
       - data
       title: WeatherDataOut
-    PointOut:
+    HTTPValidationError:
       properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    THIDataOut:
+      properties:
+        id:
+          type: string
+          format: uuid
+          title: Id
+        spatial_entity:
+          $ref: '#/components/schemas/PointOut'
+        thi:
+          type: number
+          title: Thi
+      type: object
+      required:
+      - id
+      - spatial_entity
+      - thi
+      title: THIDataOut
+    SprayForecastResponse:
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+          title: Timestamp
+        spray_conditions:
+          $ref: '#/components/schemas/SprayStatus'
+        source:
+          type: string
+          title: Source
         location:
           $ref: '#/components/schemas/GeoJSONOut'
+        detailed_status:
+          additionalProperties:
+            type: string
+          type: object
+          title: Detailed Status
       type: object
       required:
+      - timestamp
+      - spray_conditions
+      - source
       - location
-      title: PointOut
-    GeoJSONOut:
-      properties:
-        type:
-          $ref: '#/components/schemas/GeoJSONTypeEnum'
-        coordinates:
-          items: {}
-          type: array
-          title: Coordinates
-      type: object
-      required:
-      - type
-      - coordinates
-      title: GeoJSONOut
+      - detailed_status
+      title: SprayForecastResponse
   securitySchemes:
-    Bearer_Token:
+    HTTPBearer:
       type: http
       scheme: bearer
-      bearerFormat: JWT
-      description: '**Required for most operations.**
-
-        1. Login via `/login` to get token.
-
-        2. Paste access token here.
-
-        '

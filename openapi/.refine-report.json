@@ -1,26 +1,53 @@
 {
   "provider": "agstack",
   "sources": [
-    "agstack-api-api-openapi.yml",
-    "agstack-auth-api-openapi.yml",
-    "agstack-authentication-api-openapi.yml",
-    "agstack-data-api-openapi.yml",
-    "agstack-field-registration-post-api-openapi.yml",
-    "agstack-field-retrieval-queries-api-openapi.yml",
-    "agstack-linkeddata-api-openapi.yml"
+    "_original/agstack-asset-registry-openapi.yml",
+    "_original/agstack-openagri-farm-calendar-openapi.yml",
+    "_original/agstack-openagri-weather-service-openapi.yml"
   ],
   "outputs": [
-    "agstack-api-api-openapi.yml",
-    "agstack-auth-api-openapi.yml",
     "agstack-authentication-api-openapi.yml",
-    "agstack-data-api-openapi.yml",
     "agstack-field-registration-post-api-openapi.yml",
     "agstack-field-retrieval-queries-api-openapi.yml",
+    "agstack-api-api-openapi.yml",
+    "agstack-auth-api-openapi.yml",
+    "agstack-data-api-openapi.yml",
     "agstack-linkeddata-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (3 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "agstack-asset-registry-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "agstack-openagri-farm-calendar-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "agstack-openagri-farm-calendar-openapi.yml: declared missing tag: api",
+    "agstack-openagri-weather-service-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "agstack-openagri-weather-service-openapi.yml: tagged paths GET /api/data/forecast5 -> Data",
+    "agstack-openagri-weather-service-openapi.yml: tagged paths GET /api/linkeddata/forecast5 -> Linkeddata",
+    "agstack-openagri-weather-service-openapi.yml: tagged paths GET /api/data/weather -> Data",
+    "agstack-openagri-weather-service-openapi.yml: tagged paths GET /api/data/thi -> Data",
+    "agstack-openagri-weather-service-openapi.yml: tagged paths GET /api/linkeddata/thi -> Linkeddata",
+    "agstack-openagri-weather-service-openapi.yml: tagged paths GET /api/data/flight_forecast5 -> Data",
+    "agstack-openagri-weather-service-openapi.yml: tagged paths GET /api/linkeddata/flight_forecast5 -> Linkeddata",
+    "agstack-openagri-weather-service-openapi.yml: tagged paths GET /api/data/flight_forecast5/{uavmodel} -> Data",
+    "agstack-openagri-weather-service-openapi.yml: tagged paths GET /api/linkeddata/flight_forecast5/{uavmodel} -> Linkeddata",
+    "agstack-openagri-weather-service-openapi.yml: tagged paths GET /api/data/spray_forecast -> Data",
+    "agstack-openagri-weather-service-openapi.yml: tagged paths GET /api/linkeddata/spray_forecast -> Linkeddata",
+    "agstack-openagri-weather-service-openapi.yml: tagged paths GET /auth/test -> Auth",
+    "agstack-openagri-weather-service-openapi.yml: tagged paths POST /auth/token -> Auth",
+    "agstack-openagri-weather-service-openapi.yml: declared missing tag: Auth",
+    "agstack-openagri-weather-service-openapi.yml: declared missing tag: Data",
+    "agstack-openagri-weather-service-openapi.yml: declared missing tag: Linkeddata",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "agstack-api-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-auth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-authentication-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-data-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-field-registration-post-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-field-retrieval-queries-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-linkeddata-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

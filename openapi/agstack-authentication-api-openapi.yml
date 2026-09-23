@@ -1,35 +1,8 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: AgStack Asset Registry api Authentication API
+  title: AgStack Asset Registry Authentication API
   version: 1.0.0
-  description: 'Welcome to the **AgStack Asset Registry** developer portal.
-
-
-    ---
-
-
-    ## 🔐 Authentication Guide
-
-
-    | Service Zone | HTTP Method | Credential Type |
-
-    | :--- | :---: | :--- |
-
-    | **Authentication** | `GET/POST` | **Bearer Token** (where applicable) |
-
-    | **Field Registration** | `POST` | **Bearer Token** |
-
-    | **Field Retrieval** | `GET/POST`| **Bearer Token** (where applicable) |
-
-
-
-    > 🚀 **Quick Start Guide**
-
-    > 1. Login via `/login` to get an `access_token` and `refresh_token`.
-
-    > 2. Use `Bearer_Token` (Lock Icon) to authorize protected routes.
-
-    '
+  description: Welcome to the **AgStack Asset Registry** developer portal.
 servers:
 - url: https://api-ar.agstack.org
   description: Production Server
@@ -74,6 +47,8 @@ paths:
                     type: string
         '400':
           $ref: '#/components/responses/ErrorResponse'
+      operationId: postLogin
+      x-operation-id-source: derived
 components:
   responses:
     ErrorResponse:

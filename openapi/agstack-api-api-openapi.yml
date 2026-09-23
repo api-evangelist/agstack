@@ -1,38 +1,8 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: AgStack Asset Registry api API
+  title: OpenAgri Farm Calendar API
   version: 1.0.0
-  description: 'Welcome to the **AgStack Asset Registry** developer portal.
-
-
-    ---
-
-
-    ## 🔐 Authentication Guide
-
-
-    | Service Zone | HTTP Method | Credential Type |
-
-    | :--- | :---: | :--- |
-
-    | **Authentication** | `GET/POST` | **Bearer Token** (where applicable) |
-
-    | **Field Registration** | `POST` | **Bearer Token** |
-
-    | **Field Retrieval** | `GET/POST`| **Bearer Token** (where applicable) |
-
-
-
-    > 🚀 **Quick Start Guide**
-
-    > 1. Login via `/login` to get an `access_token` and `refresh_token`.
-
-    > 2. Use `Bearer_Token` (Lock Icon) to authorize protected routes.
-
-    '
-servers:
-- url: https://api-ar.agstack.org
-  description: Production Server
+  description: API for farm assets and other farm related things.
 tags:
 - name: api
 paths:
@@ -90,6 +60,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/AddRawMaterialOperation'
           description: ''
+      summary: Api v1 add raw material operations list
+      x-summary-source: derived
     post:
       operationId: api_v1_AddRawMaterialOperations_create
       description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
@@ -127,6 +99,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/AddRawMaterialOperation'
           description: ''
+      summary: Api v1 add raw material operations create
+      x-summary-source: derived
   /api/v1/AddRawMaterialOperations/{id}/:
     get:
       operationId: api_v1_AddRawMaterialOperations_retrieve
@@ -160,6 +134,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/AddRawMaterialOperation'
           description: ''
+      summary: Api v1 add raw material operations retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_AddRawMaterialOperations_update
       description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
@@ -204,6 +180,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/AddRawMaterialOperation'
           description: ''
+      summary: Api v1 add raw material operations update
+      x-summary-source: derived
     patch:
       operationId: api_v1_AddRawMaterialOperations_partial_update
       description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
@@ -247,6 +225,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/AddRawMaterialOperation'
           description: ''
+      summary: Api v1 add raw material operations partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_AddRawMaterialOperations_destroy
       description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
@@ -272,6 +252,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 add raw material operations destroy
+      x-summary-source: derived
   /api/v1/AgriculturalMachines/:
     get:
       operationId: api_v1_AgriculturalMachines_list
@@ -324,6 +306,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/AgriculturalMachine'
           description: ''
+      summary: Api v1 agricultural machines list
+      x-summary-source: derived
     post:
       operationId: api_v1_AgriculturalMachines_create
       description: API endpoint that allows AgriculturalMachine to be viewed or edited.
@@ -361,6 +345,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/AgriculturalMachine'
           description: ''
+      summary: Api v1 agricultural machines create
+      x-summary-source: derived
   /api/v1/AgriculturalMachines/{id}/:
     get:
       operationId: api_v1_AgriculturalMachines_retrieve
@@ -394,6 +380,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/AgriculturalMachine'
           description: ''
+      summary: Api v1 agricultural machines retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_AgriculturalMachines_update
       description: API endpoint that allows AgriculturalMachine to be viewed or edited.
@@ -438,6 +426,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/AgriculturalMachine'
           description: ''
+      summary: Api v1 agricultural machines update
+      x-summary-source: derived
     patch:
       operationId: api_v1_AgriculturalMachines_partial_update
       description: API endpoint that allows AgriculturalMachine to be viewed or edited.
@@ -481,6 +471,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/AgriculturalMachine'
           description: ''
+      summary: Api v1 agricultural machines partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_AgriculturalMachines_destroy
       description: API endpoint that allows AgriculturalMachine to be viewed or edited.
@@ -506,6 +498,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 agricultural machines destroy
+      x-summary-source: derived
   /api/v1/Alerts/:
     get:
       operationId: api_v1_Alerts_list
@@ -579,6 +573,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/Alert'
           description: ''
+      summary: Api v1 alerts list
+      x-summary-source: derived
     post:
       operationId: api_v1_Alerts_create
       description: API endpoint that allows Alert to be viewed or edited.
@@ -616,6 +612,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Alert'
           description: ''
+      summary: Api v1 alerts create
+      x-summary-source: derived
   /api/v1/Alerts/{id}/:
     get:
       operationId: api_v1_Alerts_retrieve
@@ -649,6 +647,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Alert'
           description: ''
+      summary: Api v1 alerts retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_Alerts_update
       description: API endpoint that allows Alert to be viewed or edited.
@@ -693,6 +693,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Alert'
           description: ''
+      summary: Api v1 alerts update
+      x-summary-source: derived
     patch:
       operationId: api_v1_Alerts_partial_update
       description: API endpoint that allows Alert to be viewed or edited.
@@ -736,6 +738,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Alert'
           description: ''
+      summary: Api v1 alerts partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_Alerts_destroy
       description: API endpoint that allows Alert to be viewed or edited.
@@ -761,6 +765,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 alerts destroy
+      x-summary-source: derived
   /api/v1/CompostOperations/:
     get:
       operationId: api_v1_CompostOperations_list
@@ -819,6 +825,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/CompostOperation'
           description: ''
+      summary: Api v1 compost operations list
+      x-summary-source: derived
     post:
       operationId: api_v1_CompostOperations_create
       description: API endpoint that allows CompostOperation to be viewed or edited.
@@ -856,6 +864,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CompostOperation'
           description: ''
+      summary: Api v1 compost operations create
+      x-summary-source: derived
   /api/v1/CompostOperations/{compost_operation_pk}/AddRawMaterialOperations/:
     get:
       operationId: api_v1_CompostOperations_AddRawMaterialOperations_list
@@ -915,6 +925,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/AddRawMaterialOperation'
           description: ''
+      summary: Api v1 compost operations add raw material operations list
+      x-summary-source: derived
     post:
       operationId: api_v1_CompostOperations_AddRawMaterialOperations_create
       description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
@@ -957,6 +969,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/AddRawMaterialOperation'
           description: ''
+      summary: Api v1 compost operations add raw material operations create
+      x-summary-source: derived
   /api/v1/CompostOperations/{compost_operation_pk}/AddRawMaterialOperations/{id}/:
     get:
       operationId: api_v1_CompostOperations_AddRawMaterialOperations_retrieve
@@ -995,6 +1009,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/AddRawMaterialOperation'
           description: ''
+      summary: Api v1 compost operations add raw material operations retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_CompostOperations_AddRawMaterialOperations_update
       description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
@@ -1044,6 +1060,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/AddRawMaterialOperation'
           description: ''
+      summary: Api v1 compost operations add raw material operations update
+      x-summary-source: derived
     patch:
       operationId: api_v1_CompostOperations_AddRawMaterialOperations_partial_update
       description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
@@ -1092,6 +1110,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/AddRawMaterialOperation'
           description: ''
+      summary: Api v1 compost operations add raw material operations partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_CompostOperations_AddRawMaterialOperations_destroy
       description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
@@ -1122,6 +1142,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 compost operations add raw material operations destroy
+      x-summary-source: derived
   /api/v1/CompostOperations/{compost_operation_pk}/CompostTurningOperations/:
     get:
       operationId: api_v1_CompostOperations_CompostTurningOperations_list
@@ -1181,6 +1203,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/CompostTurningOperation'
           description: ''
+      summary: Api v1 compost operations compost turning operations list
+      x-summary-source: derived
     post:
       operationId: api_v1_CompostOperations_CompostTurningOperations_create
       description: API endpoint that allows CompostTurningOperation to be viewed or edited.
@@ -1223,6 +1247,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CompostTurningOperation'
           description: ''
+      summary: Api v1 compost operations compost turning operations create
+      x-summary-source: derived
   /api/v1/CompostOperations/{compost_operation_pk}/CompostTurningOperations/{id}/:
     get:
       operationId: api_v1_CompostOperations_CompostTurningOperations_retrieve
@@ -1261,6 +1287,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CompostTurningOperation'
           description: ''
+      summary: Api v1 compost operations compost turning operations retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_CompostOperations_CompostTurningOperations_update
       description: API endpoint that allows CompostTurningOperation to be viewed or edited.
@@ -1310,6 +1338,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CompostTurningOperation'
           description: ''
+      summary: Api v1 compost operations compost turning operations update
+      x-summary-source: derived
     patch:
       operationId: api_v1_CompostOperations_CompostTurningOperations_partial_update
       description: API endpoint that allows CompostTurningOperation to be viewed or edited.
@@ -1358,6 +1388,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CompostTurningOperation'
           description: ''
+      summary: Api v1 compost operations compost turning operations partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_CompostOperations_CompostTurningOperations_destroy
       description: API endpoint that allows CompostTurningOperation to be viewed or edited.
@@ -1388,6 +1420,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 compost operations compost turning operations destroy
+      x-summary-source: derived
   /api/v1/CompostOperations/{compost_operation_pk}/IrrigationOperations/:
     get:
       operationId: api_v1_CompostOperations_IrrigationOperations_list
@@ -1451,6 +1485,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/IrrigationOperation'
           description: ''
+      summary: Api v1 compost operations irrigation operations list
+      x-summary-source: derived
     post:
       operationId: api_v1_CompostOperations_IrrigationOperations_create
       description: API endpoint that allows IrrigationOperation to be viewed or edited.
@@ -1493,6 +1529,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/IrrigationOperation'
           description: ''
+      summary: Api v1 compost operations irrigation operations create
+      x-summary-source: derived
   /api/v1/CompostOperations/{compost_operation_pk}/IrrigationOperations/{id}/:
     get:
       operationId: api_v1_CompostOperations_IrrigationOperations_retrieve
@@ -1531,6 +1569,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/IrrigationOperation'
           description: ''
+      summary: Api v1 compost operations irrigation operations retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_CompostOperations_IrrigationOperations_update
       description: API endpoint that allows IrrigationOperation to be viewed or edited.
@@ -1580,6 +1620,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/IrrigationOperation'
           description: ''
+      summary: Api v1 compost operations irrigation operations update
+      x-summary-source: derived
     patch:
       operationId: api_v1_CompostOperations_IrrigationOperations_partial_update
       description: API endpoint that allows IrrigationOperation to be viewed or edited.
@@ -1628,6 +1670,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/IrrigationOperation'
           description: ''
+      summary: Api v1 compost operations irrigation operations partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_CompostOperations_IrrigationOperations_destroy
       description: API endpoint that allows IrrigationOperation to be viewed or edited.
@@ -1658,6 +1702,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 compost operations irrigation operations destroy
+      x-summary-source: derived
   /api/v1/CompostOperations/{compost_operation_pk}/Observations/:
     get:
       operationId: api_v1_CompostOperations_Observations_list
@@ -1717,6 +1763,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/Observation'
           description: ''
+      summary: Api v1 compost operations observations list
+      x-summary-source: derived
     post:
       operationId: api_v1_CompostOperations_Observations_create
       description: API endpoint that allows Observation to be viewed or edited.
@@ -1759,6 +1807,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Observation'
           description: ''
+      summary: Api v1 compost operations observations create
+      x-summary-source: derived
   /api/v1/CompostOperations/{compost_operation_pk}/Observations/{id}/:
     get:
       operationId: api_v1_CompostOperations_Observations_retrieve
@@ -1797,6 +1847,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Observation'
           description: ''
+      summary: Api v1 compost operations observations retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_CompostOperations_Observations_update
       description: API endpoint that allows Observation to be viewed or edited.
@@ -1846,6 +1898,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Observation'
           description: ''
+      summary: Api v1 compost operations observations update
+      x-summary-source: derived
     patch:
       operationId: api_v1_CompostOperations_Observations_partial_update
       description: API endpoint that allows Observation to be viewed or edited.
@@ -1894,6 +1948,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Observation'
           description: ''
+      summary: Api v1 compost operations observations partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_CompostOperations_Observations_destroy
       description: API endpoint that allows Observation to be viewed or edited.
@@ -1924,6 +1980,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 compost operations observations destroy
+      x-summary-source: derived
   /api/v1/CompostOperations/{id}/:
     get:
       operationId: api_v1_CompostOperations_retrieve
@@ -1957,6 +2015,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CompostOperation'
           description: ''
+      summary: Api v1 compost operations retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_CompostOperations_update
       description: API endpoint that allows CompostOperation to be viewed or edited.
@@ -2001,6 +2061,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CompostOperation'
           description: ''
+      summary: Api v1 compost operations update
+      x-summary-source: derived
     patch:
       operationId: api_v1_CompostOperations_partial_update
       description: API endpoint that allows CompostOperation to be viewed or edited.
@@ -2044,6 +2106,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CompostOperation'
           description: ''
+      summary: Api v1 compost operations partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_CompostOperations_destroy
       description: API endpoint that allows CompostOperation to be viewed or edited.
@@ -2069,6 +2133,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 compost operations destroy
+      x-summary-source: derived
   /api/v1/CompostTurningOperations/:
     get:
       operationId: api_v1_CompostTurningOperations_list
@@ -2123,6 +2189,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/CompostTurningOperation'
           description: ''
+      summary: Api v1 compost turning operations list
+      x-summary-source: derived
     post:
       operationId: api_v1_CompostTurningOperations_create
       description: API endpoint that allows CompostTurningOperation to be viewed or edited.
@@ -2160,6 +2228,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CompostTurningOperation'
           description: ''
+      summary: Api v1 compost turning operations create
+      x-summary-source: derived
   /api/v1/CompostTurningOperations/{id}/:
     get:
       operationId: api_v1_CompostTurningOperations_retrieve
@@ -2193,6 +2263,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CompostTurningOperation'
           description: ''
+      summary: Api v1 compost turning operations retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_CompostTurningOperations_update
       description: API endpoint that allows CompostTurningOperation to be viewed or edited.
@@ -2237,6 +2309,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CompostTurningOperation'
           description: ''
+      summary: Api v1 compost turning operations update
+      x-summary-source: derived
     patch:
       operationId: api_v1_CompostTurningOperations_partial_update
       description: API endpoint that allows CompostTurningOperation to be viewed or edited.
@@ -2280,6 +2354,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CompostTurningOperation'
           description: ''
+      summary: Api v1 compost turning operations partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_CompostTurningOperations_destroy
       description: API endpoint that allows CompostTurningOperation to be viewed or edited.
@@ -2305,6 +2381,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 compost turning operations destroy
+      x-summary-source: derived
   /api/v1/CropGrowthStageObservations/:
     get:
       operationId: api_v1_CropGrowthStageObservations_list
@@ -2363,6 +2441,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/CropGrowthStageObservation'
           description: ''
+      summary: Api v1 crop growth stage observations list
+      x-summary-source: derived
     post:
       operationId: api_v1_CropGrowthStageObservations_create
       description: API endpoint that allows CropGrowthStageObservation to be viewed or edited.
@@ -2400,6 +2480,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CropGrowthStageObservation'
           description: ''
+      summary: Api v1 crop growth stage observations create
+      x-summary-source: derived
   /api/v1/CropGrowthStageObservations/{id}/:
     get:
       operationId: api_v1_CropGrowthStageObservations_retrieve
@@ -2433,6 +2515,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CropGrowthStageObservation'
           description: ''
+      summary: Api v1 crop growth stage observations retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_CropGrowthStageObservations_update
       description: API endpoint that allows CropGrowthStageObservation to be viewed or edited.
@@ -2477,6 +2561,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CropGrowthStageObservation'
           description: ''
+      summary: Api v1 crop growth stage observations update
+      x-summary-source: derived
     patch:
       operationId: api_v1_CropGrowthStageObservations_partial_update
       description: API endpoint that allows CropGrowthStageObservation to be viewed or edited.
@@ -2520,6 +2606,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CropGrowthStageObservation'
           description: ''
+      summary: Api v1 crop growth stage observations partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_CropGrowthStageObservations_destroy
       description: API endpoint that allows CropGrowthStageObservation to be viewed or edited.
@@ -2545,6 +2633,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 crop growth stage observations destroy
+      x-summary-source: derived
   /api/v1/CropProtectionOperations/:
     get:
       operationId: api_v1_CropProtectionOperations_list
@@ -2603,6 +2693,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/CropProtectionOperation'
           description: ''
+      summary: Api v1 crop protection operations list
+      x-summary-source: derived
     post:
       operationId: api_v1_CropProtectionOperations_create
       description: API endpoint that allows CropProtectionOperation to be viewed or edited.
@@ -2640,6 +2732,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CropProtectionOperation'
           description: ''
+      summary: Api v1 crop protection operations create
+      x-summary-source: derived
   /api/v1/CropProtectionOperations/{id}/:
     get:
       operationId: api_v1_CropProtectionOperations_retrieve
@@ -2673,6 +2767,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CropProtectionOperation'
           description: ''
+      summary: Api v1 crop protection operations retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_CropProtectionOperations_update
       description: API endpoint that allows CropProtectionOperation to be viewed or edited.
@@ -2717,6 +2813,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CropProtectionOperation'
           description: ''
+      summary: Api v1 crop protection operations update
+      x-summary-source: derived
     patch:
       operationId: api_v1_CropProtectionOperations_partial_update
       description: API endpoint that allows CropProtectionOperation to be viewed or edited.
@@ -2760,6 +2858,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CropProtectionOperation'
           description: ''
+      summary: Api v1 crop protection operations partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_CropProtectionOperations_destroy
       description: API endpoint that allows CropProtectionOperation to be viewed or edited.
@@ -2785,6 +2885,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 crop protection operations destroy
+      x-summary-source: derived
   /api/v1/CropStressIndicatorObservations/:
     get:
       operationId: api_v1_CropStressIndicatorObservations_list
@@ -2843,6 +2945,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/CropStressIndicatorObservation'
           description: ''
+      summary: Api v1 crop stress indicator observations list
+      x-summary-source: derived
     post:
       operationId: api_v1_CropStressIndicatorObservations_create
       description: API endpoint that allows CropStressIndicator to be viewed or edited.
@@ -2880,6 +2984,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CropStressIndicatorObservation'
           description: ''
+      summary: Api v1 crop stress indicator observations create
+      x-summary-source: derived
   /api/v1/CropStressIndicatorObservations/{id}/:
     get:
       operationId: api_v1_CropStressIndicatorObservations_retrieve
@@ -2913,6 +3019,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CropStressIndicatorObservation'
           description: ''
+      summary: Api v1 crop stress indicator observations retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_CropStressIndicatorObservations_update
       description: API endpoint that allows CropStressIndicator to be viewed or edited.
@@ -2957,6 +3065,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CropStressIndicatorObservation'
           description: ''
+      summary: Api v1 crop stress indicator observations update
+      x-summary-source: derived
     patch:
       operationId: api_v1_CropStressIndicatorObservations_partial_update
       description: API endpoint that allows CropStressIndicator to be viewed or edited.
@@ -3000,6 +3110,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/CropStressIndicatorObservation'
           description: ''
+      summary: Api v1 crop stress indicator observations partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_CropStressIndicatorObservations_destroy
       description: API endpoint that allows CropStressIndicator to be viewed or edited.
@@ -3025,6 +3137,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 crop stress indicator observations destroy
+      x-summary-source: derived
   /api/v1/DiseaseDetection/:
     get:
       operationId: api_v1_DiseaseDetection_list
@@ -3079,6 +3193,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/DiseaseDetectionObservation'
           description: ''
+      summary: Api v1 disease detection list
+      x-summary-source: derived
     post:
       operationId: api_v1_DiseaseDetection_create
       description: API endpoint that allows DiseaseDetection to be viewed or edited.
@@ -3116,6 +3232,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/DiseaseDetectionObservation'
           description: ''
+      summary: Api v1 disease detection create
+      x-summary-source: derived
   /api/v1/DiseaseDetection/{id}/:
     get:
       operationId: api_v1_DiseaseDetection_retrieve
@@ -3149,6 +3267,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/DiseaseDetectionObservation'
           description: ''
+      summary: Api v1 disease detection retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_DiseaseDetection_update
       description: API endpoint that allows DiseaseDetection to be viewed or edited.
@@ -3193,6 +3313,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/DiseaseDetectionObservation'
           description: ''
+      summary: Api v1 disease detection update
+      x-summary-source: derived
     patch:
       operationId: api_v1_DiseaseDetection_partial_update
       description: API endpoint that allows DiseaseDetection to be viewed or edited.
@@ -3236,6 +3358,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/DiseaseDetectionObservation'
           description: ''
+      summary: Api v1 disease detection partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_DiseaseDetection_destroy
       description: API endpoint that allows DiseaseDetection to be viewed or edited.
@@ -3261,6 +3385,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 disease detection destroy
+      x-summary-source: derived
   /api/v1/Farm/:
     get:
       operationId: api_v1_Farm_list
@@ -3308,6 +3434,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/Farm'
           description: ''
+      summary: Api v1 farm list
+      x-summary-source: derived
     post:
       operationId: api_v1_Farm_create
       description: API endpoint that allows Farm to be viewed or edited.
@@ -3345,6 +3473,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Farm'
           description: ''
+      summary: Api v1 farm create
+      x-summary-source: derived
   /api/v1/Farm/{id}/:
     get:
       operationId: api_v1_Farm_retrieve
@@ -3378,6 +3508,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Farm'
           description: ''
+      summary: Api v1 farm retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_Farm_update
       description: API endpoint that allows Farm to be viewed or edited.
@@ -3422,6 +3554,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Farm'
           description: ''
+      summary: Api v1 farm update
+      x-summary-source: derived
     patch:
       operationId: api_v1_Farm_partial_update
       description: API endpoint that allows Farm to be viewed or edited.
@@ -3465,6 +3599,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Farm'
           description: ''
+      summary: Api v1 farm partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_Farm_destroy
       description: API endpoint that allows Farm to be viewed or edited.
@@ -3490,6 +3626,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 farm destroy
+      x-summary-source: derived
   /api/v1/FarmAnimals/:
     get:
       operationId: api_v1_FarmAnimals_list
@@ -3546,6 +3684,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/FarmAnimal'
           description: ''
+      summary: Api v1 farm animals list
+      x-summary-source: derived
     post:
       operationId: api_v1_FarmAnimals_create
       description: API endpoint that allows FarmAnimal to be viewed or edited.
@@ -3583,6 +3723,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FarmAnimal'
           description: ''
+      summary: Api v1 farm animals create
+      x-summary-source: derived
   /api/v1/FarmAnimals/{id}/:
     get:
       operationId: api_v1_FarmAnimals_retrieve
@@ -3616,6 +3758,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FarmAnimal'
           description: ''
+      summary: Api v1 farm animals retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_FarmAnimals_update
       description: API endpoint that allows FarmAnimal to be viewed or edited.
@@ -3660,6 +3804,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FarmAnimal'
           description: ''
+      summary: Api v1 farm animals update
+      x-summary-source: derived
     patch:
       operationId: api_v1_FarmAnimals_partial_update
       description: API endpoint that allows FarmAnimal to be viewed or edited.
@@ -3703,6 +3849,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FarmAnimal'
           description: ''
+      summary: Api v1 farm animals partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_FarmAnimals_destroy
       description: API endpoint that allows FarmAnimal to be viewed or edited.
@@ -3728,6 +3876,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 farm animals destroy
+      x-summary-source: derived
   /api/v1/FarmCalendarActivities/:
     get:
       operationId: api_v1_FarmCalendarActivities_list
@@ -3786,6 +3936,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/FarmCalendarActivity'
           description: ''
+      summary: Api v1 farm calendar activities list
+      x-summary-source: derived
     post:
       operationId: api_v1_FarmCalendarActivities_create
       description: API endpoint that allows FarmCalendarActivity to be viewed or edited.
@@ -3823,6 +3975,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FarmCalendarActivity'
           description: ''
+      summary: Api v1 farm calendar activities create
+      x-summary-source: derived
   /api/v1/FarmCalendarActivities/{id}/:
     get:
       operationId: api_v1_FarmCalendarActivities_retrieve
@@ -3856,6 +4010,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FarmCalendarActivity'
           description: ''
+      summary: Api v1 farm calendar activities retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_FarmCalendarActivities_update
       description: API endpoint that allows FarmCalendarActivity to be viewed or edited.
@@ -3900,6 +4056,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FarmCalendarActivity'
           description: ''
+      summary: Api v1 farm calendar activities update
+      x-summary-source: derived
     patch:
       operationId: api_v1_FarmCalendarActivities_partial_update
       description: API endpoint that allows FarmCalendarActivity to be viewed or edited.
@@ -3943,6 +4101,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FarmCalendarActivity'
           description: ''
+      summary: Api v1 farm calendar activities partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_FarmCalendarActivities_destroy
       description: API endpoint that allows FarmCalendarActivity to be viewed or edited.
@@ -3968,6 +4128,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 farm calendar activities destroy
+      x-summary-source: derived
   /api/v1/FarmCalendarActivityTypes/:
     get:
       operationId: api_v1_FarmCalendarActivityTypes_list
@@ -4015,6 +4177,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/FarmCalendarActivityType'
           description: ''
+      summary: Api v1 farm calendar activity types list
+      x-summary-source: derived
     post:
       operationId: api_v1_FarmCalendarActivityTypes_create
       description: API endpoint that allows FarmCalendarActivityType to be viewed or edited.
@@ -4052,6 +4216,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FarmCalendarActivityType'
           description: ''
+      summary: Api v1 farm calendar activity types create
+      x-summary-source: derived
   /api/v1/FarmCalendarActivityTypes/{id}/:
     get:
       operationId: api_v1_FarmCalendarActivityTypes_retrieve
@@ -4085,6 +4251,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FarmCalendarActivityType'
           description: ''
+      summary: Api v1 farm calendar activity types retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_FarmCalendarActivityTypes_update
       description: API endpoint that allows FarmCalendarActivityType to be viewed or edited.
@@ -4129,6 +4297,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FarmCalendarActivityType'
           description: ''
+      summary: Api v1 farm calendar activity types update
+      x-summary-source: derived
     patch:
       operationId: api_v1_FarmCalendarActivityTypes_partial_update
       description: API endpoint that allows FarmCalendarActivityType to be viewed or edited.
@@ -4172,6 +4342,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FarmCalendarActivityType'
           description: ''
+      summary: Api v1 farm calendar activity types partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_FarmCalendarActivityTypes_destroy
       description: API endpoint that allows FarmCalendarActivityType to be viewed or edited.
@@ -4197,6 +4369,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 farm calendar activity types destroy
+      x-summary-source: derived
   /api/v1/FarmCrops/:
     get:
       operationId: api_v1_FarmCrops_list
@@ -4261,6 +4435,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/FarmCrop'
           description: ''
+      summary: Api v1 farm crops list
+      x-summary-source: derived
     post:
       operationId: api_v1_FarmCrops_create
       description: API endpoint that allows FarmCrop to be viewed or edited.
@@ -4298,6 +4474,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FarmCrop'
           description: ''
+      summary: Api v1 farm crops create
+      x-summary-source: derived
   /api/v1/FarmCrops/{id}/:
     get:
       operationId: api_v1_FarmCrops_retrieve
@@ -4331,6 +4509,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FarmCrop'
           description: ''
+      summary: Api v1 farm crops retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_FarmCrops_update
       description: API endpoint that allows FarmCrop to be viewed or edited.
@@ -4375,6 +4555,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FarmCrop'
           description: ''
+      summary: Api v1 farm crops update
+      x-summary-source: derived
     patch:
       operationId: api_v1_FarmCrops_partial_update
       description: API endpoint that allows FarmCrop to be viewed or edited.
@@ -4418,6 +4600,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FarmCrop'
           description: ''
+      summary: Api v1 farm crops partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_FarmCrops_destroy
       description: API endpoint that allows FarmCrop to be viewed or edited.
@@ -4443,6 +4627,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 farm crops destroy
+      x-summary-source: derived
   /api/v1/FarmParcels/:
     get:
       operationId: api_v1_FarmParcels_list
@@ -4508,6 +4694,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/FarmParcel'
           description: ''
+      summary: Api v1 farm parcels list
+      x-summary-source: derived
     post:
       operationId: api_v1_FarmParcels_create
       description: API endpoint that allows FarmParcel to be viewed or edited.
@@ -4545,6 +4733,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FarmParcel'
           description: ''
+      summary: Api v1 farm parcels create
+      x-summary-source: derived
   /api/v1/FarmParcels/{id}/:
     get:
       operationId: api_v1_FarmParcels_retrieve
@@ -4578,6 +4768,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FarmParcel'
           description: ''
+      summary: Api v1 farm parcels retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_FarmParcels_update
       description: API endpoint that allows FarmParcel to be viewed or edited.
@@ -4622,6 +4814,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FarmParcel'
           description: ''
+      summary: Api v1 farm parcels update
+      x-summary-source: derived
     patch:
       operationId: api_v1_FarmParcels_partial_update
       description: API endpoint that allows FarmParcel to be viewed or edited.
@@ -4665,6 +4859,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FarmParcel'
           description: ''
+      summary: Api v1 farm parcels partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_FarmParcels_destroy
       description: API endpoint that allows FarmParcel to be viewed or edited.
@@ -4690,6 +4886,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 farm parcels destroy
+      x-summary-source: derived
   /api/v1/FertilizationOperations/:
     get:
       operationId: api_v1_FertilizationOperations_list
@@ -4748,6 +4946,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/FertilizationOperation'
           description: ''
+      summary: Api v1 fertilization operations list
+      x-summary-source: derived
     post:
       operationId: api_v1_FertilizationOperations_create
       description: API endpoint that allows FertilizationOperation to be viewed or edited.
@@ -4785,6 +4985,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FertilizationOperation'
           description: ''
+      summary: Api v1 fertilization operations create
+      x-summary-source: derived
   /api/v1/FertilizationOperations/{id}/:
     get:
       operationId: api_v1_FertilizationOperations_retrieve
@@ -4818,6 +5020,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FertilizationOperation'
           description: ''
+      summary: Api v1 fertilization operations retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_FertilizationOperations_update
       description: API endpoint that allows FertilizationOperation to be viewed or edited.
@@ -4862,6 +5066,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FertilizationOperation'
           description: ''
+      summary: Api v1 fertilization operations update
+      x-summary-source: derived
     patch:
       operationId: api_v1_FertilizationOperations_partial_update
       description: API endpoint that allows FertilizationOperation to be viewed or edited.
@@ -4905,6 +5111,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/FertilizationOperation'
           description: ''
+      summary: Api v1 fertilization operations partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_FertilizationOperations_destroy
       description: API endpoint that allows FertilizationOperation to be viewed or edited.
@@ -4930,6 +5138,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 fertilization operations destroy
+      x-summary-source: derived
   /api/v1/Fertilizers/:
     get:
       operationId: api_v1_Fertilizers_list
@@ -4977,6 +5187,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/Fertilizer'
           description: ''
+      summary: Api v1 fertilizers list
+      x-summary-source: derived
     post:
       operationId: api_v1_Fertilizers_create
       description: API endpoint that allows Fertilizer to be viewed or edited.
@@ -5014,6 +5226,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Fertilizer'
           description: ''
+      summary: Api v1 fertilizers create
+      x-summary-source: derived
   /api/v1/Fertilizers/{id}/:
     get:
       operationId: api_v1_Fertilizers_retrieve
@@ -5047,6 +5261,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Fertilizer'
           description: ''
+      summary: Api v1 fertilizers retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_Fertilizers_update
       description: API endpoint that allows Fertilizer to be viewed or edited.
@@ -5091,6 +5307,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Fertilizer'
           description: ''
+      summary: Api v1 fertilizers update
+      x-summary-source: derived
     patch:
       operationId: api_v1_Fertilizers_partial_update
       description: API endpoint that allows Fertilizer to be viewed or edited.
@@ -5134,6 +5352,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Fertilizer'
           description: ''
+      summary: Api v1 fertilizers partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_Fertilizers_destroy
       description: API endpoint that allows Fertilizer to be viewed or edited.
@@ -5159,6 +5379,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 fertilizers destroy
+      x-summary-source: derived
   /api/v1/GenericFarmAssets/:
     get:
       operationId: api_v1_GenericFarmAssets_list
@@ -5211,6 +5433,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/GenericFarmAsset'
           description: ''
+      summary: Api v1 generic farm assets list
+      x-summary-source: derived
     post:
       operationId: api_v1_GenericFarmAssets_create
       description: API endpoint that allows GenericFarmAsset to be viewed or edited.
@@ -5248,6 +5472,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/GenericFarmAsset'
           description: ''
+      summary: Api v1 generic farm assets create
+      x-summary-source: derived
   /api/v1/GenericFarmAssets/{id}/:
     get:
       operationId: api_v1_GenericFarmAssets_retrieve
@@ -5281,6 +5507,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/GenericFarmAsset'
           description: ''
+      summary: Api v1 generic farm assets retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_GenericFarmAssets_update
       description: API endpoint that allows GenericFarmAsset to be viewed or edited.
@@ -5325,6 +5553,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/GenericFarmAsset'
           description: ''
+      summary: Api v1 generic farm assets update
+      x-summary-source: derived
     patch:
       operationId: api_v1_GenericFarmAssets_partial_update
       description: API endpoint that allows GenericFarmAsset to be viewed or edited.
@@ -5368,6 +5598,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/GenericFarmAsset'
           description: ''
+      summary: Api v1 generic farm assets partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_GenericFarmAssets_destroy
       description: API endpoint that allows GenericFarmAsset to be viewed or edited.
@@ -5393,6 +5625,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 generic farm assets destroy
+      x-summary-source: derived
   /api/v1/IrrigationOperations/:
     get:
       operationId: api_v1_IrrigationOperations_list
@@ -5451,6 +5685,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/IrrigationOperation'
           description: ''
+      summary: Api v1 irrigation operations list
+      x-summary-source: derived
     post:
       operationId: api_v1_IrrigationOperations_create
       description: API endpoint that allows IrrigationOperation to be viewed or edited.
@@ -5488,6 +5724,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/IrrigationOperation'
           description: ''
+      summary: Api v1 irrigation operations create
+      x-summary-source: derived
   /api/v1/IrrigationOperations/{id}/:
     get:
       operationId: api_v1_IrrigationOperations_retrieve
@@ -5521,6 +5759,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/IrrigationOperation'
           description: ''
+      summary: Api v1 irrigation operations retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_IrrigationOperations_update
       description: API endpoint that allows IrrigationOperation to be viewed or edited.
@@ -5565,6 +5805,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/IrrigationOperation'
           description: ''
+      summary: Api v1 irrigation operations update
+      x-summary-source: derived
     patch:
       operationId: api_v1_IrrigationOperations_partial_update
       description: API endpoint that allows IrrigationOperation to be viewed or edited.
@@ -5608,6 +5850,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/IrrigationOperation'
           description: ''
+      summary: Api v1 irrigation operations partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_IrrigationOperations_destroy
       description: API endpoint that allows IrrigationOperation to be viewed or edited.
@@ -5633,6 +5877,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 irrigation operations destroy
+      x-summary-source: derived
   /api/v1/Observations/:
     get:
       operationId: api_v1_Observations_list
@@ -5687,6 +5933,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/Observation'
           description: ''
+      summary: Api v1 observations list
+      x-summary-source: derived
     post:
       operationId: api_v1_Observations_create
       description: API endpoint that allows Observation to be viewed or edited.
@@ -5724,6 +5972,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Observation'
           description: ''
+      summary: Api v1 observations create
+      x-summary-source: derived
   /api/v1/Observations/{id}/:
     get:
       operationId: api_v1_Observations_retrieve
@@ -5757,6 +6007,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Observation'
           description: ''
+      summary: Api v1 observations retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_Observations_update
       description: API endpoint that allows Observation to be viewed or edited.
@@ -5801,6 +6053,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Observation'
           description: ''
+      summary: Api v1 observations update
+      x-summary-source: derived
     patch:
       operationId: api_v1_Observations_partial_update
       description: API endpoint that allows Observation to be viewed or edited.
@@ -5844,6 +6098,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Observation'
           description: ''
+      summary: Api v1 observations partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_Observations_destroy
       description: API endpoint that allows Observation to be viewed or edited.
@@ -5869,6 +6125,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 observations destroy
+      x-summary-source: derived
   /api/v1/Pesticides/:
     get:
       operationId: api_v1_Pesticides_list
@@ -5916,6 +6174,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/Pesticide'
           description: ''
+      summary: Api v1 pesticides list
+      x-summary-source: derived
     post:
       operationId: api_v1_Pesticides_create
       description: API endpoint that allows Pesticide to be viewed or edited.
@@ -5953,6 +6213,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Pesticide'
           description: ''
+      summary: Api v1 pesticides create
+      x-summary-source: derived
   /api/v1/Pesticides/{id}/:
     get:
       operationId: api_v1_Pesticides_retrieve
@@ -5986,6 +6248,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Pesticide'
           description: ''
+      summary: Api v1 pesticides retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_Pesticides_update
       description: API endpoint that allows Pesticide to be viewed or edited.
@@ -6030,6 +6294,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Pesticide'
           description: ''
+      summary: Api v1 pesticides update
+      x-summary-source: derived
     patch:
       operationId: api_v1_Pesticides_partial_update
       description: API endpoint that allows Pesticide to be viewed or edited.
@@ -6073,6 +6339,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Pesticide'
           description: ''
+      summary: Api v1 pesticides partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_Pesticides_destroy
       description: API endpoint that allows Pesticide to be viewed or edited.
@@ -6098,6 +6366,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 pesticides destroy
+      x-summary-source: derived
   /api/v1/SprayingRecommendation/:
     get:
       operationId: api_v1_SprayingRecommendation_list
@@ -6152,6 +6422,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/SprayingRecommendationObservation'
           description: ''
+      summary: Api v1 spraying recommendation list
+      x-summary-source: derived
     post:
       operationId: api_v1_SprayingRecommendation_create
       description: API endpoint that allows SprayingRecommendation to be viewed or edited.
@@ -6189,6 +6461,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SprayingRecommendationObservation'
           description: ''
+      summary: Api v1 spraying recommendation create
+      x-summary-source: derived
   /api/v1/SprayingRecommendation/{id}/:
     get:
       operationId: api_v1_SprayingRecommendation_retrieve
@@ -6222,6 +6496,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SprayingRecommendationObservation'
           description: ''
+      summary: Api v1 spraying recommendation retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_SprayingRecommendation_update
       description: API endpoint that allows SprayingRecommendation to be viewed or edited.
@@ -6266,6 +6542,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SprayingRecommendationObservation'
           description: ''
+      summary: Api v1 spraying recommendation update
+      x-summary-source: derived
     patch:
       operationId: api_v1_SprayingRecommendation_partial_update
       description: API endpoint that allows SprayingRecommendation to be viewed or edited.
@@ -6309,6 +6587,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SprayingRecommendationObservation'
           description: ''
+      summary: Api v1 spraying recommendation partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_SprayingRecommendation_destroy
       description: API endpoint that allows SprayingRecommendation to be viewed or edited.
@@ -6334,6 +6614,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 spraying recommendation destroy
+      x-summary-source: derived
   /api/v1/VigorEstimation/:
     get:
       operationId: api_v1_VigorEstimation_list
@@ -6388,6 +6670,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/VigorEstimationObservation'
           description: ''
+      summary: Api v1 vigor estimation list
+      x-summary-source: derived
     post:
       operationId: api_v1_VigorEstimation_create
       description: API endpoint that allows VigorEstimation to be viewed or edited.
@@ -6425,6 +6709,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/VigorEstimationObservation'
           description: ''
+      summary: Api v1 vigor estimation create
+      x-summary-source: derived
   /api/v1/VigorEstimation/{id}/:
     get:
       operationId: api_v1_VigorEstimation_retrieve
@@ -6458,6 +6744,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/VigorEstimationObservation'
           description: ''
+      summary: Api v1 vigor estimation retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_VigorEstimation_update
       description: API endpoint that allows VigorEstimation to be viewed or edited.
@@ -6502,6 +6790,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/VigorEstimationObservation'
           description: ''
+      summary: Api v1 vigor estimation update
+      x-summary-source: derived
     patch:
       operationId: api_v1_VigorEstimation_partial_update
       description: API endpoint that allows VigorEstimation to be viewed or edited.
@@ -6545,6 +6835,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/VigorEstimationObservation'
           description: ''
+      summary: Api v1 vigor estimation partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_VigorEstimation_destroy
       description: API endpoint that allows VigorEstimation to be viewed or edited.
@@ -6570,6 +6862,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 vigor estimation destroy
+      x-summary-source: derived
   /api/v1/YieldPrediction/:
     get:
       operationId: api_v1_YieldPrediction_list
@@ -6624,6 +6918,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/YieldPredictionObservation'
           description: ''
+      summary: Api v1 yield prediction list
+      x-summary-source: derived
     post:
       operationId: api_v1_YieldPrediction_create
       description: API endpoint that allows YieldPrediction to be viewed or edited.
@@ -6661,6 +6957,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/YieldPredictionObservation'
           description: ''
+      summary: Api v1 yield prediction create
+      x-summary-source: derived
   /api/v1/YieldPrediction/{id}/:
     get:
       operationId: api_v1_YieldPrediction_retrieve
@@ -6694,6 +6992,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/YieldPredictionObservation'
           description: ''
+      summary: Api v1 yield prediction retrieve
+      x-summary-source: derived
     put:
       operationId: api_v1_YieldPrediction_update
       description: API endpoint that allows YieldPrediction to be viewed or edited.
@@ -6738,6 +7038,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/YieldPredictionObservation'
           description: ''
+      summary: Api v1 yield prediction update
+      x-summary-source: derived
     patch:
       operationId: api_v1_YieldPrediction_partial_update
       description: API endpoint that allows YieldPrediction to be viewed or edited.
@@ -6781,6 +7083,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/YieldPredictionObservation'
           description: ''
+      summary: Api v1 yield prediction partial update
+      x-summary-source: derived
     delete:
       operationId: api_v1_YieldPrediction_destroy
       description: API endpoint that allows YieldPrediction to be viewed or edited.
@@ -6806,6 +7110,8 @@ paths:
       responses:
         '204':
           description: No response body
+      summary: Api v1 yield prediction destroy
+      x-summary-source: derived
   /api/v1/schema/:
     get:
       operationId: api_v1_schema_retrieve
@@ -6952,8 +7258,495 @@ paths:
                 type: object
                 additionalProperties: {}
           description: ''
+      summary: Api v1 schema retrieve
+      x-summary-source: derived
 components:
   schemas:
+    MadeBySensorField:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+      required:
+      - name
+    PatchedGenericFarmAsset:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type:
+          - string
+          - 'null'
+        hasAgriParcel:
+          type: string
+          format: uuid
+    LocationSerializerField:
+      type: object
+      properties:
+        lat:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,3}(?:\.\d{0,14})?$
+        long:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,3}(?:\.\d{0,14})?$
+      required:
+      - lat
+      - long
+    SeverityEnum:
+      enum:
+      - minor
+      - moderate
+      - severe
+      - major
+      - critical
+      type: string
+      description: '* `minor` - Minor
+
+        * `moderate` - Moderate
+
+        * `severe` - Severe
+
+        * `major` - Major
+
+        * `critical` - Critical'
+    VigorEstimationObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasArea:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+      required:
+      - activityType
+      - hasAgriParcel
+      - hasArea
+      - hasResult
+      - id
+      - observedProperty
+      - phenomenonTime
+    GeometrySerializerField:
+      type: object
+      properties:
+        asWKT:
+          type: string
+      required:
+      - asWKT
+    PatchedFarmParcel:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        deleted_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        identifier:
+          type: string
+          maxLength: 255
+        description:
+          type:
+          - string
+          - 'null'
+        validFrom:
+          type: string
+          format: date-time
+        validTo:
+          type: string
+          format: date-time
+        area:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        hasIrrigationFlow:
+          type:
+          - string
+          - 'null'
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        category:
+          type: string
+        inRegion:
+          type:
+          - string
+          - 'null'
+        hasToponym:
+          type:
+          - string
+          - 'null'
+        isNitroArea:
+          type: boolean
+        isNatura2000Area:
+          type: boolean
+        isPdopgArea:
+          type: boolean
+        isIrrigated:
+          type: boolean
+        isCultivatedInLevels:
+          type: boolean
+        isGroundSlope:
+          type: boolean
+        depiction:
+          type:
+          - string
+          - 'null'
+          format: uri
+          maxLength: 500
+        hasGeometry:
+          $ref: '#/components/schemas/GeometrySerializerField'
+        location:
+          $ref: '#/components/schemas/LocationSerializerField'
+        hasAgriCrop:
+          type: array
+          items:
+            type: string
+            format: uuid
+          readOnly: true
+        farm:
+          type: string
+          format: uuid
+    DiseaseDetectionObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasArea:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+      required:
+      - activityType
+      - hasAgriParcel
+      - hasArea
+      - hasResult
+      - id
+      - observedProperty
+      - phenomenonTime
+    PatchedObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        hasAgriParcel:
+          type: string
+          format: uuid
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+    AddRawMaterialCompostQuantity:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        typeName:
+          type: string
+        quantityValue:
+          $ref: '#/components/schemas/AppliedAmmountField'
+      required:
+      - id
+      - quantityValue
+      - typeName
+    FarmCrop:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type:
+          - string
+          - 'null'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        cropSpecies:
+          $ref: '#/components/schemas/CropSpeciesSerializerField'
+        growth_stage:
+          type:
+          - string
+          - 'null'
+          maxLength: 255
+      required:
+      - cropSpecies
+      - dateCreated
+      - dateModified
+      - hasAgriParcel
+      - id
+      - invalidatedAtTime
+      - name
+    PatchedVigorEstimationObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasArea:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+    GenericFarmAsset:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type:
+          - string
+          - 'null'
+        hasAgriParcel:
+          type: string
+          format: uuid
+      required:
+      - dateCreated
+      - dateModified
+      - hasAgriParcel
+      - id
+      - invalidatedAtTime
+      - name
+    PatchedFertilizer:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        hasCommercialName:
+          type: string
+        description:
+          type:
+          - string
+          - 'null'
+        hasCost:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        isPricePer:
+          type: string
+        hasActiveSubstance:
+          type: string
+        isTargetedTowards:
+          type: string
+        hasNutrientConcentration:
+          type: string
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
     IrrigationOperation:
       type: object
       properties:
@@ -6968,18 +7761,21 @@ components:
           type: string
           maxLength: 200
         details:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         hasStartDatetime:
           type: string
           format: date-time
         hasEndDatetime:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         responsibleAgent:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         usesAgriculturalMachinery:
           type: array
           items:
@@ -7000,7 +7796,7 @@ components:
       - operatedOn
       - usesAgriculturalMachinery
       - usesIrrigationSystem
-    Alert:
+    PatchedIrrigationOperation:
       type: object
       properties:
         id:
@@ -7014,84 +7810,81 @@ components:
           type: string
           maxLength: 200
         details:
-          type: string
-          nullable: true
-        severity:
-          $ref: '#/components/schemas/SeverityEnum'
-        hasAgriParcel:
-          type: string
-          format: uuid
-        validFrom:
-          type: string
-          format: date-time
-        validTo:
-          type: string
-          format: date-time
-        dateIssued:
-          type: string
-          format: date-time
-          readOnly: true
-          nullable: true
-        quantityValue:
-          $ref: '#/components/schemas/ObservationQuantityValueField'
-        relatedObservation:
-          type: string
-          format: uuid
-          nullable: true
-      required:
-      - activityType
-      - dateIssued
-      - hasAgriParcel
-      - id
-      - relatedObservation
-      - validFrom
-      - validTo
-    YieldPredictionObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
           type: string
           format: date-time
         hasEndDatetime:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasAgriParcel:
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasAppliedAmount:
+          $ref: '#/components/schemas/AppliedAmmountField'
+        usesIrrigationSystem:
+          $ref: '#/components/schemas/UsesIrrigationSystemEnum'
+        operatedOn:
           type: string
           format: uuid
-        hasArea:
+    PatchedFertilizationOperation:
+      type: object
+      properties:
+        id:
           type: string
-          format: decimal
-          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
+          format: uuid
+          readOnly: true
+        activityType:
           type: string
-      required:
-      - activityType
-      - hasAgriParcel
-      - hasArea
-      - hasResult
-      - id
-      - observedProperty
-      - phenomenonTime
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasAppliedAmount:
+          $ref: '#/components/schemas/AppliedAmmountField'
+        hasApplicationMethod:
+          type:
+          - string
+          - 'null'
+        usesFertilizer:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        operatedOn:
+          type: string
+          format: uuid
     PatchedSprayingRecommendationObservation:
       type: object
       properties:
@@ -7106,19 +7899,20 @@ components:
           type: string
           maxLength: 200
         details:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         phenomenonTime:
           type: string
           format: date-time
         hasEndDatetime:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         madeBySensor:
           allOf:
           - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
         hasAgriParcel:
           type: string
           format: uuid
@@ -7131,9 +7925,322 @@ components:
         observedProperty:
           type: string
         usesPesticide:
+          type:
+          - string
+          - 'null'
+          format: uuid
+    CropStressIndicatorObservation:
+      type: object
+      properties:
+        id:
           type: string
           format: uuid
-          nullable: true
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasAgriCrop:
+          type: string
+          format: uuid
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+      required:
+      - activityType
+      - hasAgriCrop
+      - hasAgriParcel
+      - hasResult
+      - id
+      - observedProperty
+      - phenomenonTime
+    PatchedCropProtectionOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasAppliedAmount:
+          $ref: '#/components/schemas/AppliedAmmountField'
+        usesPesticide:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        operatedOn:
+          type: string
+          format: uuid
+    PatchedAlert:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        severity:
+          $ref: '#/components/schemas/SeverityEnum'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        validFrom:
+          type: string
+          format: date-time
+        validTo:
+          type: string
+          format: date-time
+        dateIssued:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          readOnly: true
+        quantityValue:
+          $ref: '#/components/schemas/ObservationQuantityValueField'
+        relatedObservation:
+          type:
+          - string
+          - 'null'
+          format: uuid
+    Pesticide:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        hasCommercialName:
+          type: string
+        description:
+          type:
+          - string
+          - 'null'
+        hasCost:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        isPricePer:
+          type: string
+        hasActiveSubstance:
+          type: string
+        isTargetedTowards:
+          type: string
+        hasPreharvestInterval:
+          type: integer
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - dateCreated
+      - dateModified
+      - hasActiveSubstance
+      - hasCommercialName
+      - hasCost
+      - hasPreharvestInterval
+      - id
+      - invalidatedAtTime
+      - isPricePer
+      - isTargetedTowards
+    PatchedFarmCrop:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type:
+          - string
+          - 'null'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        cropSpecies:
+          $ref: '#/components/schemas/CropSpeciesSerializerField'
+        growth_stage:
+          type:
+          - string
+          - 'null'
+          maxLength: 255
+    Observation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        hasAgriParcel:
+          type: string
+          format: uuid
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+      required:
+      - activityType
+      - hasAgriParcel
+      - hasResult
+      - id
+      - observedProperty
+      - phenomenonTime
+    PatchedFarmCalendarActivityType:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type:
+          - string
+          - 'null'
+        category:
+          $ref: '#/components/schemas/CategoryEnum'
+        background_color:
+          type: string
+          pattern: ^#[0-9A-Fa-f]{6}$
+          maxLength: 7
+        border_color:
+          type: string
+          pattern: ^#[0-9A-Fa-f]{6}$
+          maxLength: 7
+        text_color:
+          type: string
+          pattern: ^#[0-9A-Fa-f]{6}$
+          maxLength: 7
+        activity_endpoint:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+          description: The farm activitie API endpoint with the specific details of this activity type.
+    GenericQuantityValueField:
+      type: object
+      properties:
+        unit:
+          type:
+          - string
+          - 'null'
+        hasValue:
+          type: string
+      required:
+      - hasValue
     Farm:
       type: object
       properties:
@@ -7143,9 +8250,10 @@ components:
           minimum: -2147483648
           maximum: 2147483647
         deleted_at:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         created_at:
           type: string
           format: date-time
@@ -7200,420 +8308,7 @@ components:
       required:
       - firstname
       - lastname
-    PatchedYieldPredictionObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        hasArea:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-    FarmCalendarActivityType:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        name:
-          type: string
-          maxLength: 100
-        description:
-          type: string
-          nullable: true
-        category:
-          $ref: '#/components/schemas/CategoryEnum'
-        background_color:
-          type: string
-          pattern: ^#[0-9A-Fa-f]{6}$
-          maxLength: 7
-        border_color:
-          type: string
-          pattern: ^#[0-9A-Fa-f]{6}$
-          maxLength: 7
-        text_color:
-          type: string
-          pattern: ^#[0-9A-Fa-f]{6}$
-          maxLength: 7
-        activity_endpoint:
-          type: string
-          readOnly: true
-          nullable: true
-          description: The farm activitie API endpoint with the specific details of this activity type.
-      required:
-      - activity_endpoint
-      - id
-      - name
-    UsesIrrigationSystemEnum:
-      enum:
-      - sprinkler
-      - drip
-      - centre_pivot
-      - furrow
-      - terraced
-      type: string
-      description: '* `sprinkler` - Sprinkler
-
-        * `drip` - Drip
-
-        * `centre_pivot` - Centre Pivot
-
-        * `furrow` - Furrow
-
-        * `terraced` - Terraced'
-    CropStressIndicatorObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        hasAgriCrop:
-          type: string
-          format: uuid
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-      required:
-      - activityType
-      - hasAgriCrop
-      - hasAgriParcel
-      - hasResult
-      - id
-      - observedProperty
-      - phenomenonTime
-    PatchedPesticide:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        hasCommercialName:
-          type: string
-        description:
-          type: string
-          nullable: true
-        hasCost:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
-        isPricePer:
-          type: string
-        hasActiveSubstance:
-          type: string
-        isTargetedTowards:
-          type: string
-        hasPreharvestInterval:
-          type: integer
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        dateCreated:
-          type: string
-          format: date-time
-          readOnly: true
-        dateModified:
-          type: string
-          format: date-time
-          readOnly: true
-        invalidatedAtTime:
-          type: string
-          format: date-time
-          readOnly: true
-    SprayingRecommendationObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        hasArea:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-        usesPesticide:
-          type: string
-          format: uuid
-          nullable: true
-      required:
-      - activityType
-      - hasAgriParcel
-      - hasArea
-      - hasResult
-      - id
-      - observedProperty
-      - phenomenonTime
-      - usesPesticide
-    GenericFarmAsset:
-      type: object
-      properties:
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        invalidatedAtTime:
-          type: string
-          format: date-time
-          readOnly: true
-        dateCreated:
-          type: string
-          format: date-time
-          readOnly: true
-        dateModified:
-          type: string
-          format: date-time
-          readOnly: true
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        name:
-          type: string
-          maxLength: 100
-        description:
-          type: string
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-      required:
-      - dateCreated
-      - dateModified
-      - hasAgriParcel
-      - id
-      - invalidatedAtTime
-      - name
-    FarmCalendarActivity:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        responsibleAgent:
-          type: string
-          nullable: true
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-      required:
-      - activityType
-      - hasAgriParcel
-      - hasStartDatetime
-      - id
-      - usesAgriculturalMachinery
-    MadeBySensorField:
-      type: object
-      properties:
-        name:
-          type: string
-          nullable: true
-      required:
-      - name
-    StatusEnum:
-      enum:
-      - 0
-      - 1
-      - 2
-      type: integer
-      description: '* `0` - Inactive
-
-        * `1` - Active
-
-        * `2` - Deleted'
-    FarmCrop:
-      type: object
-      properties:
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        invalidatedAtTime:
-          type: string
-          format: date-time
-          readOnly: true
-        dateCreated:
-          type: string
-          format: date-time
-          readOnly: true
-        dateModified:
-          type: string
-          format: date-time
-          readOnly: true
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        name:
-          type: string
-          maxLength: 100
-        description:
-          type: string
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        cropSpecies:
-          $ref: '#/components/schemas/CropSpeciesSerializerField'
-        growth_stage:
-          type: string
-          nullable: true
-          maxLength: 255
-      required:
-      - cropSpecies
-      - dateCreated
-      - dateModified
-      - hasAgriParcel
-      - id
-      - invalidatedAtTime
-      - name
-    PatchedFarmCrop:
-      type: object
-      properties:
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        invalidatedAtTime:
-          type: string
-          format: date-time
-          readOnly: true
-        dateCreated:
-          type: string
-          format: date-time
-          readOnly: true
-        dateModified:
-          type: string
-          format: date-time
-          readOnly: true
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        name:
-          type: string
-          maxLength: 100
-        description:
-          type: string
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        cropSpecies:
-          $ref: '#/components/schemas/CropSpeciesSerializerField'
-        growth_stage:
-          type: string
-          nullable: true
-          maxLength: 255
-    FarmAnimal:
+    PatchedFarmAnimal:
       type: object
       properties:
         id:
@@ -7623,12 +8318,14 @@ components:
         nationalID:
           type: string
         name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           maxLength: 100
         description:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         hasAgriParcel:
           type: string
           format: uuid
@@ -7643,8 +8340,157 @@ components:
           type: string
           maxLength: 255
         breed:
+          type:
+          - string
+          - 'null'
+          maxLength: 255
+        birthdate:
           type: string
-          nullable: true
+          format: date-time
+        isMemberOfAnimalGroup:
+          $ref: '#/components/schemas/FarmAnimalGroupSerializerField'
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+    PatchedCompostTurningOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        operatedOn:
+          type: string
+          format: uuid
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+    SprayingRecommendationObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasArea:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+        usesPesticide:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      required:
+      - activityType
+      - hasAgriParcel
+      - hasArea
+      - hasResult
+      - id
+      - observedProperty
+      - phenomenonTime
+      - usesPesticide
+    FarmAnimal:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        nationalID:
+          type: string
+        name:
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        description:
+          type:
+          - string
+          - 'null'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        sex:
+          allOf:
+          - $ref: '#/components/schemas/SexEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        isCastrated:
+          type: boolean
+        species:
+          type: string
+          maxLength: 255
+        breed:
+          type:
+          - string
+          - 'null'
           maxLength: 255
         birthdate:
           type: string
@@ -7676,6 +8522,142 @@ components:
       - id
       - invalidatedAtTime
       - species
+    PatchedDiseaseDetectionObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasArea:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+    StatusEnum:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      description: '* `0` - Inactive
+
+        * `1` - Active
+
+        * `2` - Deleted'
+    PatchedCropStressIndicatorObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasAgriCrop:
+          type: string
+          format: uuid
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+    AddRawMaterialOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        operatedOn:
+          type: string
+          format: uuid
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasCompostMaterial:
+          type: array
+          items:
+            $ref: '#/components/schemas/AddRawMaterialCompostQuantity'
+      required:
+      - activityType
+      - hasCompostMaterial
+      - hasStartDatetime
+      - id
+      - operatedOn
+      - usesAgriculturalMachinery
     CropProtectionOperation:
       type: object
       properties:
@@ -7690,18 +8672,21 @@ components:
           type: string
           maxLength: 200
         details:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         hasStartDatetime:
           type: string
           format: date-time
         hasEndDatetime:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         responsibleAgent:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         usesAgriculturalMachinery:
           type: array
           items:
@@ -7710,9 +8695,10 @@ components:
         hasAppliedAmount:
           $ref: '#/components/schemas/AppliedAmmountField'
         usesPesticide:
-          type: string
+          type:
+          - string
+          - 'null'
           format: uuid
-          nullable: true
         operatedOn:
           type: string
           format: uuid
@@ -7724,7 +8710,7 @@ components:
       - operatedOn
       - usesAgriculturalMachinery
       - usesPesticide
-    PatchedCropProtectionOperation:
+    CropGrowthStageObservation:
       type: object
       properties:
         id:
@@ -7738,244 +8724,39 @@ components:
           type: string
           maxLength: 200
         details:
-          type: string
-          nullable: true
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        responsibleAgent:
-          type: string
-          nullable: true
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-        hasAppliedAmount:
-          $ref: '#/components/schemas/AppliedAmmountField'
-        usesPesticide:
-          type: string
-          format: uuid
-          nullable: true
-        operatedOn:
-          type: string
-          format: uuid
-    PatchedObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         phenomenonTime:
           type: string
           format: date-time
         hasEndDatetime:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
         madeBySensor:
           allOf:
           - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-    PatchedFarmCalendarActivityType:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        name:
-          type: string
-          maxLength: 100
-        description:
-          type: string
-          nullable: true
-        category:
-          $ref: '#/components/schemas/CategoryEnum'
-        background_color:
-          type: string
-          pattern: ^#[0-9A-Fa-f]{6}$
-          maxLength: 7
-        border_color:
-          type: string
-          pattern: ^#[0-9A-Fa-f]{6}$
-          maxLength: 7
-        text_color:
-          type: string
-          pattern: ^#[0-9A-Fa-f]{6}$
-          maxLength: 7
-        activity_endpoint:
-          type: string
-          readOnly: true
-          nullable: true
-          description: The farm activitie API endpoint with the specific details of this activity type.
-    PatchedGenericFarmAsset:
-      type: object
-      properties:
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        invalidatedAtTime:
-          type: string
-          format: date-time
-          readOnly: true
-        dateCreated:
-          type: string
-          format: date-time
-          readOnly: true
-        dateModified:
-          type: string
-          format: date-time
-          readOnly: true
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        name:
-          type: string
-          maxLength: 100
-        description:
-          type: string
-          nullable: true
         hasAgriParcel:
           type: string
           format: uuid
-    DiseaseDetectionObservation:
-      type: object
-      properties:
-        id:
+        hasAgriCrop:
           type: string
           format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        hasArea:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
         hasResult:
           $ref: '#/components/schemas/GenericQuantityValueField'
         observedProperty:
           type: string
       required:
       - activityType
+      - hasAgriCrop
       - hasAgriParcel
-      - hasArea
       - hasResult
       - id
       - observedProperty
       - phenomenonTime
-    ObservationQuantityValueField:
-      type: object
-      properties:
-        unit:
-          type: string
-          readOnly: true
-          nullable: true
-        hasValue:
-          type: string
-          readOnly: true
-          nullable: true
-      required:
-      - hasValue
-      - unit
-    Pesticide:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        hasCommercialName:
-          type: string
-        description:
-          type: string
-          nullable: true
-        hasCost:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
-        isPricePer:
-          type: string
-        hasActiveSubstance:
-          type: string
-        isTargetedTowards:
-          type: string
-        hasPreharvestInterval:
-          type: integer
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        dateCreated:
-          type: string
-          format: date-time
-          readOnly: true
-        dateModified:
-          type: string
-          format: date-time
-          readOnly: true
-        invalidatedAtTime:
-          type: string
-          format: date-time
-          readOnly: true
-      required:
-      - dateCreated
-      - dateModified
-      - hasActiveSubstance
-      - hasCommercialName
-      - hasCost
-      - hasPreharvestInterval
-      - id
-      - invalidatedAtTime
-      - isPricePer
-      - isTargetedTowards
-    FertilizationOperation:
+    CompostOperation:
       type: object
       properties:
         id:
@@ -7989,162 +8770,63 @@ components:
           type: string
           maxLength: 200
         details:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         hasStartDatetime:
           type: string
           format: date-time
         hasEndDatetime:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         responsibleAgent:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         usesAgriculturalMachinery:
           type: array
           items:
             type: string
             format: uuid
-        hasAppliedAmount:
-          $ref: '#/components/schemas/AppliedAmmountField'
-        hasApplicationMethod:
-          type: string
-          nullable: true
-        usesFertilizer:
-          type: string
-          format: uuid
-          nullable: true
-        operatedOn:
-          type: string
-          format: uuid
-      required:
-      - activityType
-      - hasApplicationMethod
-      - hasAppliedAmount
-      - hasStartDatetime
-      - id
-      - operatedOn
-      - usesAgriculturalMachinery
-      - usesFertilizer
-    PatchedIrrigationOperation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        responsibleAgent:
-          type: string
-          nullable: true
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-        hasAppliedAmount:
-          $ref: '#/components/schemas/AppliedAmmountField'
-        usesIrrigationSystem:
-          $ref: '#/components/schemas/UsesIrrigationSystemEnum'
-        operatedOn:
-          type: string
-          format: uuid
-    AddressField:
-      type: object
-      properties:
-        adminUnitL1:
-          type: string
-        adminUnitL2:
-          type: string
-        addressArea:
-          type: string
-        municipality:
-          type: string
-        community:
-          type: string
-        locatorName:
-          type: string
-      required:
-      - addressArea
-      - adminUnitL1
-      - adminUnitL2
-      - community
-      - locatorName
-      - municipality
-    FarmAnimalGroupSerializerField:
-      type: object
-      properties:
-        hasName:
-          type: string
-    AddRawMaterialCompostQuantity:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        typeName:
-          type: string
-        quantityValue:
-          $ref: '#/components/schemas/AppliedAmmountField'
-      required:
-      - id
-      - quantityValue
-      - typeName
-    PatchedVigorEstimationObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
         hasAgriParcel:
           type: string
           format: uuid
-        hasArea:
+        isOperatedOn:
           type: string
-          format: decimal
-          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
+        hasNestedOperation:
+          type: array
+          items:
+            type: string
+            format: uuid
+          readOnly: true
+        hasMeasurement:
+          type: array
+          items:
+            type: string
+            format: uuid
+          readOnly: true
+      required:
+      - activityType
+      - hasAgriParcel
+      - hasMeasurement
+      - hasNestedOperation
+      - hasStartDatetime
+      - id
+      - isOperatedOn
+      - usesAgriculturalMachinery
+    SexEnum:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      description: '* `0` - N/A
+
+        * `1` - Female
+
+        * `2` - Male'
     PatchedAgriculturalMachine:
       type: object
       properties:
@@ -8156,8 +8838,9 @@ components:
           type: string
           maxLength: 100
         description:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         hasAgriParcel:
           type: string
           format: uuid
@@ -8190,7 +8873,66 @@ components:
           type: string
           format: date-time
           readOnly: true
-    AddRawMaterialOperation:
+    PatchedPesticide:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        hasCommercialName:
+          type: string
+        description:
+          type:
+          - string
+          - 'null'
+        hasCost:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        isPricePer:
+          type: string
+        hasActiveSubstance:
+          type: string
+        isTargetedTowards:
+          type: string
+        hasPreharvestInterval:
+          type: integer
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+    UsesIrrigationSystemEnum:
+      enum:
+      - sprinkler
+      - drip
+      - centre_pivot
+      - furrow
+      - terraced
+      type: string
+      description: '* `sprinkler` - Sprinkler
+
+        * `drip` - Drip
+
+        * `centre_pivot` - Centre Pivot
+
+        * `furrow` - Furrow
+
+        * `terraced` - Terraced'
+    Alert:
       type: object
       properties:
         id:
@@ -8204,53 +8946,9 @@ components:
           type: string
           maxLength: 200
         details:
-          type: string
-          nullable: true
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        operatedOn:
-          type: string
-          format: uuid
-        responsibleAgent:
-          type: string
-          nullable: true
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-        hasCompostMaterial:
-          type: array
-          items:
-            $ref: '#/components/schemas/AddRawMaterialCompostQuantity'
-      required:
-      - activityType
-      - hasCompostMaterial
-      - hasStartDatetime
-      - id
-      - operatedOn
-      - usesAgriculturalMachinery
-    PatchedAlert:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         severity:
           $ref: '#/components/schemas/SeverityEnum'
         hasAgriParcel:
@@ -8263,17 +8961,204 @@ components:
           type: string
           format: date-time
         dateIssued:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
           readOnly: true
-          nullable: true
         quantityValue:
           $ref: '#/components/schemas/ObservationQuantityValueField'
         relatedObservation:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      required:
+      - activityType
+      - dateIssued
+      - hasAgriParcel
+      - id
+      - relatedObservation
+      - validFrom
+      - validTo
+    PatchedFarmCalendarActivity:
+      type: object
+      properties:
+        id:
           type: string
           format: uuid
-          nullable: true
-    PatchedFertilizer:
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        hasAgriParcel:
+          type: string
+          format: uuid
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+    PatchedCropGrowthStageObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasAgriCrop:
+          type: string
+          format: uuid
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+    FarmCalendarActivity:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        hasAgriParcel:
+          type: string
+          format: uuid
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+      required:
+      - activityType
+      - hasAgriParcel
+      - hasStartDatetime
+      - id
+      - usesAgriculturalMachinery
+    AppliedAmmountField:
+      type: object
+      properties:
+        unit:
+          type: string
+        numericValue:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,15}(?:\.\d{0,2})?$
+      required:
+      - numericValue
+      - unit
+    YieldPredictionObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasArea:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+      required:
+      - activityType
+      - hasAgriParcel
+      - hasArea
+      - hasResult
+      - id
+      - observedProperty
+      - phenomenonTime
+    Fertilizer:
       type: object
       properties:
         id:
@@ -8283,8 +9168,9 @@ components:
         hasCommercialName:
           type: string
         description:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         hasCost:
           type: string
           format: decimal
@@ -8314,7 +9200,18 @@ components:
           type: string
           format: date-time
           readOnly: true
-    PatchedFertilizationOperation:
+      required:
+      - dateCreated
+      - dateModified
+      - hasActiveSubstance
+      - hasCommercialName
+      - hasCost
+      - hasNutrientConcentration
+      - id
+      - invalidatedAtTime
+      - isPricePer
+      - isTargetedTowards
+    PatchedYieldPredictionObservation:
       type: object
       properties:
         id:
@@ -8328,18 +9225,228 @@ components:
           type: string
           maxLength: 200
         details:
+          type:
+          - string
+          - 'null'
+        phenomenonTime:
           type: string
-          nullable: true
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasArea:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+    FarmAnimalGroupSerializerField:
+      type: object
+      properties:
+        hasName:
+          type: string
+    PatchedAddRawMaterialOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
         hasStartDatetime:
           type: string
           format: date-time
         hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        operatedOn:
+          type: string
+          format: uuid
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasCompostMaterial:
+          type: array
+          items:
+            $ref: '#/components/schemas/AddRawMaterialCompostQuantity'
+    AddressField:
+      type: object
+      properties:
+        adminUnitL1:
+          type: string
+        adminUnitL2:
+          type: string
+        addressArea:
+          type: string
+        municipality:
+          type: string
+        community:
+          type: string
+        locatorName:
+          type: string
+      required:
+      - addressArea
+      - adminUnitL1
+      - adminUnitL2
+      - community
+      - locatorName
+      - municipality
+    PatchedCompostOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
           type: string
           format: date-time
-          nullable: true
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
         responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasAgriParcel:
           type: string
-          nullable: true
+          format: uuid
+        isOperatedOn:
+          type: string
+        hasNestedOperation:
+          type: array
+          items:
+            type: string
+            format: uuid
+          readOnly: true
+        hasMeasurement:
+          type: array
+          items:
+            type: string
+            format: uuid
+          readOnly: true
+    CategoryEnum:
+      enum:
+      - activity
+      - observation
+      - alert
+      type: string
+      description: '* `activity` - Activity
+
+        * `observation` - Observation
+
+        * `alert` - Alert'
+    FarmCalendarActivityType:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type:
+          - string
+          - 'null'
+        category:
+          $ref: '#/components/schemas/CategoryEnum'
+        background_color:
+          type: string
+          pattern: ^#[0-9A-Fa-f]{6}$
+          maxLength: 7
+        border_color:
+          type: string
+          pattern: ^#[0-9A-Fa-f]{6}$
+          maxLength: 7
+        text_color:
+          type: string
+          pattern: ^#[0-9A-Fa-f]{6}$
+          maxLength: 7
+        activity_endpoint:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+          description: The farm activitie API endpoint with the specific details of this activity type.
+      required:
+      - activity_endpoint
+      - id
+      - name
+    FertilizationOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
         usesAgriculturalMachinery:
           type: array
           items:
@@ -8348,49 +9455,42 @@ components:
         hasAppliedAmount:
           $ref: '#/components/schemas/AppliedAmmountField'
         hasApplicationMethod:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         usesFertilizer:
-          type: string
+          type:
+          - string
+          - 'null'
           format: uuid
-          nullable: true
         operatedOn:
           type: string
           format: uuid
-    PatchedCompostTurningOperation:
+      required:
+      - activityType
+      - hasApplicationMethod
+      - hasAppliedAmount
+      - hasStartDatetime
+      - id
+      - operatedOn
+      - usesAgriculturalMachinery
+      - usesFertilizer
+    ObservationQuantityValueField:
       type: object
       properties:
-        id:
-          type: string
-          format: uuid
+        unit:
+          type:
+          - string
+          - 'null'
           readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        operatedOn:
-          type: string
-          format: uuid
-        responsibleAgent:
-          type: string
-          nullable: true
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
+        hasValue:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+      required:
+      - hasValue
+      - unit
     AgriculturalMachine:
       type: object
       properties:
@@ -8402,8 +9502,9 @@ components:
           type: string
           maxLength: 100
         description:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         hasAgriParcel:
           type: string
           format: uuid
@@ -8447,319 +9548,17 @@ components:
       - name
       - purchase_date
       - seria_number
-    PatchedFarmCalendarActivity:
+    CropSpeciesSerializerField:
       type: object
       properties:
-        id:
+        name:
           type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        responsibleAgent:
-          type: string
-          nullable: true
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-    SexEnum:
-      enum:
-      - 0
-      - 1
-      - 2
-      type: integer
-      description: '* `0` - N/A
-
-        * `1` - Female
-
-        * `2` - Male'
-    PatchedCropGrowthStageObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        hasAgriCrop:
-          type: string
-          format: uuid
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-    GenericQuantityValueField:
-      type: object
-      properties:
-        unit:
-          type: string
-          nullable: true
-        hasValue:
+        variety:
           type: string
       required:
-      - hasValue
-    CompostOperation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        responsibleAgent:
-          type: string
-          nullable: true
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-        hasAgriParcel:
-          type: string
-          format: uuid
-        isOperatedOn:
-          type: string
-        hasNestedOperation:
-          type: array
-          items:
-            type: string
-            format: uuid
-          readOnly: true
-        hasMeasurement:
-          type: array
-          items:
-            type: string
-            format: uuid
-          readOnly: true
-      required:
-      - activityType
-      - hasAgriParcel
-      - hasMeasurement
-      - hasNestedOperation
-      - hasStartDatetime
-      - id
-      - isOperatedOn
-      - usesAgriculturalMachinery
-    CropGrowthStageObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        hasAgriCrop:
-          type: string
-          format: uuid
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-      required:
-      - activityType
-      - hasAgriCrop
-      - hasAgriParcel
-      - hasResult
-      - id
-      - observedProperty
-      - phenomenonTime
-    LocationSerializerField:
-      type: object
-      properties:
-        lat:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,3}(?:\.\d{0,14})?$
-        long:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,3}(?:\.\d{0,14})?$
-      required:
-      - lat
-      - long
-    Observation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-      required:
-      - activityType
-      - hasAgriParcel
-      - hasResult
-      - id
-      - observedProperty
-      - phenomenonTime
-    CategoryEnum:
-      enum:
-      - activity
-      - observation
-      - alert
-      type: string
-      description: '* `activity` - Activity
-
-        * `observation` - Observation
-
-        * `alert` - Alert'
-    Fertilizer:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        hasCommercialName:
-          type: string
-        description:
-          type: string
-          nullable: true
-        hasCost:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
-        isPricePer:
-          type: string
-        hasActiveSubstance:
-          type: string
-        isTargetedTowards:
-          type: string
-        hasNutrientConcentration:
-          type: string
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        dateCreated:
-          type: string
-          format: date-time
-          readOnly: true
-        dateModified:
-          type: string
-          format: date-time
-          readOnly: true
-        invalidatedAtTime:
-          type: string
-          format: date-time
-          readOnly: true
-      required:
-      - dateCreated
-      - dateModified
-      - hasActiveSubstance
-      - hasCommercialName
-      - hasCost
-      - hasNutrientConcentration
-      - id
-      - invalidatedAtTime
-      - isPricePer
-      - isTargetedTowards
-    PatchedFarmParcel:
+      - name
+      - variety
+    PatchedFarm:
       type: object
       properties:
         status:
@@ -8768,9 +9567,10 @@ components:
           minimum: -2147483648
           maximum: 2147483647
         deleted_at:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         created_at:
           type: string
           format: date-time
@@ -8783,201 +9583,26 @@ components:
           type: string
           format: uuid
           readOnly: true
-        identifier:
+        name:
           type: string
-          maxLength: 255
         description:
           type: string
-          nullable: true
-        validFrom:
+        administrator:
           type: string
-          format: date-time
-        validTo:
+        telephone:
           type: string
-          format: date-time
-        area:
+        vatID:
           type: string
-          format: decimal
-          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
-        hasIrrigationFlow:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
-          nullable: true
-        category:
-          type: string
-        inRegion:
-          type: string
-          nullable: true
-        hasToponym:
-          type: string
-          nullable: true
-        isNitroArea:
-          type: boolean
-        isNatura2000Area:
-          type: boolean
-        isPdopgArea:
-          type: boolean
-        isIrrigated:
-          type: boolean
-        isCultivatedInLevels:
-          type: boolean
-        isGroundSlope:
-          type: boolean
-        depiction:
-          type: string
-          format: uri
-          nullable: true
-          maxLength: 500
-        hasGeometry:
-          $ref: '#/components/schemas/GeometrySerializerField'
-        location:
-          $ref: '#/components/schemas/LocationSerializerField'
-        hasAgriCrop:
-          type: array
-          items:
-            type: string
-            format: uuid
-          readOnly: true
-        farm:
-          type: string
-          format: uuid
-    PatchedCompostOperation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        responsibleAgent:
-          type: string
-          nullable: true
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
         hasAgriParcel:
-          type: string
-          format: uuid
-        isOperatedOn:
-          type: string
-        hasNestedOperation:
           type: array
           items:
             type: string
             format: uuid
           readOnly: true
-        hasMeasurement:
-          type: array
-          items:
-            type: string
-            format: uuid
-          readOnly: true
-    PatchedDiseaseDetectionObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        hasArea:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-    PatchedAddRawMaterialOperation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        operatedOn:
-          type: string
-          format: uuid
-        responsibleAgent:
-          type: string
-          nullable: true
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-        hasCompostMaterial:
-          type: array
-          items:
-            $ref: '#/components/schemas/AddRawMaterialCompostQuantity'
-    AppliedAmmountField:
-      type: object
-      properties:
-        unit:
-          type: string
-        numericValue:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,15}(?:\.\d{0,2})?$
-      required:
-      - numericValue
-      - unit
+        contactPerson:
+          $ref: '#/components/schemas/ContactPersonField'
+        address:
+          $ref: '#/components/schemas/AddressField'
     CompostTurningOperation:
       type: object
       properties:
@@ -8992,21 +9617,24 @@ components:
           type: string
           maxLength: 200
         details:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         hasStartDatetime:
           type: string
           format: date-time
         hasEndDatetime:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         operatedOn:
           type: string
           format: uuid
         responsibleAgent:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         usesAgriculturalMachinery:
           type: array
           items:
@@ -9018,178 +9646,6 @@ components:
       - id
       - operatedOn
       - usesAgriculturalMachinery
-    PatchedCropStressIndicatorObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        hasAgriCrop:
-          type: string
-          format: uuid
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-    CropSpeciesSerializerField:
-      type: object
-      properties:
-        name:
-          type: string
-        variety:
-          type: string
-      required:
-      - name
-      - variety
-    GeometrySerializerField:
-      type: object
-      properties:
-        asWKT:
-          type: string
-      required:
-      - asWKT
-    SeverityEnum:
-      enum:
-      - minor
-      - moderate
-      - severe
-      - major
-      - critical
-      type: string
-      description: '* `minor` - Minor
-
-        * `moderate` - Moderate
-
-        * `severe` - Severe
-
-        * `major` - Major
-
-        * `critical` - Critical'
-    PatchedFarmAnimal:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        nationalID:
-          type: string
-        name:
-          type: string
-          nullable: true
-          maxLength: 100
-        description:
-          type: string
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        sex:
-          allOf:
-          - $ref: '#/components/schemas/SexEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        isCastrated:
-          type: boolean
-        species:
-          type: string
-          maxLength: 255
-        breed:
-          type: string
-          nullable: true
-          maxLength: 255
-        birthdate:
-          type: string
-          format: date-time
-        isMemberOfAnimalGroup:
-          $ref: '#/components/schemas/FarmAnimalGroupSerializerField'
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        invalidatedAtTime:
-          type: string
-          format: date-time
-          readOnly: true
-        dateCreated:
-          type: string
-          format: date-time
-          readOnly: true
-        dateModified:
-          type: string
-          format: date-time
-          readOnly: true
-    VigorEstimationObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type: string
-          nullable: true
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type: string
-          format: date-time
-          nullable: true
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-          nullable: true
-        hasAgriParcel:
-          type: string
-          format: uuid
-        hasArea:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-      required:
-      - activityType
-      - hasAgriParcel
-      - hasArea
-      - hasResult
-      - id
-      - observedProperty
-      - phenomenonTime
     FarmParcel:
       type: object
       properties:
@@ -9199,9 +9655,10 @@ components:
           minimum: -2147483648
           maximum: 2147483647
         deleted_at:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         created_at:
           type: string
           format: date-time
@@ -9218,8 +9675,9 @@ components:
           type: string
           maxLength: 255
         description:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         validFrom:
           type: string
           format: date-time
@@ -9231,18 +9689,21 @@ components:
           format: decimal
           pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
         hasIrrigationFlow:
-          type: string
+          type:
+          - string
+          - 'null'
           format: decimal
           pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
-          nullable: true
         category:
           type: string
         inRegion:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         hasToponym:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         isNitroArea:
           type: boolean
         isNatura2000Area:
@@ -9256,9 +9717,10 @@ components:
         isGroundSlope:
           type: boolean
         depiction:
-          type: string
+          type:
+          - string
+          - 'null'
           format: uri
-          nullable: true
           maxLength: 500
         hasGeometry:
           $ref: '#/components/schemas/GeometrySerializerField'
@@ -9294,59 +9756,8 @@ components:
       - updated_at
       - validFrom
       - validTo
-    PatchedFarm:
-      type: object
-      properties:
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        deleted_at:
-          type: string
-          format: date-time
-          nullable: true
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        updated_at:
-          type: string
-          format: date-time
-          readOnly: true
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        name:
-          type: string
-        description:
-          type: string
-        administrator:
-          type: string
-        telephone:
-          type: string
-        vatID:
-          type: string
-        hasAgriParcel:
-          type: array
-          items:
-            type: string
-            format: uuid
-          readOnly: true
-        contactPerson:
-          $ref: '#/components/schemas/ContactPersonField'
-        address:
-          $ref: '#/components/schemas/AddressField'
   securitySchemes:
-    Bearer_Token:
-      type: http
-      scheme: bearer
-      bearerFormat: JWT
-      description: '**Required for most operations.**
-
-        1. Login via `/login` to get token.
-
-        2. Paste access token here.
-
-        '
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
