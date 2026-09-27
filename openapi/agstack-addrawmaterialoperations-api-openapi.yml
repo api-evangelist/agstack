@@ -1,0 +1,379 @@
+openapi: 3.2.0
+info:
+  title: OpenAgri Farm Calendar Add Raw Material Operations API
+  version: 1.0.0
+  description: API for farm assets and other farm related things.
+tags:
+- name: AddRawMaterialOperations
+paths:
+  /api/v1/AddRawMaterialOperations/:
+    get:
+      operationId: api_v1_AddRawMaterialOperations_list
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: activity_type
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: query
+        name: fromDate
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: parcel
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: title
+        schema:
+          type: string
+      - in: query
+        name: toDate
+        schema:
+          type: string
+          format: date-time
+      tags:
+      - AddRawMaterialOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AddRawMaterialOperation'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AddRawMaterialOperation'
+          description: ''
+      summary: Api v1 add raw material operations list
+      x-summary-source: derived
+    post:
+      operationId: api_v1_AddRawMaterialOperations_create
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      tags:
+      - AddRawMaterialOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddRawMaterialOperation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AddRawMaterialOperation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AddRawMaterialOperation'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/AddRawMaterialOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddRawMaterialOperation'
+          description: ''
+      summary: Api v1 add raw material operations create
+      x-summary-source: derived
+  /api/v1/AddRawMaterialOperations/{id}/:
+    get:
+      operationId: api_v1_AddRawMaterialOperations_retrieve
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Add Raw Material Operation.
+        required: true
+      tags:
+      - AddRawMaterialOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/AddRawMaterialOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddRawMaterialOperation'
+          description: ''
+      summary: Api v1 add raw material operations retrieve
+      x-summary-source: derived
+    put:
+      operationId: api_v1_AddRawMaterialOperations_update
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Add Raw Material Operation.
+        required: true
+      tags:
+      - AddRawMaterialOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddRawMaterialOperation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AddRawMaterialOperation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AddRawMaterialOperation'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/AddRawMaterialOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddRawMaterialOperation'
+          description: ''
+      summary: Api v1 add raw material operations update
+      x-summary-source: derived
+    patch:
+      operationId: api_v1_AddRawMaterialOperations_partial_update
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Add Raw Material Operation.
+        required: true
+      tags:
+      - AddRawMaterialOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAddRawMaterialOperation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAddRawMaterialOperation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAddRawMaterialOperation'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/AddRawMaterialOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddRawMaterialOperation'
+          description: ''
+      summary: Api v1 add raw material operations partial update
+      x-summary-source: derived
+    delete:
+      operationId: api_v1_AddRawMaterialOperations_destroy
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Add Raw Material Operation.
+        required: true
+      tags:
+      - AddRawMaterialOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+      summary: Api v1 add raw material operations destroy
+      x-summary-source: derived
+components:
+  schemas:
+    AppliedAmmountField:
+      type: object
+      properties:
+        unit:
+          type: string
+        numericValue:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,15}(?:\.\d{0,2})?$
+      required:
+      - numericValue
+      - unit
+    AddRawMaterialCompostQuantity:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        typeName:
+          type: string
+        quantityValue:
+          $ref: '#/components/schemas/AppliedAmmountField'
+      required:
+      - id
+      - quantityValue
+      - typeName
+    AddRawMaterialOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        operatedOn:
+          type: string
+          format: uuid
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasCompostMaterial:
+          type: array
+          items:
+            $ref: '#/components/schemas/AddRawMaterialCompostQuantity'
+      required:
+      - activityType
+      - hasCompostMaterial
+      - hasStartDatetime
+      - id
+      - operatedOn
+      - usesAgriculturalMachinery
+    PatchedAddRawMaterialOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        operatedOn:
+          type: string
+          format: uuid
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasCompostMaterial:
+          type: array
+          items:
+            $ref: '#/components/schemas/AddRawMaterialCompostQuantity'
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

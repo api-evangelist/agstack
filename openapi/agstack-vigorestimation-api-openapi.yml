@@ -1,0 +1,369 @@
+openapi: 3.2.0
+info:
+  title: OpenAgri Farm Calendar Vigor Estimation API
+  version: 1.0.0
+  description: API for farm assets and other farm related things.
+tags:
+- name: VigorEstimation
+paths:
+  /api/v1/VigorEstimation/:
+    get:
+      operationId: api_v1_VigorEstimation_list
+      description: API endpoint that allows VigorEstimation to be viewed or edited.
+      parameters:
+      - in: query
+        name: activity_type
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: query
+        name: fromDate
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: parcel
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: title
+        schema:
+          type: string
+      - in: query
+        name: toDate
+        schema:
+          type: string
+          format: date-time
+      tags:
+      - VigorEstimation
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/VigorEstimationObservation'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/VigorEstimationObservation'
+          description: ''
+      summary: Api v1 vigor estimation list
+      x-summary-source: derived
+    post:
+      operationId: api_v1_VigorEstimation_create
+      description: API endpoint that allows VigorEstimation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      tags:
+      - VigorEstimation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VigorEstimationObservation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/VigorEstimationObservation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/VigorEstimationObservation'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/VigorEstimationObservation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VigorEstimationObservation'
+          description: ''
+      summary: Api v1 vigor estimation create
+      x-summary-source: derived
+  /api/v1/VigorEstimation/{id}/:
+    get:
+      operationId: api_v1_VigorEstimation_retrieve
+      description: API endpoint that allows VigorEstimation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Vigor Estimation Observation.
+        required: true
+      tags:
+      - VigorEstimation
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/VigorEstimationObservation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VigorEstimationObservation'
+          description: ''
+      summary: Api v1 vigor estimation retrieve
+      x-summary-source: derived
+    put:
+      operationId: api_v1_VigorEstimation_update
+      description: API endpoint that allows VigorEstimation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Vigor Estimation Observation.
+        required: true
+      tags:
+      - VigorEstimation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VigorEstimationObservation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/VigorEstimationObservation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/VigorEstimationObservation'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/VigorEstimationObservation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VigorEstimationObservation'
+          description: ''
+      summary: Api v1 vigor estimation update
+      x-summary-source: derived
+    patch:
+      operationId: api_v1_VigorEstimation_partial_update
+      description: API endpoint that allows VigorEstimation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Vigor Estimation Observation.
+        required: true
+      tags:
+      - VigorEstimation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedVigorEstimationObservation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedVigorEstimationObservation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedVigorEstimationObservation'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/VigorEstimationObservation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VigorEstimationObservation'
+          description: ''
+      summary: Api v1 vigor estimation partial update
+      x-summary-source: derived
+    delete:
+      operationId: api_v1_VigorEstimation_destroy
+      description: API endpoint that allows VigorEstimation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Vigor Estimation Observation.
+        required: true
+      tags:
+      - VigorEstimation
+      security:
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+      summary: Api v1 vigor estimation destroy
+      x-summary-source: derived
+components:
+  schemas:
+    GenericQuantityValueField:
+      type: object
+      properties:
+        unit:
+          type:
+          - string
+          - 'null'
+        hasValue:
+          type: string
+      required:
+      - hasValue
+    VigorEstimationObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasArea:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+      required:
+      - activityType
+      - hasAgriParcel
+      - hasArea
+      - hasResult
+      - id
+      - observedProperty
+      - phenomenonTime
+    PatchedVigorEstimationObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasArea:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+    MadeBySensorField:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+      required:
+      - name
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

@@ -1,0 +1,384 @@
+openapi: 3.2.0
+info:
+  title: OpenAgri Farm Calendar Farm Crops API
+  version: 1.0.0
+  description: API for farm assets and other farm related things.
+tags:
+- name: FarmCrops
+paths:
+  /api/v1/FarmCrops/:
+    get:
+      operationId: api_v1_FarmCrops_list
+      description: API endpoint that allows FarmCrop to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: query
+        name: growth_stage
+        schema:
+          type: string
+      - in: query
+        name: name
+        schema:
+          type: string
+      - in: query
+        name: parcel
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: species
+        schema:
+          type: string
+      - in: query
+        name: status
+        schema:
+          type: integer
+          enum:
+          - 0
+          - 1
+          - 2
+        description: '* `0` - Inactive
+
+          * `1` - Active
+
+          * `2` - Deleted'
+      - in: query
+        name: variety
+        schema:
+          type: string
+      tags:
+      - FarmCrops
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FarmCrop'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FarmCrop'
+          description: ''
+      summary: Api v1 farm crops list
+      x-summary-source: derived
+    post:
+      operationId: api_v1_FarmCrops_create
+      description: API endpoint that allows FarmCrop to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      tags:
+      - FarmCrops
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FarmCrop'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/FarmCrop'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/FarmCrop'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/FarmCrop'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmCrop'
+          description: ''
+      summary: Api v1 farm crops create
+      x-summary-source: derived
+  /api/v1/FarmCrops/{id}/:
+    get:
+      operationId: api_v1_FarmCrops_retrieve
+      description: API endpoint that allows FarmCrop to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Farm Crop.
+        required: true
+      tags:
+      - FarmCrops
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/FarmCrop'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmCrop'
+          description: ''
+      summary: Api v1 farm crops retrieve
+      x-summary-source: derived
+    put:
+      operationId: api_v1_FarmCrops_update
+      description: API endpoint that allows FarmCrop to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Farm Crop.
+        required: true
+      tags:
+      - FarmCrops
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FarmCrop'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/FarmCrop'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/FarmCrop'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/FarmCrop'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmCrop'
+          description: ''
+      summary: Api v1 farm crops update
+      x-summary-source: derived
+    patch:
+      operationId: api_v1_FarmCrops_partial_update
+      description: API endpoint that allows FarmCrop to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Farm Crop.
+        required: true
+      tags:
+      - FarmCrops
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedFarmCrop'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedFarmCrop'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedFarmCrop'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/FarmCrop'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmCrop'
+          description: ''
+      summary: Api v1 farm crops partial update
+      x-summary-source: derived
+    delete:
+      operationId: api_v1_FarmCrops_destroy
+      description: API endpoint that allows FarmCrop to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Farm Crop.
+        required: true
+      tags:
+      - FarmCrops
+      security:
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+      summary: Api v1 farm crops destroy
+      x-summary-source: derived
+components:
+  schemas:
+    CropSpeciesSerializerField:
+      type: object
+      properties:
+        name:
+          type: string
+        variety:
+          type: string
+      required:
+      - name
+      - variety
+    StatusEnum:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      description: '* `0` - Inactive
+
+        * `1` - Active
+
+        * `2` - Deleted'
+    PatchedFarmCrop:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type:
+          - string
+          - 'null'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        cropSpecies:
+          $ref: '#/components/schemas/CropSpeciesSerializerField'
+        growth_stage:
+          type:
+          - string
+          - 'null'
+          maxLength: 255
+    FarmCrop:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type:
+          - string
+          - 'null'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        cropSpecies:
+          $ref: '#/components/schemas/CropSpeciesSerializerField'
+        growth_stage:
+          type:
+          - string
+          - 'null'
+          maxLength: 255
+      required:
+      - cropSpecies
+      - dateCreated
+      - dateModified
+      - hasAgriParcel
+      - id
+      - invalidatedAtTime
+      - name
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

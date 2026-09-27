@@ -1,0 +1,362 @@
+openapi: 3.2.0
+info:
+  title: OpenAgri Farm Calendar Fertilizers API
+  version: 1.0.0
+  description: API for farm assets and other farm related things.
+tags:
+- name: Fertilizers
+paths:
+  /api/v1/Fertilizers/:
+    get:
+      operationId: api_v1_Fertilizers_list
+      description: API endpoint that allows Fertilizer to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: query
+        name: name
+        schema:
+          type: string
+      - in: query
+        name: status
+        schema:
+          type: integer
+          enum:
+          - 0
+          - 1
+          - 2
+        description: '* `0` - Inactive
+
+          * `1` - Active
+
+          * `2` - Deleted'
+      tags:
+      - Fertilizers
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Fertilizer'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Fertilizer'
+          description: ''
+      summary: Api v1 fertilizers list
+      x-summary-source: derived
+    post:
+      operationId: api_v1_Fertilizers_create
+      description: API endpoint that allows Fertilizer to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      tags:
+      - Fertilizers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Fertilizer'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Fertilizer'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Fertilizer'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Fertilizer'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fertilizer'
+          description: ''
+      summary: Api v1 fertilizers create
+      x-summary-source: derived
+  /api/v1/Fertilizers/{id}/:
+    get:
+      operationId: api_v1_Fertilizers_retrieve
+      description: API endpoint that allows Fertilizer to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Fertilizer.
+        required: true
+      tags:
+      - Fertilizers
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Fertilizer'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fertilizer'
+          description: ''
+      summary: Api v1 fertilizers retrieve
+      x-summary-source: derived
+    put:
+      operationId: api_v1_Fertilizers_update
+      description: API endpoint that allows Fertilizer to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Fertilizer.
+        required: true
+      tags:
+      - Fertilizers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Fertilizer'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Fertilizer'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Fertilizer'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Fertilizer'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fertilizer'
+          description: ''
+      summary: Api v1 fertilizers update
+      x-summary-source: derived
+    patch:
+      operationId: api_v1_Fertilizers_partial_update
+      description: API endpoint that allows Fertilizer to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Fertilizer.
+        required: true
+      tags:
+      - Fertilizers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedFertilizer'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedFertilizer'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedFertilizer'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Fertilizer'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fertilizer'
+          description: ''
+      summary: Api v1 fertilizers partial update
+      x-summary-source: derived
+    delete:
+      operationId: api_v1_Fertilizers_destroy
+      description: API endpoint that allows Fertilizer to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Fertilizer.
+        required: true
+      tags:
+      - Fertilizers
+      security:
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+      summary: Api v1 fertilizers destroy
+      x-summary-source: derived
+components:
+  schemas:
+    PatchedFertilizer:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        hasCommercialName:
+          type: string
+        description:
+          type:
+          - string
+          - 'null'
+        hasCost:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        isPricePer:
+          type: string
+        hasActiveSubstance:
+          type: string
+        isTargetedTowards:
+          type: string
+        hasNutrientConcentration:
+          type: string
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+    StatusEnum:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      description: '* `0` - Inactive
+
+        * `1` - Active
+
+        * `2` - Deleted'
+    Fertilizer:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        hasCommercialName:
+          type: string
+        description:
+          type:
+          - string
+          - 'null'
+        hasCost:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        isPricePer:
+          type: string
+        hasActiveSubstance:
+          type: string
+        isTargetedTowards:
+          type: string
+        hasNutrientConcentration:
+          type: string
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - dateCreated
+      - dateModified
+      - hasActiveSubstance
+      - hasCommercialName
+      - hasCost
+      - hasNutrientConcentration
+      - id
+      - invalidatedAtTime
+      - isPricePer
+      - isTargetedTowards
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

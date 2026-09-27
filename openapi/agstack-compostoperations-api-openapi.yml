@@ -1,0 +1,1894 @@
+openapi: 3.2.0
+info:
+  title: OpenAgri Farm Calendar Compost Operations API
+  version: 1.0.0
+  description: API for farm assets and other farm related things.
+tags:
+- name: CompostOperations
+paths:
+  /api/v1/CompostOperations/:
+    get:
+      operationId: api_v1_CompostOperations_list
+      description: API endpoint that allows CompostOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: activity_type
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: compost_pile_id
+        schema:
+          type: string
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: query
+        name: fromDate
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: parcel
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: title
+        schema:
+          type: string
+      - in: query
+        name: toDate
+        schema:
+          type: string
+          format: date-time
+      tags:
+      - CompostOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CompostOperation'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CompostOperation'
+          description: ''
+      summary: Api v1 compost operations list
+      x-summary-source: derived
+    post:
+      operationId: api_v1_CompostOperations_create
+      description: API endpoint that allows CompostOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      tags:
+      - CompostOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompostOperation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CompostOperation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CompostOperation'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/CompostOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompostOperation'
+          description: ''
+      summary: Api v1 compost operations create
+      x-summary-source: derived
+  /api/v1/CompostOperations/{compost_operation_pk}/AddRawMaterialOperations/:
+    get:
+      operationId: api_v1_CompostOperations_AddRawMaterialOperations_list
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: activity_type
+        schema:
+          type: string
+          format: uuid
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: query
+        name: fromDate
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: parcel
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: title
+        schema:
+          type: string
+      - in: query
+        name: toDate
+        schema:
+          type: string
+          format: date-time
+      tags:
+      - CompostOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AddRawMaterialOperation'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AddRawMaterialOperation'
+          description: ''
+      summary: Api v1 compost operations add raw material operations list
+      x-summary-source: derived
+    post:
+      operationId: api_v1_CompostOperations_AddRawMaterialOperations_create
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
+      parameters:
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      tags:
+      - CompostOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddRawMaterialOperation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AddRawMaterialOperation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AddRawMaterialOperation'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/AddRawMaterialOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddRawMaterialOperation'
+          description: ''
+      summary: Api v1 compost operations add raw material operations create
+      x-summary-source: derived
+  /api/v1/CompostOperations/{compost_operation_pk}/AddRawMaterialOperations/{id}/:
+    get:
+      operationId: api_v1_CompostOperations_AddRawMaterialOperations_retrieve
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
+      parameters:
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Add Raw Material Operation.
+        required: true
+      tags:
+      - CompostOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/AddRawMaterialOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddRawMaterialOperation'
+          description: ''
+      summary: Api v1 compost operations add raw material operations retrieve
+      x-summary-source: derived
+    put:
+      operationId: api_v1_CompostOperations_AddRawMaterialOperations_update
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
+      parameters:
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Add Raw Material Operation.
+        required: true
+      tags:
+      - CompostOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddRawMaterialOperation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AddRawMaterialOperation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AddRawMaterialOperation'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/AddRawMaterialOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddRawMaterialOperation'
+          description: ''
+      summary: Api v1 compost operations add raw material operations update
+      x-summary-source: derived
+    patch:
+      operationId: api_v1_CompostOperations_AddRawMaterialOperations_partial_update
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
+      parameters:
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Add Raw Material Operation.
+        required: true
+      tags:
+      - CompostOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAddRawMaterialOperation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAddRawMaterialOperation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAddRawMaterialOperation'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/AddRawMaterialOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddRawMaterialOperation'
+          description: ''
+      summary: Api v1 compost operations add raw material operations partial update
+      x-summary-source: derived
+    delete:
+      operationId: api_v1_CompostOperations_AddRawMaterialOperations_destroy
+      description: API endpoint that allows AddRawMaterialOperation to be viewed or edited.
+      parameters:
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Add Raw Material Operation.
+        required: true
+      tags:
+      - CompostOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+      summary: Api v1 compost operations add raw material operations destroy
+      x-summary-source: derived
+  /api/v1/CompostOperations/{compost_operation_pk}/CompostTurningOperations/:
+    get:
+      operationId: api_v1_CompostOperations_CompostTurningOperations_list
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: activity_type
+        schema:
+          type: string
+          format: uuid
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: query
+        name: fromDate
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: parcel
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: title
+        schema:
+          type: string
+      - in: query
+        name: toDate
+        schema:
+          type: string
+          format: date-time
+      tags:
+      - CompostOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CompostTurningOperation'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CompostTurningOperation'
+          description: ''
+      summary: Api v1 compost operations compost turning operations list
+      x-summary-source: derived
+    post:
+      operationId: api_v1_CompostOperations_CompostTurningOperations_create
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
+      parameters:
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      tags:
+      - CompostOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompostTurningOperation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CompostTurningOperation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CompostTurningOperation'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/CompostTurningOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompostTurningOperation'
+          description: ''
+      summary: Api v1 compost operations compost turning operations create
+      x-summary-source: derived
+  /api/v1/CompostOperations/{compost_operation_pk}/CompostTurningOperations/{id}/:
+    get:
+      operationId: api_v1_CompostOperations_CompostTurningOperations_retrieve
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
+      parameters:
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Compost Turning Operation.
+        required: true
+      tags:
+      - CompostOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/CompostTurningOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompostTurningOperation'
+          description: ''
+      summary: Api v1 compost operations compost turning operations retrieve
+      x-summary-source: derived
+    put:
+      operationId: api_v1_CompostOperations_CompostTurningOperations_update
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
+      parameters:
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Compost Turning Operation.
+        required: true
+      tags:
+      - CompostOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompostTurningOperation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CompostTurningOperation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CompostTurningOperation'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/CompostTurningOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompostTurningOperation'
+          description: ''
+      summary: Api v1 compost operations compost turning operations update
+      x-summary-source: derived
+    patch:
+      operationId: api_v1_CompostOperations_CompostTurningOperations_partial_update
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
+      parameters:
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Compost Turning Operation.
+        required: true
+      tags:
+      - CompostOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedCompostTurningOperation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedCompostTurningOperation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedCompostTurningOperation'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/CompostTurningOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompostTurningOperation'
+          description: ''
+      summary: Api v1 compost operations compost turning operations partial update
+      x-summary-source: derived
+    delete:
+      operationId: api_v1_CompostOperations_CompostTurningOperations_destroy
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
+      parameters:
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Compost Turning Operation.
+        required: true
+      tags:
+      - CompostOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+      summary: Api v1 compost operations compost turning operations destroy
+      x-summary-source: derived
+  /api/v1/CompostOperations/{compost_operation_pk}/IrrigationOperations/:
+    get:
+      operationId: api_v1_CompostOperations_IrrigationOperations_list
+      description: API endpoint that allows IrrigationOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: activity_type
+        schema:
+          type: string
+          format: uuid
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: query
+        name: fromDate
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: parcel
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: responsible_agent
+        schema:
+          type: string
+      - in: query
+        name: title
+        schema:
+          type: string
+      - in: query
+        name: toDate
+        schema:
+          type: string
+          format: date-time
+      tags:
+      - CompostOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IrrigationOperation'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IrrigationOperation'
+          description: ''
+      summary: Api v1 compost operations irrigation operations list
+      x-summary-source: derived
+    post:
+      operationId: api_v1_CompostOperations_IrrigationOperations_create
+      description: API endpoint that allows IrrigationOperation to be viewed or edited.
+      parameters:
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      tags:
+      - CompostOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IrrigationOperation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/IrrigationOperation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/IrrigationOperation'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/IrrigationOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IrrigationOperation'
+          description: ''
+      summary: Api v1 compost operations irrigation operations create
+      x-summary-source: derived
+  /api/v1/CompostOperations/{compost_operation_pk}/IrrigationOperations/{id}/:
+    get:
+      operationId: api_v1_CompostOperations_IrrigationOperations_retrieve
+      description: API endpoint that allows IrrigationOperation to be viewed or edited.
+      parameters:
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Irrigation Operation.
+        required: true
+      tags:
+      - CompostOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/IrrigationOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IrrigationOperation'
+          description: ''
+      summary: Api v1 compost operations irrigation operations retrieve
+      x-summary-source: derived
+    put:
+      operationId: api_v1_CompostOperations_IrrigationOperations_update
+      description: API endpoint that allows IrrigationOperation to be viewed or edited.
+      parameters:
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Irrigation Operation.
+        required: true
+      tags:
+      - CompostOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IrrigationOperation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/IrrigationOperation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/IrrigationOperation'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/IrrigationOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IrrigationOperation'
+          description: ''
+      summary: Api v1 compost operations irrigation operations update
+      x-summary-source: derived
+    patch:
+      operationId: api_v1_CompostOperations_IrrigationOperations_partial_update
+      description: API endpoint that allows IrrigationOperation to be viewed or edited.
+      parameters:
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Irrigation Operation.
+        required: true
+      tags:
+      - CompostOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedIrrigationOperation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedIrrigationOperation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedIrrigationOperation'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/IrrigationOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IrrigationOperation'
+          description: ''
+      summary: Api v1 compost operations irrigation operations partial update
+      x-summary-source: derived
+    delete:
+      operationId: api_v1_CompostOperations_IrrigationOperations_destroy
+      description: API endpoint that allows IrrigationOperation to be viewed or edited.
+      parameters:
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Irrigation Operation.
+        required: true
+      tags:
+      - CompostOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+      summary: Api v1 compost operations irrigation operations destroy
+      x-summary-source: derived
+  /api/v1/CompostOperations/{compost_operation_pk}/Observations/:
+    get:
+      operationId: api_v1_CompostOperations_Observations_list
+      description: API endpoint that allows Observation to be viewed or edited.
+      parameters:
+      - in: query
+        name: activity_type
+        schema:
+          type: string
+          format: uuid
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: query
+        name: fromDate
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: parcel
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: title
+        schema:
+          type: string
+      - in: query
+        name: toDate
+        schema:
+          type: string
+          format: date-time
+      tags:
+      - CompostOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Observation'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Observation'
+          description: ''
+      summary: Api v1 compost operations observations list
+      x-summary-source: derived
+    post:
+      operationId: api_v1_CompostOperations_Observations_create
+      description: API endpoint that allows Observation to be viewed or edited.
+      parameters:
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      tags:
+      - CompostOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Observation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Observation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Observation'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Observation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Observation'
+          description: ''
+      summary: Api v1 compost operations observations create
+      x-summary-source: derived
+  /api/v1/CompostOperations/{compost_operation_pk}/Observations/{id}/:
+    get:
+      operationId: api_v1_CompostOperations_Observations_retrieve
+      description: API endpoint that allows Observation to be viewed or edited.
+      parameters:
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Observation.
+        required: true
+      tags:
+      - CompostOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Observation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Observation'
+          description: ''
+      summary: Api v1 compost operations observations retrieve
+      x-summary-source: derived
+    put:
+      operationId: api_v1_CompostOperations_Observations_update
+      description: API endpoint that allows Observation to be viewed or edited.
+      parameters:
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Observation.
+        required: true
+      tags:
+      - CompostOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Observation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Observation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Observation'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Observation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Observation'
+          description: ''
+      summary: Api v1 compost operations observations update
+      x-summary-source: derived
+    patch:
+      operationId: api_v1_CompostOperations_Observations_partial_update
+      description: API endpoint that allows Observation to be viewed or edited.
+      parameters:
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Observation.
+        required: true
+      tags:
+      - CompostOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedObservation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedObservation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedObservation'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Observation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Observation'
+          description: ''
+      summary: Api v1 compost operations observations partial update
+      x-summary-source: derived
+    delete:
+      operationId: api_v1_CompostOperations_Observations_destroy
+      description: API endpoint that allows Observation to be viewed or edited.
+      parameters:
+      - in: path
+        name: compost_operation_pk
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Observation.
+        required: true
+      tags:
+      - CompostOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+      summary: Api v1 compost operations observations destroy
+      x-summary-source: derived
+  /api/v1/CompostOperations/{id}/:
+    get:
+      operationId: api_v1_CompostOperations_retrieve
+      description: API endpoint that allows CompostOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Compost Operation.
+        required: true
+      tags:
+      - CompostOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/CompostOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompostOperation'
+          description: ''
+      summary: Api v1 compost operations retrieve
+      x-summary-source: derived
+    put:
+      operationId: api_v1_CompostOperations_update
+      description: API endpoint that allows CompostOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Compost Operation.
+        required: true
+      tags:
+      - CompostOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompostOperation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CompostOperation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CompostOperation'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/CompostOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompostOperation'
+          description: ''
+      summary: Api v1 compost operations update
+      x-summary-source: derived
+    patch:
+      operationId: api_v1_CompostOperations_partial_update
+      description: API endpoint that allows CompostOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Compost Operation.
+        required: true
+      tags:
+      - CompostOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedCompostOperation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedCompostOperation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedCompostOperation'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/CompostOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompostOperation'
+          description: ''
+      summary: Api v1 compost operations partial update
+      x-summary-source: derived
+    delete:
+      operationId: api_v1_CompostOperations_destroy
+      description: API endpoint that allows CompostOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Compost Operation.
+        required: true
+      tags:
+      - CompostOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+      summary: Api v1 compost operations destroy
+      x-summary-source: derived
+components:
+  schemas:
+    AppliedAmmountField:
+      type: object
+      properties:
+        unit:
+          type: string
+        numericValue:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,15}(?:\.\d{0,2})?$
+      required:
+      - numericValue
+      - unit
+    PatchedIrrigationOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasAppliedAmount:
+          $ref: '#/components/schemas/AppliedAmmountField'
+        usesIrrigationSystem:
+          $ref: '#/components/schemas/UsesIrrigationSystemEnum'
+        operatedOn:
+          type: string
+          format: uuid
+    IrrigationOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasAppliedAmount:
+          $ref: '#/components/schemas/AppliedAmmountField'
+        usesIrrigationSystem:
+          $ref: '#/components/schemas/UsesIrrigationSystemEnum'
+        operatedOn:
+          type: string
+          format: uuid
+      required:
+      - activityType
+      - hasAppliedAmount
+      - hasStartDatetime
+      - id
+      - operatedOn
+      - usesAgriculturalMachinery
+      - usesIrrigationSystem
+    CompostOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasAgriParcel:
+          type: string
+          format: uuid
+        isOperatedOn:
+          type: string
+        hasNestedOperation:
+          type: array
+          items:
+            type: string
+            format: uuid
+          readOnly: true
+        hasMeasurement:
+          type: array
+          items:
+            type: string
+            format: uuid
+          readOnly: true
+      required:
+      - activityType
+      - hasAgriParcel
+      - hasMeasurement
+      - hasNestedOperation
+      - hasStartDatetime
+      - id
+      - isOperatedOn
+      - usesAgriculturalMachinery
+    PatchedObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        hasAgriParcel:
+          type: string
+          format: uuid
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+    CompostTurningOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        operatedOn:
+          type: string
+          format: uuid
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+      required:
+      - activityType
+      - hasStartDatetime
+      - id
+      - operatedOn
+      - usesAgriculturalMachinery
+    PatchedCompostOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasAgriParcel:
+          type: string
+          format: uuid
+        isOperatedOn:
+          type: string
+        hasNestedOperation:
+          type: array
+          items:
+            type: string
+            format: uuid
+          readOnly: true
+        hasMeasurement:
+          type: array
+          items:
+            type: string
+            format: uuid
+          readOnly: true
+    Observation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        hasAgriParcel:
+          type: string
+          format: uuid
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
+      required:
+      - activityType
+      - hasAgriParcel
+      - hasResult
+      - id
+      - observedProperty
+      - phenomenonTime
+    GenericQuantityValueField:
+      type: object
+      properties:
+        unit:
+          type:
+          - string
+          - 'null'
+        hasValue:
+          type: string
+      required:
+      - hasValue
+    AddRawMaterialCompostQuantity:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        typeName:
+          type: string
+        quantityValue:
+          $ref: '#/components/schemas/AppliedAmmountField'
+      required:
+      - id
+      - quantityValue
+      - typeName
+    PatchedCompostTurningOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        operatedOn:
+          type: string
+          format: uuid
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+    AddRawMaterialOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        operatedOn:
+          type: string
+          format: uuid
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasCompostMaterial:
+          type: array
+          items:
+            $ref: '#/components/schemas/AddRawMaterialCompostQuantity'
+      required:
+      - activityType
+      - hasCompostMaterial
+      - hasStartDatetime
+      - id
+      - operatedOn
+      - usesAgriculturalMachinery
+    PatchedAddRawMaterialOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        operatedOn:
+          type: string
+          format: uuid
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasCompostMaterial:
+          type: array
+          items:
+            $ref: '#/components/schemas/AddRawMaterialCompostQuantity'
+    UsesIrrigationSystemEnum:
+      enum:
+      - sprinkler
+      - drip
+      - centre_pivot
+      - furrow
+      - terraced
+      type: string
+      description: '* `sprinkler` - Sprinkler
+
+        * `drip` - Drip
+
+        * `centre_pivot` - Centre Pivot
+
+        * `furrow` - Furrow
+
+        * `terraced` - Terraced'
+    MadeBySensorField:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+      required:
+      - name
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

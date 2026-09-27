@@ -142,19 +142,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    BulkPointResult:
-      type: object
-      properties:
-        status:
-          type: string
-          example: created
-        message:
-          type: string
-          example: Point registered successfully.
-        Geo Id:
-          type: string
-        Geo JSON:
-          type: object
     RegisterFieldWKTRequest:
       type: object
       required:
@@ -218,6 +205,19 @@ components:
                   s2_index:
                     type: string
                     example: 8,13
+    BulkPointResult:
+      type: object
+      properties:
+        status:
+          type: string
+          example: created
+        message:
+          type: string
+          example: Point registered successfully.
+        Geo Id:
+          type: string
+        Geo JSON:
+          type: object
   responses:
     ErrorResponse:
       description: Generic Error Response

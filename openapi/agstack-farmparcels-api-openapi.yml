@@ -1,0 +1,505 @@
+openapi: 3.2.0
+info:
+  title: OpenAgri Farm Calendar Farm Parcels API
+  version: 1.0.0
+  description: API for farm assets and other farm related things.
+tags:
+- name: FarmParcels
+paths:
+  /api/v1/FarmParcels/:
+    get:
+      operationId: api_v1_FarmParcels_list
+      description: API endpoint that allows FarmParcel to be viewed or edited.
+      parameters:
+      - in: query
+        name: contains_point
+        schema:
+          type: string
+        description: 'Filter parcels containing this point. Format (EPSG:4326): ''latitude,longitude'''
+      - in: query
+        name: farm
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: query
+        name: geo_id
+        schema:
+          type: string
+      - in: query
+        name: identifier
+        schema:
+          type: string
+      - in: query
+        name: parcel_type
+        schema:
+          type: string
+      - in: query
+        name: status
+        schema:
+          type: integer
+          enum:
+          - 0
+          - 1
+          - 2
+        description: '* `0` - Inactive
+
+          * `1` - Active
+
+          * `2` - Deleted'
+      tags:
+      - FarmParcels
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FarmParcel'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FarmParcel'
+          description: ''
+      summary: Api v1 farm parcels list
+      x-summary-source: derived
+    post:
+      operationId: api_v1_FarmParcels_create
+      description: API endpoint that allows FarmParcel to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      tags:
+      - FarmParcels
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FarmParcel'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/FarmParcel'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/FarmParcel'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/FarmParcel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmParcel'
+          description: ''
+      summary: Api v1 farm parcels create
+      x-summary-source: derived
+  /api/v1/FarmParcels/{id}/:
+    get:
+      operationId: api_v1_FarmParcels_retrieve
+      description: API endpoint that allows FarmParcel to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Farm Parcel.
+        required: true
+      tags:
+      - FarmParcels
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/FarmParcel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmParcel'
+          description: ''
+      summary: Api v1 farm parcels retrieve
+      x-summary-source: derived
+    put:
+      operationId: api_v1_FarmParcels_update
+      description: API endpoint that allows FarmParcel to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Farm Parcel.
+        required: true
+      tags:
+      - FarmParcels
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FarmParcel'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/FarmParcel'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/FarmParcel'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/FarmParcel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmParcel'
+          description: ''
+      summary: Api v1 farm parcels update
+      x-summary-source: derived
+    patch:
+      operationId: api_v1_FarmParcels_partial_update
+      description: API endpoint that allows FarmParcel to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Farm Parcel.
+        required: true
+      tags:
+      - FarmParcels
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedFarmParcel'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedFarmParcel'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedFarmParcel'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/FarmParcel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmParcel'
+          description: ''
+      summary: Api v1 farm parcels partial update
+      x-summary-source: derived
+    delete:
+      operationId: api_v1_FarmParcels_destroy
+      description: API endpoint that allows FarmParcel to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Farm Parcel.
+        required: true
+      tags:
+      - FarmParcels
+      security:
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+      summary: Api v1 farm parcels destroy
+      x-summary-source: derived
+components:
+  schemas:
+    PatchedFarmParcel:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        deleted_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        identifier:
+          type: string
+          maxLength: 255
+        description:
+          type:
+          - string
+          - 'null'
+        validFrom:
+          type: string
+          format: date-time
+        validTo:
+          type: string
+          format: date-time
+        area:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        hasIrrigationFlow:
+          type:
+          - string
+          - 'null'
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        category:
+          type: string
+        inRegion:
+          type:
+          - string
+          - 'null'
+        hasToponym:
+          type:
+          - string
+          - 'null'
+        isNitroArea:
+          type: boolean
+        isNatura2000Area:
+          type: boolean
+        isPdopgArea:
+          type: boolean
+        isIrrigated:
+          type: boolean
+        isCultivatedInLevels:
+          type: boolean
+        isGroundSlope:
+          type: boolean
+        depiction:
+          type:
+          - string
+          - 'null'
+          format: uri
+          maxLength: 500
+        hasGeometry:
+          $ref: '#/components/schemas/GeometrySerializerField'
+        location:
+          $ref: '#/components/schemas/LocationSerializerField'
+        hasAgriCrop:
+          type: array
+          items:
+            type: string
+            format: uuid
+          readOnly: true
+        farm:
+          type: string
+          format: uuid
+    FarmParcel:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        deleted_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        identifier:
+          type: string
+          maxLength: 255
+        description:
+          type:
+          - string
+          - 'null'
+        validFrom:
+          type: string
+          format: date-time
+        validTo:
+          type: string
+          format: date-time
+        area:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        hasIrrigationFlow:
+          type:
+          - string
+          - 'null'
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        category:
+          type: string
+        inRegion:
+          type:
+          - string
+          - 'null'
+        hasToponym:
+          type:
+          - string
+          - 'null'
+        isNitroArea:
+          type: boolean
+        isNatura2000Area:
+          type: boolean
+        isPdopgArea:
+          type: boolean
+        isIrrigated:
+          type: boolean
+        isCultivatedInLevels:
+          type: boolean
+        isGroundSlope:
+          type: boolean
+        depiction:
+          type:
+          - string
+          - 'null'
+          format: uri
+          maxLength: 500
+        hasGeometry:
+          $ref: '#/components/schemas/GeometrySerializerField'
+        location:
+          $ref: '#/components/schemas/LocationSerializerField'
+        hasAgriCrop:
+          type: array
+          items:
+            type: string
+            format: uuid
+          readOnly: true
+        farm:
+          type: string
+          format: uuid
+      required:
+      - category
+      - created_at
+      - farm
+      - hasAgriCrop
+      - hasGeometry
+      - hasIrrigationFlow
+      - hasToponym
+      - id
+      - identifier
+      - inRegion
+      - isCultivatedInLevels
+      - isGroundSlope
+      - isIrrigated
+      - isNatura2000Area
+      - isNitroArea
+      - isPdopgArea
+      - location
+      - updated_at
+      - validFrom
+      - validTo
+    LocationSerializerField:
+      type: object
+      properties:
+        lat:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,3}(?:\.\d{0,14})?$
+        long:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,3}(?:\.\d{0,14})?$
+      required:
+      - lat
+      - long
+    GeometrySerializerField:
+      type: object
+      properties:
+        asWKT:
+          type: string
+      required:
+      - asWKT
+    StatusEnum:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      description: '* `0` - Inactive
+
+        * `1` - Active
+
+        * `2` - Deleted'
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

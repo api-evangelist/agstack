@@ -1,0 +1,386 @@
+openapi: 3.2.0
+info:
+  title: OpenAgri Farm Calendar Irrigation Operations API
+  version: 1.0.0
+  description: API for farm assets and other farm related things.
+tags:
+- name: IrrigationOperations
+paths:
+  /api/v1/IrrigationOperations/:
+    get:
+      operationId: api_v1_IrrigationOperations_list
+      description: API endpoint that allows IrrigationOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: activity_type
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: query
+        name: fromDate
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: parcel
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: responsible_agent
+        schema:
+          type: string
+      - in: query
+        name: title
+        schema:
+          type: string
+      - in: query
+        name: toDate
+        schema:
+          type: string
+          format: date-time
+      tags:
+      - IrrigationOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IrrigationOperation'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IrrigationOperation'
+          description: ''
+      summary: Api v1 irrigation operations list
+      x-summary-source: derived
+    post:
+      operationId: api_v1_IrrigationOperations_create
+      description: API endpoint that allows IrrigationOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      tags:
+      - IrrigationOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IrrigationOperation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/IrrigationOperation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/IrrigationOperation'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/IrrigationOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IrrigationOperation'
+          description: ''
+      summary: Api v1 irrigation operations create
+      x-summary-source: derived
+  /api/v1/IrrigationOperations/{id}/:
+    get:
+      operationId: api_v1_IrrigationOperations_retrieve
+      description: API endpoint that allows IrrigationOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Irrigation Operation.
+        required: true
+      tags:
+      - IrrigationOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/IrrigationOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IrrigationOperation'
+          description: ''
+      summary: Api v1 irrigation operations retrieve
+      x-summary-source: derived
+    put:
+      operationId: api_v1_IrrigationOperations_update
+      description: API endpoint that allows IrrigationOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Irrigation Operation.
+        required: true
+      tags:
+      - IrrigationOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IrrigationOperation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/IrrigationOperation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/IrrigationOperation'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/IrrigationOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IrrigationOperation'
+          description: ''
+      summary: Api v1 irrigation operations update
+      x-summary-source: derived
+    patch:
+      operationId: api_v1_IrrigationOperations_partial_update
+      description: API endpoint that allows IrrigationOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Irrigation Operation.
+        required: true
+      tags:
+      - IrrigationOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedIrrigationOperation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedIrrigationOperation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedIrrigationOperation'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/IrrigationOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IrrigationOperation'
+          description: ''
+      summary: Api v1 irrigation operations partial update
+      x-summary-source: derived
+    delete:
+      operationId: api_v1_IrrigationOperations_destroy
+      description: API endpoint that allows IrrigationOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Irrigation Operation.
+        required: true
+      tags:
+      - IrrigationOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+      summary: Api v1 irrigation operations destroy
+      x-summary-source: derived
+components:
+  schemas:
+    AppliedAmmountField:
+      type: object
+      properties:
+        unit:
+          type: string
+        numericValue:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,15}(?:\.\d{0,2})?$
+      required:
+      - numericValue
+      - unit
+    UsesIrrigationSystemEnum:
+      enum:
+      - sprinkler
+      - drip
+      - centre_pivot
+      - furrow
+      - terraced
+      type: string
+      description: '* `sprinkler` - Sprinkler
+
+        * `drip` - Drip
+
+        * `centre_pivot` - Centre Pivot
+
+        * `furrow` - Furrow
+
+        * `terraced` - Terraced'
+    PatchedIrrigationOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasAppliedAmount:
+          $ref: '#/components/schemas/AppliedAmmountField'
+        usesIrrigationSystem:
+          $ref: '#/components/schemas/UsesIrrigationSystemEnum'
+        operatedOn:
+          type: string
+          format: uuid
+    IrrigationOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasAppliedAmount:
+          $ref: '#/components/schemas/AppliedAmmountField'
+        usesIrrigationSystem:
+          $ref: '#/components/schemas/UsesIrrigationSystemEnum'
+        operatedOn:
+          type: string
+          format: uuid
+      required:
+      - activityType
+      - hasAppliedAmount
+      - hasStartDatetime
+      - id
+      - operatedOn
+      - usesAgriculturalMachinery
+      - usesIrrigationSystem
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

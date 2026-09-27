@@ -1,0 +1,416 @@
+openapi: 3.2.0
+info:
+  title: OpenAgri Farm Calendar Farm Animals API
+  version: 1.0.0
+  description: API for farm assets and other farm related things.
+tags:
+- name: FarmAnimals
+paths:
+  /api/v1/FarmAnimals/:
+    get:
+      operationId: api_v1_FarmAnimals_list
+      description: API endpoint that allows FarmAnimal to be viewed or edited.
+      parameters:
+      - in: query
+        name: animal_group
+        schema:
+          type: string
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: query
+        name: name
+        schema:
+          type: string
+      - in: query
+        name: parcel
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: status
+        schema:
+          type: integer
+          enum:
+          - 0
+          - 1
+          - 2
+        description: '* `0` - Inactive
+
+          * `1` - Active
+
+          * `2` - Deleted'
+      tags:
+      - FarmAnimals
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FarmAnimal'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FarmAnimal'
+          description: ''
+      summary: Api v1 farm animals list
+      x-summary-source: derived
+    post:
+      operationId: api_v1_FarmAnimals_create
+      description: API endpoint that allows FarmAnimal to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      tags:
+      - FarmAnimals
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FarmAnimal'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/FarmAnimal'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/FarmAnimal'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/FarmAnimal'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmAnimal'
+          description: ''
+      summary: Api v1 farm animals create
+      x-summary-source: derived
+  /api/v1/FarmAnimals/{id}/:
+    get:
+      operationId: api_v1_FarmAnimals_retrieve
+      description: API endpoint that allows FarmAnimal to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Farm Animal.
+        required: true
+      tags:
+      - FarmAnimals
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/FarmAnimal'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmAnimal'
+          description: ''
+      summary: Api v1 farm animals retrieve
+      x-summary-source: derived
+    put:
+      operationId: api_v1_FarmAnimals_update
+      description: API endpoint that allows FarmAnimal to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Farm Animal.
+        required: true
+      tags:
+      - FarmAnimals
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FarmAnimal'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/FarmAnimal'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/FarmAnimal'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/FarmAnimal'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmAnimal'
+          description: ''
+      summary: Api v1 farm animals update
+      x-summary-source: derived
+    patch:
+      operationId: api_v1_FarmAnimals_partial_update
+      description: API endpoint that allows FarmAnimal to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Farm Animal.
+        required: true
+      tags:
+      - FarmAnimals
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedFarmAnimal'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedFarmAnimal'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedFarmAnimal'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/FarmAnimal'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmAnimal'
+          description: ''
+      summary: Api v1 farm animals partial update
+      x-summary-source: derived
+    delete:
+      operationId: api_v1_FarmAnimals_destroy
+      description: API endpoint that allows FarmAnimal to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Farm Animal.
+        required: true
+      tags:
+      - FarmAnimals
+      security:
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+      summary: Api v1 farm animals destroy
+      x-summary-source: derived
+components:
+  schemas:
+    SexEnum:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      description: '* `0` - N/A
+
+        * `1` - Female
+
+        * `2` - Male'
+    PatchedFarmAnimal:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        nationalID:
+          type: string
+        name:
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        description:
+          type:
+          - string
+          - 'null'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        sex:
+          allOf:
+          - $ref: '#/components/schemas/SexEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        isCastrated:
+          type: boolean
+        species:
+          type: string
+          maxLength: 255
+        breed:
+          type:
+          - string
+          - 'null'
+          maxLength: 255
+        birthdate:
+          type: string
+          format: date-time
+        isMemberOfAnimalGroup:
+          $ref: '#/components/schemas/FarmAnimalGroupSerializerField'
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+    FarmAnimalGroupSerializerField:
+      type: object
+      properties:
+        hasName:
+          type: string
+    FarmAnimal:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        nationalID:
+          type: string
+        name:
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        description:
+          type:
+          - string
+          - 'null'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        sex:
+          allOf:
+          - $ref: '#/components/schemas/SexEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        isCastrated:
+          type: boolean
+        species:
+          type: string
+          maxLength: 255
+        breed:
+          type:
+          - string
+          - 'null'
+          maxLength: 255
+        birthdate:
+          type: string
+          format: date-time
+        isMemberOfAnimalGroup:
+          $ref: '#/components/schemas/FarmAnimalGroupSerializerField'
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - birthdate
+      - dateCreated
+      - dateModified
+      - hasAgriParcel
+      - id
+      - invalidatedAtTime
+      - species
+    StatusEnum:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      description: '* `0` - Inactive
+
+        * `1` - Active
+
+        * `2` - Deleted'
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

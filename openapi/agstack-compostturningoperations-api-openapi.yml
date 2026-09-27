@@ -1,0 +1,343 @@
+openapi: 3.2.0
+info:
+  title: OpenAgri Farm Calendar Compost Turning Operations API
+  version: 1.0.0
+  description: API for farm assets and other farm related things.
+tags:
+- name: CompostTurningOperations
+paths:
+  /api/v1/CompostTurningOperations/:
+    get:
+      operationId: api_v1_CompostTurningOperations_list
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: activity_type
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: query
+        name: fromDate
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: parcel
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: title
+        schema:
+          type: string
+      - in: query
+        name: toDate
+        schema:
+          type: string
+          format: date-time
+      tags:
+      - CompostTurningOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CompostTurningOperation'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CompostTurningOperation'
+          description: ''
+      summary: Api v1 compost turning operations list
+      x-summary-source: derived
+    post:
+      operationId: api_v1_CompostTurningOperations_create
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      tags:
+      - CompostTurningOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompostTurningOperation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CompostTurningOperation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CompostTurningOperation'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/CompostTurningOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompostTurningOperation'
+          description: ''
+      summary: Api v1 compost turning operations create
+      x-summary-source: derived
+  /api/v1/CompostTurningOperations/{id}/:
+    get:
+      operationId: api_v1_CompostTurningOperations_retrieve
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Compost Turning Operation.
+        required: true
+      tags:
+      - CompostTurningOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/CompostTurningOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompostTurningOperation'
+          description: ''
+      summary: Api v1 compost turning operations retrieve
+      x-summary-source: derived
+    put:
+      operationId: api_v1_CompostTurningOperations_update
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Compost Turning Operation.
+        required: true
+      tags:
+      - CompostTurningOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompostTurningOperation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CompostTurningOperation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CompostTurningOperation'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/CompostTurningOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompostTurningOperation'
+          description: ''
+      summary: Api v1 compost turning operations update
+      x-summary-source: derived
+    patch:
+      operationId: api_v1_CompostTurningOperations_partial_update
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Compost Turning Operation.
+        required: true
+      tags:
+      - CompostTurningOperations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedCompostTurningOperation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedCompostTurningOperation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedCompostTurningOperation'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/CompostTurningOperation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompostTurningOperation'
+          description: ''
+      summary: Api v1 compost turning operations partial update
+      x-summary-source: derived
+    delete:
+      operationId: api_v1_CompostTurningOperations_destroy
+      description: API endpoint that allows CompostTurningOperation to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Compost Turning Operation.
+        required: true
+      tags:
+      - CompostTurningOperations
+      security:
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+      summary: Api v1 compost turning operations destroy
+      x-summary-source: derived
+components:
+  schemas:
+    CompostTurningOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        operatedOn:
+          type: string
+          format: uuid
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+      required:
+      - activityType
+      - hasStartDatetime
+      - id
+      - operatedOn
+      - usesAgriculturalMachinery
+    PatchedCompostTurningOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        operatedOn:
+          type: string
+          format: uuid
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

@@ -1,0 +1,401 @@
+openapi: 3.2.0
+info:
+  title: OpenAgri Calendar Farm API
+  version: 1.0.0
+  description: API for farm assets and other farm related things.
+tags:
+- name: Farm
+paths:
+  /api/v1/Farm/:
+    get:
+      operationId: api_v1_Farm_list
+      description: API endpoint that allows Farm to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: query
+        name: name
+        schema:
+          type: string
+      - in: query
+        name: status
+        schema:
+          type: integer
+          enum:
+          - 0
+          - 1
+          - 2
+        description: '* `0` - Inactive
+
+          * `1` - Active
+
+          * `2` - Deleted'
+      tags:
+      - Farm
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Farm'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Farm'
+          description: ''
+      summary: Api v1 farm list
+      x-summary-source: derived
+    post:
+      operationId: api_v1_Farm_create
+      description: API endpoint that allows Farm to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      tags:
+      - Farm
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Farm'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Farm'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Farm'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Farm'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Farm'
+          description: ''
+      summary: Api v1 farm create
+      x-summary-source: derived
+  /api/v1/Farm/{id}/:
+    get:
+      operationId: api_v1_Farm_retrieve
+      description: API endpoint that allows Farm to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Farm.
+        required: true
+      tags:
+      - Farm
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Farm'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Farm'
+          description: ''
+      summary: Api v1 farm retrieve
+      x-summary-source: derived
+    put:
+      operationId: api_v1_Farm_update
+      description: API endpoint that allows Farm to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Farm.
+        required: true
+      tags:
+      - Farm
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Farm'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Farm'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Farm'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Farm'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Farm'
+          description: ''
+      summary: Api v1 farm update
+      x-summary-source: derived
+    patch:
+      operationId: api_v1_Farm_partial_update
+      description: API endpoint that allows Farm to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Farm.
+        required: true
+      tags:
+      - Farm
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedFarm'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedFarm'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedFarm'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Farm'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Farm'
+          description: ''
+      summary: Api v1 farm partial update
+      x-summary-source: derived
+    delete:
+      operationId: api_v1_Farm_destroy
+      description: API endpoint that allows Farm to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Farm.
+        required: true
+      tags:
+      - Farm
+      security:
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+      summary: Api v1 farm destroy
+      x-summary-source: derived
+components:
+  schemas:
+    PatchedFarm:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        deleted_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+        description:
+          type: string
+        administrator:
+          type: string
+        telephone:
+          type: string
+        vatID:
+          type: string
+        hasAgriParcel:
+          type: array
+          items:
+            type: string
+            format: uuid
+          readOnly: true
+        contactPerson:
+          $ref: '#/components/schemas/ContactPersonField'
+        address:
+          $ref: '#/components/schemas/AddressField'
+    AddressField:
+      type: object
+      properties:
+        adminUnitL1:
+          type: string
+        adminUnitL2:
+          type: string
+        addressArea:
+          type: string
+        municipality:
+          type: string
+        community:
+          type: string
+        locatorName:
+          type: string
+      required:
+      - addressArea
+      - adminUnitL1
+      - adminUnitL2
+      - community
+      - locatorName
+      - municipality
+    Farm:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        deleted_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+        description:
+          type: string
+        administrator:
+          type: string
+        telephone:
+          type: string
+        vatID:
+          type: string
+        hasAgriParcel:
+          type: array
+          items:
+            type: string
+            format: uuid
+          readOnly: true
+        contactPerson:
+          $ref: '#/components/schemas/ContactPersonField'
+        address:
+          $ref: '#/components/schemas/AddressField'
+      required:
+      - address
+      - administrator
+      - contactPerson
+      - created_at
+      - description
+      - hasAgriParcel
+      - id
+      - name
+      - telephone
+      - updated_at
+      - vatID
+    ContactPersonField:
+      type: object
+      properties:
+        firstname:
+          type: string
+        lastname:
+          type: string
+      required:
+      - firstname
+      - lastname
+    StatusEnum:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      description: '* `0` - Inactive
+
+        * `1` - Active
+
+        * `2` - Deleted'
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

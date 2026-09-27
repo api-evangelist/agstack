@@ -1,0 +1,375 @@
+openapi: 3.2.0
+info:
+  title: OpenAgri Farm Calendar Agricultural Machines API
+  version: 1.0.0
+  description: API for farm assets and other farm related things.
+tags:
+- name: AgriculturalMachines
+paths:
+  /api/v1/AgriculturalMachines/:
+    get:
+      operationId: api_v1_AgriculturalMachines_list
+      description: API endpoint that allows AgriculturalMachine to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: query
+        name: name
+        schema:
+          type: string
+      - in: query
+        name: parcel
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: status
+        schema:
+          type: integer
+          enum:
+          - 0
+          - 1
+          - 2
+        description: '* `0` - Inactive
+
+          * `1` - Active
+
+          * `2` - Deleted'
+      tags:
+      - AgriculturalMachines
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AgriculturalMachine'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AgriculturalMachine'
+          description: ''
+      summary: Api v1 agricultural machines list
+      x-summary-source: derived
+    post:
+      operationId: api_v1_AgriculturalMachines_create
+      description: API endpoint that allows AgriculturalMachine to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      tags:
+      - AgriculturalMachines
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AgriculturalMachine'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AgriculturalMachine'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AgriculturalMachine'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/AgriculturalMachine'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgriculturalMachine'
+          description: ''
+      summary: Api v1 agricultural machines create
+      x-summary-source: derived
+  /api/v1/AgriculturalMachines/{id}/:
+    get:
+      operationId: api_v1_AgriculturalMachines_retrieve
+      description: API endpoint that allows AgriculturalMachine to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Farm Machine.
+        required: true
+      tags:
+      - AgriculturalMachines
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/AgriculturalMachine'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgriculturalMachine'
+          description: ''
+      summary: Api v1 agricultural machines retrieve
+      x-summary-source: derived
+    put:
+      operationId: api_v1_AgriculturalMachines_update
+      description: API endpoint that allows AgriculturalMachine to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Farm Machine.
+        required: true
+      tags:
+      - AgriculturalMachines
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AgriculturalMachine'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AgriculturalMachine'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AgriculturalMachine'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/AgriculturalMachine'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgriculturalMachine'
+          description: ''
+      summary: Api v1 agricultural machines update
+      x-summary-source: derived
+    patch:
+      operationId: api_v1_AgriculturalMachines_partial_update
+      description: API endpoint that allows AgriculturalMachine to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Farm Machine.
+        required: true
+      tags:
+      - AgriculturalMachines
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAgriculturalMachine'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAgriculturalMachine'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAgriculturalMachine'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/AgriculturalMachine'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgriculturalMachine'
+          description: ''
+      summary: Api v1 agricultural machines partial update
+      x-summary-source: derived
+    delete:
+      operationId: api_v1_AgriculturalMachines_destroy
+      description: API endpoint that allows AgriculturalMachine to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Farm Machine.
+        required: true
+      tags:
+      - AgriculturalMachines
+      security:
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+      summary: Api v1 agricultural machines destroy
+      x-summary-source: derived
+components:
+  schemas:
+    AgriculturalMachine:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type:
+          - string
+          - 'null'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        purchase_date:
+          type: string
+          format: date
+        manufacturer:
+          type: string
+          maxLength: 255
+        model:
+          type: string
+          maxLength: 255
+        seria_number:
+          type: string
+          maxLength: 255
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - dateCreated
+      - dateModified
+      - hasAgriParcel
+      - id
+      - invalidatedAtTime
+      - manufacturer
+      - model
+      - name
+      - purchase_date
+      - seria_number
+    PatchedAgriculturalMachine:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type:
+          - string
+          - 'null'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        purchase_date:
+          type: string
+          format: date
+        manufacturer:
+          type: string
+          maxLength: 255
+        model:
+          type: string
+          maxLength: 255
+        seria_number:
+          type: string
+          maxLength: 255
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+    StatusEnum:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      description: '* `0` - Inactive
+
+        * `1` - Active
+
+        * `2` - Deleted'
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

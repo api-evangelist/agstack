@@ -1,0 +1,347 @@
+openapi: 3.2.0
+info:
+  title: OpenAgri Farm Calendar Generic Farm Assets API
+  version: 1.0.0
+  description: API for farm assets and other farm related things.
+tags:
+- name: GenericFarmAssets
+paths:
+  /api/v1/GenericFarmAssets/:
+    get:
+      operationId: api_v1_GenericFarmAssets_list
+      description: API endpoint that allows GenericFarmAsset to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: query
+        name: name
+        schema:
+          type: string
+      - in: query
+        name: parcel
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: status
+        schema:
+          type: integer
+          enum:
+          - 0
+          - 1
+          - 2
+        description: '* `0` - Inactive
+
+          * `1` - Active
+
+          * `2` - Deleted'
+      tags:
+      - GenericFarmAssets
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GenericFarmAsset'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GenericFarmAsset'
+          description: ''
+      summary: Api v1 generic farm assets list
+      x-summary-source: derived
+    post:
+      operationId: api_v1_GenericFarmAssets_create
+      description: API endpoint that allows GenericFarmAsset to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      tags:
+      - GenericFarmAssets
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericFarmAsset'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GenericFarmAsset'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GenericFarmAsset'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/GenericFarmAsset'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericFarmAsset'
+          description: ''
+      summary: Api v1 generic farm assets create
+      x-summary-source: derived
+  /api/v1/GenericFarmAssets/{id}/:
+    get:
+      operationId: api_v1_GenericFarmAssets_retrieve
+      description: API endpoint that allows GenericFarmAsset to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Generic Farm Asset.
+        required: true
+      tags:
+      - GenericFarmAssets
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/GenericFarmAsset'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericFarmAsset'
+          description: ''
+      summary: Api v1 generic farm assets retrieve
+      x-summary-source: derived
+    put:
+      operationId: api_v1_GenericFarmAssets_update
+      description: API endpoint that allows GenericFarmAsset to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Generic Farm Asset.
+        required: true
+      tags:
+      - GenericFarmAssets
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericFarmAsset'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GenericFarmAsset'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GenericFarmAsset'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/GenericFarmAsset'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericFarmAsset'
+          description: ''
+      summary: Api v1 generic farm assets update
+      x-summary-source: derived
+    patch:
+      operationId: api_v1_GenericFarmAssets_partial_update
+      description: API endpoint that allows GenericFarmAsset to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Generic Farm Asset.
+        required: true
+      tags:
+      - GenericFarmAssets
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedGenericFarmAsset'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedGenericFarmAsset'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedGenericFarmAsset'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/GenericFarmAsset'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericFarmAsset'
+          description: ''
+      summary: Api v1 generic farm assets partial update
+      x-summary-source: derived
+    delete:
+      operationId: api_v1_GenericFarmAssets_destroy
+      description: API endpoint that allows GenericFarmAsset to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Generic Farm Asset.
+        required: true
+      tags:
+      - GenericFarmAssets
+      security:
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+      summary: Api v1 generic farm assets destroy
+      x-summary-source: derived
+components:
+  schemas:
+    GenericFarmAsset:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type:
+          - string
+          - 'null'
+        hasAgriParcel:
+          type: string
+          format: uuid
+      required:
+      - dateCreated
+      - dateModified
+      - hasAgriParcel
+      - id
+      - invalidatedAtTime
+      - name
+    StatusEnum:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      description: '* `0` - Inactive
+
+        * `1` - Active
+
+        * `2` - Deleted'
+    PatchedGenericFarmAsset:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type:
+          - string
+          - 'null'
+        hasAgriParcel:
+          type: string
+          format: uuid
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

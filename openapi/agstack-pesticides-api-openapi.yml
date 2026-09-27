@@ -1,0 +1,362 @@
+openapi: 3.2.0
+info:
+  title: OpenAgri Farm Calendar Pesticides API
+  version: 1.0.0
+  description: API for farm assets and other farm related things.
+tags:
+- name: Pesticides
+paths:
+  /api/v1/Pesticides/:
+    get:
+      operationId: api_v1_Pesticides_list
+      description: API endpoint that allows Pesticide to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: query
+        name: name
+        schema:
+          type: string
+      - in: query
+        name: status
+        schema:
+          type: integer
+          enum:
+          - 0
+          - 1
+          - 2
+        description: '* `0` - Inactive
+
+          * `1` - Active
+
+          * `2` - Deleted'
+      tags:
+      - Pesticides
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pesticide'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pesticide'
+          description: ''
+      summary: Api v1 pesticides list
+      x-summary-source: derived
+    post:
+      operationId: api_v1_Pesticides_create
+      description: API endpoint that allows Pesticide to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      tags:
+      - Pesticides
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pesticide'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Pesticide'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Pesticide'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Pesticide'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pesticide'
+          description: ''
+      summary: Api v1 pesticides create
+      x-summary-source: derived
+  /api/v1/Pesticides/{id}/:
+    get:
+      operationId: api_v1_Pesticides_retrieve
+      description: API endpoint that allows Pesticide to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Pesticide.
+        required: true
+      tags:
+      - Pesticides
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Pesticide'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pesticide'
+          description: ''
+      summary: Api v1 pesticides retrieve
+      x-summary-source: derived
+    put:
+      operationId: api_v1_Pesticides_update
+      description: API endpoint that allows Pesticide to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Pesticide.
+        required: true
+      tags:
+      - Pesticides
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pesticide'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Pesticide'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Pesticide'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Pesticide'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pesticide'
+          description: ''
+      summary: Api v1 pesticides update
+      x-summary-source: derived
+    patch:
+      operationId: api_v1_Pesticides_partial_update
+      description: API endpoint that allows Pesticide to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Pesticide.
+        required: true
+      tags:
+      - Pesticides
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedPesticide'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedPesticide'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedPesticide'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Pesticide'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pesticide'
+          description: ''
+      summary: Api v1 pesticides partial update
+      x-summary-source: derived
+    delete:
+      operationId: api_v1_Pesticides_destroy
+      description: API endpoint that allows Pesticide to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this Pesticide.
+        required: true
+      tags:
+      - Pesticides
+      security:
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+      summary: Api v1 pesticides destroy
+      x-summary-source: derived
+components:
+  schemas:
+    Pesticide:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        hasCommercialName:
+          type: string
+        description:
+          type:
+          - string
+          - 'null'
+        hasCost:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        isPricePer:
+          type: string
+        hasActiveSubstance:
+          type: string
+        isTargetedTowards:
+          type: string
+        hasPreharvestInterval:
+          type: integer
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - dateCreated
+      - dateModified
+      - hasActiveSubstance
+      - hasCommercialName
+      - hasCost
+      - hasPreharvestInterval
+      - id
+      - invalidatedAtTime
+      - isPricePer
+      - isTargetedTowards
+    PatchedPesticide:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        hasCommercialName:
+          type: string
+        description:
+          type:
+          - string
+          - 'null'
+        hasCost:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        isPricePer:
+          type: string
+        hasActiveSubstance:
+          type: string
+        isTargetedTowards:
+          type: string
+        hasPreharvestInterval:
+          type: integer
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+    StatusEnum:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      description: '* `0` - Inactive
+
+        * `1` - Active
+
+        * `2` - Deleted'
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

@@ -1,0 +1,339 @@
+openapi: 3.2.0
+info:
+  title: OpenAgri Farm Calendar Farm Calendar Activity Types API
+  version: 1.0.0
+  description: API for farm assets and other farm related things.
+tags:
+- name: FarmCalendarActivityTypes
+paths:
+  /api/v1/FarmCalendarActivityTypes/:
+    get:
+      operationId: api_v1_FarmCalendarActivityTypes_list
+      description: API endpoint that allows FarmCalendarActivityType to be viewed or edited.
+      parameters:
+      - in: query
+        name: category
+        schema:
+          type: string
+          enum:
+          - activity
+          - alert
+          - observation
+        description: '* `activity` - Activity
+
+          * `observation` - Observation
+
+          * `alert` - Alert'
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: query
+        name: name
+        schema:
+          type: string
+      tags:
+      - FarmCalendarActivityTypes
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FarmCalendarActivityType'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FarmCalendarActivityType'
+          description: ''
+      summary: Api v1 farm calendar activity types list
+      x-summary-source: derived
+    post:
+      operationId: api_v1_FarmCalendarActivityTypes_create
+      description: API endpoint that allows FarmCalendarActivityType to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      tags:
+      - FarmCalendarActivityTypes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FarmCalendarActivityType'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/FarmCalendarActivityType'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/FarmCalendarActivityType'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/FarmCalendarActivityType'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmCalendarActivityType'
+          description: ''
+      summary: Api v1 farm calendar activity types create
+      x-summary-source: derived
+  /api/v1/FarmCalendarActivityTypes/{id}/:
+    get:
+      operationId: api_v1_FarmCalendarActivityTypes_retrieve
+      description: API endpoint that allows FarmCalendarActivityType to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this farm calendar activity type.
+        required: true
+      tags:
+      - FarmCalendarActivityTypes
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/FarmCalendarActivityType'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmCalendarActivityType'
+          description: ''
+      summary: Api v1 farm calendar activity types retrieve
+      x-summary-source: derived
+    put:
+      operationId: api_v1_FarmCalendarActivityTypes_update
+      description: API endpoint that allows FarmCalendarActivityType to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this farm calendar activity type.
+        required: true
+      tags:
+      - FarmCalendarActivityTypes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FarmCalendarActivityType'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/FarmCalendarActivityType'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/FarmCalendarActivityType'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/FarmCalendarActivityType'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmCalendarActivityType'
+          description: ''
+      summary: Api v1 farm calendar activity types update
+      x-summary-source: derived
+    patch:
+      operationId: api_v1_FarmCalendarActivityTypes_partial_update
+      description: API endpoint that allows FarmCalendarActivityType to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this farm calendar activity type.
+        required: true
+      tags:
+      - FarmCalendarActivityTypes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedFarmCalendarActivityType'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedFarmCalendarActivityType'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedFarmCalendarActivityType'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/FarmCalendarActivityType'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmCalendarActivityType'
+          description: ''
+      summary: Api v1 farm calendar activity types partial update
+      x-summary-source: derived
+    delete:
+      operationId: api_v1_FarmCalendarActivityTypes_destroy
+      description: API endpoint that allows FarmCalendarActivityType to be viewed or edited.
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - jsonld
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this farm calendar activity type.
+        required: true
+      tags:
+      - FarmCalendarActivityTypes
+      security:
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+      summary: Api v1 farm calendar activity types destroy
+      x-summary-source: derived
+components:
+  schemas:
+    CategoryEnum:
+      enum:
+      - activity
+      - observation
+      - alert
+      type: string
+      description: '* `activity` - Activity
+
+        * `observation` - Observation
+
+        * `alert` - Alert'
+    FarmCalendarActivityType:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type:
+          - string
+          - 'null'
+        category:
+          $ref: '#/components/schemas/CategoryEnum'
+        background_color:
+          type: string
+          pattern: ^#[0-9A-Fa-f]{6}$
+          maxLength: 7
+        border_color:
+          type: string
+          pattern: ^#[0-9A-Fa-f]{6}$
+          maxLength: 7
+        text_color:
+          type: string
+          pattern: ^#[0-9A-Fa-f]{6}$
+          maxLength: 7
+        activity_endpoint:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+          description: The farm activitie API endpoint with the specific details of this activity type.
+      required:
+      - activity_endpoint
+      - id
+      - name
+    PatchedFarmCalendarActivityType:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type:
+          - string
+          - 'null'
+        category:
+          $ref: '#/components/schemas/CategoryEnum'
+        background_color:
+          type: string
+          pattern: ^#[0-9A-Fa-f]{6}$
+          maxLength: 7
+        border_color:
+          type: string
+          pattern: ^#[0-9A-Fa-f]{6}$
+          maxLength: 7
+        text_color:
+          type: string
+          pattern: ^#[0-9A-Fa-f]{6}$
+          maxLength: 7
+        activity_endpoint:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+          description: The farm activitie API endpoint with the specific details of this activity type.
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
