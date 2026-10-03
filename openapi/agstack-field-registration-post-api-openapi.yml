@@ -141,6 +141,20 @@ paths:
       operationId: postRegisterPointsGeojson
       x-operation-id-source: derived
 components:
+  responses:
+    ErrorResponse:
+      description: Generic Error Response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: Error description
+              error:
+                type: string
+                example: Detailed exception message
   schemas:
     RegisterFieldWKTRequest:
       type: object
@@ -161,6 +175,19 @@ components:
           type: string
           example: 8,13
           description: Comma-separated list of resolution levels
+    BulkPointResult:
+      type: object
+      properties:
+        status:
+          type: string
+          example: created
+        message:
+          type: string
+          example: Point registered successfully.
+        Geo Id:
+          type: string
+        Geo JSON:
+          type: object
     GeoJSONFeatureCollection:
       type: object
       required:
@@ -205,33 +232,6 @@ components:
                   s2_index:
                     type: string
                     example: 8,13
-    BulkPointResult:
-      type: object
-      properties:
-        status:
-          type: string
-          example: created
-        message:
-          type: string
-          example: Point registered successfully.
-        Geo Id:
-          type: string
-        Geo JSON:
-          type: object
-  responses:
-    ErrorResponse:
-      description: Generic Error Response
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              message:
-                type: string
-                example: Error description
-              error:
-                type: string
-                example: Detailed exception message
   securitySchemes:
     Bearer_Token:
       type: http

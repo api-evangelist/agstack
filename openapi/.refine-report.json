@@ -38,9 +38,7 @@
     "agstack-data-api-openapi.yml",
     "agstack-linkeddata-api-openapi.yml"
   ],
-  "archived": [
-    "deleted 1 superseded output(s) from the previous generation"
-  ],
+  "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
@@ -258,16 +256,39 @@
     "agstack-openagri-weather-service-openapi.yml: declared missing tag: Auth",
     "agstack-openagri-weather-service-openapi.yml: declared missing tag: Data",
     "agstack-openagri-weather-service-openapi.yml: declared missing tag: Linkeddata",
-    "superseded outputs removed: agstack-api-api-openapi.yml",
-    "apis.yml register: written (+25 apis, 31 total)"
+    "apis.yml register: already-registered"
   ],
   "skipped": [
-    "agstack-api-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-addrawmaterialoperations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-agriculturalmachines-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-alerts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "agstack-auth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "agstack-authentication-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-compostoperations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-compostturningoperations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-cropgrowthstageobservations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-cropprotectionoperations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-cropstressindicatorobservations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "agstack-data-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-diseasedetection-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-farm-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-farmanimals-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-farmcalendaractivities-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-farmcalendaractivitytypes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-farmcrops-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-farmparcels-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-fertilizationoperations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-fertilizers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "agstack-field-registration-post-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "agstack-field-retrieval-queries-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "agstack-linkeddata-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+    "agstack-genericfarmassets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-irrigationoperations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-linkeddata-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-observations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-pesticides-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-schema-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-sprayingrecommendation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-vigorestimation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "agstack-yieldprediction-api-openapi.yml: previously refined output, superseded by openapi/_original/"
   ]
 }

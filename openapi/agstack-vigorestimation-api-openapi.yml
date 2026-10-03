@@ -314,6 +314,15 @@ components:
       - id
       - observedProperty
       - phenomenonTime
+    MadeBySensorField:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+      required:
+      - name
     PatchedVigorEstimationObservation:
       type: object
       properties:
@@ -353,15 +362,6 @@ components:
           $ref: '#/components/schemas/GenericQuantityValueField'
         observedProperty:
           type: string
-    MadeBySensorField:
-      type: object
-      properties:
-        name:
-          type:
-          - string
-          - 'null'
-      required:
-      - name
   securitySchemes:
     cookieAuth:
       type: apiKey

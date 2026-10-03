@@ -250,30 +250,6 @@ paths:
       - Data
 components:
   schemas:
-    SprayStatus:
-      type: string
-      enum:
-      - optimal
-      - marginal
-      - unsuitable
-      title: SprayStatus
-    THIDataOut:
-      properties:
-        id:
-          type: string
-          format: uuid
-          title: Id
-        spatial_entity:
-          $ref: '#/components/schemas/PointOut'
-        thi:
-          type: number
-          title: Thi
-      type: object
-      required:
-      - id
-      - spatial_entity
-      - thi
-      title: THIDataOut
     SprayForecastResponse:
       properties:
         timestamp:
@@ -300,29 +276,75 @@ components:
       - location
       - detailed_status
       title: SprayForecastResponse
-    HTTPValidationError:
+    ValidationError:
       properties:
-        detail:
+        loc:
           items:
-            $ref: '#/components/schemas/ValidationError'
+            anyOf:
+            - type: string
+            - type: integer
           type: array
-          title: Detail
-      type: object
-      title: HTTPValidationError
-    PointOut:
-      properties:
-        location:
-          $ref: '#/components/schemas/GeoJSONOut'
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
       type: object
       required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    FlightStatusForecastResponse:
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+          title: Timestamp
+        uav_model:
+          type: string
+          title: Uav Model
+        status:
+          type: string
+          title: Status
+        weather_source:
+          type: string
+          title: Weather Source
+        location:
+          $ref: '#/components/schemas/GeoJSONOut'
+        weather_params:
+          additionalProperties:
+            type: number
+          type: object
+          title: Weather Params
+      type: object
+      required:
+      - timestamp
+      - uav_model
+      - status
+      - weather_source
       - location
-      title: PointOut
-    GeoJSONTypeEnum:
-      type: string
-      enum:
-      - Point
-      - POLYGON
-      title: GeoJSONTypeEnum
+      - weather_params
+      title: FlightStatusForecastResponse
+    THIDataOut:
+      properties:
+        id:
+          type: string
+          format: uuid
+          title: Id
+        spatial_entity:
+          $ref: '#/components/schemas/PointOut'
+        thi:
+          type: number
+          title: Thi
+      type: object
+      required:
+      - id
+      - spatial_entity
+      - thi
+      title: THIDataOut
     PredictionOut:
       properties:
         value:
@@ -365,6 +387,13 @@ components:
       - type
       - coordinates
       title: GeoJSONOut
+    SprayStatus:
+      type: string
+      enum:
+      - optimal
+      - marginal
+      - unsuitable
+      title: SprayStatus
     WeatherDataOut:
       properties:
         id:
@@ -382,58 +411,29 @@ components:
       - spatial_entity
       - data
       title: WeatherDataOut
-    FlightStatusForecastResponse:
+    GeoJSONTypeEnum:
+      type: string
+      enum:
+      - Point
+      - POLYGON
+      title: GeoJSONTypeEnum
+    PointOut:
       properties:
-        timestamp:
-          type: string
-          format: date-time
-          title: Timestamp
-        uav_model:
-          type: string
-          title: Uav Model
-        status:
-          type: string
-          title: Status
-        weather_source:
-          type: string
-          title: Weather Source
         location:
           $ref: '#/components/schemas/GeoJSONOut'
-        weather_params:
-          additionalProperties:
-            type: number
-          type: object
-          title: Weather Params
       type: object
       required:
-      - timestamp
-      - uav_model
-      - status
-      - weather_source
       - location
-      - weather_params
-      title: FlightStatusForecastResponse
-    ValidationError:
+      title: PointOut
+    HTTPValidationError:
       properties:
-        loc:
+        detail:
           items:
-            anyOf:
-            - type: string
-            - type: integer
+            $ref: '#/components/schemas/ValidationError'
           type: array
-          title: Location
-        msg:
-          type: string
-          title: Message
-        type:
-          type: string
-          title: Error Type
+          title: Detail
       type: object
-      required:
-      - loc
-      - msg
-      - type
-      title: ValidationError
+      title: HTTPValidationError
   securitySchemes:
     HTTPBearer:
       type: http

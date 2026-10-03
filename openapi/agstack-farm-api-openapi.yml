@@ -249,6 +249,84 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    ContactPersonField:
+      type: object
+      properties:
+        firstname:
+          type: string
+        lastname:
+          type: string
+      required:
+      - firstname
+      - lastname
+    Farm:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        deleted_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+        description:
+          type: string
+        administrator:
+          type: string
+        telephone:
+          type: string
+        vatID:
+          type: string
+        hasAgriParcel:
+          type: array
+          items:
+            type: string
+            format: uuid
+          readOnly: true
+        contactPerson:
+          $ref: '#/components/schemas/ContactPersonField'
+        address:
+          $ref: '#/components/schemas/AddressField'
+      required:
+      - address
+      - administrator
+      - contactPerson
+      - created_at
+      - description
+      - hasAgriParcel
+      - id
+      - name
+      - telephone
+      - updated_at
+      - vatID
+    StatusEnum:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      description: '* `0` - Inactive
+
+        * `1` - Active
+
+        * `2` - Deleted'
     PatchedFarm:
       type: object
       properties:
@@ -316,84 +394,6 @@ components:
       - community
       - locatorName
       - municipality
-    Farm:
-      type: object
-      properties:
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        deleted_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        updated_at:
-          type: string
-          format: date-time
-          readOnly: true
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        name:
-          type: string
-        description:
-          type: string
-        administrator:
-          type: string
-        telephone:
-          type: string
-        vatID:
-          type: string
-        hasAgriParcel:
-          type: array
-          items:
-            type: string
-            format: uuid
-          readOnly: true
-        contactPerson:
-          $ref: '#/components/schemas/ContactPersonField'
-        address:
-          $ref: '#/components/schemas/AddressField'
-      required:
-      - address
-      - administrator
-      - contactPerson
-      - created_at
-      - description
-      - hasAgriParcel
-      - id
-      - name
-      - telephone
-      - updated_at
-      - vatID
-    ContactPersonField:
-      type: object
-      properties:
-        firstname:
-          type: string
-        lastname:
-          type: string
-      required:
-      - firstname
-      - lastname
-    StatusEnum:
-      enum:
-      - 0
-      - 1
-      - 2
-      type: integer
-      description: '* `0` - Inactive
-
-        * `1` - Active
-
-        * `2` - Deleted'
   securitySchemes:
     cookieAuth:
       type: apiKey

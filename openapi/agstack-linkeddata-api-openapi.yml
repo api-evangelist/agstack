@@ -200,25 +200,6 @@ paths:
       - Linkeddata
 components:
   schemas:
-    JSONLDGraph:
-      properties:
-        '@context':
-          items:
-            anyOf:
-            - type: string
-            - type: object
-          type: array
-          title: '@Context'
-        '@graph':
-          items:
-            type: object
-          type: array
-          title: '@Graph'
-      type: object
-      required:
-      - '@context'
-      - '@graph'
-      title: JSONLDGraph
     ValidationError:
       properties:
         loc:
@@ -240,6 +221,25 @@ components:
       - msg
       - type
       title: ValidationError
+    JSONLDGraph:
+      properties:
+        '@context':
+          items:
+            anyOf:
+            - type: string
+            - type: object
+          type: array
+          title: '@Context'
+        '@graph':
+          items:
+            type: object
+          type: array
+          title: '@Graph'
+      type: object
+      required:
+      - '@context'
+      - '@graph'
+      title: JSONLDGraph
     HTTPValidationError:
       properties:
         detail:

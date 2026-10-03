@@ -275,63 +275,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    PatchedAlert:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type:
-          - string
-          - 'null'
-        severity:
-          $ref: '#/components/schemas/SeverityEnum'
-        hasAgriParcel:
-          type: string
-          format: uuid
-        validFrom:
-          type: string
-          format: date-time
-        validTo:
-          type: string
-          format: date-time
-        dateIssued:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          readOnly: true
-        quantityValue:
-          $ref: '#/components/schemas/ObservationQuantityValueField'
-        relatedObservation:
-          type:
-          - string
-          - 'null'
-          format: uuid
-    ObservationQuantityValueField:
-      type: object
-      properties:
-        unit:
-          type:
-          - string
-          - 'null'
-          readOnly: true
-        hasValue:
-          type:
-          - string
-          - 'null'
-          readOnly: true
-      required:
-      - hasValue
-      - unit
     SeverityEnum:
       enum:
       - minor
@@ -349,6 +292,22 @@ components:
         * `major` - Major
 
         * `critical` - Critical'
+    ObservationQuantityValueField:
+      type: object
+      properties:
+        unit:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        hasValue:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+      required:
+      - hasValue
+      - unit
     Alert:
       type: object
       properties:
@@ -398,6 +357,47 @@ components:
       - relatedObservation
       - validFrom
       - validTo
+    PatchedAlert:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        severity:
+          $ref: '#/components/schemas/SeverityEnum'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        validFrom:
+          type: string
+          format: date-time
+        validTo:
+          type: string
+          format: date-time
+        dateIssued:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          readOnly: true
+        quantityValue:
+          $ref: '#/components/schemas/ObservationQuantityValueField'
+        relatedObservation:
+          type:
+          - string
+          - 'null'
+          format: uuid
   securitySchemes:
     cookieAuth:
       type: apiKey

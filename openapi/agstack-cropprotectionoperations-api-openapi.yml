@@ -260,18 +260,50 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    AppliedAmmountField:
+    PatchedCropProtectionOperation:
       type: object
       properties:
-        unit:
+        id:
           type: string
-        numericValue:
+          format: uuid
+          readOnly: true
+        activityType:
           type: string
-          format: decimal
-          pattern: ^-?\d{0,15}(?:\.\d{0,2})?$
-      required:
-      - numericValue
-      - unit
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasAppliedAmount:
+          $ref: '#/components/schemas/AppliedAmmountField'
+        usesPesticide:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        operatedOn:
+          type: string
+          format: uuid
     CropProtectionOperation:
       type: object
       properties:
@@ -324,50 +356,18 @@ components:
       - operatedOn
       - usesAgriculturalMachinery
       - usesPesticide
-    PatchedCropProtectionOperation:
+    AppliedAmmountField:
       type: object
       properties:
-        id:
+        unit:
           type: string
-          format: uuid
-          readOnly: true
-        activityType:
+        numericValue:
           type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type:
-          - string
-          - 'null'
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        responsibleAgent:
-          type:
-          - string
-          - 'null'
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-        hasAppliedAmount:
-          $ref: '#/components/schemas/AppliedAmmountField'
-        usesPesticide:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        operatedOn:
-          type: string
-          format: uuid
+          format: decimal
+          pattern: ^-?\d{0,15}(?:\.\d{0,2})?$
+      required:
+      - numericValue
+      - unit
   securitySchemes:
     cookieAuth:
       type: apiKey

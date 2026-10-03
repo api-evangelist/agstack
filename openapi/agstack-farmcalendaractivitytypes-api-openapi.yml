@@ -249,17 +249,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    CategoryEnum:
-      enum:
-      - activity
-      - observation
-      - alert
-      type: string
-      description: '* `activity` - Activity
-
-        * `observation` - Observation
-
-        * `alert` - Alert'
     FarmCalendarActivityType:
       type: object
       properties:
@@ -332,6 +321,17 @@ components:
           - 'null'
           readOnly: true
           description: The farm activitie API endpoint with the specific details of this activity type.
+    CategoryEnum:
+      enum:
+      - activity
+      - observation
+      - alert
+      type: string
+      description: '* `activity` - Activity
+
+        * `observation` - Observation
+
+        * `alert` - Alert'
   securitySchemes:
     cookieAuth:
       type: apiKey

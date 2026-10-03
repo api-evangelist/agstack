@@ -298,17 +298,6 @@ components:
       - id
       - observedProperty
       - phenomenonTime
-    GenericQuantityValueField:
-      type: object
-      properties:
-        unit:
-          type:
-          - string
-          - 'null'
-        hasValue:
-          type: string
-      required:
-      - hasValue
     PatchedObservation:
       type: object
       properties:
@@ -353,6 +342,17 @@ components:
           - 'null'
       required:
       - name
+    GenericQuantityValueField:
+      type: object
+      properties:
+        unit:
+          type:
+          - string
+          - 'null'
+        hasValue:
+          type: string
+      required:
+      - hasValue
   securitySchemes:
     cookieAuth:
       type: apiKey

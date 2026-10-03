@@ -303,17 +303,6 @@ components:
       - id
       - observedProperty
       - phenomenonTime
-    GenericQuantityValueField:
-      type: object
-      properties:
-        unit:
-          type:
-          - string
-          - 'null'
-        hasValue:
-          type: string
-      required:
-      - hasValue
     MadeBySensorField:
       type: object
       properties:
@@ -362,6 +351,17 @@ components:
           $ref: '#/components/schemas/GenericQuantityValueField'
         observedProperty:
           type: string
+    GenericQuantityValueField:
+      type: object
+      properties:
+        unit:
+          type:
+          - string
+          - 'null'
+        hasValue:
+          type: string
+      required:
+      - hasValue
   securitySchemes:
     cookieAuth:
       type: apiKey
