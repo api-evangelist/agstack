@@ -260,6 +260,18 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    AppliedAmmountField:
+      type: object
+      properties:
+        unit:
+          type: string
+        numericValue:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,15}(?:\.\d{0,2})?$
+      required:
+      - numericValue
+      - unit
     PatchedCropProtectionOperation:
       type: object
       properties:
@@ -356,18 +368,6 @@ components:
       - operatedOn
       - usesAgriculturalMachinery
       - usesPesticide
-    AppliedAmmountField:
-      type: object
-      properties:
-        unit:
-          type: string
-        numericValue:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,15}(?:\.\d{0,2})?$
-      required:
-      - numericValue
-      - unit
   securitySchemes:
     cookieAuth:
       type: apiKey

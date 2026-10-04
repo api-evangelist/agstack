@@ -300,15 +300,6 @@ components:
           - string
           - 'null'
           format: uuid
-    MadeBySensorField:
-      type: object
-      properties:
-        name:
-          type:
-          - string
-          - 'null'
-      required:
-      - name
     SprayingRecommendationObservation:
       type: object
       properties:
@@ -373,6 +364,15 @@ components:
           type: string
       required:
       - hasValue
+    MadeBySensorField:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+      required:
+      - name
   securitySchemes:
     cookieAuth:
       type: apiKey

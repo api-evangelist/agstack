@@ -250,6 +250,57 @@ paths:
       - Data
 components:
   schemas:
+    GeoJSONOut:
+      properties:
+        type:
+          $ref: '#/components/schemas/GeoJSONTypeEnum'
+        coordinates:
+          items: {}
+          type: array
+          title: Coordinates
+      type: object
+      required:
+      - type
+      - coordinates
+      title: GeoJSONOut
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    THIDataOut:
+      properties:
+        id:
+          type: string
+          format: uuid
+          title: Id
+        spatial_entity:
+          $ref: '#/components/schemas/PointOut'
+        thi:
+          type: number
+          title: Thi
+      type: object
+      required:
+      - id
+      - spatial_entity
+      - thi
+      title: THIDataOut
     SprayForecastResponse:
       properties:
         timestamp:
@@ -276,27 +327,6 @@ components:
       - location
       - detailed_status
       title: SprayForecastResponse
-    ValidationError:
-      properties:
-        loc:
-          items:
-            anyOf:
-            - type: string
-            - type: integer
-          type: array
-          title: Location
-        msg:
-          type: string
-          title: Message
-        type:
-          type: string
-          title: Error Type
-      type: object
-      required:
-      - loc
-      - msg
-      - type
-      title: ValidationError
     FlightStatusForecastResponse:
       properties:
         timestamp:
@@ -328,23 +358,23 @@ components:
       - location
       - weather_params
       title: FlightStatusForecastResponse
-    THIDataOut:
+    PointOut:
       properties:
-        id:
-          type: string
-          format: uuid
-          title: Id
-        spatial_entity:
-          $ref: '#/components/schemas/PointOut'
-        thi:
-          type: number
-          title: Thi
+        location:
+          $ref: '#/components/schemas/GeoJSONOut'
       type: object
       required:
-      - id
-      - spatial_entity
-      - thi
-      title: THIDataOut
+      - location
+      title: PointOut
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
     PredictionOut:
       properties:
         value:
@@ -374,19 +404,6 @@ components:
       - data_type
       - measurement_type
       title: PredictionOut
-    GeoJSONOut:
-      properties:
-        type:
-          $ref: '#/components/schemas/GeoJSONTypeEnum'
-        coordinates:
-          items: {}
-          type: array
-          title: Coordinates
-      type: object
-      required:
-      - type
-      - coordinates
-      title: GeoJSONOut
     SprayStatus:
       type: string
       enum:
@@ -417,23 +434,6 @@ components:
       - Point
       - POLYGON
       title: GeoJSONTypeEnum
-    PointOut:
-      properties:
-        location:
-          $ref: '#/components/schemas/GeoJSONOut'
-      type: object
-      required:
-      - location
-      title: PointOut
-    HTTPValidationError:
-      properties:
-        detail:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
-          title: Detail
-      type: object
-      title: HTTPValidationError
   securitySchemes:
     HTTPBearer:
       type: http

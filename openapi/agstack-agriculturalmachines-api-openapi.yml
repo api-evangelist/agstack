@@ -254,17 +254,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    StatusEnum:
-      enum:
-      - 0
-      - 1
-      - 2
-      type: integer
-      description: '* `0` - Inactive
-
-        * `1` - Active
-
-        * `2` - Deleted'
     AgriculturalMachine:
       type: object
       properties:
@@ -368,6 +357,17 @@ components:
           type: string
           format: date-time
           readOnly: true
+    StatusEnum:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      description: '* `0` - Inactive
+
+        * `1` - Active
+
+        * `2` - Deleted'
   securitySchemes:
     cookieAuth:
       type: apiKey

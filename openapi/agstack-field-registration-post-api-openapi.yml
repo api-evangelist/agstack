@@ -141,40 +141,7 @@ paths:
       operationId: postRegisterPointsGeojson
       x-operation-id-source: derived
 components:
-  responses:
-    ErrorResponse:
-      description: Generic Error Response
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              message:
-                type: string
-                example: Error description
-              error:
-                type: string
-                example: Detailed exception message
   schemas:
-    RegisterFieldWKTRequest:
-      type: object
-      required:
-      - wkt
-      properties:
-        wkt:
-          type: string
-          example: POLYGON((75.78209 30.90706, 75.78211 30.90645, 75.78270 30.90654, 75.78262 30.90714, 75.78209 30.90706))
-        threshold:
-          type: integer
-          default: 95
-          description: Percentage overlap threshold
-        return_s2_indices:
-          type: boolean
-          default: false
-        s2_index:
-          type: string
-          example: 8,13
-          description: Comma-separated list of resolution levels
     BulkPointResult:
       type: object
       properties:
@@ -232,6 +199,39 @@ components:
                   s2_index:
                     type: string
                     example: 8,13
+    RegisterFieldWKTRequest:
+      type: object
+      required:
+      - wkt
+      properties:
+        wkt:
+          type: string
+          example: POLYGON((75.78209 30.90706, 75.78211 30.90645, 75.78270 30.90654, 75.78262 30.90714, 75.78209 30.90706))
+        threshold:
+          type: integer
+          default: 95
+          description: Percentage overlap threshold
+        return_s2_indices:
+          type: boolean
+          default: false
+        s2_index:
+          type: string
+          example: 8,13
+          description: Comma-separated list of resolution levels
+  responses:
+    ErrorResponse:
+      description: Generic Error Response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: Error description
+              error:
+                type: string
+                example: Detailed exception message
   securitySchemes:
     Bearer_Token:
       type: http

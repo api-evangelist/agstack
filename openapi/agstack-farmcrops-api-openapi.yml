@@ -266,6 +266,57 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    PatchedFarmCrop:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type:
+          - string
+          - 'null'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        cropSpecies:
+          $ref: '#/components/schemas/CropSpeciesSerializerField'
+        growth_stage:
+          type:
+          - string
+          - 'null'
+          maxLength: 255
+    CropSpeciesSerializerField:
+      type: object
+      properties:
+        name:
+          type: string
+        variety:
+          type: string
+      required:
+      - name
+      - variety
     StatusEnum:
       enum:
       - 0
@@ -277,16 +328,6 @@ components:
         * `1` - Active
 
         * `2` - Deleted'
-    CropSpeciesSerializerField:
-      type: object
-      properties:
-        name:
-          type: string
-        variety:
-          type: string
-      required:
-      - name
-      - variety
     FarmCrop:
       type: object
       properties:
@@ -336,47 +377,6 @@ components:
       - id
       - invalidatedAtTime
       - name
-    PatchedFarmCrop:
-      type: object
-      properties:
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        invalidatedAtTime:
-          type: string
-          format: date-time
-          readOnly: true
-        dateCreated:
-          type: string
-          format: date-time
-          readOnly: true
-        dateModified:
-          type: string
-          format: date-time
-          readOnly: true
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        name:
-          type: string
-          maxLength: 100
-        description:
-          type:
-          - string
-          - 'null'
-        hasAgriParcel:
-          type: string
-          format: uuid
-        cropSpecies:
-          $ref: '#/components/schemas/CropSpeciesSerializerField'
-        growth_stage:
-          type:
-          - string
-          - 'null'
-          maxLength: 255
   securitySchemes:
     cookieAuth:
       type: apiKey

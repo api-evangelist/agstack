@@ -249,16 +249,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    ContactPersonField:
-      type: object
-      properties:
-        firstname:
-          type: string
-        lastname:
-          type: string
-      required:
-      - firstname
-      - lastname
     Farm:
       type: object
       properties:
@@ -316,6 +306,28 @@ components:
       - telephone
       - updated_at
       - vatID
+    AddressField:
+      type: object
+      properties:
+        adminUnitL1:
+          type: string
+        adminUnitL2:
+          type: string
+        addressArea:
+          type: string
+        municipality:
+          type: string
+        community:
+          type: string
+        locatorName:
+          type: string
+      required:
+      - addressArea
+      - adminUnitL1
+      - adminUnitL2
+      - community
+      - locatorName
+      - municipality
     StatusEnum:
       enum:
       - 0
@@ -327,6 +339,16 @@ components:
         * `1` - Active
 
         * `2` - Deleted'
+    ContactPersonField:
+      type: object
+      properties:
+        firstname:
+          type: string
+        lastname:
+          type: string
+      required:
+      - firstname
+      - lastname
     PatchedFarm:
       type: object
       properties:
@@ -372,28 +394,6 @@ components:
           $ref: '#/components/schemas/ContactPersonField'
         address:
           $ref: '#/components/schemas/AddressField'
-    AddressField:
-      type: object
-      properties:
-        adminUnitL1:
-          type: string
-        adminUnitL2:
-          type: string
-        addressArea:
-          type: string
-        municipality:
-          type: string
-        community:
-          type: string
-        locatorName:
-          type: string
-      required:
-      - addressArea
-      - adminUnitL1
-      - adminUnitL2
-      - community
-      - locatorName
-      - municipality
   securitySchemes:
     cookieAuth:
       type: apiKey

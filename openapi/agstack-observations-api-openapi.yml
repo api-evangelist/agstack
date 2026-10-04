@@ -333,15 +333,6 @@ components:
           $ref: '#/components/schemas/GenericQuantityValueField'
         observedProperty:
           type: string
-    MadeBySensorField:
-      type: object
-      properties:
-        name:
-          type:
-          - string
-          - 'null'
-      required:
-      - name
     GenericQuantityValueField:
       type: object
       properties:
@@ -353,6 +344,15 @@ components:
           type: string
       required:
       - hasValue
+    MadeBySensorField:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+      required:
+      - name
   securitySchemes:
     cookieAuth:
       type: apiKey

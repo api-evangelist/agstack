@@ -256,6 +256,33 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    AppliedAmmountField:
+      type: object
+      properties:
+        unit:
+          type: string
+        numericValue:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,15}(?:\.\d{0,2})?$
+      required:
+      - numericValue
+      - unit
+    AddRawMaterialCompostQuantity:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        typeName:
+          type: string
+        quantityValue:
+          $ref: '#/components/schemas/AppliedAmmountField'
+      required:
+      - id
+      - quantityValue
+      - typeName
     PatchedAddRawMaterialOperation:
       type: object
       properties:
@@ -297,21 +324,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/AddRawMaterialCompostQuantity'
-    AddRawMaterialCompostQuantity:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        typeName:
-          type: string
-        quantityValue:
-          $ref: '#/components/schemas/AppliedAmmountField'
-      required:
-      - id
-      - quantityValue
-      - typeName
     AddRawMaterialOperation:
       type: object
       properties:
@@ -360,18 +372,6 @@ components:
       - id
       - operatedOn
       - usesAgriculturalMachinery
-    AppliedAmmountField:
-      type: object
-      properties:
-        unit:
-          type: string
-        numericValue:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,15}(?:\.\d{0,2})?$
-      required:
-      - numericValue
-      - unit
   securitySchemes:
     cookieAuth:
       type: apiKey

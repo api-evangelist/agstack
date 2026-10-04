@@ -260,6 +260,17 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    GenericQuantityValueField:
+      type: object
+      properties:
+        unit:
+          type:
+          - string
+          - 'null'
+        hasValue:
+          type: string
+      required:
+      - hasValue
     CropStressIndicatorObservation:
       type: object
       properties:
@@ -353,17 +364,6 @@ components:
           - 'null'
       required:
       - name
-    GenericQuantityValueField:
-      type: object
-      properties:
-        unit:
-          type:
-          - string
-          - 'null'
-        hasValue:
-          type: string
-      required:
-      - hasValue
   securitySchemes:
     cookieAuth:
       type: apiKey

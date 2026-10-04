@@ -258,11 +258,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    FarmAnimalGroupSerializerField:
-      type: object
-      properties:
-        hasName:
-          type: string
     PatchedFarmAnimal:
       type: object
       properties:
@@ -321,17 +316,22 @@ components:
           type: string
           format: date-time
           readOnly: true
-    StatusEnum:
+    SexEnum:
       enum:
       - 0
       - 1
       - 2
       type: integer
-      description: '* `0` - Inactive
+      description: '* `0` - N/A
 
-        * `1` - Active
+        * `1` - Female
 
-        * `2` - Deleted'
+        * `2` - Male'
+    FarmAnimalGroupSerializerField:
+      type: object
+      properties:
+        hasName:
+          type: string
     FarmAnimal:
       type: object
       properties:
@@ -398,17 +398,17 @@ components:
       - id
       - invalidatedAtTime
       - species
-    SexEnum:
+    StatusEnum:
       enum:
       - 0
       - 1
       - 2
       type: integer
-      description: '* `0` - N/A
+      description: '* `0` - Inactive
 
-        * `1` - Female
+        * `1` - Active
 
-        * `2` - Male'
+        * `2` - Deleted'
   securitySchemes:
     cookieAuth:
       type: apiKey

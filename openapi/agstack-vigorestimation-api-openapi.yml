@@ -256,6 +256,45 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    PatchedVigorEstimationObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasArea:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
     GenericQuantityValueField:
       type: object
       properties:
@@ -323,45 +362,6 @@ components:
           - 'null'
       required:
       - name
-    PatchedVigorEstimationObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type:
-          - string
-          - 'null'
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-        hasAgriParcel:
-          type: string
-          format: uuid
-        hasArea:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,13}(?:\.\d{0,2})?$
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
   securitySchemes:
     cookieAuth:
       type: apiKey

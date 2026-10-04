@@ -254,6 +254,47 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    GenericFarmAsset:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        invalidatedAtTime:
+          type: string
+          format: date-time
+          readOnly: true
+        dateCreated:
+          type: string
+          format: date-time
+          readOnly: true
+        dateModified:
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type:
+          - string
+          - 'null'
+        hasAgriParcel:
+          type: string
+          format: uuid
+      required:
+      - dateCreated
+      - dateModified
+      - hasAgriParcel
+      - id
+      - invalidatedAtTime
+      - name
     StatusEnum:
       enum:
       - 0
@@ -299,47 +340,6 @@ components:
         hasAgriParcel:
           type: string
           format: uuid
-    GenericFarmAsset:
-      type: object
-      properties:
-        status:
-          allOf:
-          - $ref: '#/components/schemas/StatusEnum'
-          minimum: -2147483648
-          maximum: 2147483647
-        invalidatedAtTime:
-          type: string
-          format: date-time
-          readOnly: true
-        dateCreated:
-          type: string
-          format: date-time
-          readOnly: true
-        dateModified:
-          type: string
-          format: date-time
-          readOnly: true
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        name:
-          type: string
-          maxLength: 100
-        description:
-          type:
-          - string
-          - 'null'
-        hasAgriParcel:
-          type: string
-          format: uuid
-      required:
-      - dateCreated
-      - dateModified
-      - hasAgriParcel
-      - id
-      - invalidatedAtTime
-      - name
   securitySchemes:
     cookieAuth:
       type: apiKey

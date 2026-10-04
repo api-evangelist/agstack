@@ -68,15 +68,6 @@ components:
       - msg
       - type
       title: ValidationError
-    AuthToken:
-      properties:
-        jwt_token:
-          type: string
-          title: Jwt Token
-      type: object
-      required:
-      - jwt_token
-      title: AuthToken
     HTTPValidationError:
       properties:
         detail:
@@ -119,6 +110,15 @@ components:
       - username
       - password
       title: Body_token_auth_token_post
+    AuthToken:
+      properties:
+        jwt_token:
+          type: string
+          title: Jwt Token
+      type: object
+      required:
+      - jwt_token
+      title: AuthToken
   securitySchemes:
     HTTPBearer:
       type: http
