@@ -1,138 +1,22 @@
-generated: '2026-07-15'
+generated: '2026-09-23'
 method: generated
-source: openapi/agstack-asset-registry-openapi.yml, openapi/agstack-openagri-farm-calendar-openapi.yml,
-  openapi/agstack-openagri-weather-service-openapi.yml
+source: openapi/agstack-api-api-openapi.yml, openapi/agstack-auth-api-openapi.yml, openapi/agstack-authentication-api-openapi.yml,
+  openapi/agstack-data-api-openapi.yml, openapi/agstack-field-registration-post-api-openapi.yml,
+  openapi/agstack-field-retrieval-queries-api-openapi.yml, openapi/agstack-linkeddata-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
   operations: 191
   by_action_class:
-    acting: 119
-    connected: 72
+    connected: 73
+    acting: 118
   by_consequence:
-    write: 99
-    read: 72
+    read: 73
+    write: 98
     safety-critical: 20
   human_in_the_loop_required: 20
 operations:
-- path: /login
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /register-field-boundary
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /register-field-boundaries-geojson
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /register-point
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /register-points-geojson
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /fetch-field/{geo_id}
-  method: get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /fetch-field-wkt/{geo_id}
-  method: get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /fetch-field-centroid/{geo_id}
-  method: get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /get-percentage-overlap-two-fields
-  method: post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /api/v1/AddRawMaterialOperations/
   method: get
   operationId: api_v1_AddRawMaterialOperations_list
@@ -2495,9 +2379,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /api/data/forecast5
+- path: /auth/test
   method: get
-  operationId: get_weather_forecast5days_api_data_forecast5_get
+  operationId: get_payload_auth_test_get
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -2505,9 +2389,41 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /api/linkeddata/forecast5
+- path: /auth/token
+  method: post
+  operationId: token_auth_token_post
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /login
+  method: post
+  operationId: postLogin
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/data/forecast5
   method: get
-  operationId: get_weather_forecast5days_ld_api_linkeddata_forecast5_get
+  operationId: get_weather_forecast5days_api_data_forecast5_get
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -2535,29 +2451,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /api/linkeddata/thi
-  method: get
-  operationId: get_thi_ld_api_linkeddata_thi_get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
 - path: /api/data/flight_forecast5
   method: get
   operationId: get_flight_forecast_for_all_uavs_api_data_flight_forecast5_get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/linkeddata/flight_forecast5
-  method: get
-  operationId: get_flight_forecast_for_all_uavs_ld_api_linkeddata_flight_forecast5_get
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -2575,9 +2471,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /api/linkeddata/flight_forecast5/{uavmodel}
+- path: /api/data/spray_forecast
   method: get
-  operationId: get_flight_forecast_for_uav_ld_api_linkeddata_flight_forecast5__uavmodel__get
+  operationId: get_spray_forecast_api_data_spray_forecast_get
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -2585,9 +2481,143 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /api/data/spray_forecast
+- path: /register-field-boundary
+  method: post
+  operationId: postRegisterFieldBoundary
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /register-field-boundaries-geojson
+  method: post
+  operationId: postRegisterFieldBoundariesGeojson
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /register-point
+  method: post
+  operationId: postRegisterPoint
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /register-points-geojson
+  method: post
+  operationId: postRegisterPointsGeojson
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /fetch-field/{geo_id}
   method: get
-  operationId: get_spray_forecast_api_data_spray_forecast_get
+  operationId: getFetchFieldByGeoId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fetch-field-wkt/{geo_id}
+  method: get
+  operationId: getFetchFieldWktByGeoId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /fetch-field-centroid/{geo_id}
+  method: get
+  operationId: getFetchFieldCentroidByGeoId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /get-percentage-overlap-two-fields
+  method: post
+  operationId: postGetPercentageOverlapTwoFields
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/linkeddata/forecast5
+  method: get
+  operationId: get_weather_forecast5days_ld_api_linkeddata_forecast5_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/linkeddata/thi
+  method: get
+  operationId: get_thi_ld_api_linkeddata_thi_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/linkeddata/flight_forecast5
+  method: get
+  operationId: get_flight_forecast_for_all_uavs_ld_api_linkeddata_flight_forecast5_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/linkeddata/flight_forecast5/{uavmodel}
+  method: get
+  operationId: get_flight_forecast_for_uav_ld_api_linkeddata_flight_forecast5__uavmodel__get
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -2605,29 +2635,3 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /auth/test
-  method: get
-  operationId: get_payload_auth_test_get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /auth/token
-  method: post
-  operationId: token_auth_token_post
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
