@@ -250,40 +250,43 @@ paths:
       - Data
 components:
   schemas:
-    GeoJSONOut:
+    PointOut:
       properties:
-        type:
-          $ref: '#/components/schemas/GeoJSONTypeEnum'
-        coordinates:
-          items: {}
-          type: array
-          title: Coordinates
+        location:
+          $ref: '#/components/schemas/GeoJSONOut'
       type: object
       required:
-      - type
-      - coordinates
-      title: GeoJSONOut
-    ValidationError:
+      - location
+      title: PointOut
+    PredictionOut:
       properties:
-        loc:
-          items:
-            anyOf:
-            - type: string
-            - type: integer
-          type: array
-          title: Location
-        msg:
+        value:
+          type: number
+          title: Value
+        timestamp:
           type: string
-          title: Message
-        type:
+          format: date-time
+          title: Timestamp
+        source:
           type: string
-          title: Error Type
+          title: Source
+        spatial_entity:
+          $ref: '#/components/schemas/PointOut'
+        data_type:
+          type: string
+          title: Data Type
+        measurement_type:
+          type: string
+          title: Measurement Type
       type: object
       required:
-      - loc
-      - msg
-      - type
-      title: ValidationError
+      - value
+      - timestamp
+      - source
+      - spatial_entity
+      - data_type
+      - measurement_type
+      title: PredictionOut
     THIDataOut:
       properties:
         id:
@@ -327,6 +330,62 @@ components:
       - location
       - detailed_status
       title: SprayForecastResponse
+    GeoJSONOut:
+      properties:
+        type:
+          $ref: '#/components/schemas/GeoJSONTypeEnum'
+        coordinates:
+          items: {}
+          type: array
+          title: Coordinates
+      type: object
+      required:
+      - type
+      - coordinates
+      title: GeoJSONOut
+    GeoJSONTypeEnum:
+      type: string
+      enum:
+      - Point
+      - POLYGON
+      title: GeoJSONTypeEnum
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    SprayStatus:
+      type: string
+      enum:
+      - optimal
+      - marginal
+      - unsuitable
+      title: SprayStatus
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
     FlightStatusForecastResponse:
       properties:
         timestamp:
@@ -358,59 +417,6 @@ components:
       - location
       - weather_params
       title: FlightStatusForecastResponse
-    PointOut:
-      properties:
-        location:
-          $ref: '#/components/schemas/GeoJSONOut'
-      type: object
-      required:
-      - location
-      title: PointOut
-    HTTPValidationError:
-      properties:
-        detail:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
-          title: Detail
-      type: object
-      title: HTTPValidationError
-    PredictionOut:
-      properties:
-        value:
-          type: number
-          title: Value
-        timestamp:
-          type: string
-          format: date-time
-          title: Timestamp
-        source:
-          type: string
-          title: Source
-        spatial_entity:
-          $ref: '#/components/schemas/PointOut'
-        data_type:
-          type: string
-          title: Data Type
-        measurement_type:
-          type: string
-          title: Measurement Type
-      type: object
-      required:
-      - value
-      - timestamp
-      - source
-      - spatial_entity
-      - data_type
-      - measurement_type
-      title: PredictionOut
-    SprayStatus:
-      type: string
-      enum:
-      - optimal
-      - marginal
-      - unsuitable
-      title: SprayStatus
     WeatherDataOut:
       properties:
         id:
@@ -428,12 +434,6 @@ components:
       - spatial_entity
       - data
       title: WeatherDataOut
-    GeoJSONTypeEnum:
-      type: string
-      enum:
-      - Point
-      - POLYGON
-      title: GeoJSONTypeEnum
   securitySchemes:
     HTTPBearer:
       type: http

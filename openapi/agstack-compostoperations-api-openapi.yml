@@ -1376,124 +1376,17 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    MadeBySensorField:
-      type: object
-      properties:
-        name:
-          type:
-          - string
-          - 'null'
-      required:
-      - name
-    AddRawMaterialOperation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type:
-          - string
-          - 'null'
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        operatedOn:
-          type: string
-          format: uuid
-        responsibleAgent:
-          type:
-          - string
-          - 'null'
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-        hasCompostMaterial:
-          type: array
-          items:
-            $ref: '#/components/schemas/AddRawMaterialCompostQuantity'
-      required:
-      - activityType
-      - hasCompostMaterial
-      - hasStartDatetime
-      - id
-      - operatedOn
-      - usesAgriculturalMachinery
-    AppliedAmmountField:
+    GenericQuantityValueField:
       type: object
       properties:
         unit:
+          type:
+          - string
+          - 'null'
+        hasValue:
           type: string
-        numericValue:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,15}(?:\.\d{0,2})?$
       required:
-      - numericValue
-      - unit
-    IrrigationOperation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type:
-          - string
-          - 'null'
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        responsibleAgent:
-          type:
-          - string
-          - 'null'
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-        hasAppliedAmount:
-          $ref: '#/components/schemas/AppliedAmmountField'
-        usesIrrigationSystem:
-          $ref: '#/components/schemas/UsesIrrigationSystemEnum'
-        operatedOn:
-          type: string
-          format: uuid
-      required:
-      - activityType
-      - hasAppliedAmount
-      - hasStartDatetime
-      - id
-      - operatedOn
-      - usesAgriculturalMachinery
-      - usesIrrigationSystem
+      - hasValue
     Observation:
       type: object
       properties:
@@ -1536,62 +1429,6 @@ components:
       - id
       - observedProperty
       - phenomenonTime
-    PatchedIrrigationOperation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type:
-          - string
-          - 'null'
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        responsibleAgent:
-          type:
-          - string
-          - 'null'
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-        hasAppliedAmount:
-          $ref: '#/components/schemas/AppliedAmmountField'
-        usesIrrigationSystem:
-          $ref: '#/components/schemas/UsesIrrigationSystemEnum'
-        operatedOn:
-          type: string
-          format: uuid
-    AddRawMaterialCompostQuantity:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        typeName:
-          type: string
-        quantityValue:
-          $ref: '#/components/schemas/AppliedAmmountField'
-      required:
-      - id
-      - quantityValue
-      - typeName
     PatchedCompostTurningOperation:
       type: object
       properties:
@@ -1629,52 +1466,59 @@ components:
           items:
             type: string
             format: uuid
-    PatchedObservation:
+    UsesIrrigationSystemEnum:
+      enum:
+      - sprinkler
+      - drip
+      - centre_pivot
+      - furrow
+      - terraced
+      type: string
+      description: '* `sprinkler` - Sprinkler
+
+        * `drip` - Drip
+
+        * `centre_pivot` - Centre Pivot
+
+        * `furrow` - Furrow
+
+        * `terraced` - Terraced'
+    AppliedAmmountField:
+      type: object
+      properties:
+        unit:
+          type: string
+        numericValue:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,15}(?:\.\d{0,2})?$
+      required:
+      - numericValue
+      - unit
+    MadeBySensorField:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+      required:
+      - name
+    AddRawMaterialCompostQuantity:
       type: object
       properties:
         id:
           type: string
           format: uuid
           readOnly: true
-        activityType:
+        typeName:
           type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type:
-          - string
-          - 'null'
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        hasAgriParcel:
-          type: string
-          format: uuid
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
-    GenericQuantityValueField:
-      type: object
-      properties:
-        unit:
-          type:
-          - string
-          - 'null'
-        hasValue:
-          type: string
+        quantityValue:
+          $ref: '#/components/schemas/AppliedAmmountField'
       required:
-      - hasValue
+      - id
+      - quantityValue
+      - typeName
     PatchedCompostOperation:
       type: object
       properties:
@@ -1726,64 +1570,6 @@ components:
             type: string
             format: uuid
           readOnly: true
-    UsesIrrigationSystemEnum:
-      enum:
-      - sprinkler
-      - drip
-      - centre_pivot
-      - furrow
-      - terraced
-      type: string
-      description: '* `sprinkler` - Sprinkler
-
-        * `drip` - Drip
-
-        * `centre_pivot` - Centre Pivot
-
-        * `furrow` - Furrow
-
-        * `terraced` - Terraced'
-    PatchedAddRawMaterialOperation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type:
-          - string
-          - 'null'
-        hasStartDatetime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        operatedOn:
-          type: string
-          format: uuid
-        responsibleAgent:
-          type:
-          - string
-          - 'null'
-        usesAgriculturalMachinery:
-          type: array
-          items:
-            type: string
-            format: uuid
-        hasCompostMaterial:
-          type: array
-          items:
-            $ref: '#/components/schemas/AddRawMaterialCompostQuantity'
     CompostOperation:
       type: object
       properties:
@@ -1844,6 +1630,89 @@ components:
       - id
       - isOperatedOn
       - usesAgriculturalMachinery
+    AddRawMaterialOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        operatedOn:
+          type: string
+          format: uuid
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasCompostMaterial:
+          type: array
+          items:
+            $ref: '#/components/schemas/AddRawMaterialCompostQuantity'
+      required:
+      - activityType
+      - hasCompostMaterial
+      - hasStartDatetime
+      - id
+      - operatedOn
+      - usesAgriculturalMachinery
+    PatchedObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        hasAgriParcel:
+          type: string
+          format: uuid
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
     CompostTurningOperation:
       type: object
       properties:
@@ -1887,6 +1756,137 @@ components:
       - id
       - operatedOn
       - usesAgriculturalMachinery
+    PatchedIrrigationOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasAppliedAmount:
+          $ref: '#/components/schemas/AppliedAmmountField'
+        usesIrrigationSystem:
+          $ref: '#/components/schemas/UsesIrrigationSystemEnum'
+        operatedOn:
+          type: string
+          format: uuid
+    PatchedAddRawMaterialOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        operatedOn:
+          type: string
+          format: uuid
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasCompostMaterial:
+          type: array
+          items:
+            $ref: '#/components/schemas/AddRawMaterialCompostQuantity'
+    IrrigationOperation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        hasStartDatetime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        responsibleAgent:
+          type:
+          - string
+          - 'null'
+        usesAgriculturalMachinery:
+          type: array
+          items:
+            type: string
+            format: uuid
+        hasAppliedAmount:
+          $ref: '#/components/schemas/AppliedAmmountField'
+        usesIrrigationSystem:
+          $ref: '#/components/schemas/UsesIrrigationSystemEnum'
+        operatedOn:
+          type: string
+          format: uuid
+      required:
+      - activityType
+      - hasAppliedAmount
+      - hasStartDatetime
+      - id
+      - operatedOn
+      - usesAgriculturalMachinery
+      - usesIrrigationSystem
   securitySchemes:
     cookieAuth:
       type: apiKey

@@ -271,6 +271,44 @@ components:
           type: string
       required:
       - hasValue
+    PatchedCropStressIndicatorObservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        activityType:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        details:
+          type:
+          - string
+          - 'null'
+        phenomenonTime:
+          type: string
+          format: date-time
+        hasEndDatetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        madeBySensor:
+          allOf:
+          - $ref: '#/components/schemas/MadeBySensorField'
+        hasAgriParcel:
+          type: string
+          format: uuid
+        hasAgriCrop:
+          type: string
+          format: uuid
+        hasResult:
+          $ref: '#/components/schemas/GenericQuantityValueField'
+        observedProperty:
+          type: string
     CropStressIndicatorObservation:
       type: object
       properties:
@@ -317,44 +355,6 @@ components:
       - id
       - observedProperty
       - phenomenonTime
-    PatchedCropStressIndicatorObservation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        activityType:
-          type: string
-          format: uuid
-        title:
-          type: string
-          maxLength: 200
-        details:
-          type:
-          - string
-          - 'null'
-        phenomenonTime:
-          type: string
-          format: date-time
-        hasEndDatetime:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        madeBySensor:
-          allOf:
-          - $ref: '#/components/schemas/MadeBySensorField'
-        hasAgriParcel:
-          type: string
-          format: uuid
-        hasAgriCrop:
-          type: string
-          format: uuid
-        hasResult:
-          $ref: '#/components/schemas/GenericQuantityValueField'
-        observedProperty:
-          type: string
     MadeBySensorField:
       type: object
       properties:

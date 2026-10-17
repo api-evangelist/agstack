@@ -295,6 +295,17 @@ components:
           $ref: '#/components/schemas/GenericQuantityValueField'
         observedProperty:
           type: string
+    GenericQuantityValueField:
+      type: object
+      properties:
+        unit:
+          type:
+          - string
+          - 'null'
+        hasValue:
+          type: string
+      required:
+      - hasValue
     YieldPredictionObservation:
       type: object
       properties:
@@ -342,17 +353,6 @@ components:
       - id
       - observedProperty
       - phenomenonTime
-    GenericQuantityValueField:
-      type: object
-      properties:
-        unit:
-          type:
-          - string
-          - 'null'
-        hasValue:
-          type: string
-      required:
-      - hasValue
     MadeBySensorField:
       type: object
       properties:
