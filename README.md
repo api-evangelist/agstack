@@ -1,4 +1,4 @@
-# AgStack Foundation (agstack)
+# AgStack Foundation
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,153 +66,266 @@
 
 AgStack Foundation is a Linux Foundation project providing open-source digital infrastructure for the agriculture sector. Key projects include the Asset Registry (global field boundary registration with unique geo IDs), the OpenAgri Weather Service (agricultural weather forecasts, THI, spray conditions, UAV flight forecasts), and the OpenAgri Farm Calendar (farm operation recording with JSON-LD/OCSM linked data support). AgStack tools support EUDR compliance, precision agriculture, and interoperability across the agtech ecosystem through the OpenAgri Common Semantic Model.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/agstack/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/agstack/refs/heads/main/apis.yml)
+**Areas:** Agriculture · Linux Foundation · Open Source · Geospatial · Precision Agriculture · Linked Data
 
-## Scope
+## AgStack Foundation on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for AgStack Foundation is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/agstack/](https://apis.io/providers/agstack/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (31)
 
-- Agriculture
-- Linux Foundation
-- Open Source
-- Geospatial
-- Precision Agriculture
-- Linked Data
+- [AgStack Foundation Auth API](https://apis.io/apis/agstack/agstack-auth-api/) — The Auth API from AgStack Foundation — 2 operation(s) for auth.
+- [AgStack Foundation Authentication API](https://apis.io/apis/agstack/agstack-authentication-api/) — The Authentication API from AgStack Foundation — 1 operation(s) for authentication.
+- [AgStack Foundation Data API](https://apis.io/apis/agstack/agstack-data-api/) — The Data API from AgStack Foundation — 6 operation(s) for data.
+- [AgStack Foundation Field Registration (POST) API](https://apis.io/apis/agstack/agstack-field-registration-post-api/) — The Field Registration (POST) API from AgStack Foundation — 4 operation(s) for field registration (post).
+- [AgStack Foundation Field Retrieval & Queries API](https://apis.io/apis/agstack/agstack-field-retrieval-queries-api/) — The Field Retrieval & Queries API from AgStack Foundation — 4 operation(s) for field retrieval & queries.
+- [AgStack Foundation Linkeddata API](https://apis.io/apis/agstack/agstack-linkeddata-api/) — The Linkeddata API from AgStack Foundation — 5 operation(s) for linkeddata.
+- [AgStack Foundation Add Raw Material Operations API](https://apis.io/apis/agstack/agstack-addrawmaterialoperations-api/) — The AddRawMaterialOperations API from AgStack Foundation — 2 operation(s) for addrawmaterialoperations.
+- [AgStack Foundation Agricultural Machines API](https://apis.io/apis/agstack/agstack-agriculturalmachines-api/) — The AgriculturalMachines API from AgStack Foundation — 2 operation(s) for agriculturalmachines.
+- [AgStack Foundation Alerts API](https://apis.io/apis/agstack/agstack-alerts-api/) — The Alerts API from AgStack Foundation — 2 operation(s) for alerts.
+- [AgStack Foundation Compost Operations API](https://apis.io/apis/agstack/agstack-compostoperations-api/) — The CompostOperations API from AgStack Foundation — 10 operation(s) for compostoperations.
+- [AgStack Foundation Compost Turning Operations API](https://apis.io/apis/agstack/agstack-compostturningoperations-api/) — The CompostTurningOperations API from AgStack Foundation — 2 operation(s) for compostturningoperations.
+- [AgStack Foundation Crop Growth Stage Observations API](https://apis.io/apis/agstack/agstack-cropgrowthstageobservations-api/) — The CropGrowthStageObservations API from AgStack Foundation — 2 operation(s) for cropgrowthstageobservations.
+- [AgStack Foundation Crop Protection Operations API](https://apis.io/apis/agstack/agstack-cropprotectionoperations-api/) — The CropProtectionOperations API from AgStack Foundation — 2 operation(s) for cropprotectionoperations.
+- [AgStack Foundation Crop Stress Indicator Observations API](https://apis.io/apis/agstack/agstack-cropstressindicatorobservations-api/) — The CropStressIndicatorObservations API from AgStack Foundation — 2 operation(s) for cropstressindicatorobservations.
+- [AgStack Foundation Disease Detection API](https://apis.io/apis/agstack/agstack-diseasedetection-api/) — The DiseaseDetection API from AgStack Foundation — 2 operation(s) for diseasedetection.
+- [AgStack Foundation Farm API](https://apis.io/apis/agstack/agstack-farm-api/) — The Farm API from AgStack Foundation — 2 operation(s) for farm.
+- [AgStack Foundation Farm Animals API](https://apis.io/apis/agstack/agstack-farmanimals-api/) — The FarmAnimals API from AgStack Foundation — 2 operation(s) for farmanimals.
+- [AgStack Foundation Farm Calendar Activities API](https://apis.io/apis/agstack/agstack-farmcalendaractivities-api/) — The FarmCalendarActivities API from AgStack Foundation — 2 operation(s) for farmcalendaractivities.
+- [AgStack Foundation Farm Calendar Activity Types API](https://apis.io/apis/agstack/agstack-farmcalendaractivitytypes-api/) — The FarmCalendarActivityTypes API from AgStack Foundation — 2 operation(s) for farmcalendaractivitytypes.
+- [AgStack Foundation Farm Crops API](https://apis.io/apis/agstack/agstack-farmcrops-api/) — The FarmCrops API from AgStack Foundation — 2 operation(s) for farmcrops.
+- [AgStack Foundation Farm Parcels API](https://apis.io/apis/agstack/agstack-farmparcels-api/) — The FarmParcels API from AgStack Foundation — 2 operation(s) for farmparcels.
+- [AgStack Foundation Fertilization Operations API](https://apis.io/apis/agstack/agstack-fertilizationoperations-api/) — The FertilizationOperations API from AgStack Foundation — 2 operation(s) for fertilizationoperations.
+- [AgStack Foundation Fertilizers API](https://apis.io/apis/agstack/agstack-fertilizers-api/) — The Fertilizers API from AgStack Foundation — 2 operation(s) for fertilizers.
+- [AgStack Foundation Generic Farm Assets API](https://apis.io/apis/agstack/agstack-genericfarmassets-api/) — The GenericFarmAssets API from AgStack Foundation — 2 operation(s) for genericfarmassets.
+- [AgStack Foundation Irrigation Operations API](https://apis.io/apis/agstack/agstack-irrigationoperations-api/) — The IrrigationOperations API from AgStack Foundation — 2 operation(s) for irrigationoperations.
+- [AgStack Foundation Observations API](https://apis.io/apis/agstack/agstack-observations-api/) — The Observations API from AgStack Foundation — 2 operation(s) for observations.
+- [AgStack Foundation Pesticides API](https://apis.io/apis/agstack/agstack-pesticides-api/) — The Pesticides API from AgStack Foundation — 2 operation(s) for pesticides.
+- [AgStack Foundation Schema API](https://apis.io/apis/agstack/agstack-schema-api/) — The Schema API from AgStack Foundation — 1 operation(s) for schema.
+- [AgStack Foundation Spraying Recommendation API](https://apis.io/apis/agstack/agstack-sprayingrecommendation-api/) — The SprayingRecommendation API from AgStack Foundation — 2 operation(s) for sprayingrecommendation.
+- [AgStack Foundation Vigor Estimation API](https://apis.io/apis/agstack/agstack-vigorestimation-api/) — The VigorEstimation API from AgStack Foundation — 2 operation(s) for vigorestimation.
+- [AgStack Foundation Yield Prediction API](https://apis.io/apis/agstack/agstack-yieldprediction-api/) — The YieldPrediction API from AgStack Foundation — 2 operation(s) for yieldprediction.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### OpenAgri Weather Service
+Which operations an agent can call, which act, and which need a human in the loop.
 
-FastAPI-based weather service providing 5-day forecasts, current conditions, Temperature-Humidity Index (THI) for livestock heat stress, UAV flight condition forecasts, and spray condition assessments. Supports both JSON and JSON-LD/OCSM output formats for linked data interoperability. Part of the OpenAgri EU Horizon Europe project.
+- [Agstack Agentic Access](https://apis.io/agentic-access/agstack/agstack-agentic-access/)
 
-- **Human URL:** [https://github.com/agstack/OpenAgri-WeatherService](https://github.com/agstack/OpenAgri-WeatherService)
+#### JSON Schema (74)
 
-#### Tags
+The data models the API reads and writes.
 
-- Agriculture
-- Weather
-- Open Source
-- Linux Foundation
+- [BulkPointResult](https://apis.io/schemas/agstack/agstack-asset-registry-bulkpointresult/)
+- [GeoJSONFeatureCollection](https://apis.io/schemas/agstack/agstack-asset-registry-geojsonfeaturecollection/)
+- [RegisterFieldWKTRequest](https://apis.io/schemas/agstack/agstack-asset-registry-registerfieldwktrequest/)
+- [AddRawMaterialCompostQuantity](https://apis.io/schemas/agstack/agstack-openagri-farm-calendar-addrawmaterialcompostquantity/)
+- [AddRawMaterialOperation](https://apis.io/schemas/agstack/agstack-openagri-farm-calendar-addrawmaterialoperation/)
+- [AddressField](https://apis.io/schemas/agstack/agstack-openagri-farm-calendar-addressfield/)
+- [AgriculturalMachine](https://apis.io/schemas/agstack/agstack-openagri-farm-calendar-agriculturalmachine/)
+- [Alert](https://apis.io/schemas/agstack/agstack-openagri-farm-calendar-alert/)
+- [AppliedAmmountField](https://apis.io/schemas/agstack/agstack-openagri-farm-calendar-appliedammountfield/)
+- [CompostOperation](https://apis.io/schemas/agstack/agstack-openagri-farm-calendar-compostoperation/)
+- [CompostTurningOperation](https://apis.io/schemas/agstack/agstack-openagri-farm-calendar-compostturningoperation/)
+- [ContactPersonField](https://apis.io/schemas/agstack/agstack-openagri-farm-calendar-contactpersonfield/)
+- [CropGrowthStageObservation](https://apis.io/schemas/agstack/agstack-openagri-farm-calendar-cropgrowthstageobservation/)
+- [CropProtectionOperation](https://apis.io/schemas/agstack/agstack-openagri-farm-calendar-cropprotectionoperation/)
+- [CropSpeciesSerializerField](https://apis.io/schemas/agstack/agstack-openagri-farm-calendar-cropspeciesserializerfield/)
+- [CropStressIndicatorObservation](https://apis.io/schemas/agstack/agstack-openagri-farm-calendar-cropstressindicatorobservation/)
+- [DiseaseDetectionObservation](https://apis.io/schemas/agstack/agstack-openagri-farm-calendar-diseasedetectionobservation/)
+- [Farm](https://apis.io/schemas/agstack/agstack-openagri-farm-calendar-farm/)
+- [FarmAnimal](https://apis.io/schemas/agstack/agstack-openagri-farm-calendar-farmanimal/)
+- [FarmAnimalGroupSerializerField](https://apis.io/schemas/agstack/agstack-openagri-farm-calendar-farmanimalgroupserializerfield/)
+- [FarmCalendarActivity](https://apis.io/schemas/agstack/agstack-openagri-farm-calendar-farmcalendaractivity/)
+- [FarmCalendarActivityType](https://apis.io/schemas/agstack/agstack-openagri-farm-calendar-farmcalendaractivitytype/)
+- [FarmCrop](https://apis.io/schemas/agstack/agstack-openagri-farm-calendar-farmcrop/)
+- [FarmParcel](https://apis.io/schemas/agstack/agstack-openagri-farm-calendar-farmparcel/)
+- [FertilizationOperation](https://apis.io/schemas/agstack/agstack-openagri-farm-calendar-fertilizationoperation/)
+- …and 49 more published on APIs.io
 
-#### Properties
+#### JSON Structure (74)
 
-- [Documentation](https://github.com/agstack/OpenAgri-WeatherService)
-- [Getting Started](https://github.com/agstack/OpenAgri-WeatherService/blob/main/README.md)
-- [OpenAPI](openapi/agstack-openagri-weather-service-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/agstack-openagri-weather-service.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/agstack-openagri-weather-service.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/agstack-openagri-weather-service-predictionout-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/agstack-openagri-weather-service-weatherdataout-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/agstack-openagri-weather-service-thidataout-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/agstack-openagri-weather-service-sprayforecastresponse-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/agstack-openagri-weather-service-flightstatusforecastresponse-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/agstack-openagri-weather-service-geojsonout-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/agstack-openagri-weather-service-jsonldgraph-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/agstack-openagri-weather-service-authtoken-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/agstack-openagri-weather-service-pointout-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/agstack-openagri-weather-service-validationerror-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/agstack-openagri-weather-service-httpvalidationerror-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/agstack-openagri-weather-service-body-token-auth-token-post-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Structure](json-structure/agstack-openagri-weather-service-predictionout-structure.json)
-- [JSON Structure](json-structure/agstack-openagri-weather-service-weatherdataout-structure.json)
-- [JSON Structure](json-structure/agstack-openagri-weather-service-thidataout-structure.json)
-- [JSON Structure](json-structure/agstack-openagri-weather-service-sprayforecastresponse-structure.json)
-- [JSON Structure](json-structure/agstack-openagri-weather-service-flightstatusforecastresponse-structure.json)
-- [JSON Structure](json-structure/agstack-openagri-weather-service-geojsonout-structure.json)
-- [JSON Structure](json-structure/agstack-openagri-weather-service-jsonldgraph-structure.json)
-- [JSON Structure](json-structure/agstack-openagri-weather-service-authtoken-structure.json)
-- [JSON Structure](json-structure/agstack-openagri-weather-service-pointout-structure.json)
-- [JSON Structure](json-structure/agstack-openagri-weather-service-validationerror-structure.json)
-- [JSON Structure](json-structure/agstack-openagri-weather-service-httpvalidationerror-structure.json)
-- [JSON Structure](json-structure/agstack-openagri-weather-service-body-token-auth-token-post-structure.json)
-- [Example](examples/agstack-openagri-weather-service-predictionout-example.json)
-- [Example](examples/agstack-openagri-weather-service-weatherdataout-example.json)
-- [Example](examples/agstack-openagri-weather-service-thidataout-example.json)
-- [Example](examples/agstack-openagri-weather-service-sprayforecastresponse-example.json)
-- [Example](examples/agstack-openagri-weather-service-flightstatusforecastresponse-example.json)
-- [Example](examples/agstack-openagri-weather-service-geojsonout-example.json)
-- [Example](examples/agstack-openagri-weather-service-jsonldgraph-example.json)
-- [Example](examples/agstack-openagri-weather-service-authtoken-example.json)
-- [Example](examples/agstack-openagri-weather-service-pointout-example.json)
-- [Example](examples/agstack-openagri-weather-service-validationerror-example.json)
-- [Example](examples/agstack-openagri-weather-service-httpvalidationerror-example.json)
-- [Example](examples/agstack-openagri-weather-service-body-token-auth-token-post-example.json)
+Data models expressed in JSON Structure.
 
-### OpenAgri Farm Calendar
+- [Agstack Asset Registry Bulkpointresult Structure](https://apis.io/json-structure/agstack/agstack-asset-registry-bulkpointresult-structure/)
+- [Agstack Asset Registry Geojsonfeaturecollection Structure](https://apis.io/json-structure/agstack/agstack-asset-registry-geojsonfeaturecollection-structure/)
+- [Agstack Asset Registry Registerfieldwktrequest Structure](https://apis.io/json-structure/agstack/agstack-asset-registry-registerfieldwktrequest-structure/)
+- [Agstack Openagri Farm Calendar Addrawmaterialcompostquantity Structure](https://apis.io/json-structure/agstack/agstack-openagri-farm-calendar-addrawmaterialcompostquantity-structure/)
+- [Agstack Openagri Farm Calendar Addrawmaterialoperation Structure](https://apis.io/json-structure/agstack/agstack-openagri-farm-calendar-addrawmaterialoperation-structure/)
+- [Agstack Openagri Farm Calendar Addressfield Structure](https://apis.io/json-structure/agstack/agstack-openagri-farm-calendar-addressfield-structure/)
+- [Agstack Openagri Farm Calendar Agriculturalmachine Structure](https://apis.io/json-structure/agstack/agstack-openagri-farm-calendar-agriculturalmachine-structure/)
+- [Agstack Openagri Farm Calendar Alert Structure](https://apis.io/json-structure/agstack/agstack-openagri-farm-calendar-alert-structure/)
+- [Agstack Openagri Farm Calendar Appliedammountfield Structure](https://apis.io/json-structure/agstack/agstack-openagri-farm-calendar-appliedammountfield-structure/)
+- [Agstack Openagri Farm Calendar Compostoperation Structure](https://apis.io/json-structure/agstack/agstack-openagri-farm-calendar-compostoperation-structure/)
+- [Agstack Openagri Farm Calendar Compostturningoperation Structure](https://apis.io/json-structure/agstack/agstack-openagri-farm-calendar-compostturningoperation-structure/)
+- [Agstack Openagri Farm Calendar Contactpersonfield Structure](https://apis.io/json-structure/agstack/agstack-openagri-farm-calendar-contactpersonfield-structure/)
+- [Agstack Openagri Farm Calendar Cropgrowthstageobservation Structure](https://apis.io/json-structure/agstack/agstack-openagri-farm-calendar-cropgrowthstageobservation-structure/)
+- [Agstack Openagri Farm Calendar Cropprotectionoperation Structure](https://apis.io/json-structure/agstack/agstack-openagri-farm-calendar-cropprotectionoperation-structure/)
+- [Agstack Openagri Farm Calendar Cropspeciesserializerfield Structure](https://apis.io/json-structure/agstack/agstack-openagri-farm-calendar-cropspeciesserializerfield-structure/)
+- [Agstack Openagri Farm Calendar Cropstressindicatorobservation Structure](https://apis.io/json-structure/agstack/agstack-openagri-farm-calendar-cropstressindicatorobservation-structure/)
+- [Agstack Openagri Farm Calendar Diseasedetectionobservation Structure](https://apis.io/json-structure/agstack/agstack-openagri-farm-calendar-diseasedetectionobservation-structure/)
+- [Agstack Openagri Farm Calendar Farm Structure](https://apis.io/json-structure/agstack/agstack-openagri-farm-calendar-farm-structure/)
+- [Agstack Openagri Farm Calendar Farmanimal Structure](https://apis.io/json-structure/agstack/agstack-openagri-farm-calendar-farmanimal-structure/)
+- [Agstack Openagri Farm Calendar Farmanimalgroupserializerfield Structure](https://apis.io/json-structure/agstack/agstack-openagri-farm-calendar-farmanimalgroupserializerfield-structure/)
+- [Agstack Openagri Farm Calendar Farmcalendaractivity Structure](https://apis.io/json-structure/agstack/agstack-openagri-farm-calendar-farmcalendaractivity-structure/)
+- [Agstack Openagri Farm Calendar Farmcalendaractivitytype Structure](https://apis.io/json-structure/agstack/agstack-openagri-farm-calendar-farmcalendaractivitytype-structure/)
+- [Agstack Openagri Farm Calendar Farmcrop Structure](https://apis.io/json-structure/agstack/agstack-openagri-farm-calendar-farmcrop-structure/)
+- [Agstack Openagri Farm Calendar Farmparcel Structure](https://apis.io/json-structure/agstack/agstack-openagri-farm-calendar-farmparcel-structure/)
+- [Agstack Openagri Farm Calendar Fertilizationoperation Structure](https://apis.io/json-structure/agstack/agstack-openagri-farm-calendar-fertilizationoperation-structure/)
+- …and 49 more published on APIs.io
 
-Django REST API for digital farm calendar management. Records farmer operations (planting, spraying, harvesting, irrigation), farm observations, parcel properties, and farm assets. Provides data in both JSON and JSON-LD formats conforming to the OpenAgri Common Semantic Model (OCSM). Part of the OpenAgri EU Horizon Europe project.
+#### JSON-LD (1)
 
-- **Human URL:** [https://github.com/agstack/OpenAgri-FarmCalendar](https://github.com/agstack/OpenAgri-FarmCalendar)
+Linked-data contexts for the provider's vocabulary.
 
-#### Tags
+- [Agstack Context](https://apis.io/jsonld/agstack/agstack-context/)
 
-- Agriculture
-- Farm Management
-- Open Source
-- Linux Foundation
+#### Vocabulary (1)
 
-#### Properties
+The provider's domain terms, defined.
 
-- [Documentation](https://github.com/agstack/OpenAgri-FarmCalendar)
-- [Getting Started](https://github.com/agstack/OpenAgri-FarmCalendar/blob/main/README.md)
-- [OpenAPI](openapi/agstack-openagri-farm-calendar-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/agstack-openagri-farm-calendar.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/agstack-openagri-farm-calendar.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [AgStack Foundation Vocabulary](https://apis.io/vocabularies/agstack/agstack-vocabulary/)
 
-### AgStack Asset Registry
+#### Examples (74)
 
-The AgStack Asset Registry provides global field boundary registration and identification. Submit a field polygon (WKT or GeoJSON) and receive a permanent 256-bit (16-character alphanumeric) geo ID. Supports single and bulk registration, field retrieval, centroid calculation, and spatial overlap analysis. Production API available at api-ar.agstack.org.
+Example requests and responses.
 
-- **Human URL:** [https://github.com/agstack/asset-registry](https://github.com/agstack/asset-registry)
+- [Agstack Asset Registry Bulkpointresult Example](https://apis.io/examples/agstack/agstack-asset-registry-bulkpointresult-example/)
+- [Agstack Asset Registry Geojsonfeaturecollection Example](https://apis.io/examples/agstack/agstack-asset-registry-geojsonfeaturecollection-example/)
+- [Agstack Asset Registry Registerfieldwktrequest Example](https://apis.io/examples/agstack/agstack-asset-registry-registerfieldwktrequest-example/)
+- [Agstack Openagri Farm Calendar Addrawmaterialcompostquantity Example](https://apis.io/examples/agstack/agstack-openagri-farm-calendar-addrawmaterialcompostquantity-example/)
+- [Agstack Openagri Farm Calendar Addrawmaterialoperation Example](https://apis.io/examples/agstack/agstack-openagri-farm-calendar-addrawmaterialoperation-example/)
+- [Agstack Openagri Farm Calendar Addressfield Example](https://apis.io/examples/agstack/agstack-openagri-farm-calendar-addressfield-example/)
+- [Agstack Openagri Farm Calendar Agriculturalmachine Example](https://apis.io/examples/agstack/agstack-openagri-farm-calendar-agriculturalmachine-example/)
+- [Agstack Openagri Farm Calendar Alert Example](https://apis.io/examples/agstack/agstack-openagri-farm-calendar-alert-example/)
+- [Agstack Openagri Farm Calendar Appliedammountfield Example](https://apis.io/examples/agstack/agstack-openagri-farm-calendar-appliedammountfield-example/)
+- [Agstack Openagri Farm Calendar Compostoperation Example](https://apis.io/examples/agstack/agstack-openagri-farm-calendar-compostoperation-example/)
+- [Agstack Openagri Farm Calendar Compostturningoperation Example](https://apis.io/examples/agstack/agstack-openagri-farm-calendar-compostturningoperation-example/)
+- [Agstack Openagri Farm Calendar Contactpersonfield Example](https://apis.io/examples/agstack/agstack-openagri-farm-calendar-contactpersonfield-example/)
+- [Agstack Openagri Farm Calendar Cropgrowthstageobservation Example](https://apis.io/examples/agstack/agstack-openagri-farm-calendar-cropgrowthstageobservation-example/)
+- [Agstack Openagri Farm Calendar Cropprotectionoperation Example](https://apis.io/examples/agstack/agstack-openagri-farm-calendar-cropprotectionoperation-example/)
+- [Agstack Openagri Farm Calendar Cropspeciesserializerfield Example](https://apis.io/examples/agstack/agstack-openagri-farm-calendar-cropspeciesserializerfield-example/)
+- [Agstack Openagri Farm Calendar Cropstressindicatorobservation Example](https://apis.io/examples/agstack/agstack-openagri-farm-calendar-cropstressindicatorobservation-example/)
+- [Agstack Openagri Farm Calendar Diseasedetectionobservation Example](https://apis.io/examples/agstack/agstack-openagri-farm-calendar-diseasedetectionobservation-example/)
+- [Agstack Openagri Farm Calendar Farm Example](https://apis.io/examples/agstack/agstack-openagri-farm-calendar-farm-example/)
+- [Agstack Openagri Farm Calendar Farmanimal Example](https://apis.io/examples/agstack/agstack-openagri-farm-calendar-farmanimal-example/)
+- [Agstack Openagri Farm Calendar Farmanimalgroupserializerfield Example](https://apis.io/examples/agstack/agstack-openagri-farm-calendar-farmanimalgroupserializerfield-example/)
+- [Agstack Openagri Farm Calendar Farmcalendaractivity Example](https://apis.io/examples/agstack/agstack-openagri-farm-calendar-farmcalendaractivity-example/)
+- [Agstack Openagri Farm Calendar Farmcalendaractivitytype Example](https://apis.io/examples/agstack/agstack-openagri-farm-calendar-farmcalendaractivitytype-example/)
+- [Agstack Openagri Farm Calendar Farmcrop Example](https://apis.io/examples/agstack/agstack-openagri-farm-calendar-farmcrop-example/)
+- [Agstack Openagri Farm Calendar Farmparcel Example](https://apis.io/examples/agstack/agstack-openagri-farm-calendar-farmparcel-example/)
+- [Agstack Openagri Farm Calendar Fertilizationoperation Example](https://apis.io/examples/agstack/agstack-openagri-farm-calendar-fertilizationoperation-example/)
+- …and 49 more published on APIs.io
 
-#### Tags
+#### Collections (10)
 
-- Agriculture
-- Geospatial
-- Open Source
-- Linux Foundation
+Postman and Open Collection request collections.
 
-#### Properties
+- [AgStack Asset Registry api API](https://apis.io/collections/agstack/open-agstack-api-api/)
+- [AgStack Asset Registry API](https://apis.io/collections/agstack/open-agstack-asset-registry/)
+- [AgStack Asset Registry api Auth API](https://apis.io/collections/agstack/open-agstack-auth-api/)
+- [AgStack Asset Registry api Authentication API](https://apis.io/collections/agstack/open-agstack-authentication-api/)
+- [AgStack Asset Registry api Data API](https://apis.io/collections/agstack/open-agstack-data-api/)
+- [AgStack Asset Registry api Field Registration (POST) API](https://apis.io/collections/agstack/open-agstack-field-registration-post-api/)
+- [AgStack Asset Registry api Field Retrieval & Queries API](https://apis.io/collections/agstack/open-agstack-field-retrieval-queries-api/)
+- [AgStack Asset Registry api Linkeddata API](https://apis.io/collections/agstack/open-agstack-linkeddata-api/)
+- [OpenAgri Farm Calendar API](https://apis.io/collections/agstack/open-agstack-openagri-farm-calendar/)
+- [OpenAgri Weather service](https://apis.io/collections/agstack/open-agstack-openagri-weather-service/)
 
-- [Documentation](https://github.com/agstack/asset-registry)
-- [API Reference](https://api-ar.agstack.org)
-- [OpenAPI](openapi/agstack-asset-registry-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/agstack-asset-registry.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/agstack-asset-registry.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/agstack-asset-registry-registerfieldwktrequest-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/agstack-asset-registry-geojsonfeaturecollection-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/agstack-asset-registry-bulkpointresult-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Structure](json-structure/agstack-asset-registry-registerfieldwktrequest-structure.json)
-- [JSON Structure](json-structure/agstack-asset-registry-geojsonfeaturecollection-structure.json)
-- [JSON Structure](json-structure/agstack-asset-registry-bulkpointresult-structure.json)
-- [Example](examples/agstack-asset-registry-registerfieldwktrequest-example.json)
-- [Example](examples/agstack-asset-registry-geojsonfeaturecollection-example.json)
-- [Example](examples/agstack-asset-registry-bulkpointresult-example.json)
+#### Governance rules (2)
 
-## Common Properties
+Spectral rulesets for the provider's contracts.
 
-- [Portal](https://agstack.org/)
+- [AgStack Foundation — jsonschema rules](https://apis.io/rules/agstack/agstack-jsonschema-spectral-rules/)
+- [AgStack Foundation API Rules](https://apis.io/rules/agstack/agstack-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Agstack Authentication](https://apis.io/security/agstack/agstack-authentication/)
+- [Agstack Domain Security](https://apis.io/security/agstack/agstack-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Agstack Plans Pricing](https://apis.io/plans/agstack/agstack-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Agstack Rate Limits](https://apis.io/rate-limits/agstack/agstack-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Agstack Finops](https://apis.io/finops/agstack/agstack-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.agstack.org/)
 - [Documentation](https://agstack.org/projects/)
-- [GitHub Organization](https://github.com/agstack)
-- [About](https://agstack.org/about/)
-- [About](https://lfaidata.foundation/)
-- [JSON-LD](json-ld/agstack-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Spectral Rules](rules/agstack-spectral-rules.yml)
-- [Vocabulary](vocabulary/agstack-vocabulary.yaml)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
+- [Blog](https://agstack.org/feed/)
+- [GitHub](https://github.com/agstack)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 37.7** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 62.5 |
+| Contract quality | 62.3 |
+| Contract governance | 27.3 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 48.8 |
+| Access clarity | 7.9 |
+
+**Agent readiness 26.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/agstack/](https://apis.io/providers/agstack/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for AgStack Foundation: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/agstack/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
