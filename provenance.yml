@@ -11,6 +11,12 @@ artifacts:
   capabilities/agstack-capability-edges.yml:
     method: unknown
     evidence: no authorship recorded
+  certification/observations-2026-11-11.jsonl:
+    method: unknown
+    evidence: no authorship recorded
+  certification/status.yml:
+    method: unknown
+    evidence: no authorship recorded
   collections/agstack-api-api.opencollection.json:
     method: unknown
     evidence: no authorship recorded
@@ -302,6 +308,12 @@ artifacts:
   heartbeat/2026-11-02.yml:
     method: unknown
     evidence: no authorship recorded
+  heartbeat/2026-11-06.yml:
+    method: unknown
+    evidence: no authorship recorded
+  heartbeat/2026-11-13.yml:
+    method: unknown
+    evidence: no authorship recorded
   integrations/_index.yml:
     method: generated
     evidence: carries an API Evangelist house phrase
@@ -311,6 +323,15 @@ artifacts:
   json-ld/agstack-context.jsonld:
     method: unknown
     evidence: no authorship recorded
+  json-schema/agstack-add-raw-material-operation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-agricultural-machine-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-alert-schema.json:
+    method: unknown
+    evidence: no authorship recorded
   json-schema/agstack-asset-registry-bulkpointresult-schema.json:
     method: unknown
     evidence: no authorship recorded
@@ -318,6 +339,57 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   json-schema/agstack-asset-registry-registerfieldwktrequest-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-compost-operation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-compost-turning-operation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-crop-growth-stage-observation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-crop-protection-operation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-crop-stress-indicator-observation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-disease-detection-observation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-farm-animal-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-farm-calendar-activity-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-farm-calendar-activity-type-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-farm-crop-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-farm-parcel-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-farm-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-fertilization-operation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-fertilizer-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-generic-farm-asset-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-irrigation-operation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-observation-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-schema/agstack-openagri-farm-calendar-addrawmaterialcompostquantity-schema.json:
@@ -531,6 +603,90 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   json-schema/agstack-openagri-weather-service-weatherdataout-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-add-raw-material-operation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-agricultural-machine-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-alert-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-compost-operation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-compost-turning-operation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-crop-growth-stage-observation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-crop-protection-operation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-crop-stress-indicator-observation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-disease-detection-observation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-farm-animal-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-farm-calendar-activity-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-farm-calendar-activity-type-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-farm-crop-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-farm-parcel-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-farm-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-fertilization-operation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-fertilizer-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-generic-farm-asset-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-irrigation-operation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-observation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-pesticide-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-spraying-recommendation-observation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-vigor-estimation-observation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-patched-yield-prediction-observation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-pesticide-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-spraying-recommendation-observation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-vigor-estimation-observation-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/agstack-yield-prediction-observation-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-structure/agstack-asset-registry-bulkpointresult-structure.json:
@@ -758,7 +914,7 @@ artifacts:
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-11-02T082323.yml:
+  kin/checks-2026-11-06T143934.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -825,6 +981,9 @@ artifacts:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-11-02T082323.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-11-06T143934.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   openapi/_original/agstack-asset-registry-openapi.yml:
